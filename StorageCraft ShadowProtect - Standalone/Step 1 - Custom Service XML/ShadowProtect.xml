@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="11/23/2011" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<servicedefinition id="24294" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.0.10">
+		<description country="ca" language="en">This service, in conjunction with the &#39;ShadowProtect.vbs&#39; script, monitors StorageCraft&#39;s ShadowProtect product.</description>
+		<displayname country="ca" language="en">StorageCraft Job</displayname>
+		<displaylabel>StorageCraft Job</displaylabel>
+		<help country="ca" language="en">Custom WMI Service</help>
+		<popuphelp country="ca" language="en">Custom WMI Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,5,10,15,20,25,30,25,40,45,50,55 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="Matrix.MatrixSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Matrix Size</shortdescription>
+				<longdescription country="ca" language="en">The number of matrices.</longdescription>
+				<help country="ca" language="en">The number of matrices.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2\Ncentral">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="StorageCraftStandAlone">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.0.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="Name">
+				<shortdescription country="ca" language="en">Constraint 0</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Value" max="" min="" phardcoded="false" preferredident="true" type="String" value="PLEASE ENTER THE NAME OF THE BACKUP TO BE MONITORED">
+				<shortdescription country="ca" language="en">Backup Job</shortdescription>
+				<longdescription country="ca" language="en">Backup Job</longdescription>
+				<help country="ca" language="en">Enter the name of the Backup Job to be monitored.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="AND">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="8">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobStatus">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobStatus.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.1.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningTimeElapsed">
+				<shortdescription country="ca" language="en">Property 1</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.1.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningTimeElapsed.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 1 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.2.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningTimeRemaining">
+				<shortdescription country="ca" language="en">Property 2</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.2.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningTimeRemaining.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 2 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.3.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningBytesPerSecond">
+				<shortdescription country="ca" language="en">Property 3</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.3.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="RunningBytesPerSecond.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 3 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.4.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobStatusDescription">
+				<shortdescription country="ca" language="en">Property 4</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.4.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobStatusDescription.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 4 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+			<moduleparameter key="Matrix.0.Var.5.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="StartTime">
+				<shortdescription country="ca" language="en">Property 5</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.5.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="StartTime.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 5 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+			<moduleparameter key="Matrix.0.Var.6.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="LastBackupActivityDate">
+				<shortdescription country="ca" language="en">Property 6</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.6.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="LastBackupActivityDate.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 6 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+			
+			<moduleparameter key="Matrix.0.Var.7.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="LastScriptExecutionDate">
+				<shortdescription country="ca" language="en">Property 7</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.7.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="LastScriptExecutionDate.StorageCraft">
+				<shortdescription country="ca" language="en">Variable 7 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="false" type="String" value="8">
+
+
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$JobStatus.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$JobStatusDescription.StorageCraft">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RunningTimeElapsed.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RunningTimeRemaining.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RunningBytesPerSecond.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$StartTime.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>				
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.6.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastBackupActivityDate.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.7.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI24294_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastScriptExecutionDate.StorageCraft ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2429401</scandetailid>
+			<scandetailid>2429402</scandetailid>
+			<scandetailid>2429403</scandetailid>
+			<scandetailid>2429404</scandetailid>
+			<scandetailid>2429405</scandetailid>
+			<scandetailid>2429406</scandetailid>
+			<scandetailid>2429407</scandetailid>
+			<scandetailid>2429408</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2429401" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Warning"/>
+				<threshold high="2" low="2" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Job Status</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2429402" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Job Status Description</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2429403" unit="Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="14400" low="0" state="Normal"/>
+				<threshold high="21600" low="14460" state="Warning"/>
+				<threshold high="4294967295" low="21660" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Elapsed Run Time</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2429404" unit="Second" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Remaining Run Time</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_4</displayname>
+	</scandetail>
+
+	<scandetail id="2429405" unit="Bytes/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="4294967295" low="1000000" state="Normal"/>
+				<threshold high="999990" low="500000" state="Warning"/>
+				<threshold high="490000" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Throughput</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_5</displayname>
+	</scandetail>
+
+	<scandetail id="2429406" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Job Start Time</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_6</displayname>
+	</scandetail>
+
+	<scandetail id="2429407" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Backup Activity Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_7</displayname>
+	</scandetail>
+
+	<scandetail id="2429408" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Script Execution Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI24294_8</displayname>
+	</scandetail>
+	
+</service>
+<?N-able-SDK version=3.0?>

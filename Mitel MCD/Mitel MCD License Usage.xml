@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="9/14/2010" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="24174" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.0.2">
+		<description country="ca" language="en">Using SNMP, this service monitors the license consumption of a Mitel MCD device.</description>
+		<displayname country="ca" language="en">Mitel MCD License Usage</displayname>
+		<displaylabel>Mitel MCD License Usage</displaylabel>
+		<help country="ca" language="en">Custom SNMP Service</help>
+		<popuphelp country="ca" language="en">Custom SNMP Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+$" />
+				</presentationinfo>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Group.0.TargetIndex.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">SNMP Index</shortdescription>
+				<longdescription country="ca" language="en">SNMP Index</longdescription>
+				<help country="ca" language="en">Enter the name of the SNMP Index to be used by this service</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UsrLicPurchased">
+				<shortdescription country="ca" language="en">Variable 0</shortdescription>
+				<longdescription country="ca" language="en">Variable 0</longdescription>
+				<help country="ca" language="en">Variable 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.1027.4.1.1.2.1.2.1">
+				<shortdescription country="ca" language="en">OID 0</shortdescription>
+				<longdescription country="ca" language="en">OID 0</longdescription>
+				<help country="ca" language="en">OID 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UsrLicUsed">
+				<shortdescription country="ca" language="en">Variable 1</shortdescription>
+				<longdescription country="ca" language="en">Variable 1</longdescription>
+				<help country="ca" language="en">Variable 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.1027.4.1.1.2.1.2.2">
+				<shortdescription country="ca" language="en">OID 1</shortdescription>
+				<longdescription country="ca" language="en">OID 1</longdescription>
+				<help country="ca" language="en">OID 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="DevLicPurchased">
+				<shortdescription country="ca" language="en">Variable 2</shortdescription>
+				<longdescription country="ca" language="en">Variable 2</longdescription>
+				<help country="ca" language="en">Variable 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.1027.4.1.1.2.1.2.3">
+				<shortdescription country="ca" language="en">OID 2</shortdescription>
+				<longdescription country="ca" language="en">OID 2</longdescription>
+				<help country="ca" language="en">OID 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="DevLicUsed">
+				<shortdescription country="ca" language="en">Variable 3</shortdescription>
+				<longdescription country="ca" language="en">Variable 3</longdescription>
+				<help country="ca" language="en">Variable 3</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.1027.4.1.1.2.1.2.4">
+				<shortdescription country="ca" language="en">OID 3</shortdescription>
+				<longdescription country="ca" language="en">OID 3</longdescription>
+				<help country="ca" language="en">OID 3</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$UsrLicUsed $UsrLicPurchased / 100.0 *">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$UsrLicPurchased">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$UsrLicUsed">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DevLicUsed $DevLicPurchased / 100.0 *">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DevLicPurchased">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24174_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DevLicUsed">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2417401</scandetailid>
+			<scandetailid>2417402</scandetailid>
+			<scandetailid>2417403</scandetailid>
+			<scandetailid>2417404</scandetailid>
+			<scandetailid>2417405</scandetailid>
+			<scandetailid>2417406</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2417401" unit="Percent" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Percentage">
+				<threshold high="85" low="0" state="Normal"/>
+				<threshold high="95" low="80" state="Warning"/>
+				<threshold high="100" low="90" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">User License Consumption</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2417402" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">User Licenses Purchased</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2417403" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">User Licenses Consumed</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2417404" unit="Percent" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Percentage">
+				<threshold high="85" low="0" state="Normal"/>
+				<threshold high="95" low="80" state="Warning"/>
+				<threshold high="100" low="90" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Device License Consumption</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2417405" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Device Licenses Purchased</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2417406" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Device Licenses Consumed</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24174_6</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>SQL Server 2012</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="163" name="Memory (WMI)">
+                <configurationName>Memory (WMI)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="16300"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="15"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Off" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Off" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Custom" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Custom" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Custom" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18005" name="SQL Database Information">
+                <configurationName>SQL Database Information</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="1800508" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="_Total"/>
+                    <parameter key="scan_interval" parameterId="1800500"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18005_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18005_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18005_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18005_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18005_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18005_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18005_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18005_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18005_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18004" name="SQL Memory Manager">
+                <configurationName>SQL Memory Manager</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1800400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18004_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_6"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_6"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_6"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                    <threshold detailName="WMI18004_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="0"/>
+                    <threshold detailName="WMI18004_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000000" valueLow="1000000001"/>
+                    <threshold detailName="WMI18004_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2000000001"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18001" name="SQL Server - Buffer Manager">
+                <configurationName>SQL Server - Buffer Manager</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1800100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18001_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18001_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18001_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18001_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18001_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18001_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18001_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18001_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18001_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18001_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18001_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18001_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18001_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18001_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18001_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18003" name="SQL Server Locks">
+                <configurationName>SQL Server Locks</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1800300"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="1800308" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="_Total"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18003_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="10000" valueLow="0"/>
+                    <threshold detailName="WMI18003_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="20000" valueLow="10001"/>
+                    <threshold detailName="WMI18003_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="20001"/>
+                    <threshold detailName="WMI18003_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18003_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18003_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                    <threshold detailName="WMI18003_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18003_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18003_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                    <threshold detailName="WMI18003_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="WMI18003_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1000" valueLow="99"/>
+                    <threshold detailName="WMI18003_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="999"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="19254" name="SQL TCP Availability">
+                <configurationName>SQL TCP Availability</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="port" parameterId="1925402" type="1"
+                        useAssetInfo="false" useDefaultValue="true" value="1433"/>
+                    <parameter key="scan_interval" parameterId="1925400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                    <parameter key="timeout_value" parameterId="1925401"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="30"/>
+                    <parameter key="send_cmd_string"
+                        parameterId="1925404" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value=""/>
+                    <parameter key="validating_string"
+                        parameterId="1925405" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value=""/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="TCP19254_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TCP19254_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TCP19254_GENERICA"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TCP19254_GENERICA"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TCP19254_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000" valueLow="0"/>
+                    <threshold detailName="TCP19254_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="5000" valueLow="950"/>
+                    <threshold detailName="TCP19254_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="60000" valueLow="4950"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18007" name="SQL Transaction Information">
+                <configurationName>SQL Transaction Information</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1800700"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18007_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18007_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18007_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                    <threshold detailName="WMI18007_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18007_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18007_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                    <threshold detailName="WMI18007_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18007_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18007_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                    <threshold detailName="WMI18007_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100000" valueLow="0"/>
+                    <threshold detailName="WMI18007_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200000" valueLow="100001"/>
+                    <threshold detailName="WMI18007_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="200001"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="231" name="Windows Event Log">
+                <configurationName>Windows Event Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Directory Service"/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="File Replication Service"/>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="MSSQLSERVER,MSSQLServerADHelper100,MSSQLServerOLAPService,Report Manager (MSSQLSERVER),Report Server (MSSQLSERVER),Report Server (WMI10),Report Server Windows Service (MSSQLSERVER),SQL Server Reporting Services (MSSQLSERVER),SQLBrowser,SQLCTR,SQLDumper,SQLISPackage100,SQLISService100,SQLNCLI10,SQLSERVERAGENT,SQLVDI,SQLWEP,SQLWriter"/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Rule" parameterId="23129" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Security"/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="f426521e12401e8ac9554028dfa2d4e6"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="DNS Server"/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="System"/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="description" parameterId="23103"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="SQL 2008"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="generate_notification"
+                        parameterId="23137" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="true"/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0.0" valueLow="0.0"/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967300" valueLow="1.0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Full-text Filter Daemon Launcher*"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server*"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Agent*"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 4</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Integration Services 10.0"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 5</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server VSS Writer"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Browser</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Browser"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service SSAS</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Analysis Service*"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service SSRS</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Reporting Services*"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

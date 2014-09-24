@@ -1,0 +1,15 @@
+Hello N-able Partner!
+
+Just a few quick notes about this custom service, as it's a little bit different than your normal, run-of-the-mill N-central custom service.
+
+
+1. If you're running Veeam 5.x, the included PowerShell script needs PowerSehll 2.0 to be installed.
+2. If you're running Veeam 6.5 or newer, the included PowerShell script needs PowerShell 3.0 to be installed.
+3. This custom service requires that the included Powershell script be run on the device on a regular basis. This can be done through N-central as a Scheduled Task, 
+   or in Windows as a Windows Scheduled Task - either way is fine.
+4. The script only works on Veeam 5.0 and newer, and requires that Powershell is installed on the same machine
+5. The script does not require any additional command line parameters
+6. Once you have added the service to the device in N-central, you must configure it with the name of the backup that is to be monitored. This is done on the 'Service Details' tab of the service
+7. if you have any questions or issues, please e-mail me at creid@n-able.com
+
+Thanks and enjoy!

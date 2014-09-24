@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Exchange 2013 Hub and Mailbox</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="18012" name="Exchange Database 2013">
+                <configurationName>Exchange Database 2013</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1801200"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="1801208" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="Information Store"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18012_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="10" valueLow="0"/>
+                    <threshold detailName="WMI18012_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="100" valueLow="10"/>
+                    <threshold detailName="WMI18012_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="100"/>
+                    <threshold detailName="WMI18012_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="80"/>
+                    <threshold detailName="WMI18012_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="80" valueLow="50"/>
+                    <threshold detailName="WMI18012_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="50" valueLow="0"/>
+                    <threshold detailName="WMI18012_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="15" valueLow="0"/>
+                    <threshold detailName="WMI18012_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="110" valueLow="15"/>
+                    <threshold detailName="WMI18012_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="110"/>
+                    <threshold detailName="WMI18012_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="25" valueLow="0"/>
+                    <threshold detailName="WMI18012_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="100" valueLow="25"/>
+                    <threshold detailName="WMI18012_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="100"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18014" name="Exchange Database Latency 2013">
+                <configurationName>Exchange Database Latency 2013</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1801400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18014_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="45" valueLow="0"/>
+                    <threshold detailName="WMI18014_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="100" valueLow="45"/>
+                    <threshold detailName="WMI18014_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="100"/>
+                    <threshold detailName="WMI18014_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="55" valueLow="0"/>
+                    <threshold detailName="WMI18014_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="100" valueLow="55"/>
+                    <threshold detailName="WMI18014_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="100"/>
+                    <threshold detailName="WMI18014_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="110" valueLow="0"/>
+                    <threshold detailName="WMI18014_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="200" valueLow="110"/>
+                    <threshold detailName="WMI18014_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="200"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="412" name="Exchange Database Store Mount Status">
+                <configurationName>Exchange Database Store Mount Status</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="41200"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="41208" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="_Total"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI412_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="WMI412_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="WMI412_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Active Directory Topology</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Active Directory Topology"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Frontend Transport</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Frontend Transport"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Information Store</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Information Store"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Mailbox Assistants</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Mailbox Assistants"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Mailbox Replication</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Mailbox Replication"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Mailbox Transport Delivery</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Mailbox Transport Delivery"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Mailbox Transport Submission</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Mailbox Transport Submission"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Transport</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Transport"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Transport Log Search</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Transport Log Search"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service Microsoft Exchange Unified Messaging</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Microsoft Exchange Unified Messaging"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

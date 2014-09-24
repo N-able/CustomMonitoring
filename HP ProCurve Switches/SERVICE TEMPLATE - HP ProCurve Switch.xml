@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.0">
+    <serviceTemplate>
+        <name>HP ProCurve Switch</name>
+        <description>Monitors the overall health of an HP ProCurve switch.</description>
+        <deviceClass>Switch/Router</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="101" name="Connectivity">
+                <configurationName>Connectivity</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="default_ttl" parameterId="10105"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="255"/>
+                    <parameter key="packet_size" parameterId="10104"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="32"/>
+                    <parameter key="packet_number" parameterId="10103"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="interval" parameterId="10102"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="1"/>
+                    <parameter key="timeout_value" parameterId="10101"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="scan_interval" parameterId="10100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="45" valueLow="0"/>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="85" valueLow="35"/>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="80"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="255" valueLow="2"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="10000" valueLow="0"/>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="20000" valueLow="9500"/>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="600000" valueLow="19500"/>
+                    <threshold detailName="PING_DNSR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="PING_DNSR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="20609" name="Interface Health">
+                <configurationName>Interface Health</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2060900"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="2060901" type="1"
+                        useAssetInfo="false" useDefaultValue="true" value=""/>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="2060902" type="2"
+                        useAssetInfo="true" useDefaultValue="false" value=""/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_OPER_ST"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OPER_ST"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24120" name="Memory (HP ProCurve)">
+                <configurationName>Memory (HP ProCurve)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="2412001" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                    <parameter key="scan_interval" parameterId="2412000"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="MEMORY_PHYSICALUSAGE"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="40" valueLow="0"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="85" valueLow="35"/>
+                    <threshold detailName="MEMORY_VIRTUALUSAGE"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="80"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24171" name="Sensor Status (HP ProCurve)">
+                <configurationName>Sensor Status (HP ProCurve)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="2417101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Fan Sensor"/>
+                    <parameter key="scan_interval" parameterId="2417100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24171" name="Sensor Status (HP ProCurve)">
+                <configurationName>Sensor Status (HP ProCurve) 2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="2417101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Power Supply 1 Sensor"/>
+                    <parameter key="scan_interval" parameterId="2417100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24171" name="Sensor Status (HP ProCurve)">
+                <configurationName>Sensor Status (HP ProCurve) 3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="2417101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Power Supply 2 Sensor"/>
+                    <parameter key="scan_interval" parameterId="2417100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP24171_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="400" name="Traffic">
+                <configurationName>Traffic</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.1.TargetValue.0"
+                        parameterId="40005" type="2" useAssetInfo="true"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Group.1.TargetIndex.0"
+                        parameterId="40004" type="1"
+                        useAssetInfo="false" useDefaultValue="true" value=""/>
+                    <parameter key="scan_interval" parameterId="40000"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Group.1.Var.5.Value.0"
+                        parameterId="40017" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="100"/>
+                    <parameter key="Group.1.Var.4.Value.0"
+                        parameterId="40015" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="100"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="180000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="190000000" valueLow="179000000"/>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="200000000" valueLow="185000000"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="80000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="90000000" valueLow="79000000"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="100000000" valueLow="85000000"/>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="80000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="90000000" valueLow="79000000"/>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="100000000" valueLow="85000000"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

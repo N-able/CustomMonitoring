@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.5.3 
+Created-By: 1.4.1_01-b01 (Sun Microsystems Inc.)
+
+Name: org/apache/axis
+Implementation-Title: Apache Axis
+Implementation-Version: 1.1 1021 June 13 2003
+Implementation-Vendor: Apache Web Services
+

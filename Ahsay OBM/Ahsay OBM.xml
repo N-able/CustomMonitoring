@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="11/1/2010" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="12445" reason="" releasedependency="4.5.0.0" servicetype="Log Batch" version="1.0.0.2">
+		<description country="ca" language="en">This service monitors the log file of Ahsay&#39;s OBM product&#41;.</description>
+		<displayname country="ca" language="en">Ahsay OBM</displayname>
+		<displaylabel>Ahsay OBM</displaylabel>
+		<help country="ca" language="en">Custom Batch Log Service</help>
+		<popuphelp country="ca" language="en">Custom Batch Log Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="1440" minpollrate="5" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="*/5 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="GenericLogPrefix" max="" min="" phardcoded="true" preferredident="false" type="String" value="GLB12445_">
+				<shortdescription country="ca" language="en">Generic Log Prefix</shortdescription>
+				<longdescription country="ca" language="en">Generic Log Prefix</longdescription>
+				<help country="ca" language="en">Generic Log Prefix</help>
+			</moduleparameter>
+			<moduleparameter key="FileSpec" max="" min="" phardcoded="false" preferredident="true" type="String" value="C:\Users\creid\.obm\log\1288625873340\Backup\*.log">
+				<shortdescription country="ca" language="en">Log File Name and Path</shortdescription>
+				<longdescription country="ca" language="en">Log File Name and Path</longdescription>
+				<help country="ca" language="en">Log File Name and Path</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^(([a-zA-Z]+:|\\)(\\[^\\]+)+)|(/[^/]+)+$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg1" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="Backup Completed Successfully">
+				<shortdescription country="ca" language="en">Successful Backup</shortdescription>
+				<longdescription country="ca" language="en">Successful Backup</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1244501</scandetailid>
+			<scandetailid>1244502</scandetailid>
+			<scandetailid>1244503</scandetailid>
+			<scandetailid>1244504</scandetailid>
+			<scandetailid>1244505</scandetailid>
+			<scandetailid>1244506</scandetailid>
+			<scandetailid>1244507</scandetailid>
+			<scandetailid>1244508</scandetailid>
+			<scandetailid>1244509</scandetailid>
+			<scandetailid>1244510</scandetailid>
+			<scandetailid>1244511</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1244501" unit="Minutes" monitoringtypeon="false" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="720" low="0" state="Normal"/>
+				<threshold high="1450" low="700" state="Warning"/>
+				<threshold high="16777215" low="1430" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Difference in minutes between the last parsed dateline of the file and the local time of the test</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_LOFFSET</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244502" unit="Byte" monitoringtypeon="false" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="LongLong">
+				<threshold high="5120" low="0" state="Normal"/>
+				<threshold high="20480" low="5000" state="Warning"/>
+				<threshold high="9223372036854775807" low="20000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">File Size</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_SIZE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244503" monitoringtypeon="false" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="16777215" low="0" state="Normal"/>
+				<threshold high="33554430" low="16000000" state="Warning"/>
+				<threshold high="2147483647" low="32000000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Line Count of Log File</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_LINECNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244504" monitoringtypeon="false" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="TimeZone">
+				<threshold high="13" low="-12" state="Normal"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parsed Dates in Time Zone</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_LTZ</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244505" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Creation Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_CTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244506" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Modification Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_MTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244507" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parse-able Date in Log</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_LTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244508" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Integer"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Error message &#40;from module&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_ERROR</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244509" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="1" low="1" state="Normal"/>
+				<threshold high="0" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Successful Backup</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_REGEX1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244510" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Successful Backup</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_REG1LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1244511" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Successful Backup</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB12445_REG1COUNT</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

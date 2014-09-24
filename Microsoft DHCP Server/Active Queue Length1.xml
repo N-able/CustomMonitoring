@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="9/3/2013" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="13254" reason="" releasedependency="4.5.0.0" servicetype="WMIServer" version="1.0.0.7">
+		<description country="ca" language="en">This monitoring service returns the number of packets in the processing queue of the DHCP server. This number equals the number of unprocessed messages received by the server.A high value      may indicate heavy server traffic.
+
+</description>
+		<displayname country="ca" language="en">Active Queue Length </displayname>
+		<displaylabel>Active Queue Length </displaylabel>
+		<help country="ca" language="en">Custom WMI Service</help>
+		<popuphelp country="ca" language="en">Custom WMI Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,5,10,15,20,25,30,35,40,45,50,55 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="Matrix.MatrixSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Matrix Size</shortdescription>
+				<longdescription country="ca" language="en">The number of matrices.</longdescription>
+				<help country="ca" language="en">The number of matrices.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Win32_PerfFormattedData_DHCPServer_DHCPServer">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ActiveQueueLength">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ActiveQueueLength.Win32_PerfFormattedData_DHCPServer_DHCPServer">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI13254_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ActiveQueueLength.Win32_PerfFormattedData_DHCPServer_DHCPServer ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1325401</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1325401" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="100" low="0" state="Normal"/>
+				<threshold high="1000" low="99" state="Warning"/>
+				<threshold high="4294967295" low="999" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Active Queue Length</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI13254_1</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

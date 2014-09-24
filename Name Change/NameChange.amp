@@ -1,0 +1,203 @@
+<Policy ID="{6d8b75ee-1b22-407f-8eb2-6fc3b933955f}" Name="NameChange" Description="Q2hlY2tzIGlmIG5hbWUgd2FzIGNoYW5nZWQgb2YgdGhlIGRldmljZSAocHJldmlvdXNseSBuYW1lIGlzIHN0b3JlZCBpbiBjdXN0b21lciBXTUkgY2xhc3MgLSByb290XGNpbXYyXG5jZW50cmFsKQ0KDQojdjEuMA0KQ3JlYXRlZCBmb3IgdGhlIGNvbW11bml0eSBieQ0KLSBWQlMgOiBUaW0gV2lzZXIgLSBPcmNoaWQNCi0gQU1QIDogV2ltIExhbW90IC0gQWNjZWwgQ29tcHV0ZXIgU2VydmljZQ0KLSBYTUwgOiBUaW0gV2lzZXIgJiBXaW0gTGFtb3Q=" Version="1.2.0.20">
+  <Object ID="{b3d8f34d-ddf8-4319-a08c-54399662e376}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/DesignerHost.Model">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>0c9b94ef-844e-4a68-bdeb-419b6587f3c3</d2p1:m_Item1>
+        <d2p1:m_Item2>d88c78be-dbdd-48ca-9958-a41d96e9d008</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.IfObject, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>VariableString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ffb4ad5c-a91e-4894-b344-432328313280</d2p1:m_Item1>
+        <d2p1:m_Item2>3ea21824-1a32-45fa-97b9-cc4f478740ae</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.RunScript, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>ScriptComputerName</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>0c9b94ef-844e-4a68-bdeb-419b6587f3c3</d2p1:m_Item1>
+        <d2p1:m_Item2>f00c18d6-3f14-42a1-a4f1-5df6c0e58b22</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.IfObject, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>VariableString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ffb4ad5c-a91e-4894-b344-432328313280</d2p1:m_Item1>
+        <d2p1:m_Item2>f9ea6797-d777-483d-887f-f2676b52a222</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.IfElse, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>VariableString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>0c9b94ef-844e-4a68-bdeb-419b6587f3c3</d2p1:m_Item1>
+        <d2p1:m_Item2>f9ea6797-d777-483d-887f-f2676b52a222</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.IfElse, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>ValueString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ffb4ad5c-a91e-4894-b344-432328313280</d2p1:m_Item1>
+        <d2p1:m_Item2>51f10271-9b74-4402-8d33-733ee7a9848d</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.RunScript, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>ScriptNotChangedComputerName</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ffb4ad5c-a91e-4894-b344-432328313280</d2p1:m_Item1>
+        <d2p1:m_Item2>c6473b8a-3499-461f-85fe-ec3bc4ae689c</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.RunScript, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>ScriptComputerNameIsChanged</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ffb4ad5c-a91e-4894-b344-432328313280</d2p1:m_Item1>
+        <d2p1:m_Item2>57fc3cd3-291b-4ceb-97b1-1362dc8504f7</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.Log, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>Message</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>0c9b94ef-844e-4a68-bdeb-419b6587f3c3</d2p1:m_Item1>
+        <d2p1:m_Item2>b43d2816-f522-410b-8438-c6e2a16caa33</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.Log, PolicyExecutionEngine, Version=1.2.0.20, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>Message</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>974,2367</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy" sap:VirtualizedContainerService.HintSize="934,2327" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:GetEnvironmentVariable Computer_Item="{x:Null}" Computer_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" Computer="localhost" Computer_DisplayArg="localhost" DisplayName="Gets the local ComputerName" sap:VirtualizedContainerService.HintSize="914,98" Moniker="ffb4ad5c-a91e-4894-b344-432328313280" Result="[GetEnvironmentVariable_Result_1]" ScriptDirectory="goog" Type="Process" TypeName="GetEnvironmentVariable" Value="[GetEnvironmentVariable_Value_0]" Variable="Computername" Variable_DisplayArg="Computername" m_bTextLinkChange="False" />
+        <p:RunScript genArgEvent="{x:Null}" DisplayName="Checks if Namespace NCentral Exists WMI" sap:VirtualizedContainerService.HintSize="914,218" Moniker="299fb0a9-4786-4b48-95e6-9992cdcdd6fa" Result="[RunScript_Result_2]" ScriptDirectory="goog" TypeName="RunScript" m_bTextLinkChange="False" script="SWYgKEdldC1XbWlPYmplY3QgLU5hbWVzcGFjZSAicm9vdFxjaW12MiIgLUNsYXNzICJfX05BTUVTUEFDRSIgfCBXaGVyZS1PYmplY3QgeyRfLk5hbWUgLWVxICJOY2VudHJhbCJ9KQ0Kew0KICAgIFdSSVRFLUhPU1QgIlRoZSByb290XGNpbXYyXE5jZW50cmFsIFdNSSBuYW1lc3BhY2UgZXhpc3RzLiINCn0NCkVsc2UNCnsNCiAgICBXUklURS1IT1NUICJUaGUgcm9vdFxjaW12MlxOY2VudHJhbCBXTUkgbmFtZXNwYWNlIGRvZXMgbm90IGV4aXN0LiINCiAgICAkd21pPSBbd21pY2xhc3NdInJvb3RcY2ltdjI6X19OYW1lc3BhY2UiIA0KICAgICRuZXdOYW1lc3BhY2UgPSAkd21pLmNyZWF0ZUluc3RhbmNlKCkgDQogICAgJG5ld05hbWVzcGFjZS5uYW1lID0gIk5DZW50cmFsIiANCiAgICAkbmV3TmFtZXNwYWNlLnB1dCgpIA0KfQ==">
+          <p:RunScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+        <p:RunScript genArgEvent="{x:Null}" DisplayName="Checks if Class NameChange Exists in WMI and output StoredName if Exists" sap:VirtualizedContainerService.HintSize="914,218" Moniker="0c9b94ef-844e-4a68-bdeb-419b6587f3c3" Result="[RunScript_Result_0]" ScriptDirectory="goog" TypeName="RunScript" m_bTextLinkChange="False" script="IyBDaGVjayB0byBzZWUgaWYgdGhlICdOYW1lQ2hhbmdlJyBjbGFzcyBleGlzdHMgLSBpZiBpdCBkb2Vzbid0LCB0aGVuIGxldCdzIGNyZWF0ZSBpdA0KSWYgKEdldC1XbWlPYmplY3QgLUxpc3QgLU5hbWVzcGFjZSAicm9vdFxjaW12MlxOY2VudHJhbCIgfCBXaGVyZS1PYmplY3QgeyRfLk5hbWUgLWVxICJOYW1lQ2hhbmdlIn0pDQp7DQogICAgV1JJVEUtSE9TVCAiVGhlIE5hbWVDaGFuZ2UgV01JIGNsYXNzIGV4aXN0cy4iDQogICAgJEdldEV4aXN0aW5nSW5zdGFuY2VzID0gR2V0LVdtaU9iamVjdCAtTmFtZXNwYWNlICJyb290XGNpbXYyXE5jZW50cmFsIiAtQ2xhc3MgIk5hbWVDaGFuZ2UiDQogICAgV1JJVEUtSE9TVCAkR2V0RXhpc3RpbmdJbnN0YW5jZXMNCiAgICBJZiAoJEdldEV4aXN0aW5nSW5zdGFuY2VzIC1lcSAkTnVsbCkgDQogICAgew0KICAgIFdSSVRFLUhPU1QgIlRoZSBOYW1lQ2hhbmdlIFdNSSBjbGFzcyBkb2VzIG5lZWRzIHRvIGJlIGNyZWF0ZWQuIg0KICAgICMgQmVjYXVzZSB0aGUgY2xhc3MgZG9lc24ndCBleGlzdCAob3IgaGFzIGp1c3QgYmVlbiBkZWxldGVkKSwgbGV0J3MgY3JlYXRlIGl0LCBhbmQgc3BlY2lmeSBhbGwgb2YgdGhlIGFwcHJvcHJpYXRlIHByb3BlcnRpZXMuDQogICAgJHN1YkNsYXNzID0gTmV3LU9iamVjdCBTeXN0ZW0uTWFuYWdlbWVudC5NYW5hZ2VtZW50Q2xhc3MgKCJyb290XGNpbXYyXE5jZW50cmFsIiwgW1N0cmluZ106OkVtcHR5LCAkbnVsbCk7IA0KICAgICRzdWJDbGFzc1siX19DTEFTUyJdID0gIk5hbWVDaGFuZ2UiOyANCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllcy5BZGQoIkluZGV4IiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpVSW50MzIsICRmYWxzZSkNCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllc1siSW5kZXgiXS5RdWFsaWZpZXJzLkFkZCgiS2V5IiwgJHRydWUpDQogICAgJHN1YkNsYXNzLlByb3BlcnRpZXMuQWRkKCJTdG9yZWROYW1lIiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpTdHJpbmcsICRmYWxzZSkNCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllcy5BZGQoIk5hbWVIYXNDaGFuZ2VkIiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpCb29sZWFuLCAkZmFsc2UpDQogICAgJHN1YkNsYXNzLlB1dCgpDQogICAgJCVpZCVTdG9yZWROYW1lJWlkJT0iTkFNRUNIQU5HRV9GSVJTVFJVTiINCiAgIH0NCiAgICBFbHNlDQogICAgew0KICAgICAgICBXUklURS1IT1NUICJUaGVyZSBhcmUgZXhpc3RpbmcgaW5zdGFuY2VzIG9mIHRoaXMgV01JIGNsYXNzIg0KICAgICAgICAkJWlkJVN0b3JlZE5hbWUlaWQlPShHZXQtV21pT2JqZWN0IC1OYW1lc3BhY2UgInJvb3RcY2ltdjJcTkNlbnRyYWwiIC1xdWVyeSAiU2VsZWN0ICogZnJvbSBOYW1lQ2hhbmdlIFdIRVJFIGluZGV4ID0gMSIpLlN0b3JlZE5hbWUNCiAgICBXUklURS1IT1NUICIkJWlkJVN0b3JlZE5hbWUlaWQlIg0KICAgIH0NCn0NCkVsc2UNCnsNCldSSVRFLUhPU1QgIlRoZSBOYW1lQ2hhbmdlIFdNSSBjbGFzcyBkb2VzIG5lZWRzIHRvIGJlIGNyZWF0ZWQuIg0KICAgICMgQmVjYXVzZSB0aGUgY2xhc3MgZG9lc24ndCBleGlzdCAob3IgaGFzIGp1c3QgYmVlbiBkZWxldGVkKSwgbGV0J3MgY3JlYXRlIGl0LCBhbmQgc3BlY2lmeSBhbGwgb2YgdGhlIGFwcHJvcHJpYXRlIHByb3BlcnRpZXMuDQogICAgJHN1YkNsYXNzID0gTmV3LU9iamVjdCBTeXN0ZW0uTWFuYWdlbWVudC5NYW5hZ2VtZW50Q2xhc3MgKCJyb290XGNpbXYyXE5jZW50cmFsIiwgW1N0cmluZ106OkVtcHR5LCAkbnVsbCk7IA0KICAgICRzdWJDbGFzc1siX19DTEFTUyJdID0gIk5hbWVDaGFuZ2UiOyANCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllcy5BZGQoIkluZGV4IiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpVSW50MzIsICRmYWxzZSkNCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllc1siSW5kZXgiXS5RdWFsaWZpZXJzLkFkZCgiS2V5IiwgJHRydWUpDQogICAgJHN1YkNsYXNzLlByb3BlcnRpZXMuQWRkKCJTdG9yZWROYW1lIiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpTdHJpbmcsICRmYWxzZSkNCiAgICAkc3ViQ2xhc3MuUHJvcGVydGllcy5BZGQoIk5hbWVIYXNDaGFuZ2VkIiwgW1N5c3RlbS5NYW5hZ2VtZW50LkNpbVR5cGVdOjpCb29sZWFuLCAkZmFsc2UpDQogICAgJHN1YkNsYXNzLlB1dCgpDQogICAgJCVpZCVTdG9yZWROYW1lJWlkJT0iTkFNRUNIQU5HRV9GSVJTVFJVTiINCn0=">
+          <p:RunScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <p:OutArg x:Key="StoredName" ArgType="string" DisplayName="StoredName" Name="StoredName">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_StoredName_1]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+        <p:IfObject ValueDate="{x:Null}" ValueDate_DisplayArg="{x:Null}" ValueDate_Item="{x:Null}" ValueDate_ItemProp="{x:Null}" ValueNum="{x:Null}" ValueNum_DisplayArg="{x:Null}" ValueNum_Item="{x:Null}" ValueNum_ItemProp="{x:Null}" ValueString_Item="{x:Null}" ValueString_ItemProp="{x:Null}" VariableDate="{x:Null}" VariableDate_DisplayArg="{x:Null}" VariableDate_Item="{x:Null}" VariableDate_ItemProp="{x:Null}" VariableNum="{x:Null}" VariableNum_DisplayArg="{x:Null}" VariableNum_Item="{x:Null}" VariableNum_ItemProp="{x:Null}" VariableString_Item="{x:Null}" VariableString_ItemProp="{x:Null}" Condition="equals" DisplayName="Fill up for the First time the Values for the StoredName when WMI at first run" sap:VirtualizedContainerService.HintSize="914,500" Moniker="d88c78be-dbdd-48ca-9958-a41d96e9d008" Result="[IfObject_Result_2]" ScriptDirectory="goog" Type="string" TypeName="IfObject" ValueString="NAMECHANGE_FIRSTRUN" ValueString_DisplayArg="NAMECHANGE_FIRSTRUN" VariableString="[RunScript_StoredName_1]" VariableString_DisplayArg="ChecksifClassNameChangeExistsinWMIandoutputStoredNameifExists.StoredName" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <ActivityAction>
+              <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="418,340" Name="SequenceActivity">
+                <p:SequenceActivity.Activities>
+                  <p:RunScript DisplayName="Fills up the WMI with the computername from the first run" sap:VirtualizedContainerService.HintSize="398,218" Moniker="3ea21824-1a32-45fa-97b9-cc4f478740ae" Result="[RunScript_Result_5]" ScriptDirectory="goog" TypeName="RunScript" genArgEvent="19b1a577-df60-422a-9717-e76c351678d0" m_bTextLinkChange="False" script="JFB1c2hEYXRhVG9XTUkgPSAoW3dtaWNsYXNzXSJyb290XGNpbXYyXE5jZW50cmFsOk5hbWVDaGFuZ2UiKS5DcmVhdGVJbnN0YW5jZSgpDQokUHVzaERhdGFUb1dNSS5JbmRleCA9IDENCiRQdXNoRGF0YVRvV01JLlN0b3JlZE5hbWUgPSAiJCVpZCVTY3JpcHRDb21wdXRlck5hbWUlaWQlIg0KJFB1c2hEYXRhVG9XTUkuTmFtZUhhc0NoYW5nZWQgPSAwDQokUHVzaERhdGFUb1dNSS5QdXQoKQ==">
+                    <p:RunScript.InArgs>
+                      <p:InArg ItemProp="{x:Null}" x:Key="ScriptComputerName" ArgType="string" DisplayArg="GetsthelocalComputerName.Value" DisplayName="ScriptComputerName" Name="ScriptComputerName" isRequired="True" isRequiredDisplay="Yes">
+                        <p:InArg.Arg>
+                          <InArgument x:TypeArguments="x:String">[GetEnvironmentVariable_Value_0]</InArgument>
+                        </p:InArg.Arg>
+                        <p:InArg.Item>
+                          <InArgument x:TypeArguments="x:Object" />
+                        </p:InArg.Item>
+                      </p:InArg>
+                    </p:RunScript.InArgs>
+                    <p:RunScript.OutArgs>
+                      <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                    </p:RunScript.OutArgs>
+                  </p:RunScript>
+                </p:SequenceActivity.Activities>
+                <p:SequenceActivity.Variables>
+                  <Variable x:TypeArguments="x:Double" Name="RunScript_Result_5" />
+                </p:SequenceActivity.Variables>
+              </p:SequenceActivity>
+            </ActivityAction>
+          </p:IfObject.IfOption>
+        </p:IfObject>
+        <p:IfObject ValueDate="{x:Null}" ValueDate_DisplayArg="{x:Null}" ValueDate_Item="{x:Null}" ValueDate_ItemProp="{x:Null}" ValueNum="{x:Null}" ValueNum_DisplayArg="{x:Null}" ValueNum_Item="{x:Null}" ValueNum_ItemProp="{x:Null}" ValueString_Item="{x:Null}" ValueString_ItemProp="{x:Null}" VariableDate="{x:Null}" VariableDate_DisplayArg="{x:Null}" VariableDate_Item="{x:Null}" VariableDate_ItemProp="{x:Null}" VariableNum="{x:Null}" VariableNum_DisplayArg="{x:Null}" VariableNum_Item="{x:Null}" VariableNum_ItemProp="{x:Null}" VariableString_Item="{x:Null}" VariableString_ItemProp="{x:Null}" Condition="does not equal" DisplayName="Now for value not like NAMECHANGE_FIRSTRUN means that we need to compare" sap:VirtualizedContainerService.HintSize="914,782" Moniker="f00c18d6-3f14-42a1-a4f1-5df6c0e58b22" Result="[IfObject_Result_6]" ScriptDirectory="goog" Type="string" TypeName="IfObject" ValueString="NAMECHANGE_FIRSTRUN" ValueString_DisplayArg="NAMECHANGE_FIRSTRUN" VariableString="[RunScript_StoredName_1]" VariableString_DisplayArg="ChecksifClassNameChangeExistsinWMIandoutputStoredNameifExists.StoredName" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <ActivityAction>
+              <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="890,622" Name="SequenceActivity">
+                <p:SequenceActivity.Activities>
+                  <p:IfElse ValueDate="{x:Null}" ValueDate_DisplayArg="{x:Null}" ValueDate_Item="{x:Null}" ValueDate_ItemProp="{x:Null}" ValueNum="{x:Null}" ValueNum_DisplayArg="{x:Null}" ValueNum_Item="{x:Null}" ValueNum_ItemProp="{x:Null}" ValueString_Item="{x:Null}" ValueString_ItemProp="{x:Null}" VariableDate="{x:Null}" VariableDate_DisplayArg="{x:Null}" VariableDate_Item="{x:Null}" VariableDate_ItemProp="{x:Null}" VariableNum="{x:Null}" VariableNum_DisplayArg="{x:Null}" VariableNum_Item="{x:Null}" VariableNum_ItemProp="{x:Null}" VariableString_Item="{x:Null}" VariableString_ItemProp="{x:Null}" Condition="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="870,500" Moniker="f9ea6797-d777-483d-887f-f2676b52a222" Result="[IfElse_Result_7]" ScriptDirectory="goog" Type="string" TypeName="IfElse" ValueString="[RunScript_StoredName_1]" ValueString_DisplayArg="ChecksifClassNameChangeExistsinWMIandoutputStoredNameifExists.StoredName" VariableString="[GetEnvironmentVariable_Value_0]" VariableString_DisplayArg="GetsthelocalComputerName.Value" m_bTextLinkChange="False">
+                    <p:IfElse.ElseOption>
+                      <ActivityAction>
+                        <p:SequenceActivity DisplayName="Name is changed" sap:VirtualizedContainerService.HintSize="418,340" Name="SequenceActivity">
+                          <p:SequenceActivity.Activities>
+                            <p:RunScript DisplayName="Update the WMI NameChange class with the TRUE field" sap:VirtualizedContainerService.HintSize="398,218" Moniker="c6473b8a-3499-461f-85fe-ec3bc4ae689c" Result="[RunScript_Result_13]" ScriptDirectory="goog" TypeName="RunScript" genArgEvent="b94e146c-1154-4340-bb6a-c18c7acb3b88" m_bTextLinkChange="False" script="JFB1c2hEYXRhVG9XTUkgPSAoW3dtaWNsYXNzXSJyb290XGNpbXYyXE5jZW50cmFsOk5hbWVDaGFuZ2UiKS5DcmVhdGVJbnN0YW5jZSgpDQokUHVzaERhdGFUb1dNSS5JbmRleCA9IDENCiRQdXNoRGF0YVRvV01JLlN0b3JlZE5hbWUgPSAiJCVpZCVTY3JpcHRDb21wdXRlck5hbWVJc0NoYW5nZWQlaWQlIg0KJFB1c2hEYXRhVG9XTUkuTmFtZUhhc0NoYW5nZWQgPSAxDQokUHVzaERhdGFUb1dNSS5QdXQoKQ==">
+                              <p:RunScript.InArgs>
+                                <p:InArg ItemProp="{x:Null}" x:Key="ScriptComputerNameIsChanged" ArgType="string" DisplayArg="GetsthelocalComputerName.Value" DisplayName="ScriptComputerNameIsChanged" Name="ScriptComputerNameIsChanged" isRequired="True" isRequiredDisplay="Yes">
+                                  <p:InArg.Arg>
+                                    <InArgument x:TypeArguments="x:String">[GetEnvironmentVariable_Value_0]</InArgument>
+                                  </p:InArg.Arg>
+                                  <p:InArg.Item>
+                                    <InArgument x:TypeArguments="x:Object" />
+                                  </p:InArg.Item>
+                                </p:InArg>
+                              </p:RunScript.InArgs>
+                              <p:RunScript.OutArgs>
+                                <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                              </p:RunScript.OutArgs>
+                            </p:RunScript>
+                          </p:SequenceActivity.Activities>
+                          <p:SequenceActivity.Variables>
+                            <Variable x:TypeArguments="x:Double" Name="RunScript_Result_13" />
+                          </p:SequenceActivity.Variables>
+                        </p:SequenceActivity>
+                      </ActivityAction>
+                    </p:IfElse.ElseOption>
+                    <p:IfElse.IfOption>
+                      <ActivityAction>
+                        <p:SequenceActivity DisplayName="Name is not changed" sap:VirtualizedContainerService.HintSize="418,340" Name="SequenceActivity">
+                          <p:SequenceActivity.Activities>
+                            <p:RunScript DisplayName="Update the WMI NameChange class with the TRUE field " sap:VirtualizedContainerService.HintSize="398,218" Moniker="51f10271-9b74-4402-8d33-733ee7a9848d" Result="[RunScript_Result_12]" ScriptDirectory="goog" TypeName="RunScript" genArgEvent="aa3c2fd5-80a7-4638-b344-8fb12f340637" m_bTextLinkChange="False" script="JFB1c2hEYXRhVG9XTUkgPSAoW3dtaWNsYXNzXSJyb290XGNpbXYyXE5jZW50cmFsOk5hbWVDaGFuZ2UiKS5DcmVhdGVJbnN0YW5jZSgpDQokUHVzaERhdGFUb1dNSS5JbmRleCA9IDENCiRQdXNoRGF0YVRvV01JLlN0b3JlZE5hbWUgPSAiJCVpZCVTY3JpcHROb3RDaGFuZ2VkQ29tcHV0ZXJOYW1lJWlkJSINCiRQdXNoRGF0YVRvV01JLk5hbWVIYXNDaGFuZ2VkID0gMA0KJFB1c2hEYXRhVG9XTUkuUHV0KCk=">
+                              <p:RunScript.InArgs>
+                                <p:InArg ItemProp="{x:Null}" x:Key="ScriptNotChangedComputerName" ArgType="string" DisplayArg="GetsthelocalComputerName.Value" DisplayName="ScriptNotChangedComputerName" Name="ScriptNotChangedComputerName" isRequired="True" isRequiredDisplay="Yes">
+                                  <p:InArg.Arg>
+                                    <InArgument x:TypeArguments="x:String">[GetEnvironmentVariable_Value_0]</InArgument>
+                                  </p:InArg.Arg>
+                                  <p:InArg.Item>
+                                    <InArgument x:TypeArguments="x:Object" />
+                                  </p:InArg.Item>
+                                </p:InArg>
+                              </p:RunScript.InArgs>
+                              <p:RunScript.OutArgs>
+                                <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                              </p:RunScript.OutArgs>
+                            </p:RunScript>
+                          </p:SequenceActivity.Activities>
+                          <p:SequenceActivity.Variables>
+                            <Variable x:TypeArguments="x:Double" Name="RunScript_Result_12" />
+                          </p:SequenceActivity.Variables>
+                        </p:SequenceActivity>
+                      </ActivityAction>
+                    </p:IfElse.IfOption>
+                  </p:IfElse>
+                </p:SequenceActivity.Activities>
+                <p:SequenceActivity.Variables>
+                  <Variable x:TypeArguments="x:Double" Name="IfElse_Result_7" />
+                </p:SequenceActivity.Variables>
+              </p:SequenceActivity>
+            </ActivityAction>
+          </p:IfObject.IfOption>
+        </p:IfObject>
+        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" DisplayName="ComputerName" sap:VirtualizedContainerService.HintSize="914,57" LogMessage="[Log_LogMessage_14]" Message="[GetEnvironmentVariable_Value_0]" Message_DisplayArg="GetsthelocalComputerName.Value" Moniker="57fc3cd3-291b-4ceb-97b1-1362dc8504f7" Result="[Log_Result_15]" ScriptDirectory="goog" TypeName="Log" m_bTextLinkChange="False" />
+        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" DisplayName="StoredName" sap:VirtualizedContainerService.HintSize="914,57" LogMessage="[Log_LogMessage_16]" Message="[RunScript_StoredName_1]" Message_DisplayArg="ChecksifClassNameChangeExistsinWMIandoutputStoredNameifExists.StoredName" Moniker="b43d2816-f522-410b-8438-c6e2a16caa33" Result="[Log_Result_17]" ScriptDirectory="goog" TypeName="Log" m_bTextLinkChange="False" />
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="GetEnvironmentVariable_Value_0" />
+        <Variable x:TypeArguments="x:Double" Name="GetEnvironmentVariable_Result_1" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Result_2" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Result_0" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_StoredName_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_2" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_6" />
+        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_14" />
+        <Variable x:TypeArguments="x:Double" Name="Log_Result_15" />
+        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_16" />
+        <Variable x:TypeArguments="x:Double" Name="Log_Result_17" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

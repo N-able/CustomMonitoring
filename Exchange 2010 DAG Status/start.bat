@@ -1,0 +1,1 @@
+Powershell.exe -command ". c:\ExchangeDAG.ps1"

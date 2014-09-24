@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="8/8/2013" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="10004" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.0.20">
+		<description country="ca" language="en">Used in conjuction with the SymantecSystemRecovery_JobPoll script, this service reads the WMI values and can be configured with an alert when the last backup time exceeds thresholds</description>
+		<displayname country="ca" language="en">Symantec System Recovery</displayname>
+		<displaylabel>Symantec System Recovery</displaylabel>
+		<help country="ca" language="en">Custom WMI Service</help>
+		<popuphelp country="ca" language="en">Custom WMI Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="10" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,5 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="Matrix.MatrixSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Matrix Size</shortdescription>
+				<longdescription country="ca" language="en">The number of matrices.</longdescription>
+				<help country="ca" language="en">The number of matrices.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2\NCentral">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="SymantecSystemRecovery">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.0.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobName">
+				<shortdescription country="ca" language="en">Constraint 0</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Value" max="" min="" phardcoded="false" preferredident="true" type="String" value="ENTER JOB NAME">
+				<shortdescription country="ca" language="en">Job Name</shortdescription>
+				<longdescription country="ca" language="en">Job Name</longdescription>
+				<help country="ca" language="en">Enter the WMI property to be used by this service.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="AND">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="3">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="MinsSinceLastBackup">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="MinsSinceLastBackup.SymantecSystemRecovery">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.1.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Timestamp">
+				<shortdescription country="ca" language="en">Property 1</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.1.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Timestamp.SymantecSystemRecovery">
+				<shortdescription country="ca" language="en">Variable 1 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.2.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobDestination">
+				<shortdescription country="ca" language="en">Property 2</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.2.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="JobDestination.SymantecSystemRecovery">
+				<shortdescription country="ca" language="en">Variable 2 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Win32_UTCTime">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="6">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Year">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Year.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.1.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Month">
+				<shortdescription country="ca" language="en">Property 1</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.1.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Month.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 1 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.2.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Day">
+				<shortdescription country="ca" language="en">Property 2</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.2.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Day.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 2 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.3.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Hour">
+				<shortdescription country="ca" language="en">Property 3</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.3.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Hour.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 3 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.4.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Minute">
+				<shortdescription country="ca" language="en">Property 4</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.4.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Minute.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 4 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.1.Var.5.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Second">
+				<shortdescription country="ca" language="en">Property 5</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.1.Var.5.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Second.Win32_UTCTime">
+				<shortdescription country="ca" language="en">Variable 5 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="false" type="String" value="5">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI10004_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$MinsSinceLastBackup.SymantecSystemRecovery ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI10004_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2628000.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + $Timestamp.SymantecSystemRecovery - ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI10004_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2628000.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI10004_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Timestamp.SymantecSystemRecovery ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI10004_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$JobDestination.SymantecSystemRecovery">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1000401</scandetailid>
+			<scandetailid>1000402</scandetailid>
+			<scandetailid>1000403</scandetailid>
+			<scandetailid>1000404</scandetailid>
+			<scandetailid>1000405</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1000401" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.18" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1500" low="0" state="Normal"/>
+				<threshold high="1600" low="1501" state="Warning"/>
+				<threshold high="4294967295" low="1601" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Minutes since last backup</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI10004_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000402" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.18" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint64">
+				<threshold high="7200" low="0" state="Normal"/>
+				<threshold high="7300" low="7201" state="Warning"/>
+				<threshold high="9223372036854775807" low="7301" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Time since last script run &#40;Seconds&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI10004_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000403" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.18" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Timestamp now</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI10004_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000404" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.18" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Timestamp at last script run</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI10004_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000405" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.19" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Job Destination</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI10004_5</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

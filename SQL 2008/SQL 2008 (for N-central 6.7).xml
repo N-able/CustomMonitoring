@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="1.1">
+    <serviceTemplate>
+        <name>SQL Server 2008</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="168" name="Generic SQL Server">
+                <configurationName>Generic SQL Server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="16800"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="port" parameterId="16803" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="1433"/>
+                    <parameter key="timeout_value" parameterId="16802"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SQL_GENERICTCP_RESP"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1000" valueLow="0"/>
+                    <threshold detailName="SQL_GENERICTCP_RESP"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="5000" valueLow="950"/>
+                    <threshold detailName="SQL_GENERICTCP_RESP"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="600000" valueLow="4950"/>
+                    <threshold detailName="SQL_GENERICA"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SQL_GENERICA"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SQL_GENERICTCP_DNSR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SQL_GENERICTCP_DNSR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+            <service id="151" name="SQL Server">
+                <configurationName>SQL Server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Matrix.1.WMIClassName"
+                        parameterId="15125" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Win32_PerfRawData_MSSQLSERVER_SQLServerGeneralStatistics"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="15121" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="_Total"/>
+                    <parameter key="scan_interval" parameterId="15100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="15"/>
+                    <parameter key="Matrix.0.WMIClassName"
+                        parameterId="15104" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Win32_PerfRawData_MSSQLSERVER_SQLServerDatabases"/>
+                    <parameter key="Matrix.2.WMIClassName"
+                        parameterId="15132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Win32_PerfRawData_MSSQLSERVER_SQLServerLocks"/>
+                    <parameter key="Matrix.2.Constraint.0.Value"
+                        parameterId="15145" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="_Total"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SQL_DATAFILESIZE"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_DATAFILESIZE"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_DATAFILESIZE"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_TRANSPERSEC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_TRANSPERSEC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_TRANSPERSEC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_ACTIVETRANS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_ACTIVETRANS"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_ACTIVETRANS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_LOGFILESIZE"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_LOGFILESIZE"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_LOGFILESIZE"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_DEADLOCKSPERSEC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_DEADLOCKSPERSEC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_DEADLOCKSPERSEC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_USERCONNECTIONS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_USERCONNECTIONS"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_USERCONNECTIONS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                    <threshold detailName="SQL_AVGWAITTIME"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1073741823" valueLow="0"/>
+                    <threshold detailName="SQL_AVGWAITTIME"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1610612735" valueLow="1000000000"/>
+                    <threshold detailName="SQL_AVGWAITTIME"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1500000000"/>
+                </thresholds>
+            </service>
+            <service id="231" name="Windows Event Log">
+                <configurationName>Windows Event Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="MSSQLSERVER,MSSQLServerADHelper100,MSSQLServerOLAPService,Report Manager (MSSQLSERVER),Report Server (MSSQLSERVER),Report Server (WMI10),Report Server Windows Service (MSSQLSERVER),SQL Server Reporting Services (MSSQLSERVER),SQLBrowser,SQLCTR,SQLDumper,SQLISPackage100,SQLISService100,SQLNCLI10,SQLSERVERAGENT,SQLVDI,SQLWEP,SQLWriter"/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Rule" parameterId="23129" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="f426521e12401e8ac9554028dfa2d4e6"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="description" parameterId="23103"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="SQL 2008"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0.0" valueLow="0.0"/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967300" valueLow="1.0"/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                </thresholds>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Full-text Filter Daemon Launcher (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Agent (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 4</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Integration Services 10.0"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 5</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server VSS Writer"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

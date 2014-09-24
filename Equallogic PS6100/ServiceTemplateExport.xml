@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Equalogic SAN PS6100</name>
+        <description/>
+        <deviceClass>Other</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status00</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="0"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status01</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status02</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="2"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status03</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="3"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status04</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="4"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status05</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="5"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status06</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="6"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status07</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="7"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status08</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="8"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status09</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="9"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status10</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="10"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status11</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="11"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status12</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="12"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status13</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="13"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status14</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="14"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status15</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="15"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status16</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="16"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status17</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="17"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status18</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="18"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status19</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="19"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status20</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="20"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status21</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="21"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status22</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="22"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11108" name="Dell Equallogic Physical Disk Status">
+                <configurationName>Dell Equallogic Physical Disk Status23</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110801" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="23"/>
+                    <parameter key="scan_interval" parameterId="1110800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11108_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11108_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11109" name="Dell Equallogic Power Supply Status">
+                <configurationName>Dell Equallogic Power Supply Status0</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Power Cooling Module 0"/>
+                    <parameter key="scan_interval" parameterId="1110900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11109_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11109_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11109_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11109_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11109" name="Dell Equallogic Power Supply Status">
+                <configurationName>Dell Equallogic Power Supply Status1</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1110901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Power Cooling Module 1"/>
+                    <parameter key="scan_interval" parameterId="1110900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5,10,15,20,25,30,35,40,45,50,55 * * * 0,1,2,3,4,5,6"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11109_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11109_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11109_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11109_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11112" name="Dell Equallogic Raid Status">
+                <configurationName>Dell Equallogic Raid Status</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1111200"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11112_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11112_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11112_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP11112_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11112_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11112_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967295" valueLow="1"/>
+                    <threshold detailName="SNMP11112_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11112_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status0</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Backplane sensor 0"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status1</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Backplane sensor 1"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 0 processor"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 0 chipset"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status4</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="System"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status5</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 1 processor"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status6</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 1 chipset"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status7</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 0 SAS Controller"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="11111" name="Dell Equallogic Temperature Status">
+                <configurationName>Dell Equallogic Temperature Status8</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="1111101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Control module 1 SAS Controller"/>
+                    <parameter key="scan_interval" parameterId="1111100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP11111_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

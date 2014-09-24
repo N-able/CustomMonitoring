@@ -1,0 +1,34 @@
+
+About the N-compass service template
+
+Before using an N-compass service template, you need to install an agent on N-compass to monitor it as an N-central device. 
+
+Download and install an agent
+
+1. Sign in to N-central and select the appropriate customer on which to install a Windows agent, typically this will be your internal company name.
+2. Click Actions > Download Agent/Probe Software.
+3. Under Customer/Site Specific Software, select the appropriate Windows agent.
+4. Install this Windows agent on N-compass. The Windows agent will register N-compass with the N-central server.
+
+To use N-compass service templates in this folder
+
+For N-central 8.0 users:
+•	If N-compass is installed on 64-bit OS, use N-compass x 64 
+•	If N-compass is installed on 32-bit OS, use N-compass x 32
+
+Import the N-compass service template.
+
+1. Sign-in to N-central.
+2. In the navigation pane, click Administration > Service Management > Service Templates.
+3. Click Import.
+4. Browse to the location of the N-compass service template on your hard drive and select the appropriate template for your hardeware/deployment.
+5. Click Import Service Template.
+6. After the system has verified the service template, click OK.
+
+Apply the N-compass service template to the N-compass device.
+
+1. In Views, click All Devices to open it.
+2. Select the check box next to the N-compass device.
+3. Click Apply Service Templates.
+4. From the list of Service Templates, select the N-compass service template and click >.
+5. Click Apply.

@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="7/23/2009" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="24110" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.0.6">
+		<description country="ca" language="en">Monitors the RAID status of an EqualLogic SAN.</description>
+		<displayname country="ca" language="en">RAID Status (EqualLogic)</displayname>
+		<displaylabel>RAID Status (EqualLogic)</displaylabel>
+		<help country="ca" language="en">Custom SNMP Service</help>
+		<popuphelp country="ca" language="en">Custom SNMP Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+$" />
+				</presentationinfo>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Group.0.TargetValue.0" max="" min="" phardcoded="false" preferredident="true" type="String" value="EQ1">
+				<shortdescription country="ca" language="en">RAID Array</shortdescription>
+				<longdescription country="ca" language="en">RAID Array</longdescription>
+				<help country="ca" language="en">Enter the name of the RAID array to be monitored. For a list of the available RAID arrays, query the SAN with the .1.3.6.1.4.1.12740.2.1.1.1.9 SNMP OID.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="canUseAssetInfo" value="true" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="TargetValue">
+				<shortdescription country="ca" language="en">Variable 0</shortdescription>
+				<longdescription country="ca" language="en">Variable 0</longdescription>
+				<help country="ca" language="en">Variable 0</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.1.1.9">
+				<shortdescription country="ca" language="en">OID 0</shortdescription>
+				<longdescription country="ca" language="en">OID 0</longdescription>
+				<help country="ca" language="en">OID 0</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="RAIDStatus">
+				<shortdescription country="ca" language="en">Variable 1</shortdescription>
+				<longdescription country="ca" language="en">Variable 1</longdescription>
+				<help country="ca" language="en">Variable 1</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.13.1.1">
+				<shortdescription country="ca" language="en">OID 1</shortdescription>
+				<longdescription country="ca" language="en">OID 1</longdescription>
+				<help country="ca" language="en">OID 1</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="LostRAIDBlocks">
+				<shortdescription country="ca" language="en">Variable 2</shortdescription>
+				<longdescription country="ca" language="en">Variable 2</longdescription>
+				<help country="ca" language="en">Variable 2</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.13.1.3">
+				<shortdescription country="ca" language="en">OID 2</shortdescription>
+				<longdescription country="ca" language="en">OID 2</longdescription>
+				<help country="ca" language="en">OID 2</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="Spares">
+				<shortdescription country="ca" language="en">Variable 3</shortdescription>
+				<longdescription country="ca" language="en">Variable 3</longdescription>
+				<help country="ca" language="en">Variable 3</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.13.1.4">
+				<shortdescription country="ca" language="en">OID 3</shortdescription>
+				<longdescription country="ca" language="en">OID 3</longdescription>
+				<help country="ca" language="en">OID 3</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="TotalStorage">
+				<shortdescription country="ca" language="en">Variable 4</shortdescription>
+				<longdescription country="ca" language="en">Variable 4</longdescription>
+				<help country="ca" language="en">Variable 4</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.10.1.1">
+				<shortdescription country="ca" language="en">OID 4</shortdescription>
+				<longdescription country="ca" language="en">OID 4</longdescription>
+				<help country="ca" language="en">OID 4</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UsedStorage">
+				<shortdescription country="ca" language="en">Variable 5</shortdescription>
+				<longdescription country="ca" language="en">Variable 5</longdescription>
+				<help country="ca" language="en">Variable 5</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.10.1.2">
+				<shortdescription country="ca" language="en">OID 5</shortdescription>
+				<longdescription country="ca" language="en">OID 5</longdescription>
+				<help country="ca" language="en">OID 5</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="NumOfControllers">
+				<shortdescription country="ca" language="en">Variable 6</shortdescription>
+				<longdescription country="ca" language="en">Variable 6</longdescription>
+				<help country="ca" language="en">Variable 6</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.11.1.3">
+				<shortdescription country="ca" language="en">OID 6</shortdescription>
+				<longdescription country="ca" language="en">OID 6</longdescription>
+				<help country="ca" language="en">OID 6</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="NumOfDisks">
+				<shortdescription country="ca" language="en">Variable 7</shortdescription>
+				<longdescription country="ca" language="en">Variable 7</longdescription>
+				<help country="ca" language="en">Variable 7</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.11.1.4">
+				<shortdescription country="ca" language="en">OID 7</shortdescription>
+				<longdescription country="ca" language="en">OID 7</longdescription>
+				<help country="ca" language="en">OID 7</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CacheSize">
+				<shortdescription country="ca" language="en">Variable 8</shortdescription>
+				<longdescription country="ca" language="en">Variable 8</longdescription>
+				<help country="ca" language="en">Variable 8</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.11.1.5">
+				<shortdescription country="ca" language="en">OID 8</shortdescription>
+				<longdescription country="ca" language="en">OID 8</longdescription>
+				<help country="ca" language="en">OID 8</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CacheMode">
+				<shortdescription country="ca" language="en">Variable 9</shortdescription>
+				<longdescription country="ca" language="en">Variable 9</longdescription>
+				<help country="ca" language="en">Variable 9</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.12740.2.1.11.1.6">
+				<shortdescription country="ca" language="en">OID 9</shortdescription>
+				<longdescription country="ca" language="en">OID 9</longdescription>
+				<help country="ca" language="en">OID 9</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RAIDStatus">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.0.Map.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Map.1" max="" min="" phardcoded="true" preferredident="false" type="String" value="2-6">
+				<shortdescription country="ca" language="en">Warning Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Map.2" max="" min="" phardcoded="true" preferredident="false" type="String" value="7,8">
+				<shortdescription country="ca" language="en">Failed Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.1.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RAIDStatus">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.1.Map.OK" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Degraded" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Verifying" max="" min="" phardcoded="true" preferredident="false" type="String" value="3">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Reconstructing" max="" min="" phardcoded="true" preferredident="false" type="String" value="4">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Failed" max="" min="" phardcoded="true" preferredident="false" type="String" value="5">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Catastrophic Loss" max="" min="" phardcoded="true" preferredident="false" type="String" value="6">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Expanding" max="" min="" phardcoded="true" preferredident="false" type="String" value="7">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Mirroring" max="" min="" phardcoded="true" preferredident="false" type="String" value="8">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.2.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$UsedStorage $TotalStorage / 100 *">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LostRAIDBlocks">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="Boolean">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Map.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Map.1" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Spares">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumOfControllers">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.5.Map.Single" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Map.Dual" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.6.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumOfDisks">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.7.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CacheSize">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.8.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24110_9">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CacheMode">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.8.Map.Unknown" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Map.Write-Thru" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Map.Write-Back" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2411001</scandetailid>
+			<scandetailid>2411002</scandetailid>
+			<scandetailid>2411003</scandetailid>
+			<scandetailid>2411004</scandetailid>
+			<scandetailid>2411005</scandetailid>
+			<scandetailid>2411006</scandetailid>
+			<scandetailid>2411007</scandetailid>
+			<scandetailid>2411008</scandetailid>
+			<scandetailid>2411009</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2411001" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint8">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Warning"/>
+				<threshold high="2" low="2" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">RAID Status</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411002" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">RAID Status Description</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411003" unit="Percent" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Percentage">
+				<threshold high="85" low="0" state="Normal"/>
+				<threshold high="95" low="80" state="Warning"/>
+				<threshold high="100" low="90" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">RAID Capacity</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411004" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Warning"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Are there Lost RAID Blocks to be cleared?</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411005" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Number of Spares</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411006" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Number of Controllers</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411007" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Number of Disks</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_7</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411008" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Read/Write Cache Size</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_8</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2411009" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Read/Write Cache Mode</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24110_9</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

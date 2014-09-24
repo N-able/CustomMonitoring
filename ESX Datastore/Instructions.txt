@@ -1,0 +1,36 @@
+Requirements:
+
+1. This script must be run from a Windows machine.
+
+2. Powershell must be installed on the Windows machine (if it's not already, just Google for 'download powershell')
+
+3. VMWare's PowerCLI application must be installed. It can be downloaded from the following URL (note that you'll need to create a free account for vmware.com):
+	http://communities.vmware.com/community/vmtn/vsphere/automationtools/powercli
+
+4. Powershell's Execution Policy must be set to "RemoteSigned". To do this open a DOS command prompt as an Administrator, and run the following command:
+	 powershell set-executionpolicy RemoteSigned
+
+
+
+Installation:
+
+1. Login to the Admin console of your N-central server, and upload the 'Datastore Size.XML' file into the Custom Services screen
+2. Add a device in N-central for each datastore that you want to monitor
+3. For each device, enable Professional mode and the 'EDF Enabled' option on the Properties tab
+4. Go to the EDF tab of the device, and grab the EDF Activation code
+5. Edit the 'Datastore.PS1' file (you can use Notepad, Wordpad, or your favorite text editor)
+      a) Find line 21
+      b) Remove all of the text in between the {} brackets (they are just examples)
+      c) For each datastore that you want to monitor, add an entry inside the {} brackets  that says "Datastore Name"="EDF Activation Code" (Enclose both the name of the datastore and the EDF activation code in double-quotes)
+      d) If you have more than one datastore that you want to monitor, put a semi-colon between each set of Datastore Names/EDF Activation Codes   (for example {"DSName1"="EDFCode1";"DSName2"="EDFCode2")
+      e) Find line 138. Wherever you see C:\users\creid\Desktop, replace it with the path where you extracted the 'ESX Datastore.zip' file.
+            EXAMPLE: If you downloaded and extracted everything to C:\ESX Datastore, then it would look like the following:
+                  $CPATH = "C:\ESX Datastore\axis\WEB-INF\lib\*;C:\ESX Datastore\jar\*;C:\ESX Datastore\resources"
+      f)Save and close the Datastore.PS1 file
+
+6. Go into the 'resources' folder, and edit the two *.properties files using Notepad or Wordpad. Replace 127.0.0.1 with the IP or FQDN of your N-central server.
+7. Make sure that everything works smoothly
+      a) Run the Datastore.ps1 script by opening a DOS prompt as administrator and typing: powershell ./Datastore.ps1
+      b) In N-central, go to the Status tab of one of the Datastore devices - if all worked well, you should see the 'Datastore Size' custom service
+      
+8. If you have any issues, please e-mail me at creid@n-able.com - I'm happy to help!

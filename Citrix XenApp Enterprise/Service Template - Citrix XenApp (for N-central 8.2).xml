@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Citrix XenApp</name>
+        <description>This service template monitors the Event Log for errors sourced from Citrix XenApp, and ensures that the Citrix windows services are running.</description>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="167" name="Citrix Presentation Server">
+                <configurationName>Citrix Presentation Server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="16700"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="port" parameterId="16703" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="1494"/>
+                    <parameter key="timeout_value" parameterId="16702"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="CTX_GENERICA"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="CTX_GENERICA"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="CTX_GENERICTCP_RESP"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="600000" valueLow="0"/>
+                    <threshold detailName="CTX_GENERICTCP_DNSR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="CTX_GENERICTCP_DNSR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24156" name="Citrix XenApp Login Status">
+                <configurationName>Citrix XenApp Login Status</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2415600"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2415608" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="CTX1"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI24156_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="WMI24156_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24157" name="Citrix XenApp XML Port">
+                <configurationName>Citrix XenApp XML Port</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="port" parameterId="2415702" type="1"
+                        useAssetInfo="false" useDefaultValue="true" value="80"/>
+                    <parameter key="scan_interval" parameterId="2415700"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="timeout_value" parameterId="2415701"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="30"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="TCP24157_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000" valueLow="0"/>
+                    <threshold detailName="TCP24157_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="5000" valueLow="950"/>
+                    <threshold detailName="TCP24157_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="60000" valueLow="4950"/>
+                    <threshold detailName="TCP24157_GENERICA"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TCP24157_GENERICA"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TCP24157_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TCP24157_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="150" name="Terminal Server">
+                <configurationName>Terminal Server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Matrix.0.WMIClassName"
+                        parameterId="15004" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="Win32_PerfRawData_TermService_TerminalServices"/>
+                    <parameter key="scan_interval" parameterId="15000"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="15"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="TSS_TOTALSESSIONS"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TSS_TOTALSESSIONS"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TSS_TOTALSESSIONS"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="TSS_ACTIVESESSIONS"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TSS_ACTIVESESSIONS"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TSS_ACTIVESESSIONS"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="TSS_INACTIVESESSIONS"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TSS_INACTIVESESSIONS"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TSS_INACTIVESESSIONS"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="231" name="Windows Event Log">
+                <configurationName>Windows Event Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="CPSLicensing,Citrix Configuration Logging,Citrix Virtual Memory Optimization,Citrix WMI Service,CTXCPUUtilMgmt,MetaframeEvents,MetaFrame"/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Rule" parameterId="23129" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="1106"/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="System"/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="7d990429fe9aa53ee45c09659950e90c"/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="c772af14b74d3bdf51fe8488b8db09b9"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="description" parameterId="23103"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="Citrix XenApp"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="0" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="0"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix ActiveSync Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 10</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Print Manager Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 11</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix SMA Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 12</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Services Manager"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 13</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Streaming Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 14</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Virtual Memory Optimization"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 15</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix WMI Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 16</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix XML Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 17</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix XTE Server"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix CPU Utilization Mgmt/CPU Rebalancer"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix CPU Utilization Mgmt/Resource Mgmt"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 4</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Client Network"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 5</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Diagnostic Facility COM Server"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 6</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Encryption Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 7</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Health Monitoring and Recovery"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 8</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix Independent Management Architecture"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service 9</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Citrix MFCOM Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="166" name="Windows Terminal Server">
+                <configurationName>Windows Terminal Server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="16600"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="timeout_value" parameterId="16602"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="30"/>
+                    <parameter key="port" parameterId="16603" type="1"
+                        useAssetInfo="false" useDefaultValue="true" value="3389"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="TRM_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TRM_GENERICTCP_DNSR"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="TRM_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="10000" valueLow="0"/>
+                    <threshold detailName="TRM_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="20000" valueLow="9500"/>
+                    <threshold detailName="TRM_GENERICTCP_RESP"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="600000" valueLow="19500"/>
+                    <threshold detailName="TRM_GENERICA"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="TRM_GENERICA"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

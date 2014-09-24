@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Domain Controller - Windows 2012</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="22303" name="Active Directory">
+                <configurationName>Active Directory</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Matrix.0.WMIClassName"
+                        parameterId="2230304" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="Win32_PerfRawData_NTDS_NTDS"/>
+                    <parameter key="scan_interval" parameterId="2230300"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="15"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI22303_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5000" valueLow="0"/>
+                    <threshold detailName="WMI22303_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="15000" valueLow="3000"/>
+                    <threshold detailName="WMI22303_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="10000"/>
+                    <threshold detailName="WMI22303_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_6"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_6"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_6"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                    <threshold detailName="WMI22303_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967290" valueLow="0"/>
+                    <threshold detailName="WMI22303_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967293" valueLow="4294967291"/>
+                    <threshold detailName="WMI22303_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967292"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18008" name="Active Directory 2012 - DRA">
+                <configurationName>Active Directory 2012 - DRA</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1800800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5,10,15,20,25,30,35,40,45,50,55 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI18008_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_6"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_6"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_6"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                    <threshold detailName="WMI18008_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000" valueLow="0"/>
+                    <threshold detailName="WMI18008_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2000000" valueLow="1000001"/>
+                    <threshold detailName="WMI18008_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="2000001"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service adds</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Active Directory Domain Services"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service adws</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Active Directory Web Services"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service dfs</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Distributed File System"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service dfsr</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="DFS Replication"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service DNSC</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="DNS Client"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service dnss</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="DNS Server"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service IM</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Intersite Messaging"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service kerberos</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Kerberos Key Distribution Center"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service netlogon</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Net Logon"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service rpc</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Remote Procedure Call (RPC)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service sam</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Security Account Manager"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service server</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Server"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service wintime</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Windows Time"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service WKS</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Workstation"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

@@ -1,0 +1,14 @@
+Hello!
+
+You must upload the two custom services before you upload the service template.
+
+If you don't upload the two custom services, the service template will fail to 
+upload.
+
+For instructions on how to upload the custom services and service template,
+please refer to the 'How to install...' text files that are included in this 
+zip file.
+
+Thanks!
+
+Chris Reid 

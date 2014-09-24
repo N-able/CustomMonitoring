@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="9/19/2013" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="18008" reason="" releasedependency="4.5.0.0" servicetype="WMIServer" version="1.0.0.3">
+		<description country="ca" language="en">Active Directory metrics for DC 2012</description>
+		<displayname country="ca" language="en">Active Directory 2012 - DRA</displayname>
+		<displaylabel>Active Directory 2012 - DRA</displaylabel>
+		<help country="ca" language="en">Custom WMI Service</help>
+		<popuphelp country="ca" language="en">Custom WMI Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,5,10,15,20,25,30,35,40,45,50,55 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="Matrix.MatrixSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Matrix Size</shortdescription>
+				<longdescription country="ca" language="en">The number of matrices.</longdescription>
+				<help country="ca" language="en">The number of matrices.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="8">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAInboundFullSyncObjectsRemaining">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAInboundFullSyncObjectsRemaining.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.1.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAInboundValuesDNSonlyPersec">
+				<shortdescription country="ca" language="en">Property 1</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.1.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAInboundValuesDNSonlyPersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 1 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.2.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAoutboundvaluesdnsonlypersec">
+				<shortdescription country="ca" language="en">Property 2</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.2.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="DRAoutboundvaluesdnsonlypersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 2 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.3.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="drapendingreplicationsynchronizations">
+				<shortdescription country="ca" language="en">Property 3</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.3.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="drapendingreplicationsynchronizations.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 3 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.4.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="dsdirectoryreadspersec">
+				<shortdescription country="ca" language="en">Property 4</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.4.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="dsdirectoryreadspersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 4 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.5.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="dsdirectorywritespersec">
+				<shortdescription country="ca" language="en">Property 5</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.5.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="dsdirectorywritespersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 5 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.6.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ldapsearchespersec">
+				<shortdescription country="ca" language="en">Property 6</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.6.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ldapsearchespersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 6 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.7.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ldapsuccessfulbindspersec">
+				<shortdescription country="ca" language="en">Property 7</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.7.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ldapsuccessfulbindspersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Variable 7 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="false" type="String" value="8">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DRAInboundFullSyncObjectsRemaining.Win32_PerfFormatteddata_NTDS_NTDS ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DRAInboundValuesDNSonlyPersec.Win32_PerfFormatteddata_NTDS_NTDS ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$DRAoutboundvaluesdnsonlypersec.Win32_PerfFormatteddata_NTDS_NTDS ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$drapendingreplicationsynchronizations.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$dsdirectoryreadspersec.Win32_PerfFormatteddata_NTDS_NTDS ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$dsdirectorywritespersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.6.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ldapsearchespersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.7.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI18008_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ldapsuccessfulbindspersec.Win32_PerfFormatteddata_NTDS_NTDS">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1800801</scandetailid>
+			<scandetailid>1800802</scandetailid>
+			<scandetailid>1800803</scandetailid>
+			<scandetailid>1800804</scandetailid>
+			<scandetailid>1800805</scandetailid>
+			<scandetailid>1800806</scandetailid>
+			<scandetailid>1800807</scandetailid>
+			<scandetailid>1800808</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1800801" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="100" low="0" state="Normal"/>
+				<threshold high="200" low="101" state="Warning"/>
+				<threshold high="4294967295" low="201" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DRA Inbound Full Sync Objects Remaining</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800802" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="2000" low="1001" state="Warning"/>
+				<threshold high="4294967295" low="2001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DRA Inbound Values DNS Only</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800803" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="2000" low="1001" state="Warning"/>
+				<threshold high="4294967295" low="2001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DRA Outbound Values DNS Only</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800804" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="50" low="0" state="Normal"/>
+				<threshold high="200" low="51" state="Warning"/>
+				<threshold high="4294967295" low="201" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DRA Pending Replication Synchronizations</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800805" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="2000" low="1001" state="Warning"/>
+				<threshold high="4294967295" low="2001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DS Directory Reads</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800806" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="2000" low="1001" state="Warning"/>
+				<threshold high="4294967295" low="2001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DS Directory Writes</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800807" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="2000" low="1001" state="Warning"/>
+				<threshold high="4294967295" low="2001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">LDAP Searches</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_7</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1800808" unit="Requests/Second" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="10000" low="0" state="Normal"/>
+				<threshold high="20000" low="10001" state="Warning"/>
+				<threshold high="4294967295" low="20001" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">LDAP Successful Binds</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI18008_8</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

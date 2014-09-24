@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.0">
+    <serviceTemplate>
+        <name>N-compass (x64)</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="121" name="Log Analysis (Appended)">
+                <configurationName>Backup Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Reg1" parameterId="12104" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ff][Aa][Ii][Ll]"/>
+                    <parameter key="Reg2" parameterId="12105" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ee][Rr][Rr][Oo][Rr]"/>
+                    <parameter key="Reg3" parameterId="12106" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg4" parameterId="12107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg5" parameterId="12108" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg6" parameterId="12109" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="FileSpec" parameterId="12110"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="C:\Program Files (x86)\N-able Technologies\N-compass\logs\Backup.log"/>
+                    <parameter key="scan_interval" parameterId="12100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="LGA_SIZE"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="15360000" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_MOFFSET"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="720" valueLow="0"/>
+                    <threshold detailName="LGA_LINECNT"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="4294967296" valueLow="0"/>
+                    <threshold detailName="LGA_REG1COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG2COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG3COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG4COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG5COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG6COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Distributed Transaction Coordinator Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Distributed Transaction Coordinator"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="121" name="Log Analysis (Appended)">
+                <configurationName>ETL Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Reg1" parameterId="12104" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ff][Aa][Ii][Ll]"/>
+                    <parameter key="Reg2" parameterId="12105" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ee][Rr][Rr][Oo][Rr]"/>
+                    <parameter key="Reg3" parameterId="12106" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg4" parameterId="12107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg5" parameterId="12108" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg6" parameterId="12109" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="FileSpec" parameterId="12110"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="C:\Program Files (x86)\N-able Technologies\N-compass\logs\Etl.DS001.log"/>
+                    <parameter key="scan_interval" parameterId="12100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="LGA_SIZE"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="15360000" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_MOFFSET"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="720" valueLow="0"/>
+                    <threshold detailName="LGA_LINECNT"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="4294967296" valueLow="0"/>
+                    <threshold detailName="LGA_REG1COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG2COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG3COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG4COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG5COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG6COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>IIS Admin Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="IIS Admin Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>IIS Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="World Wide Web Publishing Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="121" name="Log Analysis (Appended)">
+                <configurationName>Maintenance Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Reg1" parameterId="12104" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ff][Aa][Ii][Ll]"/>
+                    <parameter key="Reg2" parameterId="12105" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ee][Rr][Rr][Oo][Rr]"/>
+                    <parameter key="Reg3" parameterId="12106" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg4" parameterId="12107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg5" parameterId="12108" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg6" parameterId="12109" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="FileSpec" parameterId="12110"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="C:\Program Files (x86)\N-able Technologies\N-compass\logs\DailyMaintenance.log"/>
+                    <parameter key="scan_interval" parameterId="12100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="LGA_SIZE"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="15360000" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_MOFFSET"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="720" valueLow="0"/>
+                    <threshold detailName="LGA_LINECNT"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="4294967296" valueLow="0"/>
+                    <threshold detailName="LGA_REG1COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG2COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG3COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG4COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG5COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG6COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>N-compass Maintenance Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="N-compass Maintenance"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>N-compass Maintenance Watchdog Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="N-compass Maintenance Watchdog"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="121" name="Log Analysis (Appended)">
+                <configurationName>ODS Log</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Reg1" parameterId="12104" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ff][Aa][Ii][Ll]"/>
+                    <parameter key="Reg2" parameterId="12105" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="[Ee][Rr][Rr][Oo][Rr]"/>
+                    <parameter key="Reg3" parameterId="12106" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg4" parameterId="12107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg5" parameterId="12108" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Reg6" parameterId="12109" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="FileSpec" parameterId="12110"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="C:\Program Files (x86)\N-able Technologies\N-compass\logs\MaintainODS.log"/>
+                    <parameter key="scan_interval" parameterId="12100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="LGA_SIZE"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="15360000" valueLow="0.0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX2"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX3"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX5"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REGEX6"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="LGA_MOFFSET"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="720.0" valueLow="0.0"/>
+                    <threshold detailName="LGA_LINECNT"
+                        monitoringType="Off" taskState="3"
+                        valueHigh="4294967300" valueLow="0.0"/>
+                    <threshold detailName="LGA_REG1COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG2COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG3COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG4COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG5COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                    <threshold detailName="LGA_REG6COUNT"
+                        monitoringType="Off" taskState="3" valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>SQL Reporting Services Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Reporting Services (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>SQL Server Agent Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server Agent (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>SQL Server Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="SQL Server (MSSQLSERVER)"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

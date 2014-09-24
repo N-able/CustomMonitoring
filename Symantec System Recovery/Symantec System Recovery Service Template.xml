@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Symantec System Recovery</name>
+        <description/>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="10004" name="Symantec System Recovery">
+                <configurationName>Symantec System Recovery</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1000400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="1000408" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="ENTER JOB NAME"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI10004_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1500" valueLow="0"/>
+                    <threshold detailName="WMI10004_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1600" valueLow="1501"/>
+                    <threshold detailName="WMI10004_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1601"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="10007" name="Symantec System Recovery Job List">
+                <configurationName>Symantec System Recovery Job List</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1000700"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,15 0-23 * * *"/>
+                </parameters>
+                <thresholds/>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Symantec System Recovery"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

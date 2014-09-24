@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="2/5/2010" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="24160" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.0.2">
+		<description country="ca" language="en">Using SNMP, this service monitors the status of an Lotus Foundations Add-on. </description>
+		<displayname country="ca" language="en">Lotus Foundations Add-On</displayname>
+		<displaylabel>Lotus Foundations Add-On</displaylabel>
+		<help country="ca" language="en">Custom SNMP Service</help>
+		<popuphelp country="ca" language="en">Custom SNMP Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+$" />
+				</presentationinfo>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Group.0.TargetValue.0" max="" min="" phardcoded="false" preferredident="true" type="String" value="Lotus Foundations Run 1.1">
+				<shortdescription country="ca" language="en">Add-On</shortdescription>
+				<longdescription country="ca" language="en">Add-On</longdescription>
+				<help country="ca" language="en">Enter the name of the Add-On to be monitored.&#60;br&#62;&#60;br&#62;For a list of add-ons, query the Lotus Foundations server with the &#60;b&#62;.1.3.6.1.4.1.2.6.226.1.10.1.3&#60;&#47;b&#62; SNMP OID.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="canUseAssetInfo" value="true" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="TargetValue">
+				<shortdescription country="ca" language="en">Variable 0</shortdescription>
+				<longdescription country="ca" language="en">Variable 0</longdescription>
+				<help country="ca" language="en">Variable 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.2.6.226.1.10.1.3">
+				<shortdescription country="ca" language="en">OID 0</shortdescription>
+				<longdescription country="ca" language="en">OID 0</longdescription>
+				<help country="ca" language="en">OID 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="AddOnStatus">
+				<shortdescription country="ca" language="en">Variable 1</shortdescription>
+				<longdescription country="ca" language="en">Variable 1</longdescription>
+				<help country="ca" language="en">Variable 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.2.6.226.1.10.1.4">
+				<shortdescription country="ca" language="en">OID 1</shortdescription>
+				<longdescription country="ca" language="en">OID 1</longdescription>
+				<help country="ca" language="en">OID 1</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24160_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="&#36;AddOnStatus">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24160_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="&#36;AddOnStatus">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.1.Map.Down" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Up" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Caution" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Map.Inactive" max="" min="" phardcoded="true" preferredident="false" type="String" value="3">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2416001</scandetailid>
+			<scandetailid>2416002</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2416001" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint8">
+				<threshold high="1" low="1" state="Normal"/>
+				<threshold high="3" low="2" state="Warning"/>
+				<threshold high="0" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Status</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24160_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2416002" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Status Description</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24160_2</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

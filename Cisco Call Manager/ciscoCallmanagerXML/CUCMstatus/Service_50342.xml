@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="6/30/2013" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.n-able.com file:///opt/nable/var/ncsai/etc/custom_service_v1_1_0_0.xsd">
+  <servicedefinition id="50342" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.0.2">
+
+    <description country="ca" language="en">[Version 0.2] Cisco CUCM ccmGroupTable ccmGroupName ccmGroupTftpDefault </description>
+    <displayname country="ca" language="en">[Cisco]ccmGroupTable </displayname>
+    <help country="ca" language="en">Monitors the ccmGroupName and ccmGroupTftpDefault </help>
+    <popuphelp country="ca" language="en">Popup Help</popuphelp>
+    <displaylabel>[Cisco CUCM]ccmTable ccmGroupName</displaylabel>
+
+    <serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="8" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="45" />
+    <moduleparameters>
+      <moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="30">
+        <shortdescription country="ca" language="en">Scan Interval</shortdescription>
+        <longdescription country="ca" language="en">Scan Interval</longdescription>
+        <help country="ca" language="en">The number of minutes between scans.</help>
+        <presentationinfo>
+          <presentationitem datatype="String" description="" type="mandatory" value=""/>
+          <presentationitem datatype="String" description="" type="validation" value="^[0-9]+$"/>
+        </presentationinfo>
+
+      </moduleparameter>
+      
+      <moduleparameter key="Group.0.TargetIndex.0" max="^[1-9][0-9]*$" min="^[1-9][0-9]*$" phardcoded="false" preferredident="false" type="String" value="1">
+        <shortdescription country="ca" language="en">ccmGroupName</shortdescription>
+        <longdescription country="ca" language="en">ccmGroupName</longdescription>
+        <help country="ca" language="en">Enter the name of the CUCM. For a list of the ccmGroup attached to a CUCM server, query  1.3.6.1.4.1.9.9.156.1.1.1.1.2 SNMP OID.</help>
+        <presentationinfo>
+          <presentationitem datatype="Boolean" description="" type="canUseAssetInfo" value="true" />
+        </presentationinfo>
+      </moduleparameter>
+      <moduleparameter key="Group.0.Var.0.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="ccmGroupName">
+        <shortdescription country="ca" language="en">Variable 0</shortdescription>
+        <longdescription country="ca" language="en">Variable 0</longdescription>
+        <help country="ca" language="en">Variable 0</help>
+      </moduleparameter>
+      <moduleparameter key="Group.0.Var.0.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.9.9.156.1.1.1.1.2">
+        <shortdescription country="ca" language="en">ccmGroupName</shortdescription>
+        <longdescription country="ca" language="en">ccmGroupName</longdescription>
+        <help country="ca" language="en">ccmName</help>
+      </moduleparameter>
+      <moduleparameter key="Group.0.Var.1.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="ccmGroupTftpDefault">
+        <shortdescription country="ca" language="en">ccmName Index</shortdescription>
+        <longdescription country="ca" language="en">ccmName Index</longdescription>
+        <help country="ca" language="en">ccmName Index</help>
+      </moduleparameter>
+      <moduleparameter key="Group.0.Var.1.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.9.9.156.1.1.1.1.3">
+        <shortdescription country="ca" language="en">ccmName Index</shortdescription>
+        <longdescription country="ca" language="en">ccmName Index</longdescription>
+        <help country="ca" language="en">ccmName Index</help>
+      </moduleparameter>
+
+
+
+      <moduleparameter key="Scandetail.0.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP50342_1">
+        <shortdescription country="ca" language="en">Scan detail name</shortdescription>
+        <longdescription country="ca" language="en">Scan detail name</longdescription>
+        <help country="ca" language="en">Scan detail name</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.0.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ccmGroupName">
+        <shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+        <longdescription country="ca" language="en">Scan detail recipe</longdescription>
+        <help country="ca" language="en">Scan detail recipe</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.0.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+        <shortdescription country="ca" language="en">Scan detail type</shortdescription>
+        <longdescription country="ca" language="en">Scan detail type</longdescription>
+        <help country="ca" language="en">Scan detail type</help>
+      </moduleparameter>
+
+
+      <moduleparameter key="Scandetail.1.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP50342_2">
+        <shortdescription country="ca" language="en">Scan detail name</shortdescription>
+        <longdescription country="ca" language="en">Scan detail name</longdescription>
+        <help country="ca" language="en">Scan detail name</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.1.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ccmGroupTftpDefault">
+        <shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+        <longdescription country="ca" language="en">Scan detail recipe</longdescription>
+        <help country="ca" language="en">Scan detail recipe</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.1.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+        <shortdescription country="ca" language="en">Scan detail type</shortdescription>
+        <longdescription country="ca" language="en">Scan detail type</longdescription>
+        <help country="ca" language="en">Scan detail type</help>
+      </moduleparameter>
+   
+
+
+
+    </moduleparameters>
+    <scandetails>
+      
+      <scandetailid>50331</scandetailid>
+      <scandetailid>50332</scandetailid> 
+
+      
+    </scandetails>
+  </servicedefinition>
+  
+   
+  <scandetail id="50331" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0">
+    <thresholddefaults>
+      <thresholds configurable="false" type="String - Huge" />
+    </thresholddefaults>
+    <description country="ca" language="en">CUCM ccmGroupName</description>
+    <help country="ca" language="en">Help</help>
+    <popuphelp country="ca" language="en">Popup Help</popuphelp>
+    <displayname country="ca" language="en">SNMP50342_1</displayname>
+  </scandetail>
+
+  <scandetail id="50332" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0">
+    <thresholddefaults>
+      <thresholds configurable="false" type="String - Huge" />
+    </thresholddefaults>
+    <description country="ca" language="en">CUCM ccmGroupTftpDefault</description>
+    <help country="ca" language="en">Help</help>
+    <popuphelp country="ca" language="en">Popup Help</popuphelp>
+    <displayname country="ca" language="en">SNMP50342_2</displayname>
+  </scandetail>
+  
+  
+</service>
+<?N-able-SDK version=3.0?>

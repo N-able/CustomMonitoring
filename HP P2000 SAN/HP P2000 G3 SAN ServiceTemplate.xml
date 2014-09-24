@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>HP P2000 G3 SAN</name>
+        <description>Template to monitor the HP P2000 G3 SAN</description>
+        <deviceClass>Other</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="18769" name="HP P2000 G3 SAN Network Status">
+                <configurationName>HP P2000 G3 SAN Network Status - NIC 1</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1876901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                    <parameter key="scan_interval" parameterId="1876900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967293" valueLow="0"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967294" valueLow="4294967294"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="100000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10000000" valueLow="10000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18769" name="HP P2000 G3 SAN Network Status">
+                <configurationName>HP P2000 G3 SAN Network Status - NIC 2</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1876901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="2"/>
+                    <parameter key="scan_interval" parameterId="1876900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967293" valueLow="0"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967294" valueLow="4294967294"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="100000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10000000" valueLow="10000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18769" name="HP P2000 G3 SAN Network Status">
+                <configurationName>HP P2000 G3 SAN Network Status - NIC 3</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1876901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="3"/>
+                    <parameter key="scan_interval" parameterId="1876900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967293" valueLow="0"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967294" valueLow="4294967294"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="100000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10000000" valueLow="10000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18769" name="HP P2000 G3 SAN Network Status">
+                <configurationName>HP P2000 G3 SAN Network Status - NIC 4</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1876901" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="4"/>
+                    <parameter key="scan_interval" parameterId="1876900"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967293" valueLow="0"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967294" valueLow="4294967294"/>
+                    <threshold detailName="SNMP18769_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1000000000" valueLow="100000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10000000" valueLow="10000000"/>
+                    <threshold detailName="SNMP18769_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_7"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP18769_8"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_9"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_10"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_11"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="9223372036854775805" valueLow="0"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775806" valueLow="9223372036854775806"/>
+                    <threshold detailName="SNMP18769_12"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="10" valueLow="6"/>
+                    <threshold detailName="SNMP18769_13"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="11"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18768" name="HP P2000 G3 SAN Status">
+                <configurationName>HP P2000 G3 SAN Status</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1876800"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP18768_2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SNMP18768_2"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1000" valueLow="99"/>
+                    <threshold detailName="SNMP18768_2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="999"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="18770" name="HP P2000 G3 SAN Syslog Trap Monitor">
+                <configurationName>HP P2000 G3 SAN Syslog Trap Monitor</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Reg1" parameterId="1877006" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="The overall status of the connectivity unit"/>
+                    <parameter key="Reg2" parameterId="1877007" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="cpqSiSysBatteryIndex"/>
+                    <parameter key="scan_interval" parameterId="1877000"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,1 0-23 * * *"/>
+                    <parameter key="Reg3" parameterId="1877008" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="An event has been generated by the storage array"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SYS18770_LINECNT"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="16777215" valueLow="0"/>
+                    <threshold detailName="SYS18770_LINECNT"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="33554430" valueLow="16000000"/>
+                    <threshold detailName="SYS18770_LINECNT"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2147483647" valueLow="32000000"/>
+                    <threshold detailName="SYS18770_REGEX1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SYS18770_REGEX1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SYS18770_REG1COUNT"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SYS18770_REG1COUNT"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2147483647" valueLow="1"/>
+                    <threshold detailName="SYS18770_REGEX2"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SYS18770_REGEX2"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SYS18770_REG2COUNT"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SYS18770_REG2COUNT"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2147483647" valueLow="1"/>
+                    <threshold detailName="SYS18770_REGEX3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SYS18770_REGEX3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SYS18770_REG3COUNT"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SYS18770_REG3COUNT"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2147483647" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

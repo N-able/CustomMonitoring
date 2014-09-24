@@ -1,0 +1,6 @@
+Created by Bill Lunam December 2011
+
+bill.lunam@kinetics.co.nz
+
+You will need to change the thresholds on the Battery Charge. They are set by the SDK to defaults.    
+

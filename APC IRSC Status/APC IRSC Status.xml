@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="5/6/2010" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.32" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="24181" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.0.32">
+		<description country="ca" language="en">This service monitors how an APC InRow IRSC &#40;InRow Standalone Cooling&#41; unit is performing.</description>
+		<displayname country="ca" language="en">APC IRSC Status</displayname>
+		<displaylabel>APC IRSC Status</displaylabel>
+		<help country="ca" language="en">Custom SNMP Service</help>
+		<popuphelp country="ca" language="en">Custom SNMP Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+$" />
+				</presentationinfo>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Group.0.TargetIndex.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="0">
+				<shortdescription country="ca" language="en">SNMP Index</shortdescription>
+				<longdescription country="ca" language="en">SNMP Index</longdescription>
+				<help country="ca" language="en">Enter the name of the SNMP Index to be used by this service</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+([.][0-9]+)*$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="AirflowImperial">
+				<shortdescription country="ca" language="en">Variable 0</shortdescription>
+				<longdescription country="ca" language="en">Variable 0</longdescription>
+				<help country="ca" language="en">Variable 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.4">
+				<shortdescription country="ca" language="en">OID 0</shortdescription>
+				<longdescription country="ca" language="en">OID 0</longdescription>
+				<help country="ca" language="en">OID 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="InletAirTempImperial">
+				<shortdescription country="ca" language="en">Variable 1</shortdescription>
+				<longdescription country="ca" language="en">Variable 1</longdescription>
+				<help country="ca" language="en">Variable 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.6">
+				<shortdescription country="ca" language="en">OID 1</shortdescription>
+				<longdescription country="ca" language="en">OID 1</longdescription>
+				<help country="ca" language="en">OID 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="InletAirTempMetric">
+				<shortdescription country="ca" language="en">Variable 2</shortdescription>
+				<longdescription country="ca" language="en">Variable 2</longdescription>
+				<help country="ca" language="en">Variable 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.7">
+				<shortdescription country="ca" language="en">OID 2</shortdescription>
+				<longdescription country="ca" language="en">OID 2</longdescription>
+				<help country="ca" language="en">OID 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReturnAirTempImperial">
+				<shortdescription country="ca" language="en">Variable 3</shortdescription>
+				<longdescription country="ca" language="en">Variable 3</longdescription>
+				<help country="ca" language="en">Variable 3</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.12">
+				<shortdescription country="ca" language="en">OID 3</shortdescription>
+				<longdescription country="ca" language="en">OID 3</longdescription>
+				<help country="ca" language="en">OID 3</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReturnAirTempMetric">
+				<shortdescription country="ca" language="en">Variable 4</shortdescription>
+				<longdescription country="ca" language="en">Variable 4</longdescription>
+				<help country="ca" language="en">Variable 4</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.11">
+				<shortdescription country="ca" language="en">OID 4</shortdescription>
+				<longdescription country="ca" language="en">OID 4</longdescription>
+				<help country="ca" language="en">OID 4</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="EvaporatorFanSpeed">
+				<shortdescription country="ca" language="en">Variable 5</shortdescription>
+				<longdescription country="ca" language="en">Variable 5</longdescription>
+				<help country="ca" language="en">Variable 5</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.24">
+				<shortdescription country="ca" language="en">OID 5</shortdescription>
+				<longdescription country="ca" language="en">OID 5</longdescription>
+				<help country="ca" language="en">OID 5</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="OperateMode">
+				<shortdescription country="ca" language="en">Variable 6</shortdescription>
+				<longdescription country="ca" language="en">Variable 6</longdescription>
+				<help country="ca" language="en">Variable 6</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.1">
+				<shortdescription country="ca" language="en">OID 6</shortdescription>
+				<longdescription country="ca" language="en">OID 6</longdescription>
+				<help country="ca" language="en">OID 6</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CoolingSetPointF">
+				<shortdescription country="ca" language="en">Variable 7</shortdescription>
+				<longdescription country="ca" language="en">Variable 7</longdescription>
+				<help country="ca" language="en">Variable 7</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.6.1">
+				<shortdescription country="ca" language="en">OID 7</shortdescription>
+				<longdescription country="ca" language="en">OID 7</longdescription>
+				<help country="ca" language="en">OID 7</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CoolingSetPointC">
+				<shortdescription country="ca" language="en">Variable 8</shortdescription>
+				<longdescription country="ca" language="en">Variable 8</longdescription>
+				<help country="ca" language="en">Variable 8</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.6.2">
+				<shortdescription country="ca" language="en">OID 8</shortdescription>
+				<longdescription country="ca" language="en">OID 8</longdescription>
+				<help country="ca" language="en">OID 8</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="AirSetPointF">
+				<shortdescription country="ca" language="en">Variable 9</shortdescription>
+				<longdescription country="ca" language="en">Variable 9</longdescription>
+				<help country="ca" language="en">Variable 9</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.6.6">
+				<shortdescription country="ca" language="en">OID 9</shortdescription>
+				<longdescription country="ca" language="en">OID 9</longdescription>
+				<help country="ca" language="en">OID 9</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.10.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="AirSetPointC">
+				<shortdescription country="ca" language="en">Variable 10</shortdescription>
+				<longdescription country="ca" language="en">Variable 10</longdescription>
+				<help country="ca" language="en">Variable 10</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.10.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.6.7">
+				<shortdescription country="ca" language="en">OID 10</shortdescription>
+				<longdescription country="ca" language="en">OID 10</longdescription>
+				<help country="ca" language="en">OID 10</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.11.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CoolingOutput">
+				<shortdescription country="ca" language="en">Variable 11</shortdescription>
+				<longdescription country="ca" language="en">Variable 11</longdescription>
+				<help country="ca" language="en">Variable 11</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.11.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.2">
+				<shortdescription country="ca" language="en">OID 11</shortdescription>
+				<longdescription country="ca" language="en">OID 11</longdescription>
+				<help country="ca" language="en">OID 11</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.12.VarName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="CoolingDemand">
+				<shortdescription country="ca" language="en">Variable 12</shortdescription>
+				<longdescription country="ca" language="en">Variable 12</longdescription>
+				<help country="ca" language="en">Variable 12</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.12.OID.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="1.3.6.1.4.1.318.1.1.13.3.4.1.2.3">
+				<shortdescription country="ca" language="en">OID 12</shortdescription>
+				<longdescription country="ca" language="en">OID 12</longdescription>
+				<help country="ca" language="en">OID 12</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$AirflowImperial">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$InletAirTempImperial 10 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$InletAirTempMetric 10 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReturnAirTempImperial 10 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReturnAirTempMetric 10 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$EvaporatorFanSpeed 10 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.6.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OperateMode">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.6.Map.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Map.1" max="" min="" phardcoded="true" preferredident="false" type="String" value="1,3">
+				<shortdescription country="ca" language="en">Failed Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.7.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OperateMode">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="VERYLONGSTRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+			<moduleparameter key="Scandetail.7.Map.Standby" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Map.On" max="" min="" phardcoded="true" preferredident="false" type="String" value="2">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Map.Idle" max="" min="" phardcoded="true" preferredident="false" type="String" value="3">
+				<shortdescription country="ca" language="en">Custom Mapping</shortdescription>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.8.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_9">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CoolingSetPointF 10.0 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.9.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_10">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CoolingSetPointC 10.0 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.10.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_11">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.10.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$AirSetPointF 10.0 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.10.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.11.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_12">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.11.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$AirSetPointC">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.11.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT16">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.12.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_13">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.12.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CoolingDemand 10.0 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.12.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.13.ScandetailName.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="SNMP24181_14">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.13.Recipe.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="$CoolingOutput 10.0 /">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.13.Type.0" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2418101</scandetailid>
+			<scandetailid>2418102</scandetailid>
+			<scandetailid>2418103</scandetailid>
+			<scandetailid>2418104</scandetailid>
+			<scandetailid>2418105</scandetailid>
+			<scandetailid>2418106</scandetailid>
+			<scandetailid>2418107</scandetailid>
+			<scandetailid>2418108</scandetailid>
+			<scandetailid>2418109</scandetailid>
+			<scandetailid>2418110</scandetailid>
+			<scandetailid>2418111</scandetailid>
+			<scandetailid>2418112</scandetailid>
+			<scandetailid>2418113</scandetailid>
+			<scandetailid>2418114</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2418101" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Supply Airflow Rate &#40;Cubic Feet per Minute&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418102" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint16">
+				<threshold high="76" low="0" state="Normal"/>
+				<threshold high="81" low="75" state="Warning"/>
+				<threshold high="65535" low="80" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Rack Inlet Air Temperature &#40;&#176;F&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418103" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint16">
+				<threshold high="25" low="0" state="Normal"/>
+				<threshold high="28" low="24" state="Warning"/>
+				<threshold high="65535" low="27" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Rack Inlet Air Temperature &#40;&#176;C&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418104" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint16">
+				<threshold high="78" low="0" state="Normal"/>
+				<threshold high="82" low="79" state="Warning"/>
+				<threshold high="65535" low="83" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Supply Air Temperature &#40;&#176;F&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418105" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint16">
+				<threshold high="25" low="0" state="Normal"/>
+				<threshold high="27" low="26" state="Warning"/>
+				<threshold high="65535" low="28" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Supply Air Temperature &#40;&#176;C&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418106" unit="Percent" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Percentage"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Evaporator Fan Load</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418107" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint8">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Operating Mode</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_7</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418108" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Operating Mode Description</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_8</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418109" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint16"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Cooling Setpoint &#40;&#176;F&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_9</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418110" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint16"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Cooling Setpoint &#40;&#176;C&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_10</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418111" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint16"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Air Supply Setpoint &#40;&#176;F&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_11</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418112" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint16"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Air Supply Setpoint &#40;&#176;C&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_12</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418113" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Cooling Demand &#40;kW&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_13</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2418114" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.31" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Cooling Output &#40;kW&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">SNMP24181_14</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="10/17/2012" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.21" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="17568" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.0.21">
+		<description country="ca" language="en">Provides Extensive Monitoring for DFS Service. requires the DFS Powershell script to be run periodically</description>
+		<displayname country="ca" language="en">DFSR Monitoring</displayname>
+		<displaylabel>DFSR Monitoring</displaylabel>
+		<help country="ca" language="en">Custom WMI Service</help>
+		<popuphelp country="ca" language="en">Custom WMI Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,1 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="Matrix.MatrixSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="1">
+				<shortdescription country="ca" language="en">Matrix Size</shortdescription>
+				<longdescription country="ca" language="en">The number of matrices.</longdescription>
+				<help country="ca" language="en">The number of matrices.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.NameSpace" max="" min="" phardcoded="true" preferredident="false" type="String" value="root\cimv2\nable">
+				<shortdescription country="ca" language="en">Namespace</shortdescription>
+				<longdescription country="ca" language="en">WMI class namespace used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class namespace used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ImpMethod" max="" min="" phardcoded="true" preferredident="false" type="String" value="Query">
+				<shortdescription country="ca" language="en">Implementation Method</shortdescription>
+				<longdescription country="ca" language="en">WMI implementation method used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI implementation method used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.WMIClassName" max="" min="" phardcoded="true" preferredident="false" type="String" value="DFSRSummary">
+				<shortdescription country="ca" language="en">Class Name</shortdescription>
+				<longdescription country="ca" language="en">WMI class name used for this scan detail.</longdescription>
+				<help country="ca" language="en">WMI class name used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.ProcessingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="Value">
+				<shortdescription country="ca" language="en">Processing Type</shortdescription>
+				<longdescription country="ca" language="en">Processing type used for this scan detail.</longdescription>
+				<help country="ca" language="en">Processing type used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.ConstraintSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="5">
+				<shortdescription country="ca" language="en">Number of Constraints</shortdescription>
+				<longdescription country="ca" language="en">The number of constraints for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of constraints for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.0.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicatedFolderNameAndID">
+				<shortdescription country="ca" language="en">Constraint 1</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Value" max="" min="" phardcoded="false" preferredident="true" type="String" value="Naming for Display">
+				<shortdescription country="ca" language="en">Folder Name and Info &#40;for display purposes only&#41;</shortdescription>
+				<longdescription country="ca" language="en">Folder Name and Info &#40;for display purposes only&#41;</longdescription>
+				<help country="ca" language="en">this criteria is only used to display a unique name on the screen. </help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="OR">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.0.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.1.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicationGroupName">
+				<shortdescription country="ca" language="en">Constraint 1</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.1.Value" max="" min="" phardcoded="false" preferredident="false" type="String" value="Path Name">
+				<shortdescription country="ca" language="en">ReplicationGroupName - Share Group Name</shortdescription>
+				<longdescription country="ca" language="en">ReplicationGroupName - Share Group Name</longdescription>
+				<help country="ca" language="en">match the value within WMI for this folder</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.1.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="OR">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.1.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.2.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReceivingMember">
+				<shortdescription country="ca" language="en">Constraint 2</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.2.Value" max="" min="" phardcoded="false" preferredident="false" type="String" value="SERVERNAME">
+				<shortdescription country="ca" language="en">ReceivingMember - Server Name</shortdescription>
+				<longdescription country="ca" language="en">ReceivingMember - Server Name</longdescription>
+				<help country="ca" language="en">Match the server name within WMI exactly &#40;sometimes it may require a &#36; at the end&#41;</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.2.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="AND">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.2.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.3.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="SendingMember">
+				<shortdescription country="ca" language="en">Constraint 3</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.3.Value" max="" min="" phardcoded="false" preferredident="false" type="String" value="SERVERNAME">
+				<shortdescription country="ca" language="en">SendingMember - Server Name</shortdescription>
+				<longdescription country="ca" language="en">SendingMember - Server Name</longdescription>
+				<help country="ca" language="en">Match the server name within WMI exactly &#40;sometimes it may require a &#36; at the end&#41;</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.3.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="AND">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.3.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Constraint.4.Para" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicatedFolderName">
+				<shortdescription country="ca" language="en">Constraint 4</shortdescription>
+				<longdescription country="ca" language="en">The constraint parameter for this scan detail.</longdescription>
+				<help country="ca" language="en">The constraint parameter for this scan detail.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.4.Value" max="" min="" phardcoded="false" preferredident="false" type="String" value="FOLDERNAME">
+				<shortdescription country="ca" language="en">ReplicatedFolderName</shortdescription>
+				<longdescription country="ca" language="en">ReplicatedFolderName</longdescription>
+				<help country="ca" language="en">Enter the WMI property to be used by this service.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.4.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="AND">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Constraint.4.PaddingType" max="" min="" phardcoded="true" preferredident="false" type="String" value="PathAndQuotes">
+				<shortdescription country="ca" language="en">Padding Type</shortdescription>
+				<longdescription country="ca" language="en">Padding type used to construct WQL query.</longdescription>
+				<help country="ca" language="en">Padding type used to construct WQL query.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="false" type="String" value="10">
+				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
+				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
+				<help country="ca" language="en">The number of variables for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.0.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogCount">
+				<shortdescription country="ca" language="en">Property 0</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.0.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogCount.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 0 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.1.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicatedFolderName">
+				<shortdescription country="ca" language="en">Property 1</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.1.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicatedFolderName.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 1 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.2.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicationGroupName">
+				<shortdescription country="ca" language="en">Property 2</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.2.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReplicationGroupName.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 2 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.3.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogStatusText">
+				<shortdescription country="ca" language="en">Property 3</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.3.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogStatusText.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 3 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.4.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogStatusCode">
+				<shortdescription country="ca" language="en">Property 4</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.4.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="BackLogStatusCode.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 4 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.5.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ConnectionEnabled">
+				<shortdescription country="ca" language="en">Property 5</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.5.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ConnectionEnabled.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 5 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.6.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReceivingMember">
+				<shortdescription country="ca" language="en">Property 6</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.6.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="ReceivingMember.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 6 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.7.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="SendingMember">
+				<shortdescription country="ca" language="en">Property 7</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.7.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="SendingMember.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 7 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.8.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="FolderEnabled">
+				<shortdescription country="ca" language="en">Property 8</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.8.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="FolderEnabled.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 8 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Matrix.0.Var.9.Property" max="" min="" phardcoded="true" preferredident="false" type="String" value="Inbound">
+				<shortdescription country="ca" language="en">Property 10</shortdescription>
+				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+				<help country="ca" language="en">The WMI property used for this scan detail.</help>
+			</moduleparameter>
+			<moduleparameter key="Matrix.0.Var.9.VarName" max="" min="" phardcoded="true" preferredident="false" type="String" value="Inbound.DFSRSummary">
+				<shortdescription country="ca" language="en">Variable 10 Name</shortdescription>
+				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="false" type="String" value="10">
+				<shortdescription country="ca" language="en"/>
+				<longdescription country="ca" language="en"/>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+
+
+
+			<moduleparameter key="Scandetail.0.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$BackLogCount.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.1.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReplicatedFolderName.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.2.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReplicationGroupName.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.3.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReceivingMember.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.4.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$SendingMember.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.5.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$BackLogStatusText.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="STRING">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.6.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$BackLogStatusCode.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.7.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FolderEnabled.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="Boolean">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.8.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_9">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Inbound.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="Boolean">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+
+
+
+			<moduleparameter key="Scandetail.9.Name" max="" min="" phardcoded="true" preferredident="false" type="String" value="WMI17568_10">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ConnectionEnabled.DFSRSummary ">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="Boolean">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1756801</scandetailid>
+			<scandetailid>1756802</scandetailid>
+			<scandetailid>1756803</scandetailid>
+			<scandetailid>1756804</scandetailid>
+			<scandetailid>1756805</scandetailid>
+			<scandetailid>1756806</scandetailid>
+			<scandetailid>1756807</scandetailid>
+			<scandetailid>1756808</scandetailid>
+			<scandetailid>1756809</scandetailid>
+			<scandetailid>1756810</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1756801" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="100" low="0" state="Normal"/>
+				<threshold high="1000" low="99" state="Warning"/>
+				<threshold high="4294967295" low="999" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">BackLog Count</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756802" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Replicated Folder Name</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756803" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Replication Group Name</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756804" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Receiving Member</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756805" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Sending Member</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756806" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">BackLog Status</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756807" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="2" low="1" state="Warning"/>
+				<threshold high="3" low="3" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">BackLog Status Code</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_7</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756808" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="1" low="1" state="Normal"/>
+				<threshold high="0" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Folder Enabled</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_8</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756809" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Boolean"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Inbound</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_9</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1756810" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.20" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="1" low="1" state="Normal"/>
+				<threshold high="0" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Connection Enabled</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">WMI17568_10</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

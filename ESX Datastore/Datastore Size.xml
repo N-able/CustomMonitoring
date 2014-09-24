@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="10/8/2010" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="13454" reason="" releasedependency="4.5.0.0" servicetype="EDF" version="1.0.0.10">
+		<description country="ca" language="en">Using a Windows Powershell script, this custom service monitors the total/free/used space on an ES or ESXi datastore.</description>
+		<displayname country="ca" language="en">Datastore Size</displayname>
+		<displaylabel>Datastore Size</displaylabel>
+		<help country="ca" language="en">Custom EDF Service</help>
+		<popuphelp country="ca" language="en">Custom EDF Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="true" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^[0-9]+$" />
+				</presentationinfo>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1345401</scandetailid>
+			<scandetailid>1345402</scandetailid>
+			<scandetailid>1345403</scandetailid>
+			<scandetailid>1345404</scandetailid>
+			<scandetailid>1345405</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1345401" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.3" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String - Huge"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Datastore Name</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">EDF13454_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1345402" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint64">
+				<threshold high="9223372036854775807" low="100" state="Normal"/>
+				<threshold high="99" low="50" state="Warning"/>
+				<threshold high="49" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Free Space &#40;GB&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">EDF13454_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1345403" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Percentage">
+				<threshold high="100" low="50" state="Normal"/>
+				<threshold high="49" low="26" state="Warning"/>
+				<threshold high="25" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Free Space &#40;&#37;&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">EDF13454_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1345404" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Used Space &#40;GB&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">EDF13454_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1345405" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.2" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint64"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Total Space &#40;GB&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">EDF13454_5</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

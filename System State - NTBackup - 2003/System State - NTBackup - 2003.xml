@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="8/18/2011" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="18998" reason="" releasedependency="4.5.0.0" servicetype="Log Batch" version="1.0.0.6">
+		<description country="ca" language="en">Monitors the System State Backup from NTbackup on 2003</description>
+		<displayname country="ca" language="en">System State - 2003</displayname>
+		<displaylabel>System State - 2003</displaylabel>
+		<help country="ca" language="en">Custom Batch Log Service</help>
+		<popuphelp country="ca" language="en">Custom Batch Log Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="1440" minpollrate="5" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="8640"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="*/1440 0-23 * * 2,3,4,5,6">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="GenericLogPrefix" max="" min="" phardcoded="true" preferredident="false" type="String" value="GLB18998_">
+				<shortdescription country="ca" language="en">Generic Log Prefix</shortdescription>
+				<longdescription country="ca" language="en">Generic Log Prefix</longdescription>
+				<help country="ca" language="en">Generic Log Prefix</help>
+			</moduleparameter>
+			<moduleparameter key="FileSpec" max="" min="" phardcoded="false" preferredident="true" type="String" value="C:\Documents and Settings\Administrator\Local Settings\Application Data\Microsoft\Windows NT\NTBackup\data\backup*.log">
+				<shortdescription country="ca" language="en">Log File Name and Path</shortdescription>
+				<longdescription country="ca" language="en">Log File Name and Path</longdescription>
+				<help country="ca" language="en">Log File Name and Path</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^(([a-zA-Z]+:|\\)(\\[^\\]+)+)|(/[^/]+)+$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg1" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="Backup completed on">
+				<shortdescription country="ca" language="en">Backup Successful</shortdescription>
+				<longdescription country="ca" language="en">Backup Successful</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg2" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="The operation did not successfully complete.">
+				<shortdescription country="ca" language="en">Backup Failed</shortdescription>
+				<longdescription country="ca" language="en">Backup Failed</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1899801</scandetailid>
+			<scandetailid>1899802</scandetailid>
+			<scandetailid>1899803</scandetailid>
+			<scandetailid>1899804</scandetailid>
+			<scandetailid>1899805</scandetailid>
+			<scandetailid>1899806</scandetailid>
+			<scandetailid>1899807</scandetailid>
+			<scandetailid>1899808</scandetailid>
+			<scandetailid>1899809</scandetailid>
+			<scandetailid>1899810</scandetailid>
+			<scandetailid>1899811</scandetailid>
+			<scandetailid>1899812</scandetailid>
+			<scandetailid>1899813</scandetailid>
+			<scandetailid>1899814</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1899801" unit="Minutes" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="720" low="0" state="Normal"/>
+				<threshold high="1450" low="700" state="Warning"/>
+				<threshold high="16777215" low="1430" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Difference in minutes between the last parsed dateline of the file and the local time of the test</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_LOFFSET</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899802" unit="Bytes - Base 2" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="LongLong">
+				<threshold high="5120" low="0" state="Normal"/>
+				<threshold high="20480" low="5000" state="Warning"/>
+				<threshold high="9223372036854775807" low="20000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">File Size</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_SIZE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899803" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="16777215" low="0" state="Normal"/>
+				<threshold high="33554430" low="16000000" state="Warning"/>
+				<threshold high="2147483647" low="32000000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Line Count of Log File</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_LINECNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899804" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="TimeZone">
+				<threshold high="13" low="-12" state="Normal"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parsed Dates in Time Zone</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_LTZ</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899805" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Creation Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_CTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899806" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Modification Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_MTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899807" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parse-able Date in Log</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_LTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899808" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Integer"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Error message &#40;from module&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_ERROR</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899809" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="1" low="1" state="Normal"/>
+				<threshold high="0" low="0" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Backup Successful</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REGEX1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899810" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Backup Successful</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REG1LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899811" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Backup Successful</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REG1COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899812" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Backup Failed</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REGEX2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899813" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Backup Failed</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REG2LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1899814" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.4" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Backup Failed</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB18998_REG2COUNT</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

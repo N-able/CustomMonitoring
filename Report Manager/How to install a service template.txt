@@ -1,0 +1,33 @@
+
+About the Report Manager service template
+
+Before using an Report Manager service template, you need to install an agent on Report Manager to monitor it as an N-central device. 
+
+Download and install an agent
+
+1. Sign in to N-central and select the appropriate customer on which to install a Windows agent, typically this will be your internal company name.
+2. Click Actions > Download Agent/Probe Software.
+3. Under Customer/Site Specific Software, select the appropriate Windows agent.
+4. Install this Windows agent on Report Manager. The Windows agent will register Report Manager with the N-central server.
+
+To use Report Manager service templates in this folder
+
+•	If Report Manager is installed on 64-bit OS, use Report Manager x64 
+•	If Report Manager is installed on 32-bit OS, use Report Manager x32
+
+Import the Report Manager service template.
+
+1. Sign-in to N-central.
+2. In the navigation pane, click Configuration > Monitoring > Service Templates.
+3. Click Import.
+4. Browse to the location of the Report Manager service template on your hard drive
+5. Click Import Service Template.
+6. After the system has verified the service template, click OK.
+
+Apply the Report Manager service template to the Report Manager device.
+
+1. In Views, click All Devices to open it.
+2. Select the check box next to the Report Manager device.
+3. Click Apply Service Templates.
+4. From the list of Service Templates, select the Report Manager service template and click >.
+5. Click Apply.

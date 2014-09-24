@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>Microsoft DirSync</name>
+        <description>Monitors the Microsoft Dirsync solution for Office 365
+Self healing active on both windows services.
+Only alert on WARNING/ERROR for the there specific eventid sources</description>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="231" isCustomService="false" name="Windows Event Log">
+                <configurationName>Windows Event Log</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="[autoReapply: null]"/>
+                <parameters>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="generate_notification"
+                        parameterId="23137" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="true"/>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Directory Synchronization"/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="0b4c7b8a437425ea5b991239dd88dc40"/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,109,115,657,611,606,612,652,655,6900"/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="description" parameterId="23103"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Directory Synchronization"/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Rule" parameterId="23129" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1"
+                        valueString="" valueStringEval=""/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="231" isCustomService="false" name="Windows Event Log">
+                <configurationName>Windows Event Log 2</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="[autoReapply: null]"/>
+                <parameters>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="description" parameterId="23103"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="FIMSynchronizationService"/>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="FIMSynchronizationService"/>
+                    <parameter key="generate_notification"
+                        parameterId="23137" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="true"/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Rule" parameterId="23129" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="7389fbfea3ef77ea737c82823a61a96f"/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1"
+                        valueString="" valueStringEval=""/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="231" isCustomService="false" name="Windows Event Log">
+                <configurationName>Windows Event Log 3</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="[autoReapply: null]"/>
+                <parameters>
+                    <parameter key="SourceIncludeFilter"
+                        parameterId="23132" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Windows Azure Active Directory Sync"/>
+                    <parameter key="generate_notification"
+                        parameterId="23137" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="true"/>
+                    <parameter key="IncludeList" parameterId="23130"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="ExcludeList" parameterId="23131"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LastRecordSignature"
+                        parameterId="23115" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LogName" parameterId="23104"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Application"/>
+                    <parameter key="description" parameterId="23103"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Windows Azure Active Directory Sync"/>
+                    <parameter key="Log.3.TypeList" parameterId="23117"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LogName" parameterId="23116"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LastRecordSignature"
+                        parameterId="23123" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.3.LastRecordSignature"
+                        parameterId="23119" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.LogName" parameterId="23124"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="RegDescription" parameterId="23134"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Target_URI" parameterId="23101"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="localhost"/>
+                    <parameter key="SourceExcludeFilter"
+                        parameterId="23133" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.TypeList" parameterId="23105"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="Error, Warning"/>
+                    <parameter key="Log.1.LogName" parameterId="23108"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.0.LastRecordSignature"
+                        parameterId="23107" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="0b4c7b8a437425ea5b991239dd88dc40"/>
+                    <parameter key="Log.2.TypeList" parameterId="23113"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.2.LogName" parameterId="23112"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.LogName" parameterId="23120"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.5.TypeList" parameterId="23125"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.1.LastRecordSignature"
+                        parameterId="23111" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="show_scan_details"
+                        parameterId="23136" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="false"/>
+                    <parameter key="Log.1.TypeList" parameterId="23109"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="Log.4.TypeList" parameterId="23121"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="IgnoreMinutesBefore"
+                        parameterId="23128" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="720"/>
+                    <parameter key="Rule" parameterId="23129" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="AND"/>
+                    <parameter key="scan_interval" parameterId="23100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_STATUS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="WEL_DUPLICATE_COUNT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="1"
+                        valueString="" valueStringEval=""/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" isCustomService="false" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="[autoReapply: null]"/>
+                <parameters>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Windows Azure Active Directory Sync Service"/>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1" valueString="" valueStringEval=""/>
+                </thresholds>
+                <selfHealing>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="maxNumberOfRetriesPerInterval" value="3"/>
+                    <selfHealingProperty key="executeSelfHeal" value="true"/>
+                    <selfHealingProperty key="selectedService" value="{{serviceParameter}}"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                    <selfHealingProperty key="restartServiceBy" value="MonitoredService"/>
+                    <selfHealingProperty key="credentialPassword" value=""/>
+                    <selfHealingProperty key="useCustomCredentials" value="LocalSystem"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="RemoteExecutionTimeout" value="1"/>
+                    <selfHealingProperty key="selfHealingType" value="restartService"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="false"/>
+                    <selfHealingProperty key="credentialUserName" value=""/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty key="selectedStatuses" value="5"/>
+                    <selfHealingProperty key="selectedInterval" value="3600"/>
+                </selfHealing>
+            </service>
+            <service id="22105" isCustomService="false" name="Windows Service">
+                <configurationName>Windows Service 2</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="[autoReapply: null]"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Forefront Identity Manager Synchronization Service"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0" valueString="" valueStringEval=""/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1" valueString="" valueStringEval=""/>
+                </thresholds>
+                <selfHealing>
+                    <selfHealingProperty key="credentialPassword" value=""/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty key="RemoteExecutionTimeout" value="1"/>
+                    <selfHealingProperty
+                        key="maxNumberOfRetriesPerInterval" value="3"/>
+                    <selfHealingProperty key="selfHealingType" value="restartService"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="true"/>
+                    <selfHealingProperty key="executeSelfHeal" value="true"/>
+                    <selfHealingProperty key="selectedStatuses" value="5"/>
+                    <selfHealingProperty key="restartServiceBy" value="MonitoredService"/>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="selectedInterval" value="3600"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                    <selfHealingProperty key="selectedService" value="{{serviceParameter}}"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty key="useCustomCredentials" value="LocalSystem"/>
+                    <selfHealingProperty key="credentialUserName" value=""/>
+                </selfHealing>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

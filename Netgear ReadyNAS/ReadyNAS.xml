@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>ReadyNAS</name>
+        <description/>
+        <deviceClass>Other</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="16004" name="Fan Status (ReadyNAS)">
+                <configurationName>Fan Status (ReadyNAS)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1600400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,1 0-23 * * *"/>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1600401" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP16004_2"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="65535" valueLow="5000"/>
+                    <threshold detailName="SNMP16004_2"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="6000" valueLow="3000"/>
+                    <threshold detailName="SNMP16004_2"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4000" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="16000" name="Firmware (ReadyNAS)">
+                <configurationName>Firmware (ReadyNAS)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1600000"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds/>
+                <selfHealing/>
+            </service>
+            <service id="16002" name="Physical Drive (ReadyNAS)">
+                <configurationName>Physical Drive (ReadyNAS)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1600200"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5 0-23 * * *"/>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1600201" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP16002_3"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SNMP16002_3"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="150" valueLow="99"/>
+                    <threshold detailName="SNMP16002_3"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="255" valueLow="149"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="16003" name="Temperature Status (ReadyNAS)">
+                <configurationName>Temperature Status (ReadyNAS)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1600300"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,1 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP16003_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="100" valueLow="0"/>
+                    <threshold detailName="SNMP16003_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="150" valueLow="99"/>
+                    <threshold detailName="SNMP16003_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="255" valueLow="149"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="16001" name="Volume (ReadyNAS)">
+                <configurationName>Volume (ReadyNAS)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="1600101" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="1"/>
+                    <parameter key="scan_interval" parameterId="1600100"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,5 0-23 * * *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP16001_4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="100" valueLow="15"/>
+                    <threshold detailName="SNMP16001_4"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="20" valueLow="5"/>
+                    <threshold detailName="SNMP16001_4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="10" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

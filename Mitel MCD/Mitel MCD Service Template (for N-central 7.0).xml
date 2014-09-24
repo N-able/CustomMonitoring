@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.0">
+    <serviceTemplate>
+        <name>Mitel MCD</name>
+        <description>Monitors Mitel MCD devices for alarms, license usage, bandwidth consumption, and online accessability.</description>
+        <deviceClass>Switch/Router</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="101" name="Connectivity">
+                <configurationName>Connectivity</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="default_ttl" parameterId="10105"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="255"/>
+                    <parameter key="packet_size" parameterId="10104"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="32"/>
+                    <parameter key="packet_number" parameterId="10103"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="interval" parameterId="10102"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="1"/>
+                    <parameter key="timeout_value" parameterId="10101"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                    <parameter key="scan_interval" parameterId="10100"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="10000" valueLow="0"/>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="20000" valueLow="9500"/>
+                    <threshold detailName="PINGRTT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="600000" valueLow="19500"/>
+                    <threshold detailName="PING_DNSR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="PING_DNSR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="45" valueLow="0"/>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="85" valueLow="35"/>
+                    <threshold detailName="PINGPLP"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="80"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="255" valueLow="2"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="PINGTTL"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="109" name="HTTP">
+                <configurationName>HTTP</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="http_authentication_type"
+                        parameterId="10910" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="Basic"/>
+                    <parameter key="http_username" parameterId="10908"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="http_password" parameterId="10909"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="warning_responsecode"
+                        parameterId="10906" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="300,301,302,303,304,305,307"/>
+                    <parameter key="content_regex" parameterId="10907"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="http_url" parameterId="10904"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value=""/>
+                    <parameter key="normal_responsecode"
+                        parameterId="10905" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="100,101,200,201,202,203,204,205,206"/>
+                    <parameter key="port" parameterId="10902" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value="80"/>
+                    <parameter key="validating_string"
+                        parameterId="10903" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="HTTP"/>
+                    <parameter key="scan_interval" parameterId="10900"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="timeout_value" parameterId="10901"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="30"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="HTTP_DNSR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="HTTP_DNSR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="HTTP_CNTMATCHED"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="HTTP_CNTMATCHED"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="HTTPA"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="HTTPA"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="255" valueLow="2"/>
+                    <threshold detailName="HTTPA"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="HTTPT"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="10000" valueLow="0"/>
+                    <threshold detailName="HTTPT"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="20000" valueLow="9500"/>
+                    <threshold detailName="HTTPT"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="600000" valueLow="19500"/>
+                    <threshold detailName="HTTP_LOGIN"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="HTTP_LOGIN"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="20609" name="Interface Health">
+                <configurationName>Interface Health</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2060900"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Group.0.TargetIndex.0"
+                        parameterId="2060901" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Group.0.TargetValue.0"
+                        parameterId="2060902" type="2"
+                        useAssetInfo="true" useDefaultValue="false" value="(Internal Port) SW to APC card"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_OUT_DIS"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_OUT_ERR"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_IN_DISC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP20609_IF_IN_ERRO"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4294967295" valueLow="2"/>
+                    <threshold detailName="SNMP20609_IF_OPER_ST"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="SNMP20609_IF_OPER_ST"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="1" valueLow="1"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24175" name="Mitel MCD Alarm Level">
+                <configurationName>Mitel MCD Alarm Level</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2417500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="1"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP24175_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="SNMP24175_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="SNMP24175_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="4" valueLow="3"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="24174" name="Mitel MCD License Usage">
+                <configurationName>Mitel MCD License Usage</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2417400"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP24174_4"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP24174_4"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP24174_4"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="SNMP24174_1"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP24174_1"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP24174_1"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="400" name="Traffic">
+                <configurationName>Traffic</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="Group.1.TargetValue.0"
+                        parameterId="40005" type="2" useAssetInfo="true"
+                        useDefaultValue="false" value="(Internal Port) SW to APC card"/>
+                    <parameter key="Group.1.TargetIndex.0"
+                        parameterId="40004" type="1"
+                        useAssetInfo="false" useDefaultValue="false" value=""/>
+                    <parameter key="Group.1.Var.5.Value.0"
+                        parameterId="40017" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="100"/>
+                    <parameter key="scan_interval" parameterId="40000"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Group.1.Var.4.Value.0"
+                        parameterId="40015" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="100"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="80000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="90000000" valueLow="79000000"/>
+                    <threshold detailName="SNMP400_BITSOUTPERSEC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100000000" valueLow="85000000"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_UTIL"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="180000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="190000000" valueLow="179000000"/>
+                    <threshold detailName="SNMP400_TOTALBITSPERSEC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="200000000" valueLow="185000000"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="80000000" valueLow="0"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="90000000" valueLow="79000000"/>
+                    <threshold detailName="SNMP400_BITSINPERSEC"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100000000" valueLow="85000000"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_UPUTIL"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="85" valueLow="0"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Normal" taskState="4"
+                        valueHigh="95" valueLow="80"/>
+                    <threshold detailName="SNMP400_DOWNUTIL"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="100" valueLow="90"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

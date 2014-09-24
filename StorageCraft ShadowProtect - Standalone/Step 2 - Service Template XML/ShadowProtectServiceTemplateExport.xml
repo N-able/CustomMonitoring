@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>ShadowProtect</name>
+        <description>** This needs the task profile to be run</description>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="24294" name="ShadowProtect">
+                <configurationName>ShadowProtect</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2429400"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="false" value="0,59 * * * 0,1,2,3,4,5,6"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2429408" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="PLEASE ENTER THE NAME OF THE BACKUP TO BE MONITORED"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI24294_1"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI24294_1"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="WMI24294_1"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="2" valueLow="2"/>
+                    <threshold detailName="WMI24294_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="14400" valueLow="0"/>
+                    <threshold detailName="WMI24294_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="21600" valueLow="14460"/>
+                    <threshold detailName="WMI24294_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="21660"/>
+                    <threshold detailName="WMI24294_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="4294967295" valueLow="1000000"/>
+                    <threshold detailName="WMI24294_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="999990" valueLow="500000"/>
+                    <threshold detailName="WMI24294_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="490000" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service (ShadowProtect)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="ShadowProtect *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing/>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service (StorageCraft)</configurationName>
+                <action actionId="2"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="false" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="StorageCraft *"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Normal" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty key="selectedService" value="Spooler"/>
+                    <selfHealingProperty
+                        key="maxNumberOfRetriesPerInterval" value="3"/>
+                    <selfHealingProperty key="selfHealingType" value="restartService"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="true"/>
+                    <selfHealingProperty key="executeSelfHeal" value="true"/>
+                    <selfHealingProperty key="selectedInterval" value="3600"/>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="selectedStatuses" value="5"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                </selfHealing>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>

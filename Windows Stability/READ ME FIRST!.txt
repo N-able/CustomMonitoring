@@ -1,0 +1,18 @@
+Thanks for your interest in using this Custom Service.
+
+There are a few steps involved in getting this service to work:
+
+1. Upload the custom service to your N-central server (instructions on how to do this are included in this Zip file)
+
+2. Run the included PowerShell (*.ps1) script on the appropriate Windows devices
+	-> I'd recommend doing this through a Scheduled Task Profile in N-central
+
+3. Adding the custom service to the appropriate devices in N-central
+	-> I'd recommend putting the custom service into a Service Template, and then associating both the Service Template and the Scheduled Task Profile with a Rule
+
+
+As always, if you have any questions regarding the script or the custom service, please e-mail me at creid@n-able.com.
+
+Thanks!
+
+Chris Reid

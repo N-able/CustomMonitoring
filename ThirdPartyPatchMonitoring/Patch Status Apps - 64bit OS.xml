@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="7/19/2012" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="10001" reason="" releasedependency="4.5.0.0" servicetype="Log Batch" version="1.0.0.8">
+		<description country="ca" language="en">Monitors the status of third party applications
+Requires Security Manager | Patch</description>
+		<displayname country="ca" language="en">Patch Status Apps - 64bit OS</displayname>
+		<displaylabel>Patch Status Apps - 64bit OS</displaylabel>
+		<help country="ca" language="en">Custom Batch Log Service</help>
+		<popuphelp country="ca" language="en">Custom Batch Log Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="String" value="0,59 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="GenericLogPrefix" max="" min="" phardcoded="true" preferredident="false" type="String" value="GLB10001_">
+				<shortdescription country="ca" language="en">Generic Log Prefix</shortdescription>
+				<longdescription country="ca" language="en">Generic Log Prefix</longdescription>
+				<help country="ca" language="en">Generic Log Prefix</help>
+			</moduleparameter>
+			<moduleparameter key="FileSpec" max="" min="" phardcoded="false" preferredident="true" type="String" value="C:\Program Files &#40;x86&#41;\N-able Technologies\Security Manager Patch\audit.txt">
+				<shortdescription country="ca" language="en">Log File Name and Path</shortdescription>
+				<longdescription country="ca" language="en">Log File Name and Path</longdescription>
+				<help country="ca" language="en">Log File Name and Path</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+					<presentationitem datatype="String" description="" type="validation" value="^(([a-zA-Z]+:|\\)(\\[^\\]+)+)|(/[^/]+)+$" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg1" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="&#40;Flash*|Reader|Shockwave|Acrobat|Air&#41; : Update">
+				<shortdescription country="ca" language="en">Adobe Updates</shortdescription>
+				<longdescription country="ca" language="en">Adobe Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg2" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="&#40;Chrome|Firefox|Opera|Safari&#41; : Update">
+				<shortdescription country="ca" language="en">Browser Updates</shortdescription>
+				<longdescription country="ca" language="en">Browser Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg3" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="&#40;iTunes|QuickTime&#41; : Update">
+				<shortdescription country="ca" language="en">Apple Updates</shortdescription>
+				<longdescription country="ca" language="en">Apple Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg4" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="&#40;Java*|JDK*&#41; : Update">
+				<shortdescription country="ca" language="en">Java Updates</shortdescription>
+				<longdescription country="ca" language="en">Java Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg5" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value="Enter the regex for your app ">
+				<shortdescription country="ca" language="en">Missing Updates</shortdescription>
+				<longdescription country="ca" language="en">Missing Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Reg6" max=".{0,250}" min=".{0,250}" phardcoded="false" preferredident="false" type="String" value=": Update - ">
+				<shortdescription country="ca" language="en">Total Missing Updates</shortdescription>
+				<longdescription country="ca" language="en">Total Missing Updates</longdescription>
+				<help country="ca" language="en">A regular expression is a string of characters and metacharacters specified by the user to find predetermined key words in a log file. You can set a different threshold option that is applicable for each regular expression that you specify.</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>1000101</scandetailid>
+			<scandetailid>1000102</scandetailid>
+			<scandetailid>1000103</scandetailid>
+			<scandetailid>1000104</scandetailid>
+			<scandetailid>1000105</scandetailid>
+			<scandetailid>1000106</scandetailid>
+			<scandetailid>1000107</scandetailid>
+			<scandetailid>1000108</scandetailid>
+			<scandetailid>1000109</scandetailid>
+			<scandetailid>1000110</scandetailid>
+			<scandetailid>1000111</scandetailid>
+			<scandetailid>1000112</scandetailid>
+			<scandetailid>1000113</scandetailid>
+			<scandetailid>1000114</scandetailid>
+			<scandetailid>1000115</scandetailid>
+			<scandetailid>1000116</scandetailid>
+			<scandetailid>1000117</scandetailid>
+			<scandetailid>1000118</scandetailid>
+			<scandetailid>1000119</scandetailid>
+			<scandetailid>1000120</scandetailid>
+			<scandetailid>1000121</scandetailid>
+			<scandetailid>1000122</scandetailid>
+			<scandetailid>1000123</scandetailid>
+			<scandetailid>1000124</scandetailid>
+			<scandetailid>1000125</scandetailid>
+			<scandetailid>1000126</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="1000101" unit="Minutes" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="10080" low="0" state="Normal"/>
+				<threshold high="20160" low="10080" state="Warning"/>
+				<threshold high="16777215" low="20160" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Difference in minutes between the last parsed dateline of the file and the local time of the test</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_LOFFSET</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000102" unit="Bytes - Base 2" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="LongLong">
+				<threshold high="5120" low="0" state="Normal"/>
+				<threshold high="20480" low="5000" state="Warning"/>
+				<threshold high="9223372036854775807" low="20000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">File Size</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_SIZE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000103" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Long">
+				<threshold high="16777215" low="0" state="Normal"/>
+				<threshold high="33554430" low="16000000" state="Warning"/>
+				<threshold high="2147483647" low="32000000" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Line Count of Log File</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_LINECNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000104" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="TimeZone">
+				<threshold high="13" low="-12" state="Normal"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parsed Dates in Time Zone</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_LTZ</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000105" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Creation Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_CTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000106" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">File Modification Date</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_MTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000107" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Timestamp"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Last Parse-able Date in Log</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_LTIME</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000108" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="Integer"/>
+		</thresholddefaults>
+		<description country="ca" language="en">Error message &#40;from module&#41;</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_ERROR</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000109" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Adobe Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000110" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Adobe Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG1LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000111" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Adobe Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG1COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000112" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Browser Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000113" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Browser Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG2LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000114" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Browser Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG2COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000115" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Apple Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000116" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Apple Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG3LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000117" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Apple Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG3COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000118" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Java Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000119" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Java Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG4LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000120" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Java Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG4COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000121" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000122" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG5LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000123" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG5COUNT</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000124" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Total Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REGEX6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000125" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="String"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The first lines matched Total Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG6LINE</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="1000126" monitoringtypeon="false" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.7" >
+		<thresholddefaults>
+			<thresholds configurable="false" type="uint32"/>
+		</thresholddefaults>
+		<description country="ca" language="en">The line count matched Total Missing Updates</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">GLB10001_REG6COUNT</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

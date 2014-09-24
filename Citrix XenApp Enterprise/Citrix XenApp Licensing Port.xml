@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="2/3/2009" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="24158" reason="" releasedependency="4.5.0.0" servicetype="GenericTCP" version="1.0.0.0">
+		<description country="ca" language="en">Monitors the status of port 27000 - the Citrix Licensing Port.</description>
+		<displayname country="ca" language="en">Citrix XenApp Licensing Port</displayname>
+		<help country="ca" language="en">Custom Generic TCP Service</help>
+		<popuphelp country="ca" language="en">Custom Generic TCP Service</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="1" maxpollrate="1440" minpollrate="5" schedulertype="Interval Based Scheduler" serviceinstancetype="Single" timetostale="30"/>
+
+
+		<moduleparameters>
+			<moduleparameter key="scan_interval" max="1440" min="5" phardcoded="false" preferredident="false" type="Integer" value="5">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+
+
+		
+			<moduleparameter key="timeout_value" max="60" min="1" phardcoded="false" preferredident="false" type="Integer" value="30">
+				<shortdescription country="ca" language="en">Timeout Value</shortdescription>
+				<longdescription country="ca" language="en">Timeout Value</longdescription>
+				<help country="ca" language="en">The time out value is the amount of time for which the central server waits before considering the test a failure. The time out value is measured in seconds.</help>
+			</moduleparameter>
+			<moduleparameter key="port" max="65535" min="1" phardcoded="false" preferredident="true" type="Integer" value="27000">
+				<shortdescription country="ca" language="en">Port Number</shortdescription>
+				<longdescription country="ca" language="en">Port Number</longdescription>
+				<help country="ca" language="en">Enter the TCP port to be monitored. The default port for this service is 27000.</help>
+			</moduleparameter>
+			<moduleparameter key="GenericTCPPrefix" max="" min="" phardcoded="true" preferredident="false" type="String" value="TCP24158_">
+				<shortdescription country="ca" language="en">Generic TCP Prefix</shortdescription>
+				<longdescription country="ca" language="en">Generic TCP Prefix</longdescription>
+				<help country="ca" language="en">The prefix used to create unique scan details related to this service.</help>
+			</moduleparameter>
+			<moduleparameter key="send_cmd_string" max=".{0,250}" min="" phardcoded="true" preferredident="false" type="String" value="">
+				<shortdescription country="ca" language="en">Send Command String</shortdescription>
+				<longdescription country="ca" language="en">Send Command String</longdescription>
+				<help country="ca" language="en">A predefined set of characters specific to the TCP service. The string is transmitted upon connection to the host and requests the response about the TCP service.</help>
+			</moduleparameter>
+			<moduleparameter key="validating_string" max=".{0,250}" min="" phardcoded="true" preferredident="false" type="String" value="">
+				<shortdescription country="ca" language="en">Validating String</shortdescription>
+				<longdescription country="ca" language="en">Validating String</longdescription>
+				<help country="ca" language="en">A regular expression that determines whether the response sent by the queried device is valid.</help>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>2415801</scandetailid>
+			<scandetailid>2415802</scandetailid>
+			<scandetailid>2415803</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="2415801" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Failed"/>
+				<threshold high="1" low="1" state="Normal"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">DNS Resolution</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">TCP24158_GENERICTCP_DNSR</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2415802" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Boolean">
+				<threshold high="0" low="0" state="Failed"/>
+				<threshold high="1" low="1" state="Normal"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Port Availability</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">TCP24158_GENERICA</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="2415803" monitoringtypeon="false" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Response Time">
+				<threshold high="1000" low="0" state="Normal"/>
+				<threshold high="5000" low="950" state="Warning"/>
+				<threshold high="60000" low="4950" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Round Trip Time (ms)</description>
+		<help country="ca" language="en">Help</help>
+		<popuphelp country="ca" language="en">Popup Help</popuphelp>
+		<displayname country="ca" language="en">TCP24158_GENERICTCP_RESP</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>

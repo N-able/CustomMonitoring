@@ -1,0 +1,4 @@
+1. Login to the UI as Product Admin (by default, productadmin@n-able.com)
+2. Click on the System node
+3. Click setup -> Service Templates
+4. Click 'Import Template(s)'
