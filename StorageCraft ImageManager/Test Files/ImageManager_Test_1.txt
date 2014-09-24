@@ -1,0 +1,3 @@
+A very basic configuration with:
+- A single managed folder (F:\SPBackups, WatchPath index 2)
+- No replication jobs

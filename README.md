@@ -107,6 +107,7 @@ Master list
 | SQL 2008 | Template | N/A |
 | SQL 2012 | Service | 18005, 18004, 18001, 18003, 19254, 18007 |
 | SQL 2014 | Service | 18893, 18892, 18894, 18895, 18896 |
+| StorageCraft ImageManager | Service | 11000, 11002 |
 | StorageCraft ShadowProtect - Standalone | Service | 24294 |
 | SuperMicro Health | Service | 24172 |
 | Switchvox - Disk | Service | 18787 |

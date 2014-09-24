@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceTemplates version="2.1">
+    <serviceTemplate>
+        <name>StorageCraft ImageManager</name>
+        <description>Adds an instance of the StorageCraft ImageManager service, the list of managed folders</description>
+        <deviceClass>Windows Server</deviceClass>
+        <removesServices>false</removesServices>
+        <services>
+            <service id="11000" name="StorageCraft ImageManager">
+                <configurationName>StorageCraft ImageManager</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="false"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1100000"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,5 0-23 * * *"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="1100008" type="2"
+                        useAssetInfo="false" useDefaultValue="true" value="ENTER MANAGED FOLDER NAME"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="WMI11000_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI11000_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775806"/>
+                    <threshold detailName="WMI11000_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="1"/>
+                    <threshold detailName="WMI11000_4"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="5" valueLow="0"/>
+                    <threshold detailName="WMI11000_4"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="14" valueLow="5"/>
+                    <threshold detailName="WMI11000_4"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="15"/>
+                    <threshold detailName="WMI11000_5"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1920" valueLow="0"/>
+                    <threshold detailName="WMI11000_5"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2880" valueLow="1921"/>
+                    <threshold detailName="WMI11000_5"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="2881"/>
+                    <threshold detailName="WMI11000_9"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="7200" valueLow="0"/>
+                    <threshold detailName="WMI11000_9"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="7300" valueLow="7201"/>
+                    <threshold detailName="WMI11000_9"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="9223372036854775807" valueLow="7301"/>
+                </thresholds>
+                <selfHealing>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="false"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty key="executeSelfHeal" value="false"/>
+                    <selfHealingProperty key="selectedStatuses" value=""/>
+                </selfHealing>
+            </service>
+            <service id="11002" name="StorageCraft ImageManager Managed Folder List">
+                <configurationName>StorageCraft ImageManager Managed Folder List</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="false"/>
+                <parameters>
+                    <parameter key="scan_interval" parameterId="1100200"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,15 0-23 * * *"/>
+                </parameters>
+                <thresholds/>
+                <selfHealing>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="false"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty key="executeSelfHeal" value="false"/>
+                    <selfHealingProperty key="selectedStatuses" value=""/>
+                </selfHealing>
+            </service>
+            <service id="22105" name="Windows Service">
+                <configurationName>Windows Service</configurationName>
+                <action actionId="2"/>
+                <autoReapply value="false"/>
+                <parameters>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="StorageCraft ImageManager"/>
+                    <parameter key="scan_interval" parameterId="2210500"
+                        type="1" useAssetInfo="false"
+                        useDefaultValue="true" value="5"/>
+                </parameters>
+                <thresholds>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="1"/>
+                    <threshold detailName="ServiceStarted"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="0" valueLow="0"/>
+                </thresholds>
+                <selfHealing>
+                    <selfHealingProperty key="waitIntervalAfterSelfHeal" value="3"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountBeforeSelfHeal" value="3"/>
+                    <selfHealingProperty key="selectedService" value="{{serviceParameter}}"/>
+                    <selfHealingProperty
+                        key="retryMonitoringCountAfterSelfHeal" value="3"/>
+                    <selfHealingProperty key="notificationType" value="FollowStandardNotificationRules"/>
+                    <selfHealingProperty
+                        key="retryMonitoringBeforeSelfHeal" value="false"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalBeforeSelfHeal" value="10"/>
+                    <selfHealingProperty
+                        key="retryMonitoringIntervalAfterSelfHeal" value="10"/>
+                    <selfHealingProperty key="executeSelfHeal" value="false"/>
+                    <selfHealingProperty key="selectedStatuses" value=""/>
+                </selfHealing>
+            </service>
+        </services>
+    </serviceTemplate>
+</serviceTemplates>
