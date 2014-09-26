@@ -240,8 +240,8 @@ namespace ImageManagerPoll
                         {
                             headstartJobsText += "Target " + target.Id + tildaline+
                                                  "Status: " + target.Status.Text + tildaline +
-                                                 "Target " + target.Id + " LastAppliedSnapshotTime: " + target.Status.LastAppliedSnapshotTime + tildaline +
-                                                 "Target " + target.Id + " UnappliedSnapshotDays: " + target.UnappliedSnapshotDays.Count + dashline;
+                                                 "LastAppliedSnapshotTime: " + target.Status.LastAppliedSnapshotTime + tildaline +
+                                                 "UnappliedSnapshotDays: " + target.UnappliedSnapshotDays.Count + dashline;
 
                         }
 
