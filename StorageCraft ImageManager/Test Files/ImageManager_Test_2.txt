@@ -1,5 +1,0 @@
-A basic configuration with:
-- A single managed folder (F:\SPBackups, WatchPath index 2)
-- Another which has been deleted (F:\FTemp, WatchPath index 1)
-- Two replication jobs (TargetPaths) for F:\SPBackups, one local and one LAN
-- Another replication job which has been deleted
