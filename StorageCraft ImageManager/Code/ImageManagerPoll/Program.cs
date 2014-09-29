@@ -47,15 +47,22 @@ namespace ImageManagerPoll
                     }
                 }
 
-                string hashedPassword;
+                string hashedPassword=null;
                 if (args.Length > 0 && args[0] != null)
                 {
-                    Console.WriteLine("Using ImageManager password supplied from command line");
-                    string unhashedPassword = args[0].Trim();
-                    PasswordHash hash = new PasswordHash();
-                    hashedPassword = hash.ComputeAsBase64(unhashedPassword);
+                    foreach (string arg in args)
+                    {
+                        if (arg.ToLower().StartsWith("password="))
+                        {
+                            Console.WriteLine(arg);
+                            string unhashedPassword = arg.Substring(9).Trim();
+                            Console.WriteLine("Using ImageManager password supplied from command line ("+unhashedPassword.Length+" characters)");
+                            PasswordHash hash = new PasswordHash();
+                            hashedPassword = hash.ComputeAsBase64(unhashedPassword);
+                        }
+                    }
                 }
-                else
+                if (hashedPassword==null)
                 {
                     Console.WriteLine("Looking for ImageManager hashed password from settings file");
                     DirectoryInfo testFolder = new DirectoryInfo("C:\\windows\\SysWOW64\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
