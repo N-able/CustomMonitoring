@@ -68,20 +68,26 @@ namespace ImageManagerPoll
                             return 1;
                         }
                     }
+
+                    Console.WriteLine("Found StorageCraft data folder at " + testFolder.FullName);
                     DirectoryInfo[] directories = testFolder.GetDirectories();
                     if (directories.Length == 0)
                     {
-                        Console.WriteLine("Error: No subdirectory found under " + testFolder.FullName);
+                        Console.WriteLine("Error: No subdirectory found under " + testFolder.Name);
                         return 1;
                     }
+                    Console.WriteLine("Navigating down first subdirectory of " + testFolder.Name);
                     DirectoryInfo imageManagerDataFolder = new DirectoryInfo(directories[0].FullName);
                     directories = imageManagerDataFolder.GetDirectories();
                     if (directories.Length == 0)
                     {
-                        Console.WriteLine("Error: No subdirectory found under " + testFolder.FullName);
+                        Console.WriteLine("Error: No subdirectory found under " + testFolder.Name);
                         return 1;
                     }
-                    string userConfigFile = directories[0].FullName + "\\user.config";
+                    Console.WriteLine("Navigating down newest subdirectory of " + imageManagerDataFolder.Name);
+                    IEnumerator<DirectoryInfo> orderedDirectories = directories.OrderByDescending(d => d.Name).GetEnumerator();
+                    orderedDirectories.MoveNext();
+                    string userConfigFile = orderedDirectories.Current.FullName + "\\user.config";
                     Console.WriteLine("Attempting to read hashed password from '" + userConfigFile + "'");
                     XPathDocument reader = new XPathDocument(userConfigFile);
                     XPathNavigator navigator = reader.CreateNavigator();
