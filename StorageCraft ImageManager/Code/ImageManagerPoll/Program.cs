@@ -106,7 +106,9 @@ namespace ImageManagerPoll
 
                 Console.WriteLine("Connecting to ImageManager service");
 
-                IAgent3 agent = (IAgent3)Client.Connect("localhost", 56765, hashedPassword);
+                // using the IAgent2 interface instead of IAgent3 for compatibility with v6.0.
+                // None of the data we query for monitoring relies on the IAgent3 interface.
+                IAgent2 agent = (IAgent2)Client.Connect("localhost", 56765, hashedPassword);
                 if (agent == null)
                 {
                     Console.WriteLine("Incorrect password provided for local ImageManager service");
