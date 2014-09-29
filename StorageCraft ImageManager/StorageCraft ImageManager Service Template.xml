@@ -6,53 +6,89 @@
         <deviceClass>Windows Server</deviceClass>
         <removesServices>false</removesServices>
         <services>
-            <service id="11000" name="StorageCraft ImageManager">
+            <service id="16100" name="StorageCraft ImageManager">
                 <configurationName>StorageCraft ImageManager</configurationName>
                 <action actionId="2"/>
                 <autoReapply value="false"/>
                 <parameters>
-                    <parameter key="scan_interval" parameterId="1100000"
-                        type="2" useAssetInfo="false"
-                        useDefaultValue="true" value="0,5 0-23 * * *"/>
                     <parameter key="Matrix.0.Constraint.0.Value"
-                        parameterId="1100008" type="2"
+                        parameterId="1610008" type="2"
                         useAssetInfo="false" useDefaultValue="true" value="ENTER MANAGED FOLDER NAME"/>
+                    <parameter key="scan_interval" parameterId="1610000"
+                        type="2" useAssetInfo="false"
+                        useDefaultValue="true" value="0,51 0-23 * * *"/>
                 </parameters>
                 <thresholds>
-                    <threshold detailName="WMI11000_3"
+                    <threshold detailName="WMI16100_3"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="1" valueLow="0"/>
+                    <threshold detailName="WMI16100_3"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="2" valueLow="1"/>
+                    <threshold detailName="WMI16100_3"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="255" valueLow="3"/>
+                    <threshold detailName="WMI16100_5"
                         monitoringType="Default" taskState="3"
                         valueHigh="0" valueLow="0"/>
-                    <threshold detailName="WMI11000_3"
+                    <threshold detailName="WMI16100_5"
                         monitoringType="Default" taskState="4"
-                        valueHigh="9223372036854775807" valueLow="9223372036854775806"/>
-                    <threshold detailName="WMI11000_3"
+                        valueHigh="9223372036854775807" valueLow="9223372036854775807"/>
+                    <threshold detailName="WMI16100_5"
                         monitoringType="Default" taskState="5"
                         valueHigh="9223372036854775807" valueLow="1"/>
-                    <threshold detailName="WMI11000_4"
+                    <threshold detailName="WMI16100_13"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI16100_13"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="WMI16100_13"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                    <threshold detailName="WMI16100_15"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI16100_15"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="WMI16100_15"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                    <threshold detailName="WMI16100_16"
                         monitoringType="Default" taskState="3"
                         valueHigh="5" valueLow="0"/>
-                    <threshold detailName="WMI11000_4"
+                    <threshold detailName="WMI16100_16"
                         monitoringType="Default" taskState="4"
-                        valueHigh="14" valueLow="5"/>
-                    <threshold detailName="WMI11000_4"
+                        valueHigh="14" valueLow="6"/>
+                    <threshold detailName="WMI16100_16"
                         monitoringType="Default" taskState="5"
-                        valueHigh="9223372036854775807" valueLow="15"/>
-                    <threshold detailName="WMI11000_5"
+                        valueHigh="4294967295" valueLow="15"/>
+                    <threshold detailName="WMI16100_18"
                         monitoringType="Default" taskState="3"
-                        valueHigh="1920" valueLow="0"/>
-                    <threshold detailName="WMI11000_5"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI16100_18"
                         monitoringType="Default" taskState="4"
-                        valueHigh="2880" valueLow="1921"/>
-                    <threshold detailName="WMI11000_5"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="WMI16100_18"
                         monitoringType="Default" taskState="5"
-                        valueHigh="9223372036854775807" valueLow="2881"/>
-                    <threshold detailName="WMI11000_9"
+                        valueHigh="4294967295" valueLow="1"/>
+                    <threshold detailName="WMI16100_21"
+                        monitoringType="Default" taskState="3"
+                        valueHigh="0" valueLow="0"/>
+                    <threshold detailName="WMI16100_21"
+                        monitoringType="Default" taskState="4"
+                        valueHigh="4294967295" valueLow="4294967295"/>
+                    <threshold detailName="WMI16100_21"
+                        monitoringType="Default" taskState="5"
+                        valueHigh="4294967295" valueLow="1"/>
+                    <threshold detailName="WMI16100_25"
                         monitoringType="Default" taskState="3"
                         valueHigh="7200" valueLow="0"/>
-                    <threshold detailName="WMI11000_9"
+                    <threshold detailName="WMI16100_25"
                         monitoringType="Default" taskState="4"
                         valueHigh="7300" valueLow="7201"/>
-                    <threshold detailName="WMI11000_9"
+                    <threshold detailName="WMI16100_25"
                         monitoringType="Default" taskState="5"
                         valueHigh="9223372036854775807" valueLow="7301"/>
                 </thresholds>
@@ -105,12 +141,12 @@
                 <action actionId="2"/>
                 <autoReapply value="false"/>
                 <parameters>
-                    <parameter key="Matrix.0.Constraint.0.Value"
-                        parameterId="2210508" type="2"
-                        useAssetInfo="false" useDefaultValue="false" value="StorageCraft ImageManager"/>
                     <parameter key="scan_interval" parameterId="2210500"
                         type="1" useAssetInfo="false"
                         useDefaultValue="true" value="5"/>
+                    <parameter key="Matrix.0.Constraint.0.Value"
+                        parameterId="2210508" type="2"
+                        useAssetInfo="false" useDefaultValue="false" value="StorageCraft ImageManager"/>
                 </parameters>
                 <thresholds>
                     <threshold detailName="ServiceStarted"
