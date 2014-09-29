@@ -183,7 +183,9 @@ namespace ImageManagerPoll
 
 
                     Console.WriteLine("Querying replication data");
-                    IReplicationService2 replicationService = locator.Find<IReplicationService2>(folder.Id);
+                    // using the IReplicationService interface instead of IReplicationService2 for compatibility with older versions.
+                    // None of the data we query for monitoring relies on the IReplicationService2 interface.
+                    IReplicationService replicationService = locator.Find<IReplicationService>(folder.Id);
                     int failedReplications = 0;
                     int queuedFiles = 0;
                     string replicationTargetsText = (replicationService.Targets.Count > 0 ? "" : "N/A");
@@ -212,10 +214,17 @@ namespace ImageManagerPoll
                     Console.WriteLine("Number of retention issues: " + retentionService.Issues.Count);
                     Console.WriteLine("Retention Policy:");
                     bool retentionPolicyInheritedFromGlobal = retentionService.Policy == null;
-                    RetentionPolicy retentionPolicy;
+                    RetentionPolicy retentionPolicy=null;
                     if (retentionPolicyInheritedFromGlobal)
                     {
-                        retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
+                        try
+                        {
+                            retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
+                        }
+                        catch (TypeLoadException e)
+                        {
+                            // type won't exist in the dll prior to 6.0
+                        }
                     }
                     else
                     {
@@ -226,8 +235,16 @@ namespace ImageManagerPoll
                     Console.WriteLine("  DaysToRetainIntraDailyImages:" + retentionPolicy.DaysToRetainIntraDailyImages);
                     Console.WriteLine("  DaysToRetainConsolidatedDailyImages:" + retentionPolicy.DaysToRetainConsolidatedDailyImages);
                     Console.WriteLine("  DaysToRetainConsolidatedWeeklyImages:" + retentionPolicy.DaysToRetainConsolidatedWeeklyImages);
-                    Console.WriteLine("  MonthsToRetainConsolidatedMonthlyImages:" + retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
-                    Console.WriteLine("  MonthlyRetentionIsSupported:" + retentionPolicy.MonthlyRetentionIsSupported);
+                    try
+                    {
+                        retentionPolicy.MonthsToRetainConsolidatedMonthlyImages = -1;
+                        Console.WriteLine("  MonthsToRetainConsolidatedMonthlyImages:" + retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
+                        Console.WriteLine("  MonthlyRetentionIsSupported:" + retentionPolicy.MonthlyRetentionIsSupported);
+                    }
+                    catch (TypeLoadException e)
+                    {
+                        // type won't exist in the dll prior to 6.0
+                    }
                     Console.WriteLine("  MoveConsolidatedImages:" + retentionPolicy.MoveConsolidatedImages);
                     string retentionIssuesText = (retentionService.Issues.Count > 0 ? "" : "N/A");
                     foreach (RetentionIssue issue in retentionService.Issues)
@@ -238,7 +255,9 @@ namespace ImageManagerPoll
 
 
                     Console.WriteLine("Querying Headstart Restore data");
-                    IHeadStartService2 headStartService = locator.Find<IHeadStartService2>(folder.Id);
+                    // using the IHeadStartService interface instead of IHeadStartService2 for compatibility with older versions.
+                    // None of the data we query for monitoring relies on the IHeadStartService2 interface.
+                    IHeadStartService headStartService = locator.Find<IHeadStartService>(folder.Id);
                     int failedHeadstartJobs = 0;
                     string headstartJobsText = (headStartService.FindAllJobs().Count > 0 ? "" : "N/A");
                     foreach (HeadStartJob job in headStartService.FindAllJobs())
