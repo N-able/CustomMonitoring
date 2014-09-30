@@ -134,7 +134,7 @@ function main()
 		$minsSinceLastNotSeen = [UInt32] $timeSinceLastNotSeen.TotalMinutes
 		$_.MinsSinceLastNotSeen=$minsSinceLastNotSeen
 		$_ | Set-WmiInstance
-		$allDiskDetails += "$eqline Volume Serial Number: $($_.VolumeSerialNumber) $dashline Drive and Label: $($_.DriveLetter) ($($_.VolumeLabel)) $dashline First Seen: $($_.FirstTimeSeenString) $dashline Last Seen: $($_.LastTimeSeenString) $dashline Last Not Seen: $($_.LastTimeNotSeenString) "
+		$allDiskDetails += "$eqline Volume Serial Number: $($_.VolumeSerialNumber) $dashline Drive and Label: $($_.DriveLetter) ($($_.VolumeLabel)) $dashline Physical Disk Model: $($_.PhysicalDiskModel) $dashline First Seen: $($_.FirstTimeSeenString) $dashline Last Seen: $($_.LastTimeSeenString) $dashline Last Not Seen: $($_.LastTimeNotSeenString) "
 	}
 	$allDiskDetails += $eqline;
 	
@@ -159,11 +159,13 @@ function main()
 		$longestConnectedDisk | % {
 			$timeOfOldestDiskRemoval = [System.Management.ManagementDateTimeConverter]::ToDateTime($_.LastTimeNotSeen).ToString();
 			$minsSinceOldestDiskRemoval = $_.MinsSinceLastNotSeen;
-			$offendingDiskDetails = "$eqline Volume Serial Number: $($_.VolumeSerialNumber) $dashline Drive and Label: $($_.DriveLetter) ($($_.VolumeLabel)) $dashline First Seen: $($_.FirstTimeSeenString) $dashline Last Seen: $($_.LastTimeSeenString) $dashline Last Not Seen: $($_.LastTimeNotSeenString) $eqline"
+			$offendingDiskDetails = "$eqline Volume Serial Number: $($_.VolumeSerialNumber) $dashline Drive and Label: $($_.DriveLetter) ($($_.VolumeLabel)) $dashline Physical Disk Model: $($_.PhysicalDiskModel) $dashline First Seen: $($_.FirstTimeSeenString) $dashline Last Seen: $($_.LastTimeSeenString) $dashline Last Not Seen: $($_.LastTimeNotSeenString) $eqline"
 			$wmiObject.TimeOfOldestDiskRemoval=$timeOfOldestDiskRemoval
 			$wmiObject.MinsSinceOldestDiskRemoval=$minsSinceOldestDiskRemoval
 			$wmiObject.OffendingDiskDetails=$offendingDiskDetails
 			$wmiObject.AllDiskDetails=$allDiskDetails
+			
+			
 		}
 	}
 	
