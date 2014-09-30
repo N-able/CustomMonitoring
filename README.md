@@ -93,6 +93,7 @@ Master list
 | QNAP Volume Status | Service | 24196 |
 | RAID Status (Dell) - No Battery | Service | 14076 |
 | RAID Status (Dell)- no Firmware | Service | 14888 |
+| Removable Disk Cycle | Service | 16200 |
 | Report Manager | Template | N/A |
 | RICOH Color Printer Toner Levels | Service | 19116, 19117, 19118, 19119 |
 | Ricoh Printer Toner Level | Service | 11000 |
