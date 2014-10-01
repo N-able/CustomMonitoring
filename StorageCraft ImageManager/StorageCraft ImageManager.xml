@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
-<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="9/26/2014" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="9/26/2014" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
-	<servicedefinition id="16100" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.0.5">
+	<servicedefinition id="16100" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.0.6">
 		<description country="ca" language="en">Used in conjuction with the ImageManager_Poll script</description>
 		<displayname country="ca" language="en">StorageCraft ImageManager</displayname>
 		<displaylabel>StorageCraft ImageManager</displaylabel>
@@ -542,7 +542,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$MachineName.ImageManager">
+			<moduleparameter key="Scandetail.0.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$MachineName.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -561,7 +561,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OverallState.ImageManager">
+			<moduleparameter key="Scandetail.1.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OverallState.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -580,7 +580,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OverallStateValue.ImageManager">
+			<moduleparameter key="Scandetail.2.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$OverallStateValue.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -599,7 +599,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FileCount.ImageManager">
+			<moduleparameter key="Scandetail.3.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FileCount.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -618,7 +618,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesFailingVerification.ImageManager">
+			<moduleparameter key="Scandetail.4.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesFailingVerification.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -637,7 +637,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.5.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$VerificationFailureDetails.ImageManager">
+			<moduleparameter key="Scandetail.5.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$VerificationFailureDetails.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -656,7 +656,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.6.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastSuccessfulVerification.ImageManager">
+			<moduleparameter key="Scandetail.6.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastSuccessfulVerification.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -675,7 +675,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.7.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$VerifyNewImages.ImageManager">
+			<moduleparameter key="Scandetail.7.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$VerifyNewImages.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -694,7 +694,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.8.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReverifyExistingImages.ImageManager">
+			<moduleparameter key="Scandetail.8.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReverifyExistingImages.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -713,7 +713,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.9.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReverifyInterval.ImageManager">
+			<moduleparameter key="Scandetail.9.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReverifyInterval.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -732,7 +732,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.10.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ConsolidationEnabled.ImageManager">
+			<moduleparameter key="Scandetail.10.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ConsolidationEnabled.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -751,7 +751,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.11.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastSuccessfulConsolidation.ImageManager">
+			<moduleparameter key="Scandetail.11.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastSuccessfulConsolidation.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -770,7 +770,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.12.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesFailingConsolidation.ImageManager">
+			<moduleparameter key="Scandetail.12.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesFailingConsolidation.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -789,7 +789,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.13.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ConsolidationFailureDetails.ImageManager">
+			<moduleparameter key="Scandetail.13.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ConsolidationFailureDetails.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -808,7 +808,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.14.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FailedReplications.ImageManager">
+			<moduleparameter key="Scandetail.14.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FailedReplications.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -827,7 +827,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.15.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesQueuedForReplication.ImageManager">
+			<moduleparameter key="Scandetail.15.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$NumberOfFilesQueuedForReplication.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -846,7 +846,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.16.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReplicationTargetDetails.ImageManager">
+			<moduleparameter key="Scandetail.16.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$ReplicationTargetDetails.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -865,7 +865,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.17.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionIssues.ImageManager">
+			<moduleparameter key="Scandetail.17.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionIssues.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -884,7 +884,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.18.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionIssueDetails.ImageManager">
+			<moduleparameter key="Scandetail.18.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionIssueDetails.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -903,7 +903,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.19.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionEnabled.ImageManager">
+			<moduleparameter key="Scandetail.19.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$RetentionEnabled.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -922,7 +922,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.20.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FailedHeadstartJobs.ImageManager">
+			<moduleparameter key="Scandetail.20.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$FailedHeadstartJobs.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -941,7 +941,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.21.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$HeadstartJobDetails.ImageManager">
+			<moduleparameter key="Scandetail.21.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$HeadstartJobDetails.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -960,7 +960,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.22.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastScriptRunTime.ImageManager">
+			<moduleparameter key="Scandetail.22.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$LastScriptRunTime.ImageManager ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -979,7 +979,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.23.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime +">
+			<moduleparameter key="Scandetail.23.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -998,7 +998,7 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.24.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + $Timestamp.ImageManager -">
+			<moduleparameter key="Scandetail.24.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + $Timestamp.ImageManager - ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
@@ -1044,7 +1044,7 @@
 
 
 
-	<scandetail id="1610001" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610001" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1056,7 +1056,7 @@
 
 
 
-	<scandetail id="1610002" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610002" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1068,7 +1068,7 @@
 
 
 
-	<scandetail id="1610003" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610003" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint8">
 				<threshold high="1" low="0" state="Normal"/>
@@ -1084,7 +1084,7 @@
 
 
 
-	<scandetail id="1610004" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610004" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -1096,7 +1096,7 @@
 
 
 
-	<scandetail id="1610005" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610005" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint64">
 				<threshold high="0" low="0" state="Normal"/>
@@ -1112,7 +1112,7 @@
 
 
 
-	<scandetail id="1610006" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610006" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1124,7 +1124,7 @@
 
 
 
-	<scandetail id="1610007" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610007" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1136,7 +1136,7 @@
 
 
 
-	<scandetail id="1610008" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610008" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="Boolean"/>
 		</thresholddefaults>
@@ -1148,7 +1148,7 @@
 
 
 
-	<scandetail id="1610009" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610009" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="Boolean"/>
 		</thresholddefaults>
@@ -1160,7 +1160,7 @@
 
 
 
-	<scandetail id="1610010" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610010" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="int32"/>
 		</thresholddefaults>
@@ -1172,7 +1172,7 @@
 
 
 
-	<scandetail id="1610011" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610011" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="Boolean"/>
 		</thresholddefaults>
@@ -1184,7 +1184,7 @@
 
 
 
-	<scandetail id="1610012" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610012" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1196,7 +1196,7 @@
 
 
 
-	<scandetail id="1610013" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610013" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -1212,7 +1212,7 @@
 
 
 
-	<scandetail id="1610014" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610014" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1224,7 +1224,7 @@
 
 
 
-	<scandetail id="1610015" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610015" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -1240,7 +1240,7 @@
 
 
 
-	<scandetail id="1610016" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610016" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="5" low="0" state="Normal"/>
@@ -1256,7 +1256,7 @@
 
 
 
-	<scandetail id="1610017" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610017" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1268,7 +1268,7 @@
 
 
 
-	<scandetail id="1610018" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610018" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -1284,7 +1284,7 @@
 
 
 
-	<scandetail id="1610019" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610019" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1296,7 +1296,7 @@
 
 
 
-	<scandetail id="1610020" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610020" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="Boolean"/>
 		</thresholddefaults>
@@ -1308,7 +1308,7 @@
 
 
 
-	<scandetail id="1610021" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610021" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -1324,7 +1324,7 @@
 
 
 
-	<scandetail id="1610022" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610022" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1336,7 +1336,7 @@
 
 
 
-	<scandetail id="1610023" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610023" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -1348,7 +1348,7 @@
 
 
 
-	<scandetail id="1610024" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610024" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint64"/>
 		</thresholddefaults>
@@ -1360,12 +1360,12 @@
 
 
 
-	<scandetail id="1610025" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.0" >
+	<scandetail id="1610025" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.5" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint64">
-				<threshold high="7200" low="0" state="Normal"/>
-				<threshold high="7300" low="7201" state="Warning"/>
-				<threshold high="9223372036854775807" low="7301" state="Failed"/>
+				<threshold high="144000" low="0" state="Normal"/>
+				<threshold high="144002" low="144001" state="Warning"/>
+				<threshold high="9223372036854775807" low="144003" state="Failed"/>
 			</thresholds>
 		</thresholddefaults>
 		<description country="ca" language="en">Time since last script run &#40;seconds&#41;</description>
