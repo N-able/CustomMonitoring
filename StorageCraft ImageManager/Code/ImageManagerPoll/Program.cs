@@ -18,7 +18,8 @@ namespace ImageManagerPoll
 {
     class Program
     {
-        public static string wmiNamespaceString = "root\\cimv2\\NCentral";
+        public static string wmiNamespaceName = "NCentral";
+        public static string wmiNamespaceString = "root\\cimv2\\"+wmiNamespaceName;
         public static string wmiClassString = "ImageManager";
         public static string eqLine = " ================================================= ";
         public static string dashline = " _________________________________________________ ";
@@ -366,6 +367,14 @@ namespace ImageManagerPoll
 
         static void createOrUpdateWmi()
         {
+            Console.WriteLine("Checking for namespace " + wmiNamespaceString+", and creating if missing");
+            PutOptions options = new PutOptions();
+            options.Type = PutType.UpdateOrCreate;
+            ManagementClass objHostSettingClass = new ManagementClass("root\\cimv2", "__Namespace", null);
+            ManagementObject wmiObject = objHostSettingClass.CreateInstance();
+            wmiObject.SetPropertyValue("Name", wmiNamespaceName);
+            wmiObject.Put(options);
+
             System.Management.ManagementClass wmiClass;
             try
             {
