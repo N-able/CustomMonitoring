@@ -35,6 +35,7 @@ Master list
 | DFSR Replication Group | Service | 24105 |
 | Disk Health v4 | Service | 18771 |
 | Disk IO | Service | 24180 |
+| DoubleTake | Service | 10015, 10016 |
 | Eaton Evolution UPS | Service | 24167 |
 | Eaton Powerware UPS | Service | 24166 |
 | Equallogic PS6100 | Service | 11108, 11109, 11112, 11111, 11110 |
