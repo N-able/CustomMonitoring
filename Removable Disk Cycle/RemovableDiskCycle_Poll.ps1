@@ -73,6 +73,7 @@ function main()
 			else
 			{
 				write-host "UserRemovalPolicy != 3, Quick Removal policy is not set"
+				$quickRemovalPolicy = $false;
 			}
 		}
 		
