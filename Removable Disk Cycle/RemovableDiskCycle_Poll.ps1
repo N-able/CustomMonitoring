@@ -79,8 +79,14 @@ function main()
 		
 		if ($quickRemovalPolicy)
 		{
-			write-host "UserRemovalPolicy = 3, retrieving drive information for serial number $volumeSerialNumber"
-			$wmiFilter = "VolumeSerialNumber='$($logicalDisk.VolumeSerialNumber)'"
+            $diskSerialNumber=$diskDrive.SerialNumber
+            if ($diskSerialNumber -eq $null -or $diskSerialNumber.Length -lt 2)
+            {
+                $diskSerialNumber="NoDiskSerialNumber"
+            }
+			$volumeSerialNumberAndDiskSerialNumber = "$($logicalDisk.VolumeSerialNumber)_$diskSerialNumber"
+			write-host "UserRemovalPolicy = 3, retrieving drive information for serial number $volumeSerialNumberAndDiskSerialNumber"
+			$wmiFilter = "VolumeSerialNumber='$volumeSerialNumberAndDiskSerialNumber'"
 			$wmiFilter = $wmiFilter.replace("\","\\")
 			$existingEntry = Get-WmiObject -Namespace $wmiNameSpacePath -Class $wmiClassNameEachInstance -Filter $wmiFilter
 			
@@ -96,7 +102,7 @@ function main()
 			
 			if ($existingEntry -eq $null)
 			{
-				$wmiObject.VolumeSerialNumber=$logicalDisk.VolumeSerialNumber
+				$wmiObject.VolumeSerialNumber=$volumeSerialNumberAndDiskSerialNumber
 				$wmiObject.LastTimeNotSeen=$timenowDmtf
 				$wmiObject.LastTimeNotSeenString=$timenowString
 				$wmiObject.FirstTimeSeen=$timenowDmtf
