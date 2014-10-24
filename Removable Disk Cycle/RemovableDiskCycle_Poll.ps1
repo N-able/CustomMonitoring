@@ -85,6 +85,9 @@ function main()
                 $diskSerialNumber="NoDiskSerialNumber"
             }
 			$volumeSerialNumberAndDiskSerialNumber = "$($logicalDisk.VolumeSerialNumber)_$diskSerialNumber"
+            [regex]$r="[^\w\.]"
+            $volumeSerialNumberAndDiskSerialNumber = $r.Replace($volumeSerialNumberAndDiskSerialNumber,"")
+
 			write-host "UserRemovalPolicy = 3, retrieving drive information for serial number $volumeSerialNumberAndDiskSerialNumber"
 			$wmiFilter = "VolumeSerialNumber='$volumeSerialNumberAndDiskSerialNumber'"
 			$wmiFilter = $wmiFilter.replace("\","\\")
