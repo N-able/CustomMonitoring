@@ -13,7 +13,7 @@
     </When>
     <When Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">
       <PropertyGroup>
-        <FodySolutionDir>$(MSBuildProjectDirectory)\..\</FodySolutionDir>
+        <FodySolutionDir>$(MSBuildProjectDirectory)..\..\..\</FodySolutionDir>
       </PropertyGroup>
     </When>
   </Choose>
@@ -36,23 +36,21 @@
   </Choose>
   <PropertyGroup>
     <IntermediateDir>$(ProjectDir)$(IntermediateOutputPath)</IntermediateDir>
-    <FodyMessageImportance Condition="$(FodyMessageImportance) == '' Or $(FodyMessageImportance) == '*Undefined*'">Low</FodyMessageImportance>
     <FodySignAssembly Condition="$(FodySignAssembly) == '' Or $(FodySignAssembly) == '*Undefined*'">$(SignAssembly)</FodySignAssembly>
-    <FodyPath Condition="$(FodyPath) == '' Or $(FodyPath) == '*Undefined*'">$(MSBuildThisFileDirectory)</FodyPath>
+    <FodyPath Condition="$(FodyPath) == '' Or $(FodyPath) == '*Undefined*'">$(MSBuildThisFileDirectory)..\</FodyPath>
   </PropertyGroup>
   <UsingTask
       TaskName="Fody.WeavingTask"
       AssemblyFile="$(FodyPath)\Fody.dll" />
   <Target
       AfterTargets="AfterCompile"
-      Name="WinFodyTarget"
-      Condition=" '$(OS)' == 'Windows_NT'">
+      Name="FodyTarget"
+      DependsOnTargets="$(FodyDependsOnTargets)">
 
     <Fody.WeavingTask
           AssemblyPath="@(IntermediateAssembly)"
           IntermediateDir="$(IntermediateDir)"
           KeyFilePath="$(FodyKeyFilePath)"
-          MessageImportance="$(FodyMessageImportance)"
           ProjectDirectory="$(ProjectDir)"
           SolutionDir="$(FodySolutionDir)"
           References="@(ReferencePath)"
@@ -62,27 +60,26 @@
       />
   </Target>
 
-  <Target
+
+  <UsingTask
+    TaskName="Fody.VerifyTask"
+    AssemblyFile="$(FodyPath)\Fody.dll" />
+  <Target Condition="'$(NCrunch)' != '1'"
       AfterTargets="AfterBuild"
-      Name="NonWinFodyTarget"
-      Condition=" '$(OS)' != 'Windows_NT'">
-    <Fody.WeavingTask
-          AssemblyPath="$(TargetPath)"
-          IntermediateDir="$(IntermediateDir)"
-          KeyFilePath="$(FodyKeyFilePath)"
-          MessageImportance="$(FodyMessageImportance)"
+      Name="FodyVerifyTarget"
+      DependsOnTargets="$(FodyVerifyDependsOnTargets)">
+
+    <Fody.VerifyTask
           ProjectDirectory="$(ProjectDir)"
+          TargetPath="$(TargetPath)"
           SolutionDir="$(FodySolutionDir)"
-          References="@(ReferencePath)"
-          SignAssembly="$(FodySignAssembly)"
-          ReferenceCopyLocalPaths="$(ReferenceCopyLocalPaths)"
           DefineConstants="$(DefineConstants)"
       />
   </Target>
-
-
+  
+  
   <!--Support for ncrunch-->
-  <ItemGroup>
+  <ItemGroup  Condition="'$(NCrunch)' == '1'">
     <None Include="$(FodyPath)\*.*" />
   </ItemGroup>
 
