@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
-<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="8/5/2015" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.26" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<service xmlns="http://www.n-able.com" author="N-able SDK" creationdate="8/5/2015" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.0.62" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
-	<servicedefinition id="10000" reason="" releasedependency="4.5.0.0" servicetype="WMIServer" version="1.0.0.26">
+	<servicedefinition id="10000" reason="" releasedependency="4.5.0.0" servicetype="WMIServer" version="1.0.0.62">
 		<description country="ca" language="en">Backup job history monitoring for Arcserve UDP</description>
 		<displayname country="ca" language="en">Arcserve UDP</displayname>
 		<displaylabel>Arcserve UDP</displaylabel>
@@ -662,12 +662,12 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.14.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + $Timestamp.ArcserveUDP -">
+			<moduleparameter key="Scandetail.14.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + $Timestamp.ArcserveUDP - ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.14.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+			<moduleparameter key="Scandetail.14.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
 				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
 				<longdescription country="ca" language="en">Scan detail type</longdescription>
 				<help country="ca" language="en">Scan detail type</help>
@@ -686,7 +686,7 @@
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.15.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+			<moduleparameter key="Scandetail.15.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
 				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
 				<longdescription country="ca" language="en">Scan detail type</longdescription>
 				<help country="ca" language="en">Scan detail type</help>
@@ -700,12 +700,12 @@
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
 				<help country="ca" language="en">Scan detail name</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.16.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime +">
+			<moduleparameter key="Scandetail.16.Recipe" max="" min="" phardcoded="true" preferredident="false" type="String" value="$Year.Win32_UTCTime 1970.0 - 31556.926 * 1000.0 * $Month.Win32_UTCTime 1.0 - 2678400.0 * + $Day.Win32_UTCTime 1.0 - 86400.0 * + $Hour.Win32_UTCTime 3600.0 * + $Minute.Win32_UTCTime 60.0 * + $Second.Win32_UTCTime + ">
 				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
 				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
 				<help country="ca" language="en">Scan detail recipe</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.16.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT64">
+			<moduleparameter key="Scandetail.16.Type" max="" min="" phardcoded="true" preferredident="false" type="String" value="UINT32">
 				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
 				<longdescription country="ca" language="en">Scan detail type</longdescription>
 				<help country="ca" language="en">Scan detail type</help>
@@ -738,7 +738,7 @@
 
 
 
-	<scandetail id="1000001" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000001" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -750,7 +750,7 @@
 
 
 
-	<scandetail id="1000002" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000002" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -766,7 +766,7 @@
 
 
 
-	<scandetail id="1000003" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000003" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -782,7 +782,7 @@
 
 
 
-	<scandetail id="1000004" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000004" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -798,7 +798,7 @@
 
 
 
-	<scandetail id="1000005" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000005" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -810,7 +810,7 @@
 
 
 
-	<scandetail id="1000006" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000006" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -822,7 +822,7 @@
 
 
 
-	<scandetail id="1000007" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000007" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -834,7 +834,7 @@
 
 
 
-	<scandetail id="1000008" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000008" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32">
 				<threshold high="0" low="0" state="Normal"/>
@@ -850,9 +850,13 @@
 
 
 
-	<scandetail id="1000009" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000009" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
-			<thresholds configurable="false" type="uint32"/>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="0" low="0" state="Normal"/>
+				<threshold high="1" low="1" state="Warning"/>
+				<threshold high="4294967295" low="2" state="Failed"/>
+			</thresholds>
 		</thresholddefaults>
 		<description country="ca" language="en">Count of Missed Jobs</description>
 		<help country="ca" language="en">Help</help>
@@ -862,7 +866,7 @@
 
 
 
-	<scandetail id="1000010" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000010" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -874,7 +878,7 @@
 
 
 
-	<scandetail id="1000011" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000011" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -886,7 +890,7 @@
 
 
 
-	<scandetail id="1000012" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000012" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
@@ -898,7 +902,7 @@
 
 
 
-	<scandetail id="1000013" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000013" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="uint8"/>
 		</thresholddefaults>
@@ -910,7 +914,7 @@
 
 
 
-	<scandetail id="1000014" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000014" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
 			<thresholds configurable="false" type="String - Huge"/>
 		</thresholddefaults>
@@ -922,9 +926,13 @@
 
 
 
-	<scandetail id="1000015" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000015" monitoringtypeon="true" processforstate="true" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
-			<thresholds configurable="false" type="uint64"/>
+			<thresholds configurable="true" type="uint32">
+				<threshold high="144000" low="0" state="Normal"/>
+				<threshold high="144002" low="144001" state="Warning"/>
+				<threshold high="4294967295" low="144003" state="Failed"/>
+			</thresholds>
 		</thresholddefaults>
 		<description country="ca" language="en">Time since script last run</description>
 		<help country="ca" language="en">Help</help>
@@ -934,9 +942,9 @@
 
 
 
-	<scandetail id="1000016" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000016" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
-			<thresholds configurable="false" type="uint64"/>
+			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
 		<description country="ca" language="en">Timestamp at last script run</description>
 		<help country="ca" language="en">Help</help>
@@ -946,9 +954,9 @@
 
 
 
-	<scandetail id="1000017" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.17" >
+	<scandetail id="1000017" monitoringtypeon="true" processforstate="false" releasedependency="4.5.0.0" version="1.0.0.60" >
 		<thresholddefaults>
-			<thresholds configurable="false" type="uint64"/>
+			<thresholds configurable="false" type="uint32"/>
 		</thresholddefaults>
 		<description country="ca" language="en">Timestamp now</description>
 		<help country="ca" language="en">Help</help>
