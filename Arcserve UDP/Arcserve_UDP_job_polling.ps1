@@ -158,6 +158,10 @@ foreach ($job in $jobHistoryData)
     {
         $jobLicenseFailedCount++
     }
+    elseif ($job.jobStatus -eq 'Missed')
+    {
+        $jobMissedCount++
+    }
 }
 
 $wmiFilter = "RPSId=$rpsId"
