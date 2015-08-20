@@ -102,11 +102,11 @@ $rpsNodeName = $rpsInfo.node_name
 
 $jobHistoryData = $jobHistory.data |
                     select  targetRPSId,
-                            jobLocalStartDate, 
-                            jobLocalEndDate,
+                            jobUTCStartDate, 
+                            jobUTCEndDate,
                             jobStatus,
                             jobType,
-                            nodeName | ? { $_.jobLocalStartDate -ge $earliest }
+                            nodeName | ? { $_.jobUTCStartDate -ge $earliest }
 
 $jobAllCount = 0
 $jobActiveCount = 0
