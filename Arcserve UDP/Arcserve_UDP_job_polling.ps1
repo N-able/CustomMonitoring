@@ -86,9 +86,11 @@ $agent.CookieContainer = $cookieContainer
 $session = $agent.login($user,$pass, $domain)
 
 # Should consider using a DateTime CimType and migrating service into automation policy with a Powershell script instead of epoch
-$timenow = (Get-Date).ToUniversalTime()
+$timeNow = Get-Date
 $earliest = $timeNow.AddHours(-$lookbackHours)
-$timestamp = (((((($timeNow.Year - 1970.0) * 31556926) + (($timeNow.Month - 1.0) * 2678400)) + (($timeNow.Day - 1.0) * 86400)) + ($timeNow.Hour * 3600)) + ($timeNow.Minute * 60)) + ($timeNow.Second)
+
+$timenowUtc = $timeNow.ToUniversalTime()
+$timestamp = (((((($timenowUtc.Year - 1970.0) * 31556926) + (($timenowUtc.Month - 1.0) * 2678400)) + (($timenowUtc.Day - 1.0) * 86400)) + ($timenowUtc.Hour * 3600)) + ($timenowUtc.Minute * 60)) + ($timenowUtc.Second)
 
 $jobHistory = $agent.getJobHistoryList(-1, $null, $null)
 
