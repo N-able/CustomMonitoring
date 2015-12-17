@@ -141,9 +141,9 @@ for ($i=0; $i -le $jobarray1.count – 1; $i++)
 {
 $name=$jobarray1[$i]
 $job1=get-vbrjob | where {$_.name -eq $name}
-$jobid=$job1.FindLastSession().Id 
-WRITE-HOST "The sessionID for this job is: " $jobid 
-$job = Get-VBRBackupSession | where {$_.Id -eq $jobid}
+#$jobid=$job1.FindLastSession().Id 
+$job = Get-VBRBackupSession | where {$_.Name -eq $name -and $_.Result -ne 'None'} | Sort-Object EndTime -Descending | Select-Object -First 1
+WRITE-HOST "The sessionID for this job is: " $job.Id 
  
  
 # Figure out if the job completed successfully the last time it ran 
