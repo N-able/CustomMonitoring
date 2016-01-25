@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="{999cddb3-c879-4ba9-a72f-df5d0b0afe67}" Name="Discover Azure Backup" Description="UmVhZHMgam9iIGluZm9ybWF0aW9uIGZvciBNaWNyb3NvZnQgQXp1cmUgQmFja3VwLg0KDQpCeSBUaW0gV2lzZXIsIEdDSSBNYW5hZ2VkIElUIChKdW5lIDIwMTUp" Version="1.7.2.45" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0" VariableSuffix="15">
+  <Object ID="{475fe3e1-38ee-45ed-8f5f-d2a43b36f326}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;oCount&quot; Label=&quot;Number of recoverable backups&quot; ParameterType=&quot;number&quot; Value=&quot;Getjobinformation.outCount&quot; /&gt;&lt;Parameter ParameterName=&quot;oOldestbackup&quot; Label=&quot;Date of oldest recoverable backup&quot; ParameterType=&quot;string&quot; Value=&quot;Getjobinformation.outOldestbackup&quot; /&gt;&lt;Parameter ParameterName=&quot;oLastbackup&quot; Label=&quot;Date of most recent recoverable backup&quot; ParameterType=&quot;string&quot; Value=&quot;Getjobinformation.outLastbackup&quot; /&gt;&lt;Parameter ParameterName=&quot;oDatasources&quot; Label=&quot;Volumes available for recovery&quot; ParameterType=&quot;string&quot; Value=&quot;Getjobinformation.outDatasources&quot; /&gt;&lt;Parameter ParameterName=&quot;oDays&quot; Label=&quot;Days since last recoverable backup&quot; ParameterType=&quot;number&quot; Value=&quot;Getjobinformation.outDays&quot; /&gt;&lt;Parameter ParameterName=&quot;oBytesused&quot; Label=&quot;Total offsite data (Gb)&quot; ParameterType=&quot;number&quot; Value=&quot;Getjobinformation.outGbused&quot; /&gt;&lt;Parameter ParameterName=&quot;oSchedule&quot; Label=&quot;Backup schedule&quot; ParameterType=&quot;string&quot; Value=&quot;Getjobinformation.outSchedule&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outDays</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oDays</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outDatasources</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oDatasources</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outLastbackup</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oLastbackup</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outOldestbackup</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oOldestbackup</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outCount</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oCount</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outGbused</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oBytesused</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>9fb93832-7eb2-4171-bd67-f0d0b17ac80b.outSchedule</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>oSchedule</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>494,501</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy" sap:VirtualizedContainerService.HintSize="454,461" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunScript AssemblyName="PolicyExecutionEngine, Version=1.7.2.45, Culture=neutral, PublicKeyToken=null" DisplayName="Get job information" sap:VirtualizedContainerService.HintSize="434,269" Moniker="9fb93832-7eb2-4171-bd67-f0d0b17ac80b" OutPut_64="[RunScript_OutPut_64_0]" Result="[RunScript_Result_3]" ResultString="[RunScript_ResultString_1]" Results_x64="[RunScript_Results_x64_2]" RunAsCLU="False" ScriptDirectory="Unused" TypeName="RunScript" genArgEvent="554ffdd2-88b2-4063-8e12-62043b309ad3" m_bTextLinkChange="False" script="JHBvaW50c2NvdW50ID0gMA0KJG9sZGVzdHBvaW50ID0gIiINCg0KJGxhdGVzdHBvaW50ID0gR2V0LU9CQWxsUmVjb3ZlcnlQb2ludHMgfCBTZWxlY3QgYmFja3VwdGltZSwgZGF0YXNvdXJjZXMgfCBzZWxlY3Qtb2JqZWN0IC1maXJzdCAxDQokb2xkZXN0cG9pbnQgPSBHZXQtT0JBbGxSZWNvdmVyeVBvaW50cyB8IFNlbGVjdCBiYWNrdXB0aW1lLCBkYXRhc291cmNlcyB8IHNlbGVjdC1vYmplY3QgLWxhc3QgMQ0KJGFsbHBvaW50cyA9IEdldC1PQkFsbFJlY292ZXJ5UG9pbnRzIHwgbWVhc3VyZQ0KDQojIGJhY2t1cCBzY2hlZHVsZSBpbmZvcm1hdGlvbg0KJHNjaGVkdWxlID0gR2V0LU9CUG9saWN5IHwgR2V0LU9CU2NoZWR1bGUNCltzdHJpbmddJHJ1bnRpbWUgPSAkc2NoZWR1bGUuc2NoZWR1bGVydW50aW1lcw0KW3N0cmluZ10kcnVuZGF5cyA9ICRzY2hlZHVsZS5zY2hlZHVsZXJ1bmRheXMNCiRiYWNrdXBzY2hlZHVsZSA9ICRydW50aW1lICwib24iLCAkcnVuZGF5cyANCldyaXRlLWhvc3QgJGJhY2t1cHNjaGVkdWxlDQoNCiMgb2Zmc2l0ZSBzdG9yYWdlDQokb2Zmc2l0ZSA9IEdldC1PQk1hY2hpbmVVc2FnZQ0KJGdiID0gJG9mZnNpdGUuU3RvcmFnZVVzZWRCeU1hY2hpbmVJbkJ5dGVzIC8gMUdCDQoNCiMgZGlzcGxheSBzb21lIG91dHB1dCB3aGVuIHJ1biBhcyBhIHRhc2sNCldyaXRlLWhvc3QgIk1vc3QgcmVjZW50IGJhY2t1cCAiICRsYXRlc3Rwb2ludC5iYWNrdXB0aW1lDQpXcml0ZS1ob3N0ICJPbGRlc3QgYmFja3VwICIgJG9sZGVzdHBvaW50LmJhY2t1cHRpbWUNCldyaXRlLWhvc3QgIk51bWJlciBvZiByZWNvdmVyeSBwb2ludHMgIiAkYWxscG9pbnRzLmNvdW50DQpXcml0ZS1Ib3N0ICJPZmZzaXRlIHN0b3JhZ2UgdXNlZCBpbiBieXRlczogIiAkb2Zmc2l0ZS5TdG9yYWdlVXNlZEJ5TWFjaGluZUluQnl0ZXMNCldyaXRlLUhvc3QgIk9mZnNpdGUgc3RvcmFnZSB1c2VkIGluIGdpZ2FieXRlczogIiAkZ2INCg0KJGxhc3RiYWNrdXAgPSBbZGF0ZXRpbWVdJGxhdGVzdHBvaW50LmJhY2t1cHRpbWUNCiRjdXJyZW50ID0gZ2V0LWRhdGUNCg0Kd3JpdGUtaG9zdCAkbGF0ZXN0cG9pbnQuYmFja3VwdGltZQ0Kd3JpdGUtaG9zdCAkY3VycmVudC5kYXRlCQkjIHJldHVybnMgZGF0ZSBhbmQgbWlkbmlnaHQgYXMgdGltZQ0KDQokZGF5ZGlmZiA9IG5ldy10aW1lc3BhbiAtc3RhcnQgJGxhdGVzdHBvaW50LmJhY2t1cHRpbWUgLWVuZCAkY3VycmVudC5kYXRlDQp3cml0ZS1ob3N0ICRkYXlkaWZmLmRheXMNCndyaXRlLWhvc3QgJGxhdGVzdHBvaW50LmRhdGFzb3VyY2VzDQoNCiQlaWQlb3V0RGF5cyVpZCUgPSAkZGF5ZGlmZi5kYXlzDQokJWlkJW91dERhdGFzb3VyY2VzJWlkJSA9ICRsYXRlc3Rwb2ludC5kYXRhc291cmNlcw0KJCVpZCVvdXRMYXN0YmFja3VwJWlkJSA9ICRsYXRlc3Rwb2ludC5iYWNrdXB0aW1lDQokJWlkJW91dE9sZGVzdGJhY2t1cCVpZCUgPSAkb2xkZXN0cG9pbnQuYmFja3VwdGltZQ0KJCVpZCVvdXRDb3VudCVpZCUgPSAkYWxscG9pbnRzLmNvdW50DQokJWlkJW91dEdidXNlZCVpZCUgPSAkZ2INCltzdHJpbmddJCVpZCVvdXRTY2hlZHVsZSVpZCUgPSBbc3RyaW5nXSRiYWNrdXBzY2hlZHVsZQ==">
+          <p:RunScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <p:OutArg x:Key="outDays" ArgType="number" DisplayName="outDays" Name="outDays">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_outDays_5]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outLastbackup" ArgType="string" DisplayName="outLastbackup" Name="outLastbackup">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_outLastbackup_6]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outDatasources" ArgType="string" DisplayName="outDatasources" Name="outDatasources">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_outDatasources_7]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outOldestbackup" ArgType="string" DisplayName="outOldestbackup" Name="outOldestbackup">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_outOldestbackup_11]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outCount" ArgType="number" DisplayName="outCount" Name="outCount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_outCount_10]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outGbused" ArgType="number" DisplayName="outGbused" Name="outGbused">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_outGbused_13]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="outSchedule" ArgType="string" DisplayName="outSchedule" Name="outSchedule">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_outSchedule_14]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunScript_OutPut_64_0" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_ResultString_1" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunScript_Results_x64_2" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Result_3" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_outDays_5" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_outLastbackup_6" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_outDatasources_7" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_outCount_10" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_outOldestbackup_11" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_outGbused_13" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_outSchedule_14" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
