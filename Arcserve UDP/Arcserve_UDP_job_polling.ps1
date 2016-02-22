@@ -1,9 +1,27 @@
-﻿Param(
+Param(
     [string]$domain = [string]::Empty,
     [string]$user,
     [string]$pass,
     [string]$lookbackHours = 100
 )
+
+Function NewJobHistoryObj($JobTypes, $JobStatuses)
+{
+    $jobHistoryCollection = @()
+
+    $JobTypes | % {
+        $jobHistoryData = New-Object PSObject
+        Add-Member -InputObject $jobHistoryData -MemberType NoteProperty -Name JobType -Value $_
+        Add-Member -InputObject $jobHistoryData -MemberType NoteProperty -Name JobStatuses -Value @{}
+        $JobStatuses | % { $jobHistoryData.JobStatuses.Add($_, 0) }
+
+        $jobHistoryCollection += $jobHistoryData
+    }
+
+    return $jobHistoryCollection
+}
+
+$error.Clear()
 
 ##############################################################################################
 # WMI Setup Start
@@ -46,19 +64,23 @@ if ($class["RPSId"] -eq $null)
 }
 
 if ($class["RPSNodeName"] -eq $null){$class.Properties.Add("RPSNodeName", [System.Management.CimType]::string, $false);}
-if ($class["JobActiveCount"] -eq $null){$class.Properties.Add("JobActiveCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobFinishedCount"] -eq $null){$class.Properties.Add("JobFinishedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobCancelledCount"] -eq $null){$class.Properties.Add("JobCancelledCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobFailedCount"] -eq $null){$class.Properties.Add("JobFailedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobIncompleteCount"] -eq $null){$class.Properties.Add("JobIncompleteCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobIdleCount"] -eq $null){$class.Properties.Add("JobIdleCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobWaitingCount"] -eq $null){$class.Properties.Add("JobWaitingCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobCrashedCount"] -eq $null){$class.Properties.Add("JobCrashedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobLicenseFailedCount"] -eq $null){$class.Properties.Add("JobLicenseFailedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobSkippedCount"] -eq $null){$class.Properties.Add("JobSkippedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobStoppedCount"] -eq $null){$class.Properties.Add("JobStoppedCount", [System.Management.CimType]::uint32, $false);}
-if ($class["JobMissedCount"] -eq $null){$class.Properties.Add("JobMissedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["BackupActiveCount"] -eq $null){$class.Properties.Add("BackupActiveCount", [System.Management.CimType]::uint32, $false);}
+if ($class["BackupFinishedCount"] -eq $null){$class.Properties.Add("BackupFinishedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["BackupFailedCount"] -eq $null){$class.Properties.Add("BackupFailedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["BackupOtherCount"] -eq $null){$class.Properties.Add("BackupOtherCount", [System.Management.CimType]::uint32, $false);}
+if ($class["VMBackupActiveCount"] -eq $null){$class.Properties.Add("VMBackupActiveCount", [System.Management.CimType]::uint32, $false);}
+if ($class["VMBackupFinishedCount"] -eq $null){$class.Properties.Add("VMBackupFinishedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["VMBackupFailedCount"] -eq $null){$class.Properties.Add("VMBackupFailedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["VMBackupOtherCount"] -eq $null){$class.Properties.Add("VMBackupOtherCount", [System.Management.CimType]::uint32, $false);}
+if ($class["ReplicateActiveCount"] -eq $null){$class.Properties.Add("ReplicateActiveCount", [System.Management.CimType]::uint32, $false);}
+if ($class["ReplicateFinishedCount"] -eq $null){$class.Properties.Add("ReplicateFinishedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["ReplicateFailedCount"] -eq $null){$class.Properties.Add("ReplicateFailedCount", [System.Management.CimType]::uint32, $false);}
+if ($class["ReplicateOtherCount"] -eq $null){$class.Properties.Add("ReplicateOtherCount", [System.Management.CimType]::uint32, $false);}
+if ($class["StatusText"] -eq $null){$class.Properties.Add("StatusText", [System.Management.CimType]::string, $false);}
+if ($class["DatastoreValid"] -eq $null){$class.Properties.Add("DatastoreValid", [System.Management.CimType]::Boolean, $false);}
+if ($class["DatastoreValidationOutput"] -eq $null){$class.Properties.Add("DatastoreValidationOutput", [System.Management.CimType]::string, $false);}
 if ($class["Timestamp"] -eq $null){$class.Properties.Add("Timestamp", [System.Management.CimType]::uint64, $false);}
+if ($class["ValidationTimestamp"] -eq $null){$class.Properties.Add("ValidationTimestamp", [System.Management.CimType]::uint64, $false);}
 
 try
 {
@@ -92,7 +114,30 @@ $earliest = $timeNow.AddHours(-$lookbackHours)
 $timenowUtc = $timeNow.ToUniversalTime()
 $timestamp = (((((($timenowUtc.Year - 1970.0) * 31556926) + (($timenowUtc.Month - 1.0) * 2678400)) + (($timenowUtc.Day - 1.0) * 86400)) + ($timenowUtc.Hour * 3600)) + ($timenowUtc.Minute * 60)) + ($timenowUtc.Second)
 
-$jobHistory = $agent.getJobHistoryList(-1, $null, $null)
+Add-Type -TypeDefinition @"
+    [System.Flags]
+    public enum JobType
+    {
+        BACKUP = 0,
+        VM_BACKUP = 3,
+        CATALOG_FS = 11,
+        RPS_REPLICATE = 22
+    }
+
+    public enum JobStatus
+    {
+        Active,
+        Finished,
+        Canceled,
+        Failed,
+        Incomplete,
+        Idle,
+        Waiting,
+        Crash,
+        LicenseFailed,
+        Missed
+    }
+"@
 
 #Assume all RPSes for now.  We could loop through and create new WMI objects with each RPS ID as primary key
 #$rpsId = $jobHistory.data[0].targetRPSId
@@ -100,69 +145,34 @@ $rpsId = 0
 $rpsInfo = $agent.getRpsInfo($rpsId)
 $rpsNodeName = $rpsInfo.node_name
 
-$jobHistoryData = $jobHistory.data |
-                    select  targetRPSId,
-                            jobUTCStartDate, 
-                            jobUTCEndDate,
-                            jobStatus,
-                            jobType,
-                            nodeName | ? { $_.jobUTCStartDate -ge $earliest }
+$jobTypes = [enum]::GetValues([JobType])
+$jobStatuses = [enum]::GetValues([JobStatus])
+$jobHistoryCollection = NewJobHistoryObj -JobTypes $jobTypes -JobStatuses $jobStatuses
 
-$jobAllCount = 0
-$jobActiveCount = 0
-$jobFinishedCount = 0
-$jobCancelledCount = 0
-$jobFailedCount = 0
-$jobIncompleteCount = 0
-$jobIdleCount = 0
-$jobWaitingCount = 0
-$jobCrashedCount = 0
-$jobLicenseFailedCount = 0
-$jobSkippedCount = 0
-$jobStoppedCount = 0
-$jobMissedCount = 0
+$nodeIds = $agent.getNodeList($null, $null).data | Select -ExpandProperty Id
 
-foreach ($job in $jobHistoryData)
+foreach($nodeId in $nodeIds)
 {
-    if ($job.jobStatus -eq 'Active')
+    Write-Host "Checking job history for node $nodeId"
+    
+    $jobHistory = $agent.getJobHistoryList($nodeId, $null, $null)
+
+    $jobHistoryData = $jobHistory.data |
+                        select  targetRPSId,
+                                jobUTCStartDate, 
+                                jobUTCEndDate,
+                                jobStatus,
+                                jobType,
+                                nodeName | ? { $_.jobUTCStartDate -ge $earliest }
+
+    foreach ($job in $jobHistoryData)
     {
-        $jobActiveCount++
-    }
-    elseif ($job.jobStatus -eq 'Finished')
-    {
-        $jobFinishedCount++
-    }
-    elseif ($job.jobStatus -eq 'Canceled')
-    {
-        $jobCancelledCount++
-    }
-    elseif ($job.jobStatus -eq 'Failed')
-    {
-        $jobFailedCount++
-    }
-    elseif ($job.jobStatus -eq 'Incomplete')
-    {
-        $jobIncompleteCount++
-    }
-    elseif ($job.jobStatus -eq 'Idle')
-    {
-        $jobIdleCount++
-    }
-    elseif ($job.jobStatus -eq 'Waiting')
-    {
-        $jobWaitingCount++
-    }
-    elseif ($job.jobStatus -eq 'Crash')
-    {
-        $jobCrashedCount++
-    }
-    elseif ($job.jobStatus -eq 'LicenseFailed')
-    {
-        $jobLicenseFailedCount++
-    }
-    elseif ($job.jobStatus -eq 'Missed')
-    {
-        $jobMissedCount++
+        $jobHistory = $jobHistoryCollection | ? { [int] $_.JobType -eq $job.jobType } | Select -First 1
+
+        if ($jobHistory -ne $null)
+        {
+            $jobHistory.JobStatuses[[JobStatus]([string]$job.jobStatus)]++
+        }
     }
 }
 
@@ -170,28 +180,83 @@ $wmiFilter = "RPSId=$rpsId"
 $wmiFilter = $wmiFilter.Replace("\","\\")
 $currentValue = Get-WmiObject -Namespace $wmiNameSpacePath -Class $wmiClassName -Filter $wmiFilter
 
+$backupTaskHistory = $jobHistoryCollection | ? { $_.JobType -eq [JobType]::BACKUP }
+$vmBackupTaskHistory = $jobHistoryCollection | ? { $_.JobType -eq [JobType]::VM_BACKUP }
+$replicateTaskHistory = $jobHistoryCollection | ? { $_.JobType -eq [JobType]::RPS_REPLICATE }
+
+# Get active, finished, failed counts for backup, VM backup and replication jobs
+$backupActiveCount = $backupTaskHistory.JobStatuses[[JobStatus]::Active]
+$backupFinishedCount = $backupTaskHistory.JobStatuses[[JobStatus]::Finished]
+$backupFailedCount = $backupTaskHistory.JobStatuses[[JobStatus]::Failed]
+
+$vmBackupActiveCount = $vmBackupTaskHistory.JobStatuses[[JobStatus]::Active]
+$vmBackupFinishedCount = $vmBackupTaskHistory.JobStatuses[[JobStatus]::Finished]
+$vmBackupFailedCount = $vmBackupTaskHistory.JobStatuses[[JobStatus]::Failed]
+
+$replicateActiveCount = $replicateTaskHistory.JobStatuses[[JobStatus]::Active]
+$replicateFinishedCount = $replicateTaskHistory.JobStatuses[[JobStatus]::Finished]
+$replicateFailedCount = $replicateTaskHistory.JobStatuses[[JobStatus]::Failed]
+
+# Get all other status accounts for these job types
+$backupOtherCount = 0
+$vmBackupOtherCount = 0
+$replicateOtherCount = 0
+
+[enum]::GetValues([JobStatus]) | ? {
+    $_ -ne [JobStatus]::Active -and
+    $_ -ne [JobStatus]::Finished -and
+    $_ -ne [JobStatus]::Failed
+} | % {
+    $jobStatus = $_
+    $backupOtherCount += $backupTaskHistory.JobStatuses[$jobStatus]
+    $vmBackupOtherCount += $vmBackupTaskHistory.JobStatuses[$jobStatus]
+    $replicateOtherCount += $replicateTaskHistory.JobStatuses[$jobStatus]
+}
+
+$lineStr = "_________________________________________________"
+$statusText = "$lineStr`n"
+
+[enum]::GetValues([JobType]) | % {
+    $jobType = $_
+    $jobTypeHistory = $jobHistoryCollection | ? {                                                                                               
+        $_.JobType -eq $jobType
+    }
+    
+    $jobTypeHistory.JobStatuses.GetEnumerator() | % {
+        $statusText += "$($jobTypeHistory.JobType): $($_.Value) $($_.Name)`n".PadRight(50)
+        Write-Host $_
+    }
+    $statusText += "$lineStr`n"
+}
+
 $args = 
 @{
 RPSNodeName = $rpsNodeName;
-JobActiveCount = $jobActiveCount;
-JobFinishedCount = $jobFinishedCount;
-JobCancelledCount = $jobCancelledCount;
-JobFailedCount = $jobFailedCount;
-JobIncompleteCount = $jobIncompleteCount;
-JobIdleCount = $jobIdleCount;
-JobWaitingCount = $jobWaitingCount;
-JobCrashedCount = $jobCrashedCount;
-JobLicenseFailedCount = $jobLicenseFailedCount;
-JobSkippedCount = $jobSkippedCount;
-JobStoppedCount = $jobStoppedCount;
-JobMissedCount = $JobMissedCount;
+BackupActiveCount = $backupActiveCount;
+BackupFinishedCount = $backupFinishedCount;
+BackupFailedCount = $backupFailedCount;
+BackupOtherCount = $backupOtherCount;
+VMBackupActiveCount = $vmBackupActiveCount;
+VMBackupFinishedCount = $vmBackupFinishedCount;                                                                       
+VMBackupFailedCount = $vmBackupFailedCount;
+VMBackupOtherCount = $vmBackupOtherCount;
+ReplicateActiveCount = $replicateActiveCount;
+ReplicateFinishedCount = $replicateFinishedCount;
+ReplicateFailedCount = $replicateFailedCount;
+ReplicateOtherCount = $replicateOtherCount;
+StatusText = $statusText;
 Timestamp = $timestamp
+}
+
+if ($Error.Count -gt 0)
+{
+    exit
 }
 
 if ($currentValue -eq $null)
 {
     Write-Host "Creating new instance of $wmiClassName class for RPS Id = $rpsId"
-    $args += @{RPSId = $rpsId}
+    $args += @{RPSId = $rpsId; ValidationTimestamp = 0; DatastoreValidationOutput = 'N/A'; DatastoreValid = $false}
     Set-WmiInstance -Namespace $wmiNameSpacePath -Class $wmiClassName -Arguments $args
 }
 else
