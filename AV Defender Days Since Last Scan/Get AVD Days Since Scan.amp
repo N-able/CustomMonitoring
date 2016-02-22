@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="{b38cbe97-a3bc-4543-bb13-638ef784555b}" Name="Get AVD Days Since Scan" Description="RXh0cmFjdHMgdGhlIGxhc3Qgc2NhbiBjb21wbGV0aW9uIGZyb20gQVZEZWZlbmRlclNjYW5EYXRhLnhtbCBpbiB0aGUgY29uZmlnIGZvbGRlciBhbmQgZGV0ZXJtaW5lcyBob3cgbWFueSBkYXlzIHNpbmNlIHRoZSBsYXN0IHNjYW4gY29tcGxldGVkLg==" Version="1.7.0.28" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0" VariableSuffix="10018">
+  <Object ID="{225c6107-10eb-4179-85dd-cfcb7944a28b}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;DaysSinceLastScan&quot; Label=&quot;DaysSinceLastScan&quot; ParameterType=&quot;number&quot; Value=&quot;GetDaysSinceLastCompletion.Days&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>00b1864a-c91a-40f0-91a3-aff5b4fb2266</d2p1:m_Item1>
+        <d2p1:m_Item2>7069cf3c-aba5-4c19-8158-22497bd53423</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.RunScript, PolicyExecutionEngine, Version=1.7.0.28, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>AVDefenderScanData</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>7069cf3c-aba5-4c19-8158-22497bd53423.Days</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>DaysSinceLastScan</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>ed8e688d-3288-47c0-8a58-258fe89e33d8</d2p1:m_Item1>
+        <d2p1:m_Item2>00b1864a-c91a-40f0-91a3-aff5b4fb2266</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.FormatString, PolicyExecutionEngine, Version=1.7.0.28, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>Input0</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>494.4,974.4</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy" sap:VirtualizedContainerService.HintSize="454.4,934.4" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=1.7.0.28, Culture=neutral, PublicKeyToken=null" DisplayName="Get Agent Config Folder" sap:VirtualizedContainerService.HintSize="433.6,270.4" Moniker="ed8e688d-3288-47c0-8a58-258fe89e33d8" OutPut_64="[RunScript_OutPut_64_10013]" Result="[RunScript_Result_10016]" ResultString="[RunScript_ResultString_10014]" Results_x64="[RunScript_Results_x64_10015]" RunAsCLU="False" ScriptDirectory="Unused" TypeName="RunScript" m_bTextLinkChange="False" script="JEFnZW50Q29uZmlnRm9sZGVyID0gKGd3bWkgd2luMzJfc2VydmljZSAtZmlsdGVyICJOYW1lIGxpa2UgJ1dpbmRvd3MgQWdlbnQgU2VydmljZSciKS5QYXRoTmFtZQ0KJCVpZCVDb25maWdGb2xkZXIlaWQlID0gJEFnZW50Q29uZmlnRm9sZGVyLlJlcGxhY2UoImJpblxhZ2VudC5leGUiLCAiY29uZmlnIikuUmVwbGFjZSgnIicsJycp">
+          <p:RunScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <p:OutArg x:Key="ConfigFolder" ArgType="string" DisplayName="ConfigFolder" Name="ConfigFolder">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_ConfigFolder_10017]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=1.7.0.28, Culture=neutral, PublicKeyToken=null" DisplayName="AVDefenderScanData" FormattedString="[FormatString_FormattedString_10006]" sap:VirtualizedContainerService.HintSize="433.6,120" Input0="[RunScript_ConfigFolder_10017]" Input0_DisplayArg="GetAgentConfigFolder.ConfigFolder" Input1="AVDefenderScanData.xml" Input1_DisplayArg="AVDefenderScanData.xml" Moniker="00b1864a-c91a-40f0-91a3-aff5b4fb2266" Result="[FormatString_Result_10007]" ScriptDirectory="Unused" Text="{}{0}\{1}" Text_DisplayArg="{}{0}\{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:RunScript AssemblyName="PolicyExecutionEngine, Version=1.7.0.28, Culture=neutral, PublicKeyToken=null" DisplayName="Get Days Since Last Completion" sap:VirtualizedContainerService.HintSize="433.6,270.4" Moniker="7069cf3c-aba5-4c19-8158-22497bd53423" OutPut_64="[RunScript_OutPut_64_10008]" Result="[RunScript_Result_10011]" ResultString="[RunScript_ResultString_10009]" Results_x64="[RunScript_Results_x64_10010]" RunAsCLU="False" ScriptDirectory="Unused" TypeName="RunScript" genArgEvent="3f5d0605-e72b-41ad-a647-d329ebe0c0cd" m_bTextLinkChange="False" script="W3htbF0kYXZkc2NhbiA9IGdldC1jb250ZW50ICQlaWQlQVZEZWZlbmRlclNjYW5EYXRhJWlkJQ0KDQokbGFzdGNvbXBsZXRlID0gJGF2ZHNjYW4uQVZEZWZlbmRlclNjYW5EYXRhLmNvbXBsZXRlZFNjYW5UYXNrU3RhdHVzSW5mby5TY2FuVGFza1N0YXR1c0luZm8uQ29tcGxldGlvbkRldGVjdGVkVGltZQ0KJCVpZCVEYXlzJWlkJSA9IChbZGF0ZXRpbWVdOjpub3cgLSBbZGF0ZXRpbWVdJGxhc3Rjb21wbGV0ZSkuZGF5cw0KDQo=">
+          <p:RunScript.InArgs>
+            <p:InArg ItemProp="{x:Null}" x:Key="AVDefenderScanData" ArgType="string" DisplayArg="AVDefenderScanData.FormattedString" DisplayName="AVDefenderScanData" Name="AVDefenderScanData" isRequired="True" isRequiredDisplay="Yes">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[FormatString_FormattedString_10006]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <p:OutArg x:Key="Days" ArgType="number" DisplayName="Days" Name="Days">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_Days_10012]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_10006" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result_10007" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_OutPut_64_10008" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_ResultString_10009" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunScript_Results_x64_10010" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Result_10011" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Days_10012" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_OutPut_64_10013" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_ResultString_10014" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunScript_Results_x64_10015" />
+        <Variable x:TypeArguments="x:Double" Name="RunScript_Result_10016" />
+        <Variable x:TypeArguments="x:String" Name="RunScript_ConfigFolder_10017" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
