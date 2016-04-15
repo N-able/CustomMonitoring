@@ -142,15 +142,40 @@ namespace ImageManagerPoll
 
                     Console.WriteLine("  Machine Name: " + folder.ImagedComputer);
                     Console.WriteLine("  File Count: " + folder.ImageFileCount);
+                    //Console.WriteLine("ParentID:  " + folder.ParentFolderId);
+                    //Console.WriteLine("FolderID:  " + folder.Id);
+                    
                     IFolderServiceLocator locator = agent.Services;
                     Console.WriteLine("Querying verification data");
+
                     IVerificationService verificationService = locator.Find<IVerificationService>(folder.Id);
+
+                    VerificationPolicy parentVPolicy;
+                    VerificationPolicy folderVPolicy;
+                    VerificationPolicy vEffective = null;
+
+
+                    //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
+                    if (folder.ParentFolderId != Guid.Empty)
+                    {
+                        parentVPolicy = locator.Find<IVerificationService>(folder.ParentFolderId).Policy;
+                        folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
+                    }
+                    else
+                    {
+                        parentVPolicy = null;
+                        folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
+                    }
+
+                    //Determine the effective Verification Policy on the folder.
+                    vEffective = VerificationPolicy.ResolveEffectivePolicy(parentVPolicy, folderVPolicy);
+
                     String lastSuccessfulVerification = (DateTime.MinValue.Equals(verificationService.LastSuccessTime) ? "Never" : verificationService.LastSuccessTime.ToString());
 
                     Console.WriteLine("Verification Policy:");
-                    Console.WriteLine("  VerifyNewImages:" + verificationService.Policy.VerifyNewImages);
-                    Console.WriteLine("  ReverifyExistingImages:" + verificationService.Policy.ReverifyExistingImages);
-                    Console.WriteLine("  ReverifyInterval: " + verificationService.Policy.ReverifyInterval);
+                    Console.WriteLine("  VerifyNewImages:" + vEffective.VerifyNewImages);
+                    Console.WriteLine("  ReverifyExistingImages:" + vEffective.ReverifyExistingImages);
+                    Console.WriteLine("  ReverifyInterval: " + vEffective.ReverifyInterval);
                     Console.WriteLine("Last successful verification: " + lastSuccessfulVerification);
                     Console.WriteLine("Number of failures detected: " + verificationService.Failures.Count);
                     List<VerificationFailure> sortedVerificationFailures = verificationService.Failures.OrderByDescending(o => o.FailureTime).ToList();
@@ -211,26 +236,51 @@ namespace ImageManagerPoll
 
 
                     Console.WriteLine("Querying retention data");
+
                     IRetentionService retentionService = locator.Find<IRetentionService>(folder.Id);
-                    Console.WriteLine("Number of retention issues: " + retentionService.Issues.Count);
-                    Console.WriteLine("Retention Policy:");
+
+                    RetentionPolicy parentRPolicy;
+                    RetentionPolicy folderRPolicy;
+                    RetentionPolicy retentionPolicy = null;
                     bool retentionPolicyInheritedFromGlobal = retentionService.Policy == null;
-                    RetentionPolicy retentionPolicy=null;
-                    if (retentionPolicyInheritedFromGlobal)
+
+
+                    //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
+                    if (folder.ParentFolderId != Guid.Empty)
                     {
-                        try
-                        {
-                            retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
-                        }
-                        catch (TypeLoadException e)
-                        {
-                            // type won't exist in the dll prior to 6.0
-                        }
+                        parentRPolicy = locator.Find<IRetentionService>(folder.ParentFolderId).Policy;
+                        folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
                     }
                     else
                     {
-                        retentionPolicy = retentionService.Policy;
+                        parentRPolicy = null;
+                        folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
                     }
+
+                    //Determine the effective Retention Policy on the folder.
+                    retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(agent.AgentSettings.AgentRetentionPolicy, parentRPolicy, folderRPolicy);
+
+
+                    //Removed on 4/13/2016 and implemented ResolveEffectivePolicy built into ImageManager 7.0.2.      
+                    //if (retentionPolicyInheritedFromGlobal)
+                    //{
+                    //    try
+                    //   {
+                    //        retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
+                    //    }
+                    //    catch (TypeLoadException e)
+                    //    {
+                    //type won't exist in the dll prior to 6.0
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    retentionPolicy = retentionService.Policy;
+                    //}
+
+                    Console.WriteLine("Number of retention issues: " + retentionService.Issues.Count);
+                    Console.WriteLine("Retention Policy:");
+                   
                     Console.WriteLine("  InheritedFromGlobal:" + retentionPolicyInheritedFromGlobal);
                     Console.WriteLine("  RetentionEnabled:" + retentionPolicy.IsEnabled);
                     Console.WriteLine("  DaysToRetainIntraDailyImages:" + retentionPolicy.DaysToRetainIntraDailyImages);
@@ -297,9 +347,9 @@ namespace ImageManagerPoll
                     wmiObject.SetPropertyValue("NumberOfFilesFailingVerification", verificationService.Failures.Count);
                     wmiObject.SetPropertyValue("VerificationFailureDetails", verificationFailureDetails);
                     wmiObject.SetPropertyValue("LastSuccessfulVerification", lastSuccessfulVerification);
-                    wmiObject.SetPropertyValue("VerifyNewImages", verificationService.Policy.VerifyNewImages);
-                    wmiObject.SetPropertyValue("ReverifyExistingImages", verificationService.Policy.ReverifyExistingImages);
-                    wmiObject.SetPropertyValue("ReverifyInterval", verificationService.Policy.ReverifyInterval);
+                    wmiObject.SetPropertyValue("VerifyNewImages", vEffective.VerifyNewImages);
+                    wmiObject.SetPropertyValue("ReverifyExistingImages", vEffective.ReverifyExistingImages);
+                    wmiObject.SetPropertyValue("ReverifyInterval", vEffective.ReverifyInterval);
 
                     wmiObject.SetPropertyValue("ConsolidationEnabled", consolidationService.Policy.IsEnabled);
                     wmiObject.SetPropertyValue("LastSuccessfulConsolidation", lastSuccessfulConsolidation);
