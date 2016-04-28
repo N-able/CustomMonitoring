@@ -67,28 +67,14 @@ namespace ImageManagerPoll
                 {
                     Console.WriteLine("Looking for ImageManager hashed password from settings file");
 
-                    DirectoryInfo testFolder = null;
+                    DirectoryInfo testFolder = new DirectoryInfo("C:\\windows\\SysWOW64\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
 
-                    if (Environment.Is64BitOperatingSystem)
-                    {
-
-                        testFolder = new DirectoryInfo("C:\\windows\\SysWOW64\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
-                        if (!testFolder.Exists)
-                        {
-                            testFolder = new DirectoryInfo("C:\\windows\\SysWOW64\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
-                            if (!testFolder.Exists)
-                            {
-                                Console.WriteLine("Unable to locate StorageCraft_Technology_C under the local system profile path. Check that the ImageManager service is running under the Local System account and that a password has been set.");
-                                return 1;
-                            }
-                        }
-                    }
-                    else
+                    if (!testFolder.Exists)
                     {
                         testFolder = new DirectoryInfo("C:\\windows\\System32\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
                         if (!testFolder.Exists)
                         {
-                            testFolder = new DirectoryInfo("C:\\windows\\System32\\config\\systemprofile\\AppData\\local\\StorageCraft_Technology_C");
+                            testFolder = new DirectoryInfo("C:\\Documents and Settings\\Default User\\Local Settings\\Application Data\\StorageCraft_Technology_C");
                             if (!testFolder.Exists)
                             {
                                 Console.WriteLine("Unable to locate StorageCraft_Technology_C under the local system profile path. Check that the ImageManager service is running under the Local System account and that a password has been set.");
@@ -96,6 +82,8 @@ namespace ImageManagerPoll
                             }
                         }
                     }
+                 
+                    
 
                     Console.WriteLine("Found StorageCraft data folder at " + testFolder.FullName);
                     DirectoryInfo[] directories = testFolder.GetDirectories();
