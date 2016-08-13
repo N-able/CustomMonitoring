@@ -125,290 +125,315 @@ namespace ImageManagerPoll
                 }
                 agent.Ping();
                 Console.WriteLine("Retrieving list of Managed Folders");
+                
                 List<ManagedFolder> allFolders = agent.ManagedFolders;
                 string allFoldersText = "";
                 // we put all managed folders in each folder instance, because the StorageCraft ImageManager Job List service just grabs the first one
                 foreach (ManagedFolder folder in allFolders)
                 {
-                    allFoldersText = allFoldersText + eqLine + folder.Path;
+                    if (folder.FolderType != FolderType.StoreParent)
+                    {
+                        allFoldersText = allFoldersText + eqLine + folder.Path;
+                    }
                 }
                 foreach (ManagedFolder folder in allFolders)
                 {
-                    Console.WriteLine("--------------------------------------------");
-                    Console.WriteLine("Found folder: '" + folder.Path);
-                    Console.WriteLine("  State: " + folder.State);
-                    int stateValue;
-                    switch (folder.State)
+                    if (folder.FolderType != FolderType.StoreParent)
                     {
-                        case FolderState.Active: stateValue = 0; break;
-                        case FolderState.Syncing: stateValue = 1; break;
-                        case FolderState.Offline: stateValue = 2; break;
-                        case FolderState.Failure: stateValue = 3; break;
-                        default: throw new Exception("Unhandled job state value " + folder.State.ToString());
-                    }
-                    Console.WriteLine("  State Value: " + stateValue);
-
-                    Console.WriteLine("  Machine Name: " + folder.ImagedComputer);
-                    Console.WriteLine("  File Count: " + folder.ImageFileCount);
-                    //Console.WriteLine("ParentID:  " + folder.ParentFolderId);
-                    //Console.WriteLine("FolderID:  " + folder.Id);
-                    
-                    IFolderServiceLocator locator = agent.Services;
-                    Console.WriteLine("Querying verification data");
-
-                    IVerificationService verificationService = locator.Find<IVerificationService>(folder.Id);
-
-                    VerificationPolicy parentVPolicy;
-                    VerificationPolicy folderVPolicy;
-                    VerificationPolicy vEffective = null;
-
-
-                    //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
-                    if (folder.ParentFolderId != Guid.Empty)
-                    {
-                        parentVPolicy = locator.Find<IVerificationService>(folder.ParentFolderId).Policy;
-                        folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
-                    }
-                    else
-                    {
-                        parentVPolicy = null;
-                        folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
-                    }
-
-                    //Determine the effective Verification Policy on the folder.
-                    vEffective = VerificationPolicy.ResolveEffectivePolicy(parentVPolicy, folderVPolicy);
-
-                    String lastSuccessfulVerification = (DateTime.MinValue.Equals(verificationService.LastSuccessTime) ? "Never" : verificationService.LastSuccessTime.ToString());
-
-                    Console.WriteLine("Verification Policy:");
-                    Console.WriteLine("  VerifyNewImages:" + vEffective.VerifyNewImages);
-                    Console.WriteLine("  ReverifyExistingImages:" + vEffective.ReverifyExistingImages);
-                    Console.WriteLine("  ReverifyInterval: " + vEffective.ReverifyInterval);
-                    Console.WriteLine("Last successful verification: " + lastSuccessfulVerification);
-                    Console.WriteLine("Number of failures detected: " + verificationService.Failures.Count);
-                    List<VerificationFailure> sortedVerificationFailures = verificationService.Failures.OrderByDescending(o => o.FailureTime).ToList();
-                    string verificationFailureDetails = (verificationService.Failures.Count > 0 ? "" : "N/A");
-                    foreach (VerificationFailure failure in sortedVerificationFailures)
-                    {
-                        Console.WriteLine("Verification failure detected - " + failure.FailureTime.ToString() + ": " + failure.Reason);
-                        verificationFailureDetails += dashline + " " + failure.FailureTime.ToString() + ": " + failure.Reason + " ";
-                    }
-
-
-                    Console.WriteLine("Querying consolidation data");
-                    IConsolidationService consolidationService = locator.Find<IConsolidationService>(folder.Id);
-                    Console.WriteLine("Consolidation Policy:");
-                    Console.WriteLine("  ConsolidationEnabled:" + consolidationService.Policy.IsEnabled);
-                    Console.WriteLine("  MonthlyConsolidationDay:" + consolidationService.Policy.MonthlyConsolidationDay);
-                    Console.WriteLine("  MonthlyConsolidationDayOfWeek:" + consolidationService.Policy.MonthlyConsolidationDayOfWeek);
-                    Console.WriteLine("  MonthlyConsolidationWeek:" + consolidationService.Policy.MonthlyConsolidationWeek);
-                    Console.WriteLine("  WeeklyConsolidationDay:" + consolidationService.Policy.WeeklyConsolidationDay);
-
-                    String lastSuccessfulConsolidation = (DateTime.MinValue.Equals(consolidationService.LastSuccessTime) ? "Never" : consolidationService.LastSuccessTime.ToString());
-                    Console.WriteLine("Last successful consolidation: " + lastSuccessfulConsolidation + ", number of failures detected: " + consolidationService.Failures.Count);
-                    Console.WriteLine("last consolidation success message: " + consolidationService.LastSuccessMessage);
-                    List<ConsolidationFailure> sortedConsolidationFailures = consolidationService.Failures.OrderByDescending(o => o.FailureTime).ToList();
-                    string consolidationFailureDetails = (consolidationService.Failures.Count > 0 ? eqLine : "N/A");
-                    foreach (ConsolidationFailure failure in consolidationService.Failures)
-                    {
-                        Console.WriteLine("Consolidation failure detected - " + failure.FailureTime.ToString() + ": " + failure.Reason);
-                        consolidationFailureDetails += " " + failure.FailureTime.ToString() + ": " + failure.Reason + " " + dashline;
-                    }
-
-
-                    Console.WriteLine("Querying replication data");
-                    // using the IReplicationService interface instead of IReplicationService2 for compatibility with older versions.
-                    // None of the data we query for monitoring relies on the IReplicationService2 interface.
-                    IReplicationService replicationService = locator.Find<IReplicationService>(folder.Id);
-                    int failedReplications = 0;
-                    int queuedFiles = 0;
-                    string replicationTargetsText = (replicationService.Targets.Count > 0 ? "" : "N/A");
-                    foreach (ReplicationTarget target in replicationService.Targets)
-                    {
-                        Console.WriteLine("Replication Target Found: " + target.FullPath);
-                        Console.WriteLine("  Type: " + target.Destination.Type.ToString() + ", Successful: " + target.IsSuccessful + ", Status: " + target.Status.Text + ", Queued Files: " + target.Status.QueuedFiles);
-
-                        if (!target.IsSuccessful)
+                        Console.WriteLine("--------------------------------------------");
+                        Console.WriteLine("Found folder: '" + folder.Path);
+                        Console.WriteLine("  State: " + folder.State);
+                        int stateValue;
+                        switch (folder.State)
                         {
-                            failedReplications++;
+                            case FolderState.Active: stateValue = 0; break;
+                            case FolderState.Syncing: stateValue = 1; break;
+                            case FolderState.Offline: stateValue = 2; break;
+                            case FolderState.Failure: stateValue = 3; break;
+                            case FolderState.Warning: stateValue = 4; break;
+                            default: throw new Exception("Unhandled job state value " + folder.State.ToString());
                         }
-                        queuedFiles += (int)target.Status.QueuedFiles;
-                        replicationTargetsText += eqLine + "Path: " + target.FullPath + eqLine +
-                                                          "Type: " + target.Destination.Type.ToString() + dashline +
-                                                          "Queued Files Count: " + target.Status.QueuedFiles +dashline +
-                                                          "Status: " + target.Status.Text + dashline +
-                                                          "Successful: " + target.IsSuccessful + dashline;
+                        Console.WriteLine("  State Value: " + stateValue);
 
-                    }
-                    Console.WriteLine("Failed replication targets: " + failedReplications);
+                        Console.WriteLine("  Machine Name: " + folder.ImagedComputer);
+                        Console.WriteLine("  File Count: " + folder.ImageFileCount);
+                        //Console.WriteLine("ParentID:  " + folder.ParentFolderId);
+                        //Console.WriteLine("FolderID:  " + folder.Id);
 
+                        IFolderServiceLocator locator = agent.Services;
+                        Console.WriteLine("Querying verification data");
 
-                    Console.WriteLine("Querying retention data");
+                        IVerificationService verificationService = locator.Find<IVerificationService>(folder.Id);
 
-                    IRetentionService retentionService = locator.Find<IRetentionService>(folder.Id);
-
-                    RetentionPolicy parentRPolicy;
-                    RetentionPolicy folderRPolicy;
-                    RetentionPolicy retentionPolicy = null;
-                    bool retentionPolicyInheritedFromGlobal = retentionService.Policy == null;
+                        VerificationPolicy parentVPolicy;
+                        VerificationPolicy folderVPolicy;
+                        VerificationPolicy vEffective = null;
 
 
-                    //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
-                    if (folder.ParentFolderId != Guid.Empty)
-                    {
-                        parentRPolicy = locator.Find<IRetentionService>(folder.ParentFolderId).Policy;
-                        folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
-                    }
-                    else
-                    {
-                        parentRPolicy = null;
-                        folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
-                    }
-
-                    //Determine the effective Retention Policy on the folder.
-                    retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(agent.AgentSettings.AgentRetentionPolicy, parentRPolicy, folderRPolicy);
-
-
-                    //Removed on 4/13/2016 and implemented ResolveEffectivePolicy built into ImageManager 7.0.2.      
-                    //if (retentionPolicyInheritedFromGlobal)
-                    //{
-                    //    try
-                    //   {
-                    //        retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
-                    //    }
-                    //    catch (TypeLoadException e)
-                    //    {
-                    //type won't exist in the dll prior to 6.0
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    retentionPolicy = retentionService.Policy;
-                    //}
-
-                    Console.WriteLine("Number of retention issues: " + retentionService.Issues.Count);
-                    Console.WriteLine("Retention Policy:");
-                   
-                    Console.WriteLine("  InheritedFromGlobal:" + retentionPolicyInheritedFromGlobal);
-                    Console.WriteLine("  RetentionEnabled:" + retentionPolicy.IsEnabled);
-                    Console.WriteLine("  DaysToRetainIntraDailyImages:" + retentionPolicy.DaysToRetainIntraDailyImages);
-                    Console.WriteLine("  DaysToRetainConsolidatedDailyImages:" + retentionPolicy.DaysToRetainConsolidatedDailyImages);
-                    Console.WriteLine("  DaysToRetainConsolidatedWeeklyImages:" + retentionPolicy.DaysToRetainConsolidatedWeeklyImages);
-                    try
-                    {
-                        retentionPolicy.MonthsToRetainConsolidatedMonthlyImages = -1;
-                        Console.WriteLine("  MonthsToRetainConsolidatedMonthlyImages:" + retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
-                        Console.WriteLine("  MonthlyRetentionIsSupported:" + retentionPolicy.MonthlyRetentionIsSupported);
-                    }
-                    catch (TypeLoadException e)
-                    {
-                        // type won't exist in the dll prior to 6.0
-                    }
-                    Console.WriteLine("  MoveConsolidatedImages:" + retentionPolicy.MoveConsolidatedImages);
-                    string retentionIssuesText = (retentionService.Issues.Count > 0 ? "" : "N/A");
-                    foreach (RetentionIssue issue in retentionService.Issues)
-                    {
-                        Console.WriteLine(issue.IssueTime + " Reason: " + issue.Reason);
-                        retentionIssuesText += dashline + " " + issue.IssueTime.ToString() + ": " + issue.Reason + " ";
-                    }
-
-
-                    Console.WriteLine("Querying Headstart Restore data");
-                    // using the IHeadStartService interface instead of IHeadStartService2 for compatibility with older versions.
-                    // None of the data we query for monitoring relies on the IHeadStartService2 interface.
-                    IHeadStartService headStartService = locator.Find<IHeadStartService>(folder.Id);
-                    int failedHeadstartJobs = 0;
-                    string headstartJobsText = (headStartService.FindAllJobs().Count > 0 ? "" : "N/A");
-                    foreach (HeadStartJob job in headStartService.FindAllJobs())
-                    {
-                        Console.WriteLine("Headstart Restore Job Found: " + job.Name + ", Destination: '" + job.Destination.Path + "', State: " + job.State.ToString());
-                        if (job.State.Equals(HeadStartState.Failure))
+                        //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
+                        if (folder.ParentFolderId != Guid.Empty)
                         {
-                            failedHeadstartJobs++;
+                            parentVPolicy = locator.Find<IVerificationService>(folder.ParentFolderId).Policy;
+                            folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
                         }
-                        headstartJobsText += eqLine + "Job Name: " + job.Name +eqLine +
-                                                          "Destination Path: " + job.Destination.Path + dashline +
-                                                          "State: " + job.State.ToString() + dashline;
-                        foreach (HeadStartTarget target in job.Targets)
+                        else
                         {
-                            headstartJobsText += "Target " + target.Id + tildaline+
-                                                 "Status: " + target.Status.Text + tildaline +
-                                                 "LastAppliedSnapshotTime: " + target.Status.LastAppliedSnapshotTime + tildaline +
-                                                 "UnappliedSnapshotDays: " + target.UnappliedSnapshotDays.Count + dashline;
-
+                            parentVPolicy = null;
+                            folderVPolicy = locator.Find<IVerificationService>(folder.Id).Policy;
                         }
 
+                        //Determine the effective Verification Policy on the folder.
+                        vEffective = VerificationPolicy.ResolveEffectivePolicy(parentVPolicy, folderVPolicy);
+
+                        String lastSuccessfulVerification = (DateTime.MinValue.Equals(verificationService.LastSuccessTime) ? "Never" : verificationService.LastSuccessTime.ToString());
+
+                        Console.WriteLine("Verification Policy:");
+                        Console.WriteLine("  VerifyNewImages:" + vEffective.VerifyNewImages);
+                        Console.WriteLine("  ReverifyExistingImages:" + vEffective.ReverifyExistingImages);
+                        Console.WriteLine("  ReverifyInterval: " + vEffective.ReverifyInterval);
+                        Console.WriteLine("Last successful verification: " + lastSuccessfulVerification);
+                        Console.WriteLine("Number of failures detected: " + verificationService.Failures.Count);
+                        List<VerificationFailure> sortedVerificationFailures = verificationService.Failures.OrderByDescending(o => o.FailureTime).ToList();
+                        string verificationFailureDetails = (verificationService.Failures.Count > 0 ? "" : "N/A");
+                        foreach (VerificationFailure failure in sortedVerificationFailures)
+                        {
+                            Console.WriteLine("Verification failure detected - " + failure.FailureTime.ToString() + ": " + failure.Reason);
+                            verificationFailureDetails += dashline + " " + failure.FailureTime.ToString() + ": " + failure.Reason + " ";
+                        }
+
+
+                        Console.WriteLine("Querying consolidation data");
+                        IConsolidationService consolidationService = locator.Find<IConsolidationService>(folder.Id);
+                        Console.WriteLine("Consolidation Policy:");
+                        Console.WriteLine("  ConsolidationEnabled:" + consolidationService.Policy.IsEnabled);
+                        Console.WriteLine("  MonthlyConsolidationDay:" + consolidationService.Policy.MonthlyConsolidationDay);
+                        Console.WriteLine("  MonthlyConsolidationDayOfWeek:" + consolidationService.Policy.MonthlyConsolidationDayOfWeek);
+                        Console.WriteLine("  MonthlyConsolidationWeek:" + consolidationService.Policy.MonthlyConsolidationWeek);
+                        Console.WriteLine("  WeeklyConsolidationDay:" + consolidationService.Policy.WeeklyConsolidationDay);
+
+                        String lastSuccessfulConsolidation = (DateTime.MinValue.Equals(consolidationService.LastSuccessTime) ? "Never" : consolidationService.LastSuccessTime.ToString());
+                        Console.WriteLine("Last successful consolidation: " + lastSuccessfulConsolidation + ", number of failures detected: " + consolidationService.Failures.Count);
+                        Console.WriteLine("last consolidation success message: " + consolidationService.LastSuccessMessage);
+                        List<ConsolidationFailure> sortedConsolidationFailures = consolidationService.Failures.OrderByDescending(o => o.FailureTime).ToList();
+                        string consolidationFailureDetails = (consolidationService.Failures.Count > 0 ? eqLine : "N/A");
+                        foreach (ConsolidationFailure failure in consolidationService.Failures)
+                        {
+                            Console.WriteLine("Consolidation failure detected - " + failure.FailureTime.ToString() + ": " + failure.Reason);
+                            consolidationFailureDetails += " " + failure.FailureTime.ToString() + ": " + failure.Reason + " " + dashline;
+                        }
+
+
+                        Console.WriteLine("Querying replication data");
+                        // using the IReplicationService interface instead of IReplicationService2 for compatibility with older versions.
+                        // None of the data we query for monitoring relies on the IReplicationService2 interface.
+                        IReplicationService replicationService = locator.Find<IReplicationService>(folder.Id);
+                        int failedReplications = 0;
+                        int queuedFiles = 0;
+                        string replicationTargetsText = (replicationService.Targets.Count > 0 ? "" : "N/A");
+                        foreach (ReplicationTarget target in replicationService.Targets)
+                        {
+                            Console.WriteLine("Replication Target Found: " + target.FullPath);
+                            Console.WriteLine("  Type: " + target.Destination.Type.ToString() + ", Successful: " + target.IsSuccessful + ", Status: " + target.Status.Text + ", Queued Files: " + target.Status.QueuedFiles);
+
+                            if (!target.IsSuccessful)
+                            {
+                                failedReplications++;
+                            }
+                            queuedFiles += (int)target.Status.QueuedFiles;
+                            replicationTargetsText += eqLine + "Path: " + target.FullPath + eqLine +
+                                                              "Type: " + target.Destination.Type.ToString() + dashline +
+                                                              "Queued Files Count: " + target.Status.QueuedFiles + dashline +
+                                                              "Status: " + target.Status.Text + dashline +
+                                                              "Successful: " + target.IsSuccessful + dashline;
+
+                        }
+                        Console.WriteLine("Failed replication targets: " + failedReplications);
+
+
+                        Console.WriteLine("Querying retention data");
+
+                        IRetentionService retentionService = locator.Find<IRetentionService>(folder.Id);
+
+                        RetentionPolicy parentRPolicy;
+                        RetentionPolicy folderRPolicy;
+                        RetentionPolicy retentionPolicy = null;
+                        bool retentionPolicyInheritedFromGlobal = retentionService.Policy == null;
+
+
+                        //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.
+                        if (folder.ParentFolderId != Guid.Empty)
+                        {
+                            parentRPolicy = locator.Find<IRetentionService>(folder.ParentFolderId).Policy;
+                            folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
+                            //Console.WriteLine("Parent Policy is not Null.");
+                        }
+                        else
+                        {
+                            parentRPolicy = null;
+                            folderRPolicy = locator.Find<IRetentionService>(folder.Id).Policy;
+                            //Console.WriteLine("Parent Policy is Null.");
+                        }
+                        //Console.WriteLine("Parent Policy:  " + parentRPolicy);
+                        //Console.WriteLine("Folder Policy:  " + folderRPolicy);
+                        //Determine the effective Retention Policy on the folder.
+
+                        if ((parentRPolicy == null) && (folderRPolicy == null))
+                        {
+                            Console.WriteLine("Evaluating parent policy and agent policy.");
+                            retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(locator.Find<IRetentionService>(folder.ParentFolderId).Policy, agent.AgentSettings.AgentRetentionPolicy);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Evaluating parent policy and folder policy.");
+                            retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(parentRPolicy, folderRPolicy);
+                        }
+                     
+                        
+
+
+                        //Removed on 4/13/2016 and implemented ResolveEffectivePolicy built into ImageManager 7.0.2.      
+                        //if (retentionPolicyInheritedFromGlobal)
+                        //{
+                        //    try
+                        //   {
+                        //        retentionPolicy = agent.AgentSettings.AgentRetentionPolicy;
+                        //    }
+                        //    catch (TypeLoadException e)
+                        //    {
+                        //type won't exist in the dll prior to 6.0
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    retentionPolicy = retentionService.Policy;
+                        //}
+
+                        Console.WriteLine("Number of retention issues: " + retentionService.Issues.Count);
+                        Console.WriteLine("Retention Policy:");
+
+                        Console.WriteLine("  InheritedFromGlobal:" + retentionPolicyInheritedFromGlobal);
+                        Console.WriteLine("  RetentionEnabled:" + retentionPolicy.IsEnabled);
+                        Console.WriteLine("  DaysToRetainIntraDailyImages:" + retentionPolicy.DaysToRetainIntraDailyImages);
+                        Console.WriteLine("  DaysToRetainConsolidatedDailyImages:" + retentionPolicy.DaysToRetainConsolidatedDailyImages);
+                        Console.WriteLine("  DaysToRetainConsolidatedWeeklyImages:" + retentionPolicy.DaysToRetainConsolidatedWeeklyImages);
+                        try
+                        {
+                            //retentionPolicy.MonthsToRetainConsolidatedMonthlyImages = -1;
+                            Console.WriteLine("  MonthsToRetainConsolidatedMonthlyImages:" + retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
+                            Console.WriteLine("  MonthlyRetentionIsSupported:" + retentionPolicy.MonthlyRetentionIsSupported);
+                        }
+                        catch (TypeLoadException e)
+                        {
+                            // type won't exist in the dll prior to 6.0
+                        }
+                        Console.WriteLine("  MoveConsolidatedImages:" + retentionPolicy.MoveConsolidatedImages);
+                        string retentionIssuesText = (retentionService.Issues.Count > 0 ? "" : "N/A");
+                        foreach (RetentionIssue issue in retentionService.Issues)
+                        {
+                            Console.WriteLine(issue.IssueTime + " Reason: " + issue.Reason);
+                            retentionIssuesText += dashline + " " + issue.IssueTime.ToString() + ": " + issue.Reason + " ";
+                        }
+
+
+                        Console.WriteLine("Querying Headstart Restore data");
+                        // using the IHeadStartService interface instead of IHeadStartService2 for compatibility with older versions.
+                        // None of the data we query for monitoring relies on the IHeadStartService2 interface.
+                        IHeadStartService headStartService = locator.Find<IHeadStartService>(folder.Id);
+                        int failedHeadstartJobs = 0;
+                        string headstartJobsText = (headStartService.FindAllJobs().Count > 0 ? "" : "N/A");
+                        foreach (HeadStartJob job in headStartService.FindAllJobs())
+                        {
+                            Console.WriteLine("Headstart Restore Job Found: " + job.Name + ", Destination: '" + job.Destination.Path + "', State: " + job.State.ToString());
+                            if (job.State.Equals(HeadStartState.Failure))
+                            {
+                                failedHeadstartJobs++;
+                            }
+                            headstartJobsText += eqLine + "Job Name: " + job.Name + eqLine +
+                                                              "Destination Path: " + job.Destination.Path + dashline +
+                                                              "State: " + job.State.ToString() + dashline;
+                            foreach (HeadStartTarget target in job.Targets)
+                            {
+                                headstartJobsText += "Target " + target.Id + tildaline +
+                                                     "Status: " + target.Status.Text + tildaline +
+                                                     "LastAppliedSnapshotTime: " + target.Status.LastAppliedSnapshotTime + tildaline +
+                                                     "UnappliedSnapshotDays: " + target.UnappliedSnapshotDays.Count + dashline;
+
+                            }
+
+                        }
+                        Console.WriteLine("Failed headstart restore jobs: " + failedHeadstartJobs);
+
+                        PutOptions options = new PutOptions();
+                        options.Type = PutType.UpdateOrCreate;
+                        ManagementClass objHostSettingClass = new ManagementClass(wmiNamespaceString, wmiClassString, null);
+                        ManagementObject wmiObject = objHostSettingClass.CreateInstance();
+
+                        wmiObject.SetPropertyValue("ManagedFolder", folder.Path);
+                        wmiObject.SetPropertyValue("MachineName", folder.ImagedComputer);
+                        wmiObject.SetPropertyValue("OverallState", folder.State);
+                        wmiObject.SetPropertyValue("OverallStateValue", stateValue);
+                        wmiObject.SetPropertyValue("FileCount", folder.ImageFileCount);
+
+                        wmiObject.SetPropertyValue("NumberOfFilesFailingVerification", verificationService.Failures.Count);
+                        wmiObject.SetPropertyValue("VerificationFailureDetails", verificationFailureDetails);
+                        wmiObject.SetPropertyValue("LastSuccessfulVerification", lastSuccessfulVerification);
+                        wmiObject.SetPropertyValue("VerifyNewImages", vEffective.VerifyNewImages);
+                        wmiObject.SetPropertyValue("ReverifyExistingImages", vEffective.ReverifyExistingImages);
+                        wmiObject.SetPropertyValue("ReverifyInterval", vEffective.ReverifyInterval);
+
+                        wmiObject.SetPropertyValue("ConsolidationEnabled", consolidationService.Policy.IsEnabled);
+                        wmiObject.SetPropertyValue("LastSuccessfulConsolidation", lastSuccessfulConsolidation);
+                        wmiObject.SetPropertyValue("NumberOfFilesFailingConsolidation", consolidationService.Failures.Count);
+                        wmiObject.SetPropertyValue("ConsolidationFailureDetails", consolidationFailureDetails);
+
+                        wmiObject.SetPropertyValue("ReplicationTargetDetails", replicationTargetsText);
+                        wmiObject.SetPropertyValue("FailedReplications", failedReplications);
+                        wmiObject.SetPropertyValue("NumberOfFilesQueuedForReplication", queuedFiles);
+
+
+
+                        wmiObject.SetPropertyValue("RetentionIssues", retentionService.Issues.Count);
+                        wmiObject.SetPropertyValue("RetentionIssueDetails", retentionIssuesText);
+                        wmiObject.SetPropertyValue("RetentionEnabled", retentionPolicy.IsEnabled);
+                        wmiObject.SetPropertyValue("RetentionPolicyInheritedFromGlobal", retentionPolicyInheritedFromGlobal);
+                        wmiObject.SetPropertyValue("DaysToRetainIntraDailyImages", retentionPolicy.DaysToRetainIntraDailyImages);
+                        wmiObject.SetPropertyValue("DaysToRetainConsolidatedDailyImages", retentionPolicy.DaysToRetainConsolidatedDailyImages);
+                        wmiObject.SetPropertyValue("DaysToRetainConsolidatedWeeklyImages", retentionPolicy.DaysToRetainConsolidatedWeeklyImages);
+                        wmiObject.SetPropertyValue("MonthsToRetainConsolidatedMonthlyImages", retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
+                        wmiObject.SetPropertyValue("MonthlyRetentionIsSupported", retentionPolicy.MonthlyRetentionIsSupported);
+                        wmiObject.SetPropertyValue("MoveConsolidatedImages", retentionPolicy.MoveConsolidatedImages);
+
+                        wmiObject.SetPropertyValue("FailedHeadstartJobs", failedHeadstartJobs);
+                        wmiObject.SetPropertyValue("HeadstartJobDetails", headstartJobsText);
+
+                        wmiObject.SetPropertyValue("LastScriptRunTime", DateTime.Now.ToString());
+
+                        SelectQuery selectQuery = new SelectQuery("select * from win32_utctime");
+                        ManagementObjectSearcher searcher = new ManagementObjectSearcher(selectQuery);
+                        ManagementObjectCollection utcTimeFromWmi = searcher.Get();
+                        ManagementObjectCollection.ManagementObjectEnumerator enumerator = utcTimeFromWmi.GetEnumerator();
+                        enumerator.MoveNext();
+                        ManagementBaseObject mbo = enumerator.Current;
+
+                        UInt32 year = (UInt32)mbo.GetPropertyValue("Year");
+                        UInt32 month = (UInt32)mbo.GetPropertyValue("Month");
+                        UInt32 day = (UInt32)mbo.GetPropertyValue("Day");
+                        UInt32 hour = (UInt32)mbo.GetPropertyValue("Hour");
+                        UInt32 min = (UInt32)mbo.GetPropertyValue("Minute");
+                        UInt32 second = (UInt32)mbo.GetPropertyValue("Second");
+
+                        long timestamp = ((((((year - 1970) * 31556926) + ((month - 1) * 2678400)) + ((day - 1) * 86400)) + (hour * 3600)) + (min * 60)) + (second);
+                        wmiObject.SetPropertyValue("Timestamp", timestamp);
+
+                        wmiObject.SetPropertyValue("ListOfAllManagedFolders", allFoldersText);
+
+                        wmiObject.Put(options);
                     }
-                    Console.WriteLine("Failed headstart restore jobs: " + failedHeadstartJobs);
-
-                    PutOptions options = new PutOptions();
-                    options.Type = PutType.UpdateOrCreate;
-                    ManagementClass objHostSettingClass = new ManagementClass(wmiNamespaceString, wmiClassString, null);
-                    ManagementObject wmiObject = objHostSettingClass.CreateInstance();
-
-                    wmiObject.SetPropertyValue("ManagedFolder", folder.Path);
-                    wmiObject.SetPropertyValue("MachineName", folder.ImagedComputer);
-                    wmiObject.SetPropertyValue("OverallState", folder.State);
-                    wmiObject.SetPropertyValue("OverallStateValue", stateValue);
-                    wmiObject.SetPropertyValue("FileCount", folder.ImageFileCount);
-
-                    wmiObject.SetPropertyValue("NumberOfFilesFailingVerification", verificationService.Failures.Count);
-                    wmiObject.SetPropertyValue("VerificationFailureDetails", verificationFailureDetails);
-                    wmiObject.SetPropertyValue("LastSuccessfulVerification", lastSuccessfulVerification);
-                    wmiObject.SetPropertyValue("VerifyNewImages", vEffective.VerifyNewImages);
-                    wmiObject.SetPropertyValue("ReverifyExistingImages", vEffective.ReverifyExistingImages);
-                    wmiObject.SetPropertyValue("ReverifyInterval", vEffective.ReverifyInterval);
-
-                    wmiObject.SetPropertyValue("ConsolidationEnabled", consolidationService.Policy.IsEnabled);
-                    wmiObject.SetPropertyValue("LastSuccessfulConsolidation", lastSuccessfulConsolidation);
-                    wmiObject.SetPropertyValue("NumberOfFilesFailingConsolidation", consolidationService.Failures.Count);
-                    wmiObject.SetPropertyValue("ConsolidationFailureDetails", consolidationFailureDetails);
-
-                    wmiObject.SetPropertyValue("ReplicationTargetDetails", replicationTargetsText);
-                    wmiObject.SetPropertyValue("FailedReplications", failedReplications);
-                    wmiObject.SetPropertyValue("NumberOfFilesQueuedForReplication", queuedFiles);
-
-
-
-                    wmiObject.SetPropertyValue("RetentionIssues", retentionService.Issues.Count);
-                    wmiObject.SetPropertyValue("RetentionIssueDetails", retentionIssuesText);
-                    wmiObject.SetPropertyValue("RetentionEnabled", retentionPolicy.IsEnabled);
-                    wmiObject.SetPropertyValue("RetentionPolicyInheritedFromGlobal", retentionPolicyInheritedFromGlobal);
-                    wmiObject.SetPropertyValue("DaysToRetainIntraDailyImages", retentionPolicy.DaysToRetainIntraDailyImages);
-                    wmiObject.SetPropertyValue("DaysToRetainConsolidatedDailyImages", retentionPolicy.DaysToRetainConsolidatedDailyImages);
-                    wmiObject.SetPropertyValue("DaysToRetainConsolidatedWeeklyImages", retentionPolicy.DaysToRetainConsolidatedWeeklyImages);
-                    wmiObject.SetPropertyValue("MonthsToRetainConsolidatedMonthlyImages", retentionPolicy.MonthsToRetainConsolidatedMonthlyImages);
-                    wmiObject.SetPropertyValue("MonthlyRetentionIsSupported", retentionPolicy.MonthlyRetentionIsSupported);
-                    wmiObject.SetPropertyValue("MoveConsolidatedImages", retentionPolicy.MoveConsolidatedImages);
-
-                    wmiObject.SetPropertyValue("FailedHeadstartJobs", failedHeadstartJobs);
-                    wmiObject.SetPropertyValue("HeadstartJobDetails", headstartJobsText);
-
-                    wmiObject.SetPropertyValue("LastScriptRunTime", DateTime.Now.ToString());
-
-                    SelectQuery selectQuery = new SelectQuery("select * from win32_utctime");
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher(selectQuery);
-                    ManagementObjectCollection utcTimeFromWmi = searcher.Get();
-                    ManagementObjectCollection.ManagementObjectEnumerator enumerator = utcTimeFromWmi.GetEnumerator();
-                    enumerator.MoveNext();
-                    ManagementBaseObject mbo = enumerator.Current;
-
-                    UInt32 year = (UInt32)mbo.GetPropertyValue("Year");
-                    UInt32 month = (UInt32)mbo.GetPropertyValue("Month");
-                    UInt32 day = (UInt32)mbo.GetPropertyValue("Day");
-                    UInt32 hour = (UInt32)mbo.GetPropertyValue("Hour");
-                    UInt32 min = (UInt32)mbo.GetPropertyValue("Minute");
-                    UInt32 second = (UInt32)mbo.GetPropertyValue("Second");
-
-                    long timestamp = ((((((year - 1970) * 31556926) + ((month - 1) * 2678400)) + ((day - 1) * 86400)) + (hour * 3600)) + (min * 60)) + (second);
-                    wmiObject.SetPropertyValue("Timestamp", timestamp);
-
-                    wmiObject.SetPropertyValue("ListOfAllManagedFolders", allFoldersText);
-
-                    wmiObject.Put(options);
                 }
                 Console.WriteLine("--------------------------------------------");
                 Console.WriteLine("Poll complete");
+                //Console.WriteLine("Folders Found");
+                //Console.WriteLine(allFoldersText);
                 return 0;
             }
             catch (Exception e)
