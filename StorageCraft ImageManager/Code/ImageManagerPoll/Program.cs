@@ -280,8 +280,9 @@ namespace ImageManagerPoll
                         if ((parentRPolicy == null) && (folderRPolicy == null))
                         {
                             Console.WriteLine("Evaluating parent policy and agent policy.");
-                            retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(locator.Find<IRetentionService>(folder.ParentFolderId).Policy, agent.AgentSettings.AgentRetentionPolicy);
+                            retentionPolicy = RetentionPolicy.ResolveEffectivePolicy(parentRPolicy, agent.AgentSettings.AgentRetentionPolicy);
                         }
+                        
                         else
                         {
                             Console.WriteLine("Evaluating parent policy and folder policy.");
