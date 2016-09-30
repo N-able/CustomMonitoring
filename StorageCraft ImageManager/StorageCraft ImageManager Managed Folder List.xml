@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
-<service xmlns="http://www.n-able.com" author="conner@plummerslade.com" creationdate="04/22/2016" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<service xmlns="http://www.n-able.com" author="conner@plummerslade.com" creationdate="09/30/2016" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
 	<servicedefinition id="11002" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.1.4">
@@ -100,7 +100,7 @@
 
 
 
-	<scandetail id="3027500" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.1.0.440" version="1.0.0.0" >
+	<scandetail id="3027500" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
 		<description country="ca" language="en">Managed folders found by script</description>
 		<displayname country="ca" language="en">WMI11002_1</displayname>
 	</scandetail>
