@@ -117,7 +117,7 @@ namespace ImageManagerPoll
 
                 // using the IAgent interface instead of IAgent3 for compatibility with older versions.
                 // None of the data we query for monitoring relies on the IAgent3 interface.
-                IAgent agent = (IAgent)Client.Connect("localhost", 56765, hashedPassword);
+                IAgent5 agent = (IAgent5)Client.Connect("localhost", 56765, hashedPassword);
                 if (agent == null)
                 {
                     Console.WriteLine("Incorrect password provided for local ImageManager service");
@@ -154,7 +154,31 @@ namespace ImageManagerPoll
                             default: throw new Exception("Unhandled job state value " + folder.State.ToString());
                         }
                         Console.WriteLine("  State Value: " + stateValue);
-
+                        string stateWarning = "No warnings or failures.";
+                        if (stateValue == 4)
+                        {
+                            stateWarning = "";
+                            List<ManagedFolderIssue> managedFolderIssueList = new List<ManagedFolderIssue>();
+                            NotificationSettings notificationSettings = (NotificationSettings)null;
+                            
+                            managedFolderIssueList.AddRange((IEnumerable<ManagedFolderIssue>)agent.FindAllIssues(folder.Id));
+                            notificationSettings = agent.NotificationSettings;
+                            
+                            foreach (ManagedFolderIssue issue in managedFolderIssueList)
+                            {
+                                if (issue == managedFolderIssueList[0])
+                                { stateWarning = issue.Reason; }
+                                else
+                                {
+                                    stateWarning = stateWarning + ", " + issue.Reason;
+                                }
+                            }
+                        }
+                        else if (stateValue == 3)
+                        {
+                            stateWarning = "Failures Found - See below for Verification / Replication / Retention failures.";
+                        }
+                        Console.WriteLine("  Warning / Failure Reason(s): " + stateWarning);
                         Console.WriteLine("  Machine Name: " + folder.ImagedComputer);
                         Console.WriteLine("  File Count: " + folder.ImageFileCount);
                         //Console.WriteLine("ParentID:  " + folder.ParentFolderId);
@@ -373,6 +397,7 @@ namespace ImageManagerPoll
                         wmiObject.SetPropertyValue("MachineName", folder.ImagedComputer);
                         wmiObject.SetPropertyValue("OverallState", folder.State);
                         wmiObject.SetPropertyValue("OverallStateValue", stateValue);
+                        wmiObject.SetPropertyValue("WarningReason", stateWarning);
                         wmiObject.SetPropertyValue("FileCount", folder.ImageFileCount);
 
                         wmiObject.SetPropertyValue("NumberOfFilesFailingVerification", verificationService.Failures.Count);
@@ -484,6 +509,7 @@ namespace ImageManagerPoll
             if (!testValueExists(wmiClass, "MachineName")) { wmiClass.Properties.Add("MachineName", System.Management.CimType.String, false); }
             if (!testValueExists(wmiClass, "OverallState")) { wmiClass.Properties.Add("OverallState", System.Management.CimType.String, false); }
             if (!testValueExists(wmiClass, "OverallStateValue")) { wmiClass.Properties.Add("OverallStateValue", System.Management.CimType.UInt32, false); }
+            if (!testValueExists(wmiClass, "WarningReason")) { wmiClass.Properties.Add("WarningReason", System.Management.CimType.String, false); }
             if (!testValueExists(wmiClass, "FileCount")) { wmiClass.Properties.Add("FileCount", System.Management.CimType.UInt64, false); }
 
             if (!testValueExists(wmiClass, "NumberOfFilesFailingVerification")) { wmiClass.Properties.Add("NumberOfFilesFailingVerification", System.Management.CimType.UInt32, false); }

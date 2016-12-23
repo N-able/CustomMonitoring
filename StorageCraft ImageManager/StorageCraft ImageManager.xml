@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
-<service xmlns="http://www.n-able.com" author="conner@plummerslade.com" creationdate="09/30/2016" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<service xmlns="http://www.n-able.com" author="conner@plummerslade.com" creationdate="12/22/2016" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
 	<servicedefinition id="16100" reason="" releasedependency="4.5.0.0" servicetype="WMIWorkstation" version="1.0.1.5">
@@ -235,6 +235,16 @@
 				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
 				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
 			</moduleparameter>
+      <moduleparameter key="Matrix.0.Var.24.Property" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="WarningReason">
+        <shortdescription country="ca" language="en">Property 24</shortdescription>
+        <longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
+        <help country="ca" language="en">The WMI property used for this scan detail.</help>
+      </moduleparameter>
+      <moduleparameter key="Matrix.0.Var.24.VarName" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="WarningReason.ImageManager">
+        <shortdescription country="ca" language="en">Variable 24 Name</shortdescription>
+        <longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
+        <help country="ca" language="en">The name of the variable used for this scan detail.</help>
+      </moduleparameter>
 			<moduleparameter key="Matrix.0.Var.3.Property" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="NumberOfFilesFailingVerification">
 				<shortdescription country="ca" language="en">Property 3</shortdescription>
 				<longdescription country="ca" language="en">The WMI property used for this scan detail.</longdescription>
@@ -305,7 +315,7 @@
 				<longdescription country="ca" language="en">The name of the variable used for this scan detail.</longdescription>
 				<help country="ca" language="en">The name of the variable used for this scan detail.</help>
 			</moduleparameter>
-			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="24">
+			<moduleparameter key="Matrix.0.VarSize" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="25">
 				<shortdescription country="ca" language="en">Number of Variables</shortdescription>
 				<longdescription country="ca" language="en">The number of variables for this scan detail.</longdescription>
 				<help country="ca" language="en">The number of variables for this scan detail.</help>
@@ -680,6 +690,21 @@
 				<longdescription country="ca" language="en">Scan detail type</longdescription>
 				<help country="ca" language="en">Scan detail type</help>
 			</moduleparameter>
+      <moduleparameter key="Scandetail.25.Name" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="WMI16100_26">
+        <shortdescription country="ca" language="en">Scan detail name</shortdescription>
+        <longdescription country="ca" language="en">Scan detail name</longdescription>
+        <help country="ca" language="en">Scan detail name</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.25.Recipe" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="$WarningReason.ImageManager">
+        <shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+        <longdescription country="ca" language="en">Scan detail recipe</longdescription>
+        <help country="ca" language="en">Scan detail recipe</help>
+      </moduleparameter>
+      <moduleparameter key="Scandetail.25.Type" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="STRING">
+        <shortdescription country="ca" language="en">Scan detail type</shortdescription>
+        <longdescription country="ca" language="en">Scan detail type</longdescription>
+        <help country="ca" language="en">Scan detail type</help>
+      </moduleparameter>
 			<moduleparameter key="Scandetail.3.Name" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="WMI16100_4">
 				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
 				<longdescription country="ca" language="en">Scan detail name</longdescription>
@@ -785,7 +810,7 @@
 				<longdescription country="ca" language="en">Scan detail type</longdescription>
 				<help country="ca" language="en">Scan detail type</help>
 			</moduleparameter>
-			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="25">
+			<moduleparameter key="Scandetail.Size" max="" min="" phardcoded="true" preferredident="0" foruseby="null" type="2" value="26">
 				<shortdescription country="ca" language="en"/>
 				<longdescription country="ca" language="en"/>
 				<help country="ca" language="en"/>
@@ -803,6 +828,7 @@
 			<scandetailid>3563200</scandetailid>
 			<scandetailid>3563201</scandetailid>
 			<scandetailid>3563202</scandetailid>
+      <scandetailid>3563225</scandetailid>
 			<scandetailid>3563203</scandetailid>
 			<scandetailid>3563204</scandetailid>
 			<scandetailid>3563205</scandetailid>
@@ -830,21 +856,21 @@
 
 
 
-	<scandetail id="3563200" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563200" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Machine name</description>
 		<displayname country="ca" language="en">WMI16100_1</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563201" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563201" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Overall state</description>
 		<displayname country="ca" language="en">WMI16100_2</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563202" monitoringtypeon="true" processforstate="true" cookid="15" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563202" monitoringtypeon="true" processforstate="true" cookid="15" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint8"><threshold high="1" low="0" streval="" strvalue="" state="Normal"/><threshold high="2" low="1" streval="" strvalue="" state="Warning"/><threshold high="255" low="3" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -854,15 +880,20 @@
 	</scandetail>
 
 
+  <scandetail id="3563225" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
+    <description country="ca" language="en">Warning / Failure Reason</description>
+    <displayname country="ca" language="en">WMI16100_26</displayname>
+  </scandetail>
+  
 
-	<scandetail id="3563203" monitoringtypeon="true" processforstate="false" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563203" monitoringtypeon="true" processforstate="false" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">File count</description>
 		<displayname country="ca" language="en">WMI16100_4</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563204" monitoringtypeon="true" processforstate="true" cookid="21" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563204" monitoringtypeon="true" processforstate="true" cookid="21" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint64"><threshold high="0" low="0" streval="" strvalue="" state="Normal"/><threshold high="9007199254740992" low="9007199254740991" streval="" strvalue="" state="Warning"/><threshold high="9007199254740991" low="1" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -873,56 +904,56 @@
 
 
 
-	<scandetail id="3563205" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563205" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Verification failure details</description>
 		<displayname country="ca" language="en">WMI16100_6</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563206" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563206" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Last successful verification</description>
 		<displayname country="ca" language="en">WMI16100_7</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563207" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563207" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Verify new images</description>
 		<displayname country="ca" language="en">WMI16100_8</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563208" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563208" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Reverify existing images</description>
 		<displayname country="ca" language="en">WMI16100_9</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563209" monitoringtypeon="true" processforstate="false" cookid="18" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563209" monitoringtypeon="true" processforstate="false" cookid="18" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Reverify interval</description>
 		<displayname country="ca" language="en">WMI16100_10</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563210" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563210" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Consolidation enabled</description>
 		<displayname country="ca" language="en">WMI16100_11</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563211" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563211" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Last successful consolidation</description>
 		<displayname country="ca" language="en">WMI16100_12</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563212" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563212" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32"><threshold high="0" low="0" streval="" strvalue="" state="Normal"/><threshold high="4294967295" low="4294967294" streval="" strvalue="" state="Warning"/><threshold high="4294967294" low="1" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -933,14 +964,14 @@
 
 
 
-	<scandetail id="3563213" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563213" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Consolidation failure details</description>
 		<displayname country="ca" language="en">WMI16100_14</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563214" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563214" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32"><threshold high="5" low="0" streval="" strvalue="" state="Normal"/><threshold high="4294967295" low="4294967294" streval="" strvalue="" state="Warning"/><threshold high="4294967294" low="6" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -951,7 +982,7 @@
 
 
 
-	<scandetail id="3563215" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563215" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32"><threshold high="5" low="0" streval="" strvalue="" state="Normal"/><threshold high="14" low="6" streval="" strvalue="" state="Warning"/><threshold high="4294967295" low="15" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -962,14 +993,14 @@
 
 
 
-	<scandetail id="3563216" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563216" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Replication target details</description>
 		<displayname country="ca" language="en">WMI16100_17</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563217" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563217" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32"><threshold high="0" low="0" streval="" strvalue="" state="Normal"/><threshold high="4294967295" low="4294967294" streval="" strvalue="" state="Warning"/><threshold high="4294967294" low="1" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -980,21 +1011,21 @@
 
 
 
-	<scandetail id="3563218" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563218" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Retention issue details</description>
 		<displayname country="ca" language="en">WMI16100_19</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563219" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563219" monitoringtypeon="true" processforstate="false" cookid="2" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Retention enabled</description>
 		<displayname country="ca" language="en">WMI16100_20</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563220" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563220" monitoringtypeon="true" processforstate="true" cookid="19" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint32"><threshold high="0" low="0" streval="" strvalue="" state="Normal"/><threshold high="4294967295" low="4294967294" streval="" strvalue="" state="Warning"/><threshold high="4294967294" low="1" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -1005,28 +1036,28 @@
 
 
 
-	<scandetail id="3563221" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563221" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Headstart job details</description>
 		<displayname country="ca" language="en">WMI16100_22</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563222" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563222" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Last script run</description>
 		<displayname country="ca" language="en">WMI16100_23</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563223" monitoringtypeon="true" processforstate="false" cookid="21" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563223" monitoringtypeon="true" processforstate="false" cookid="21" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<description country="ca" language="en">Timestamp now</description>
 		<displayname country="ca" language="en">WMI16100_24</displayname>
 	</scandetail>
 
 
 
-	<scandetail id="3563224" monitoringtypeon="true" processforstate="true" cookid="21" releasedependency="10.2.1.350" version="1.0.0.0" >
+	<scandetail id="3563224" monitoringtypeon="true" processforstate="true" cookid="21" releasedependency="10.2.1.435" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="uint64"><threshold high="144000" low="0" streval="" strvalue="" state="Normal"/><threshold high="144002" low="144001" streval="" strvalue="" state="Warning"/><threshold high="9007199254740992" low="144003" streval="" strvalue="" state="Failed"/>
 			</thresholds>
