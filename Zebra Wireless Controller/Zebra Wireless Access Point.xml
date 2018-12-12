@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="robbys" creationdate="10/19/2016" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="909762" reason="" releasedependency="4.5.0.0" servicetype="SNMP" version="1.0.1.8">
+		<description country="ca" language="en">Using SNMP, this service monitors the overall status of a wireless access point that&#39;s connected to a Zebra Wireless LAN controller.</description>
+		<displayname country="ca" language="en">Zebra Wireless Access Point</displayname>
+		<displaylabel>Zebra Wireless Access Point</displaylabel>
+		<help country="ca" language="en">Zebra Wireless Access Point</help>
+		<popuphelp country="ca" language="en">Zebra Wireless Access Point</popuphelp>
+
+
+		<serviceparameters aggregatedata="true" aggregatetasks="false" maxinstances="100" maxpollrate="59" minpollrate="1" schedulertype="Cron-like Scheduler" serviceinstancetype="Single" timetostale="10000" usesstockserviceitem="false"/>
+
+
+		<moduleparameters>
+
+
+		
+			<moduleparameter key="Group.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="2" type="2" value="Query 0">
+				<shortdescription country="ca" language="en">Group name</shortdescription>
+				<longdescription country="ca" language="en">Group name</longdescription>
+				<help country="ca" language="en">Group name</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.TargetValue.0" max="null" min="null" phardcoded="false" preferredident="1" foruseby="3" type="2" value="AP01">
+				<shortdescription country="ca" language="en">Access Point Name</shortdescription>
+				<longdescription country="ca" language="en">Access Point Name</longdescription>
+				<help country="ca" language="en">Enter the name of the SNMP Value to be used by this service</help>
+				<presentationinfo>
+					<presentationitem datatype="String" description="" type="canUseAssetInfo" value="true" />
+					<presentationitem datatype="String" description="" type="mandatory" value="" />
+				</presentationinfo>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.3">
+				<shortdescription country="ca" language="en">OID 0</shortdescription>
+				<longdescription country="ca" language="en">OID 0</longdescription>
+				<help country="ca" language="en">OID 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.0.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="TargetValue">
+				<shortdescription country="ca" language="en">Variable 0</shortdescription>
+				<longdescription country="ca" language="en">Variable 0</longdescription>
+				<help country="ca" language="en">Variable 0</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.1">
+				<shortdescription country="ca" language="en">OID 1</shortdescription>
+				<longdescription country="ca" language="en">OID 1</longdescription>
+				<help country="ca" language="en">OID 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.1.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="MACAddress">
+				<shortdescription country="ca" language="en">Variable 1</shortdescription>
+				<longdescription country="ca" language="en">Variable 1</longdescription>
+				<help country="ca" language="en">Variable 1</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.10.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.4.1.1.23">
+				<shortdescription country="ca" language="en">OID 10</shortdescription>
+				<longdescription country="ca" language="en">OID 10</longdescription>
+				<help country="ca" language="en">OID 10</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.10.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="ModelNumber">
+				<shortdescription country="ca" language="en">Variable 10</shortdescription>
+				<longdescription country="ca" language="en">Variable 10</longdescription>
+				<help country="ca" language="en">Variable 10</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.2">
+				<shortdescription country="ca" language="en">OID 2</shortdescription>
+				<longdescription country="ca" language="en">OID 2</longdescription>
+				<help country="ca" language="en">OID 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.2.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="Type">
+				<shortdescription country="ca" language="en">Variable 2</shortdescription>
+				<longdescription country="ca" language="en">Variable 2</longdescription>
+				<help country="ca" language="en">Variable 2</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.4">
+				<shortdescription country="ca" language="en">OID 3</shortdescription>
+				<longdescription country="ca" language="en">OID 3</longdescription>
+				<help country="ca" language="en">OID 3</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.3.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="Version">
+				<shortdescription country="ca" language="en">Variable 3</shortdescription>
+				<longdescription country="ca" language="en">Variable 3</longdescription>
+				<help country="ca" language="en">Variable 3</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.5">
+				<shortdescription country="ca" language="en">OID 4</shortdescription>
+				<longdescription country="ca" language="en">OID 4</longdescription>
+				<help country="ca" language="en">OID 4</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.4.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SerialNumber">
+				<shortdescription country="ca" language="en">Variable 4</shortdescription>
+				<longdescription country="ca" language="en">Variable 4</longdescription>
+				<help country="ca" language="en">Variable 4</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.1.1.7">
+				<shortdescription country="ca" language="en">OID 5</shortdescription>
+				<longdescription country="ca" language="en">OID 5</longdescription>
+				<help country="ca" language="en">OID 5</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.5.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="Online">
+				<shortdescription country="ca" language="en">Variable 5</shortdescription>
+				<longdescription country="ca" language="en">Variable 5</longdescription>
+				<help country="ca" language="en">Variable 5</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.4.1.1.14">
+				<shortdescription country="ca" language="en">OID 6</shortdescription>
+				<longdescription country="ca" language="en">OID 6</longdescription>
+				<help country="ca" language="en">OID 6</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.6.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="Uptime">
+				<shortdescription country="ca" language="en">Variable 6</shortdescription>
+				<longdescription country="ca" language="en">Variable 6</longdescription>
+				<help country="ca" language="en">Variable 6</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.4.1.1.15">
+				<shortdescription country="ca" language="en">OID 7</shortdescription>
+				<longdescription country="ca" language="en">OID 7</longdescription>
+				<help country="ca" language="en">OID 7</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.7.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="CPU">
+				<shortdescription country="ca" language="en">Variable 7</shortdescription>
+				<longdescription country="ca" language="en">Variable 7</longdescription>
+				<help country="ca" language="en">Variable 7</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.4.1.1.16">
+				<shortdescription country="ca" language="en">OID 8</shortdescription>
+				<longdescription country="ca" language="en">OID 8</longdescription>
+				<help country="ca" language="en">OID 8</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.8.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="RAM">
+				<shortdescription country="ca" language="en">Variable 8</shortdescription>
+				<longdescription country="ca" language="en">Variable 8</longdescription>
+				<help country="ca" language="en">Variable 8</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.OID.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="1.3.6.1.4.1.388.50.1.4.2.4.1.1.18">
+				<shortdescription country="ca" language="en">OID 9</shortdescription>
+				<longdescription country="ca" language="en">OID 9</longdescription>
+				<help country="ca" language="en">OID 9</help>
+			</moduleparameter>
+			<moduleparameter key="Group.0.Var.9.VarName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="UpgradeStatus">
+				<shortdescription country="ca" language="en">Variable 9</shortdescription>
+				<longdescription country="ca" language="en">Variable 9</longdescription>
+				<help country="ca" language="en">Variable 9</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$MACAddress">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_1">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.0.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$Type">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_2">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.1.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$ModelNumber">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_3">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.2.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$SerialNumber">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_4">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.3.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Map.0" max="null" min="null" phardcoded="false" preferredident="0" foruseby="3" type="2" value="1">
+				<shortdescription country="ca" language="en">Normal Mapping</shortdescription>
+				<longdescription country="ca" language="en">Normal Mapping</longdescription>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Map.1" max="null" min="null" phardcoded="false" preferredident="0" foruseby="3" type="2" value="0">
+				<shortdescription country="ca" language="en">Warning Mapping</shortdescription>
+				<longdescription country="ca" language="en">Warning Mapping</longdescription>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Map.2" max="null" min="null" phardcoded="false" preferredident="0" foruseby="3" type="2" value="2">
+				<shortdescription country="ca" language="en">Failed Mapping</shortdescription>
+				<longdescription country="ca" language="en">Failed Mapping</longdescription>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$Online">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_5">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.4.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="uint8">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$Version">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_6">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.5.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$CPU">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_7">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.6.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$RAM">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_8">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.7.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$UpgradeStatus">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_9">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.8.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Recipe.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="$Uptime">
+				<shortdescription country="ca" language="en">Scan detail recipe</shortdescription>
+				<longdescription country="ca" language="en">Scan detail recipe</longdescription>
+				<help country="ca" language="en">Scan detail recipe</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.ScandetailName.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="SD909762_SNMP14003_10">
+				<shortdescription country="ca" language="en">Scan detail name</shortdescription>
+				<longdescription country="ca" language="en">Scan detail name</longdescription>
+				<help country="ca" language="en">Scan detail name</help>
+			</moduleparameter>
+			<moduleparameter key="Scandetail.9.Type.0" max="null" min="null" phardcoded="true" preferredident="0" foruseby="3" type="2" value="String">
+				<shortdescription country="ca" language="en">Scan detail type</shortdescription>
+				<longdescription country="ca" language="en">Scan detail type</longdescription>
+				<help country="ca" language="en">Scan detail type</help>
+			</moduleparameter>
+			<moduleparameter key="scan_interval" max="null" min="null" phardcoded="false" preferredident="0" foruseby="3" type="2" value="0,5,10,15,20,25,30,35,40,45,50,55 0-23 * * *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>3064000</scandetailid>
+			<scandetailid>3064001</scandetailid>
+			<scandetailid>3064002</scandetailid>
+			<scandetailid>3064003</scandetailid>
+			<scandetailid>3064004</scandetailid>
+			<scandetailid>3064005</scandetailid>
+			<scandetailid>3064006</scandetailid>
+			<scandetailid>3064007</scandetailid>
+			<scandetailid>3064008</scandetailid>
+			<scandetailid>3064009</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="3064000" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">MAC Address</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_1</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064001" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Type</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_2</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064002" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Model Number</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_3</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064003" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Serial Number</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_4</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064004" monitoringtypeon="true" processforstate="true" cookid="15" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="uint8"><threshold high="0" low="0" streval="" strvalue="" state="Normal"/><threshold high="1" low="1" streval="" strvalue="" state="Warning"/><threshold high="2" low="2" streval="" strvalue="" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">Online</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_5</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064005" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">OS Version</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_6</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064006" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">CPU Model</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_7</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064007" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Total RAM</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_8</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064008" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Upgrade Status</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_9</displayname>
+	</scandetail>
+
+
+
+	<scandetail id="3064009" monitoringtypeon="true" processforstate="false" cookid="34" releasedependency="10.2.1.268" version="1.0.0.0" >
+		<description country="ca" language="en">Uptime</description>
+		<displayname country="ca" language="en">SD909762_SNMP14003_10</displayname>
+	</scandetail>
+</service>
+<?N-able-SDK version=3.0?>
