@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="6f0c2c0a-114c-42ab-ac18-1bd975a11207" Name="SentinelOne Status Monitor v6" Description="Rm9yayBvZiBFRFIgTW9uaXRvcg==" Version="2.14.0.2" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{f6a046bb-648e-4a7e-a893-e877dfb11d49}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;IsEDRInstalled&quot; Label=&quot;Is SentinelOne Agent Installed&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Is EDR Installed&quot; /&gt;&lt;Parameter ParameterName=&quot;AgentStatus&quot; Label=&quot;Agent Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Agent Status&quot; /&gt;&lt;Parameter ParameterName=&quot;AgentBuild&quot; Label=&quot;Agent Build&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Build ID&quot; /&gt;&lt;Parameter ParameterName=&quot;EnforcedSecurityStatus&quot; Label=&quot;Enforced Security Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Enforced Security Status&quot; /&gt;&lt;Parameter ParameterName=&quot;selfprotectstatus&quot; Label=&quot;Self-Protection Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Self-Protection Status&quot; /&gt;&lt;Parameter ParameterName=&quot;DynamicEngineStatus&quot; Label=&quot;Dynamic Engine Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Dynamic Engine Status&quot; /&gt;&lt;Parameter ParameterName=&quot;InfectedStatus&quot; Label=&quot;Infected Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Infected Status&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.isedrinstalled</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>IsEDRInstalled</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.agentstatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>AgentStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.buildid</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>AgentBuild</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.enforcesecuritystatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>EnforcedSecurityStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.selfstatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>selfprotectstatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.dynamicengines</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>DynamicEngineStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>65c9f1c1-b904-4257-a295-ba8607c43dc9.Infectedstatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>InfectedStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,743.2</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,743.2" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.11.0.52, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,520.8" Moniker="65c9f1c1-b904-4257-a295-ba8607c43dc9" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="c55d7145-c3fa-4082-944e-fb437aad9495" m_bTextLinkChange="False" script="JABzAGMAcgBpAHAAdAA6AG0AbwBuAGkAdABvAHIAUwB0AGEAdAB1AHMAPQAiACIADQAKACQAcwBjAHIAaQBwAHQAOgBwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzAD0AIgAiAA0ACgAkAHMAYwByAGkAcAB0ADoAbQBvAG4AaQB0AG8AcgBCAHUAaQBsAGQASQBkAD0AIgAiAA0ACgAkAHMAYwByAGkAcAB0ADoAZQBuAGYAbwByAGMAaQBuAGcAUwBlAGMAdQByAGkAdAB5AD0AIgAiAA0ACgAkAHMAYwByAGkAcAB0ADoAYQBnAGUAbgB0AEwAbwBhAGQAZQBkAFMAdABhAHQAdQBzAD0AIgAiAA0ACgAkAHMAYwByAGkAcAB0ADoAagBhAHYAYQBBAGcAZQBuAHQAUwB0AGEAdAB1AHMAPQAiACIADQAKACQAcwBjAHIAaQBwAHQAOgBtAGkAdABpAGcAUABvAGwAaQBjAHkATgBhAG0AZQA9ACIAIgANAAoAJABzAGMAcgBpAHAAdAA6AGkAcwBJAG4AZgBlAGMAdABlAGQAPQAiACIADQAKACQAcwBjAHIAaQBwAHQAOgByAGUAYgBvAG8AdABMAG8AZwBMAGkAbgBlAD0AIgAiAA0ACgAkAHMAYwByAGkAcAB0ADoAZAB5AG4AYQBtAGkAYwBFAG4AZwBpAG4AZQBTAHQAYQB0AHUAcwA9ACIAIgANAAoAJABzAGMAcgBpAHAAdAA6AGkAbgBzAHQAYQBsAGwAYQB0AGkAbwBuAFMAdABhAHQAdQBzAD0AIgAiAA0ACgANAAoAJABzAGMAcgBpAHAAdAA6AGYAdQBsAGwATwB1AHQAcAB1AHQAPQAiACIADQAKACQAcwBjAHIAaQBwAHQAOgBzAHUAYwBjAGUAcwBzAEMAbwBkAGUAPQAwAA0ACgAkAHMAYwByAGkAcAB0ADoAZQByAHIAbwByAE0AcwBnAD0AIgAiAA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAAYwBoAGUAYwBrAFMAZQBuAHQAaQBuAGUAbABPAG4AZQAoACQAcgBlAHQAcgB5AEMAbwB1AG4AdAApACAAewANAAoAIwBSAHUAbgAgAGEAIABkAGkAcwBjAG8AdgBlAHIAeQAgAHQAbwAgAHMAZQBlACAAaQBmACAAUwBlAG4AdABpAG4AZQBsAE8AbgBlACAAUwB1AGMAYwBlAHMAcwBmAHUAbABsAHkAIABJAG4AcwB0AGEAbABsAGUAZAANAAoADQAKAAkAJABzAGMAcgBpAHAAdAA6AHMAMQBfAGoAcwBvAG4ATwBiAGoAIAA9ACAAJABuAHUAbABsAA0ACgAJACQAcwBsAGUAZQBwAEkAbgBTAGUAYwBvAG4AZABzACAAPQAgADUADQAKAA0ACgAJACQAYQB0AHQAZQBtAHAAdAAgAD0AIAAwAA0ACgAJAHcAaABpAGwAZQAgACgAJABhAHQAdABlAG0AcAB0ACAALQBsAHQAIAAkAHIAZQB0AHIAeQBDAG8AdQBuAHQAKQAgAHsADQAKAAkACQB0AHIAeQAgAHsADQAKAAkACQAJACQAaABlAGwAcABlAHIAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AQwBvAG0ATwBiAGoAZQBjAHQAIAAiAFMAZQBuAHQAaQBuAGUAbABIAGUAbABwAGUAcgAuADEAIgAgAC0AZQByAHIAbwByAHYAYQByAGkAYQBiAGwAZQAgAHMAMQBFAHIAcgBvAHIADQAKAAkACQAJACQAcwBjAHIAaQBwAHQAOgBzADEAXwBqAHMAbwBuAE8AYgBqACAAPQAgACQAaABlAGwAcABlAHIALgBHAGUAdABBAGcAZQBuAHQAUwB0AGEAdAB1AHMASgBTAE8ATgAoACkADQAKAAkACQAJACQAcwBjAHIAaQBwAHQAOgBzAHUAYwBjAGUAcwBzAEMAbwBkAGUAIAA9ACAAMAANAAoACQAJAAkAJABzAGMAcgBpAHAAdAA6AGUAcgByAG8AcgBNAHMAZwAgAD0AIAAiACIADQAKAAkACQAJAGIAcgBlAGEAawA7AA0ACgAJAAkAfQAgAGMAYQB0AGMAaAAgAHsADQAKAAkACQAJACQAcwBjAHIAaQBwAHQAOgBzAHUAYwBjAGUAcwBzAEMAbwBkAGUAIAA9ACAAJABFAHIAcgBvAHIAWwAwAF0ALgBFAHgAYwBlAHAAdABpAG8AbgAuAEgAUgBlAHMAdQBsAHQADQAKAAkACQAJACQAcwBjAHIAaQBwAHQAOgBlAHIAcgBvAHIATQBzAGcAIAA9ACAAJABzADEARQByAHIAbwByAA0ACgAJAAkAfQANAAoACQAJACQAYQB0AHQAZQBtAHAAdAArACsADQAKAAkACQBpAGYAIAAoACQAYQB0AHQAZQBtAHAAdAAgAC0AbAB0ACAAJAByAGUAdAByAHkAQwBvAHUAbgB0ACkAIAB7AA0ACgAJAAkACQBzAGwAZQBlAHAAIAAkAHMAbABlAGUAcABJAG4AUwBlAGMAbwBuAGQAcwANAAoACQAJAH0ADQAKAAkAfQANAAoACQByAGUAdAB1AHIAbgAgACQAcwAxAF8AagBzAG8AbgBPAGIAagANAAoADQAKAH0ADQAKAA0ACgBmAHUAbgBjAHQAaQBvAG4AIABnAGUAdABEAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAFMAdABhAHQAdQBzACAAewANAAoADQAKACAAIAAgACAAdAByAHkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAJABzAGUAbgB0AGkAbgBlAGwATwBuAGUATABvAGcATABpAG4AZQAgAD0AIAAoAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBNAGEAeABFAHYAZQBuAHQAcwAgADEAIAAtAEYAaQBsAHQAZQByAEgAYQBzAGgAdABhAGIAbABlACAAQAB7AFAAcgBvAHYAaQBkAGUAcgBOAGEAbQBlAD0AJwBTAGUAbgB0AGkAbgBlAGwATwBuAGUAJwA7ACAASQBEAD0AMQB9ACkALgBNAGUAcwBzAGEAZwBlAA0ACgAgACAAIAAgAH0AIABjAGEAdABjAGgAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAJABzAGUAbgB0AGkAbgBlAGwATwBuAGUATABvAGcATABpAG4AZQAgAD0AIAAiACIADQAKACAAIAAgACAAfQANAAoACQANAAoACQBTAHcAaQB0AGMAaAAgAC0AVwBpAGwAZABjAGEAcgBkACAAKAAkAHMAZQBuAHQAaQBuAGUAbABPAG4AZQBMAG8AZwBMAGkAbgBlACkAIAB7AA0ACgAJAAkAJwBXAGkAbgBkAG8AdwBzACAAQQBnAGUAbgB0ACAAaQBzACAAcwB0AGEAcgB0AGkAbgBnACAAaQBuACAAcwBsAGkAbQAgAG0AbwBkAGUAKgAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAFMAdABhAHQAdQBzAD0AIgBEAGkAcwBhAGIAbABlAGQAIgAgAH0ADQAKAAkACQAnAFcAaQBuAGQAbwB3AHMAIABBAGcAZQBuAHQAIABpAHMAIABzAHQAYQByAHQAaQBuAGcAIABpAG4AIABmAHUAbABsACAAbQBvAGQAZQAqACcAIAB7ACAAJABzAGMAcgBpAHAAdAA6AGQAeQBuAGEAbQBpAGMARQBuAGcAaQBuAGUAUwB0AGEAdAB1AHMAPQAiAEUAbgBhAGIAbABlAGQAIgAgAH0ADQAKAAkACQBEAGUAZgBhAHUAbAB0ACAAewAgACQAcwBjAHIAaQBwAHQAOgBkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAFMAdABhAHQAdQBzAD0AIgBVAG4AawBuAG8AdwBuACIAIAB9AA0ACgAJAH0ADQAKAA0ACgB9AA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAAQwBvAG4AdgBlAHIAdABGAHIAbwBtAC0ASgBzAG8AbgAyADAAKAAkAGkAdABlAG0AKQAgAHsADQAKAA0ACgAJAGEAZABkAC0AdAB5AHAAZQAgAC0AYQBzAHMAZQBtAGIAbAB5ACAAcwB5AHMAdABlAG0ALgB3AGUAYgAuAGUAeAB0AGUAbgBzAGkAbwBuAHMADQAKAAkAJABwAHMAXwBqAHMAPQBuAGUAdwAtAG8AYgBqAGUAYwB0ACAAcwB5AHMAdABlAG0ALgB3AGUAYgAuAHMAYwByAGkAcAB0AC4AcwBlAHIAaQBhAGwAaQB6AGEAdABpAG8AbgAuAGoAYQB2AGEAcwBjAHIAaQBwAHQAUwBlAHIAaQBhAGwAaQB6AGUAcgANAAoADQAKAAkAIwBUAGgAZQAgAGMAbwBtAG0AYQAgAG8AcABlAHIAYQB0AG8AcgAgAGkAcwAgAHQAaABlACAAYQByAHIAYQB5ACAAYwBvAG4AcwB0AHIAdQBjAHQAaQBvAG4AIABvAHAAZQByAGEAdABvAHIAIABpAG4AIABQAG8AdwBlAHIAUwBoAGUAbABsAA0ACgAJAHIAZQB0AHUAcgBuACAALAAkAHAAcwBfAGoAcwAuAEQAZQBzAGUAcgBpAGEAbABpAHoAZQBPAGIAagBlAGMAdAAoACQAaQB0AGUAbQApAA0ACgANAAoAfQANAAoADQAKAGYAdQBuAGMAdABpAG8AbgAgAHMAZQB0AEQAZQBmAGEAdQBsAHQAVgBhAGwAdQBlAHMAIAB7AA0ACgAJACQAcwBjAHIAaQBwAHQAOgBpAG4AcwB0AGEAbABsAGEAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAE4AbwAiAA0ACgAJACQAcwBjAHIAaQBwAHQAOgBkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAFMAdABhAHQAdQBzACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiAA0ACgAJACQAcwBjAHIAaQBwAHQAOgBtAG8AbgBpAHQAbwByAEIAdQBpAGwAZABJAGQAIAA9ACAAIgBVAG4AawBuAG8AdwBuACIADQAKAAkAJABzAGMAcgBpAHAAdAA6AG0AaQB0AGkAZwBQAG8AbABpAGMAeQBOAGEAbQBlACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiAA0ACgAJACQAcwBjAHIAaQBwAHQAOgBwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiAA0ACgAJACQAcwBjAHIAaQBwAHQAOgBlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIAA9ACAAIgBVAG4AawBuAG8AdwBuACIADQAKAAkAJABzAGMAcgBpAHAAdAA6AGEAZwBlAG4AdABMAG8AYQBkAGUAZABTAHQAYQB0AHUAcwAgAD0AIAAiAE4AbwAgAFMAdABhAHQAdQBzACAAUgBlAHQAdQByAG4AZQBkACIADQAKAAkAJABzAGMAcgBpAHAAdAA6AGkAcwBJAG4AZgBlAGMAdABlAGQAPQAiAFUAbgBrAG4AbwB3AG4AIgANAAoAfQANAAoADQAKAGYAdQBuAGMAdABpAG8AbgAgAGUAeABlAGMAdQB0AGUAUwBlAG4AdABpAG4AZQBsAEMATwBNACAAewANAAoACQAkAHIAZQB0AHIAeQBDAG8AdQBuAHQAIAA9ACAAMgANAAoACQBjAGgAZQBjAGsAUwBlAG4AdABpAG4AZQBsAE8AbgBlACgAJAByAGUAdAByAHkAQwBvAHUAbgB0ACkADQAKAAkADQAKAAkAcwBlAHQARABlAGYAYQB1AGwAdABWAGEAbAB1AGUAcwANAAoACQANAAoACQBpAGYAIAAoACQAcwBjAHIAaQBwAHQAOgBlAHIAcgBvAHIATQBzAGcAIAAtAGUAcQAgACIAIgApACAAewANAAoACQANAAoACQAJACQAcwBjAHIAaQBwAHQAOgBpAG4AcwB0AGEAbABsAGEAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAFkAZQBzACIADQAKAAkACQAkAGoAcwBvAG4ATwBiAGoAIAA9ACAAQwBvAG4AdgBlAHIAdABGAHIAbwBtAC0ASgBzAG8AbgAyADAAKAAkAHMAMQBfAGoAcwBvAG4ATwBiAGoAKQANAAoACQAJAFMAdwBpAHQAYwBoACAAKAAkAGoAcwBvAG4ATwBiAGoALgAnAHMAZQBsAGYALQBwAHIAbwB0AGUAYwB0AGkAbwBuAC0AZQBuAGEAYgBsAGUAZAAnACkAIAB7ACAADQAKAAkACQAJACcAdAByAHUAZQAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzACAAPQAgACIARQBuAGEAYgBsAGUAZAAiACAAfQANAAoACQAJAAkAJwBmAGEAbABzAGUAJwAgAHsAIAAkAHMAYwByAGkAcAB0ADoAcAByAG8AdABlAGMAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAEQAaQBzAGEAYgBsAGUAZAAiACAAfQANAAoACQAJAAkARABlAGYAYQB1AGwAdAAgAHsAIAAkAHMAYwByAGkAcAB0ADoAcAByAG8AdABlAGMAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAFUAbgBrAG4AbwB3AG4AIgAgAH0ADQAKAAkACQB9AA0ACgAJAAkADQAKAAkACQAkAHMAYwByAGkAcAB0ADoAbQBvAG4AaQB0AG8AcgBCAHUAaQBsAGQASQBkACAAPQAgACQAagBzAG8AbgBPAGIAagAuACcAYQBnAGUAbgB0AC0AdgBlAHIAcwBpAG8AbgAnAA0ACgAJAAkADQAKAAkACQBTAHcAaQB0AGMAaAAgACgAJABqAHMAbwBuAE8AYgBqAC4AJwBlAG4AZgBvAHIAYwBpAG4AZwAtAHMAZQBjAHUAcgBpAHQAeQAnACkAIAB7ACAADQAKAAkACQAJACcAdAByAHUAZQAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIAA9ACAAIgBFAG4AYQBiAGwAZQBkACIAIAB9AA0ACgAJAAkACQAnAGYAYQBsAHMAZQAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIAA9ACAAIgBEAGkAcwBhAGIAbABlAGQAIgAgAH0ADQAKAAkACQAJAEQAZQBmAGEAdQBsAHQAIAB7ACAAJABzAGMAcgBpAHAAdAA6AGUAbgBmAG8AcgBjAGkAbgBnAFMAZQBjAHUAcgBpAHQAeQAgAD0AIAAiAFUAbgBrAG4AbwB3AG4AIgAgAH0ADQAKAAkACQB9AA0ACgAJAAkADQAKAAkACQBTAHcAaQB0AGMAaAAgACgAJABqAHMAbwBuAE8AYgBqAC4AJwBhAGcAZQBuAHQALQByAHUAbgBuAGkAbgBnACcAKQAgAHsAIAANAAoACQAJAAkAJwB0AHIAdQBlACcAIAB7ACAAJABzAGMAcgBpAHAAdAA6AGEAZwBlAG4AdABMAG8AYQBkAGUAZABTAHQAYQB0AHUAcwAgAD0AIAAiAFIAdQBuAG4AaQBuAGcAIABOAG8AcgBtAGEAbABsAHkAIgAgAH0ADQAKAAkACQAJACcAZgBhAGwAcwBlACcAIAB7ACAAJABzAGMAcgBpAHAAdAA6AGEAZwBlAG4AdABMAG8AYQBkAGUAZABTAHQAYQB0AHUAcwAgAD0AIAAiAE4AbwB0ACAAUgB1AG4AbgBpAG4AZwAiACAAfQANAAoACQAJAAkARABlAGYAYQB1AGwAdAAgAHsAIAAkAHMAYwByAGkAcAB0ADoAYQBnAGUAbgB0AEwAbwBhAGQAZQBkAFMAdABhAHQAdQBzACAAPQAgACIATgBvACAAUwB0AGEAdAB1AHMAIABSAGUAdAB1AHIAbgBlAGQAIgAgAH0ADQAKAAkACQB9AA0ACgAJAAkADQAKAAkACQBTAHcAaQB0AGMAaAAgACgAJABqAHMAbwBuAE8AYgBqAC4AJwBhAGMAdABpAHYAZQAtAHQAaAByAGUAYQB0AHMALQBwAHIAZQBzAGUAbgB0ACcAKQAgAHsADQAKAAkACQAJACcAdAByAHUAZQAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBpAHMASQBuAGYAZQBjAHQAZQBkACAAPQAgACIASQBuAGYAZQBjAHQAZQBkACIAIAB9AA0ACgAJAAkACQAnAGYAYQBsAHMAZQAnACAAewAgACQAcwBjAHIAaQBwAHQAOgBpAHMASQBuAGYAZQBjAHQAZQBkACAAPQAgACIAQwBsAGUAYQBuACIAIAB9AA0ACgAJAAkACQBEAGUAZgBhAHUAbAB0ACAAewAgACQAcwBjAHIAaQBwAHQAOgBpAHMASQBuAGYAZQBjAHQAZQBkACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiACAAfQANAAoACQAJAH0ADQAKAA0ACgAJAAkAZwBlAHQARAB5AG4AYQBtAGkAYwBFAG4AZwBpAG4AZQBTAHQAYQB0AHUAcwANAAoACQAJAA0ACgAJAH0ADQAKAH0ADQAKAA0ACgANAAoAZQB4AGUAYwB1AHQAZQBTAGUAbgB0AGkAbgBlAGwAQwBPAE0ADQAKAA0ACgAiAFMAZQBsAGYALQBQAHIAbwB0AGUAYwB0AGkAbwBuACAAUwB0AGEAdAB1AHMAIABpAHMAIAAiACAAKwAgACQAcwBjAHIAaQBwAHQAOgBwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzAA0ACgAiAFMAZQBuAHQAaQBuAGUAbAAgAEEAZwBlAG4AdAAgAFMAdABhAHQAdQBzACAAaQBzACAAIgAgACsAIAAkAHMAYwByAGkAcAB0ADoAYQBnAGUAbgB0AEwAbwBhAGQAZQBkAFMAdABhAHQAdQBzAA0ACgAiAEIAdQBpAGwAZAAgAG8AZgAgAHQAaABlACAATQBvAG4AaQB0AG8AcgAgAEEAZwBlAG4AdAAgAGkAcwAgACIAIAArACAAJABzAGMAcgBpAHAAdAA6AG0AbwBuAGkAdABvAHIAQgB1AGkAbABkAEkAZAANAAoAIgBEAHkAbgBhAG0AaQBjACAARQBuAGcAaQBuAGUAIABTAHQAYQB0AHUAcwAgAGkAcwAgACIAIAArACAAJABzAGMAcgBpAHAAdAA6AGQAeQBuAGEAbQBpAGMARQBuAGcAaQBuAGUAUwB0AGEAdAB1AHMADQAKACIASQBzACAARQBEAFIAIABJAG4AcwB0AGEAbABsAGUAZAAgACIAIAArACAAJABzAGMAcgBpAHAAdAA6AGkAbgBzAHQAYQBsAGwAYQB0AGkAbwBuAFMAdABhAHQAdQBzAA0ACgAiAEUAbgBmAG8AcgBjAGUAZAAgAFMAZQBjAHUAcgBpAHQAeQAgAFMAdABhAHQAdQBzACAAaQBzACAAIgAgACsAIAAkAHMAYwByAGkAcAB0ADoAZQBuAGYAbwByAGMAaQBuAGcAUwBlAGMAdQByAGkAdAB5AA0ACgAiAEkAbgBmAGUAYwB0AGUAZAAgAFMAdABhAHQAdQBzACAAaQBzACAAIgAgACsAIAAkAHMAYwByAGkAcAB0ADoAaQBzAEkAbgBmAGUAYwB0AGUAZAANAAoADQAKACQAcwBlAGwAZgBzAHQAYQB0AHUAcwAgAD0AIAAkAHMAYwByAGkAcAB0ADoAcAByAG8AdABlAGMAdABpAG8AbgBTAHQAYQB0AHUAcwANAAoAJABhAGcAZQBuAHQAcwB0AGEAdAB1AHMAIAA9ACAAJABzAGMAcgBpAHAAdAA6AGEAZwBlAG4AdABMAG8AYQBkAGUAZABTAHQAYQB0AHUAcwANAAoAJABkAHkAbgBhAG0AaQBjAGUAbgBnAGkAbgBlAHMAIAA9ACAAJABzAGMAcgBpAHAAdAA6AGQAeQBuAGEAbQBpAGMARQBuAGcAaQBuAGUAUwB0AGEAdAB1AHMADQAKACQAaQBzAGUAZAByAGkAbgBzAHQAYQBsAGwAZQBkACAAPQAgACQAcwBjAHIAaQBwAHQAOgBpAG4AcwB0AGEAbABsAGEAdABpAG8AbgBTAHQAYQB0AHUAcwANAAoAJABiAHUAaQBsAGQAaQBkACAAPQAgACQAcwBjAHIAaQBwAHQAOgBtAG8AbgBpAHQAbwByAEIAdQBpAGwAZABJAGQADQAKACQAZQBuAGYAbwByAGMAZQBzAGUAYwB1AHIAaQB0AHkAcwB0AGEAdAB1AHMAIAA9ACAAJABzAGMAcgBpAHAAdAA6AGUAbgBmAG8AcgBjAGkAbgBnAFMAZQBjAHUAcgBpAHQAeQANAAoAJABpAG4AZgBlAGMAdABlAGQAcwB0AGEAdAB1AHMAIAA9ACAAJABzAGMAcgBpAHAAdAA6AGkAcwBJAG4AZgBlAGMAdABlAGQADQAKAA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="agentstatus" ArgType="string" DisplayName="Agent Status" Name="agentstatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_agentstatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="buildid" ArgType="string" DisplayName="Build ID" Name="buildid">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_buildid]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="isedrinstalled" ArgType="string" DisplayName="Is EDR Installed" Name="isedrinstalled">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_isedrinstalled]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="selfstatus" ArgType="string" DisplayName="Self-Protection Status" Name="selfstatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_selfstatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="dynamicengines" ArgType="string" DisplayName="Dynamic Engine Status" Name="dynamicengines">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_dynamicengines]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="enforcesecuritystatus" ArgType="string" DisplayName="Enforced Security Status" Name="enforcesecuritystatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_enforcesecuritystatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="Infectedstatus" ArgType="string" DisplayName="Infected Status" Name="Infectedstatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_Infectedstatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_isedrinstalled" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_buildid" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_agentstatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_selfstatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_dynamicengines" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_enforcesecuritystatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_Infectedstatus" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

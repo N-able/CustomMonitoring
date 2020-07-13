@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="999bc6f7-3ddc-4a80-886e-c8f69cbe6afd" Name="Get-SentinelOneStatusv7" Description="R2V0LVNlbnRpbmVsT25lU3RhdHVzdjc=" Version="2.11.0.52" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0">
+  <Object ID="{d77ec66b-a9ca-4863-891c-66a12100f4b4}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;EDRInstalledOut&quot; Label=&quot;SentinelOne Agent Installed&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.EDR Installed&quot; /&gt;&lt;Parameter ParameterName=&quot;SentinelOneAgentVersionOut&quot; Label=&quot;SentinelOne Agent Version&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.SentinelOne Agent Version&quot; /&gt;&lt;Parameter ParameterName=&quot;SentinelOneAgentStatusOut&quot; Label=&quot;SentinelOne Agent Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Sentinel Agent Status&quot; /&gt;&lt;Parameter ParameterName=&quot;TamperOut&quot; Label=&quot;Tamper Protection Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Tamper Protection Status&quot; /&gt;&lt;Parameter ParameterName=&quot;dynamicOut&quot; Label=&quot;Dynamic Engines Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Dynamic Engines Status&quot; /&gt;&lt;Parameter ParameterName=&quot;EnforcedOut&quot; Label=&quot;Enforced Security Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Enforced Security Status&quot; /&gt;&lt;Parameter ParameterName=&quot;infectedOut&quot; Label=&quot;Infection Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Infected Status&quot; /&gt;&lt;Parameter ParameterName=&quot;OSInstallOut&quot; Label=&quot;OS Install Time&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.OS Install Time&quot; /&gt;&lt;Parameter ParameterName=&quot;LastBootupOut&quot; Label=&quot;Last Bootup Time&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Last Bootup Time&quot; /&gt;&lt;Parameter ParameterName=&quot;agentinstallout&quot; Label=&quot;SentinelOne Agent Install Date&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.SentinelOne Agent Install Time&quot; /&gt;&lt;Parameter ParameterName=&quot;RebootReqOut&quot; Label=&quot;Reboot Required&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Reboot Required&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.installationStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>EDRInstalledOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.agentversion</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SentinelOneAgentVersionOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.SentinelAgentStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SentinelOneAgentStatusOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.protectionStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>TamperOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.DynamicEnginesStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>dynamicOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.enforcingSecurity</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>EnforcedOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.InfectedStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>infectedOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.OSInstalldate</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>OSInstallOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.LastBootupTime</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>LastBootupOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.s1agentinstalltime</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>agentinstallout</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10.s1rebootreq</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>RebootReqOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,743.2</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,743.2" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.11.0.52, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,520.8" Moniker="701f9c4d-8de8-4cc3-b9ea-6ffaaa503a10" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="c186e8fb-3c7d-47b0-b117-8aeeb75b8dba" m_bTextLinkChange="False" script="JABtAG8AbgBpAHQAbwByAFMAdABhAHQAdQBzAD0AIgAiAA0ACgAkAHAAcgBvAHQAZQBjAHQAaQBvAG4AUwB0AGEAdAB1AHMAPQAiACIADQAKACQAQQBnAGUAbgB0AFYAZQByAHMAaQBvAG4APQAiACIADQAKACQAZQBuAGYAbwByAGMAaQBuAGcAUwBlAGMAdQByAGkAdAB5AD0AIgAiAA0ACgAkAFMAZQBuAHQAaQBuAGUAbABBAGcAZQBuAHQAUwB0AGEAdAB1AHMAPQAiACIADQAKACQAagBhAHYAYQBBAGcAZQBuAHQAUwB0AGEAdAB1AHMAPQAiACIADQAKACQAbQBpAHQAaQBnAFAAbwBsAGkAYwB5AE4AYQBtAGUAPQAiACIADQAKACQASQBuAGYAZQBjAHQAZQBkAFMAdABhAHQAdQBzAD0AIgAiAA0ACgAkAHIAZQBiAG8AbwB0AEwAbwBnAEwAaQBuAGUAPQAiACIADQAKACQAZAB5AG4AYQBtAGkAYwBFAG4AZwBpAG4AZQBzAFMAdABhAHQAdQBzAD0AIgAiAA0ACgAkAGkAbgBzAHQAYQBsAGwAYQB0AGkAbwBuAFMAdABhAHQAdQBzAD0AIgAiAA0ACgANAAoAJABmAHUAbABsAE8AdQB0AHAAdQB0AD0AIgAiAA0ACgAkAHMAdQBjAGMAZQBzAHMAQwBvAGQAZQA9ADAADQAKACQAZQByAHIAbwByAE0AcwBnAD0AIgAiAA0ACgANAAoAIwByAGUAZwBpAG8AbgAgAGYAdQBuAGMAdABpAG8AbgBzAA0ACgBmAHUAbgBjAHQAaQBvAG4AIABjAGgAZQBjAGsAUwBlAG4AdABpAG4AZQBsAE8AbgBlACgAJAByAGUAdAByAHkAQwBvAHUAbgB0ACkAIAB7AA0ACgAjAFIAdQBuACAAYQAgAGQAaQBzAGMAbwB2AGUAcgB5ACAAdABvACAAcwBlAGUAIABpAGYAIABTAGUAbgB0AGkAbgBlAGwATwBuAGUAIABTAHUAYwBjAGUAcwBzAGYAdQBsAGwAeQAgAEkAbgBzAHQAYQBsAGwAZQBkAA0ACgANAAoACQAkAHMAMQBfAGoAcwBvAG4ATwBiAGoAIAA9ACAAJABuAHUAbABsAA0ACgAJACQAcwBsAGUAZQBwAEkAbgBTAGUAYwBvAG4AZABzACAAPQAgADUADQAKAA0ACgAJACQAYQB0AHQAZQBtAHAAdAAgAD0AIAAwAA0ACgAJAHcAaABpAGwAZQAgACgAJABhAHQAdABlAG0AcAB0ACAALQBsAHQAIAAkAHIAZQB0AHIAeQBDAG8AdQBuAHQAKQAgAHsADQAKAAkACQB0AHIAeQAgAHsADQAKAAkACQAJACQAaABlAGwAcABlAHIAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AQwBvAG0ATwBiAGoAZQBjAHQAIAAiAFMAZQBuAHQAaQBuAGUAbABIAGUAbABwAGUAcgAuADEAIgAgAC0AZQByAHIAbwByAHYAYQByAGkAYQBiAGwAZQAgAHMAMQBFAHIAcgBvAHIADQAKAAkACQAJACQAcwAxAF8AagBzAG8AbgBPAGIAagAgAD0AIAAkAGgAZQBsAHAAZQByAC4ARwBlAHQAQQBnAGUAbgB0AFMAdABhAHQAdQBzAEoAUwBPAE4AKAApAA0ACgAJAAkACQAkAHMAdQBjAGMAZQBzAHMAQwBvAGQAZQAgAD0AIAAwAA0ACgAJAAkACQAkAGUAcgByAG8AcgBNAHMAZwAgAD0AIAAiACIADQAKAAkACQAJAGIAcgBlAGEAawA7AA0ACgAJAAkAfQAgAGMAYQB0AGMAaAAgAHsADQAKAAkACQAJACQAcwB1AGMAYwBlAHMAcwBDAG8AZABlACAAPQAgACQARQByAHIAbwByAFsAMABdAC4ARQB4AGMAZQBwAHQAaQBvAG4ALgBIAFIAZQBzAHUAbAB0AA0ACgAJAAkACQAkAGUAcgByAG8AcgBNAHMAZwAgAD0AIAAkAHMAMQBFAHIAcgBvAHIADQAKAAkACQB9AA0ACgAJAAkAJABhAHQAdABlAG0AcAB0ACsAKwANAAoACQAJAGkAZgAgACgAJABhAHQAdABlAG0AcAB0ACAALQBsAHQAIAAkAHIAZQB0AHIAeQBDAG8AdQBuAHQAKQAgAHsADQAKAAkACQAJAHMAdABhAHIAdAAtAHMAbABlAGUAcAAgACQAcwBsAGUAZQBwAEkAbgBTAGUAYwBvAG4AZABzAA0ACgAJAAkAfQANAAoACQB9AA0ACgAJAHIAZQB0AHUAcgBuACAAJABzADEAXwBqAHMAbwBuAE8AYgBqAA0ACgANAAoAfQANAAoADQAKAGYAdQBuAGMAdABpAG8AbgAgAGcAZQB0AEQAeQBuAGEAbQBpAGMARQBuAGcAaQBuAGUAUwB0AGEAdAB1AHMAIAB7AA0ACgANAAoAIAAgACAAIAB0AHIAeQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHMAZQBuAHQAaQBuAGUAbABPAG4AZQBMAG8AZwBMAGkAbgBlACAAPQAgACgARwBlAHQALQBXAGkAbgBFAHYAZQBuAHQAIAAtAE0AYQB4AEUAdgBlAG4AdABzACAAMQAgAC0ARgBpAGwAdABlAHIASABhAHMAaAB0AGEAYgBsAGUAIABAAHsAUAByAG8AdgBpAGQAZQByAE4AYQBtAGUAPQAnAFMAZQBuAHQAaQBuAGUAbABPAG4AZQAnADsAIABJAEQAPQAxAH0AKQAuAE0AZQBzAHMAYQBnAGUADQAKACAAIAAgACAAfQAgAGMAYQB0AGMAaAAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHMAZQBuAHQAaQBuAGUAbABPAG4AZQBMAG8AZwBMAGkAbgBlACAAPQAgACIAIgANAAoAIAAgACAAIAB9AA0ACgAJAA0ACgAJAFMAdwBpAHQAYwBoACAALQBXAGkAbABkAGMAYQByAGQAIAAoACQAcwBlAG4AdABpAG4AZQBsAE8AbgBlAEwAbwBnAEwAaQBuAGUAKQAgAHsADQAKAAkACQAnAFcAaQBuAGQAbwB3AHMAIABBAGcAZQBuAHQAIABpAHMAIABzAHQAYQByAHQAaQBuAGcAIABpAG4AIABzAGwAaQBtACAAbQBvAGQAZQAqACcAIAB7ACAAJABkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAHMAUwB0AGEAdAB1AHMAPQAiAEQAaQBzAGEAYgBsAGUAZAAiACAAfQANAAoACQAJACcAVwBpAG4AZABvAHcAcwAgAEEAZwBlAG4AdAAgAGkAcwAgAHMAdABhAHIAdABpAG4AZwAgAGkAbgAgAGYAdQBsAGwAIABtAG8AZABlACoAJwAgAHsAIAAkAGQAeQBuAGEAbQBpAGMARQBuAGcAaQBuAGUAcwBTAHQAYQB0AHUAcwA9ACIARQBuAGEAYgBsAGUAZAAiACAAfQANAAoACQAJAEQAZQBmAGEAdQBsAHQAIAB7ACAAJABkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAHMAUwB0AGEAdAB1AHMAPQAiAFUAbgBrAG4AbwB3AG4AIgAgAH0ADQAKAAkAfQANAAoADQAKAH0ADQAKAA0ACgBmAHUAbgBjAHQAaQBvAG4AIABDAG8AbgB2AGUAcgB0AEYAcgBvAG0ALQBKAHMAbwBuADIAMAAoACQAaQB0AGUAbQApACAAewANAAoADQAKAAkAYQBkAGQALQB0AHkAcABlACAALQBhAHMAcwBlAG0AYgBsAHkAIABzAHkAcwB0AGUAbQAuAHcAZQBiAC4AZQB4AHQAZQBuAHMAaQBvAG4AcwANAAoACQAkAHAAcwBfAGoAcwA9AG4AZQB3AC0AbwBiAGoAZQBjAHQAIABzAHkAcwB0AGUAbQAuAHcAZQBiAC4AcwBjAHIAaQBwAHQALgBzAGUAcgBpAGEAbABpAHoAYQB0AGkAbwBuAC4AagBhAHYAYQBzAGMAcgBpAHAAdABTAGUAcgBpAGEAbABpAHoAZQByAA0ACgANAAoACQAjAFQAaABlACAAYwBvAG0AbQBhACAAbwBwAGUAcgBhAHQAbwByACAAaQBzACAAdABoAGUAIABhAHIAcgBhAHkAIABjAG8AbgBzAHQAcgB1AGMAdABpAG8AbgAgAG8AcABlAHIAYQB0AG8AcgAgAGkAbgAgAFAAbwB3AGUAcgBTAGgAZQBsAGwADQAKAAkAcgBlAHQAdQByAG4AIAAsACQAcABzAF8AagBzAC4ARABlAHMAZQByAGkAYQBsAGkAegBlAE8AYgBqAGUAYwB0ACgAJABpAHQAZQBtACkADQAKAA0ACgB9AA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAAcwBlAHQARABlAGYAYQB1AGwAdABWAGEAbAB1AGUAcwAgAHsADQAKAAkAJABpAG4AcwB0AGEAbABsAGEAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAEYAYQBsAHMAZQAiAA0ACgAJACQAZAB5AG4AYQBtAGkAYwBFAG4AZwBpAG4AZQBzAFMAdABhAHQAdQBzACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiAA0ACgAJACQAQQBnAGUAbgB0AFYAZQByAHMAaQBvAG4AIAA9ACAAIgBVAG4AawBuAG8AdwBuACIADQAKAAkAJABtAGkAdABpAGcAUABvAGwAaQBjAHkATgBhAG0AZQAgAD0AIAAiAFUAbgBrAG4AbwB3AG4AIgANAAoACQAkAHAAcgBvAHQAZQBjAHQAaQBvAG4AUwB0AGEAdAB1AHMAIAA9ACAAIgBVAG4AawBuAG8AdwBuACIADQAKAAkAJABlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIAA9ACAAIgBVAG4AawBuAG8AdwBuACIADQAKAAkAJABTAGUAbgB0AGkAbgBlAGwAQQBnAGUAbgB0AFMAdABhAHQAdQBzACAAPQAgACIATgBvACAAUwB0AGEAdAB1AHMAIABSAGUAdAB1AHIAbgBlAGQAIgANAAoACQAkAEkAbgBmAGUAYwB0AGUAZABTAHQAYQB0AHUAcwA9ACIAVQBuAGsAbgBvAHcAbgAiAA0ACgB9AA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAAZQB4AGUAYwB1AHQAZQBTAGUAbgB0AGkAbgBlAGwAQwBPAE0AIAB7AA0ACgAJACQAcgBlAHQAcgB5AEMAbwB1AG4AdAAgAD0AIAAyAA0ACgAJAC4AIABjAGgAZQBjAGsAUwBlAG4AdABpAG4AZQBsAE8AbgBlACgAJAByAGUAdAByAHkAQwBvAHUAbgB0ACkADQAKAAkADQAKAAkALgAgAHMAZQB0AEQAZQBmAGEAdQBsAHQAVgBhAGwAdQBlAHMADQAKAAkADQAKAAkAaQBmACAAKAAkAGUAcgByAG8AcgBNAHMAZwAgAC0AZQBxACAAIgAiACkAIAB7AA0ACgAJAA0ACgAJAAkAJABpAG4AcwB0AGEAbABsAGEAdABpAG8AbgBTAHQAYQB0AHUAcwAgAD0AIAAiAFQAcgB1AGUAIgANAAoACQAJACQAagBzAG8AbgBPAGIAagAgAD0AIABDAG8AbgB2AGUAcgB0AEYAcgBvAG0ALQBKAHMAbwBuADIAMAAoACQAcwAxAF8AagBzAG8AbgBPAGIAagApAA0ACgAJAAkAUwB3AGkAdABjAGgAIAAoACQAagBzAG8AbgBPAGIAagAuACcAcwBlAGwAZgAtAHAAcgBvAHQAZQBjAHQAaQBvAG4ALQBlAG4AYQBiAGwAZQBkACcAKQAgAHsAIAANAAoACQAJAAkAJwB0AHIAdQBlACcAIAB7ACAAJABwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzACAAPQAgACIARQBuAGEAYgBsAGUAZAAiACAAfQANAAoACQAJAAkAJwBmAGEAbABzAGUAJwAgAHsAIAAkAHAAcgBvAHQAZQBjAHQAaQBvAG4AUwB0AGEAdAB1AHMAIAA9ACAAIgBEAGkAcwBhAGIAbABlAGQAIgAgAH0ADQAKAAkACQAJAEQAZQBmAGEAdQBsAHQAIAB7ACAAJABwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiACAAfQANAAoACQAJAH0ADQAKAAkACQANAAoACQAJACQAQQBnAGUAbgB0AFYAZQByAHMAaQBvAG4AIAA9ACAAJABqAHMAbwBuAE8AYgBqAC4AJwBhAGcAZQBuAHQALQB2AGUAcgBzAGkAbwBuACcADQAKAAkACQANAAoACQAJAFMAdwBpAHQAYwBoACAAKAAkAGoAcwBvAG4ATwBiAGoALgAnAGUAbgBmAG8AcgBjAGkAbgBnAC0AcwBlAGMAdQByAGkAdAB5ACcAKQAgAHsAIAANAAoACQAJAAkAJwB0AHIAdQBlACcAIAB7ACAAJABlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIAA9ACAAIgBFAG4AYQBiAGwAZQBkACIAIAB9AA0ACgAJAAkACQAnAGYAYQBsAHMAZQAnACAAewAgACQAZQBuAGYAbwByAGMAaQBuAGcAUwBlAGMAdQByAGkAdAB5ACAAPQAgACIARABpAHMAYQBiAGwAZQBkACIAIAB9AA0ACgAJAAkACQBEAGUAZgBhAHUAbAB0ACAAewAgACQAZQBuAGYAbwByAGMAaQBuAGcAUwBlAGMAdQByAGkAdAB5ACAAPQAgACIAVQBuAGsAbgBvAHcAbgAiACAAfQANAAoACQAJAH0ADQAKAAkACQANAAoACQAJAFMAdwBpAHQAYwBoACAAKAAkAGoAcwBvAG4ATwBiAGoALgAnAGEAZwBlAG4AdAAtAHIAdQBuAG4AaQBuAGcAJwApACAAewAgAA0ACgAJAAkACQAnAHQAcgB1AGUAJwAgAHsAIAAkAFMAZQBuAHQAaQBuAGUAbABBAGcAZQBuAHQAUwB0AGEAdAB1AHMAIAA9ACAAIgBSAHUAbgBuAGkAbgBnACAATgBvAHIAbQBhAGwAbAB5ACIAIAB9AA0ACgAJAAkACQAnAGYAYQBsAHMAZQAnACAAewAgACQAUwBlAG4AdABpAG4AZQBsAEEAZwBlAG4AdABTAHQAYQB0AHUAcwAgAD0AIAAiAE4AbwB0ACAAUgB1AG4AbgBpAG4AZwAiACAAfQANAAoACQAJAAkARABlAGYAYQB1AGwAdAAgAHsAIAAkAFMAZQBuAHQAaQBuAGUAbABBAGcAZQBuAHQAUwB0AGEAdAB1AHMAIAA9ACAAIgBOAG8AIABTAHQAYQB0AHUAcwAgAFIAZQB0AHUAcgBuAGUAZAAiACAAfQANAAoACQAJAH0ADQAKAAkACQANAAoACQAJAFMAdwBpAHQAYwBoACAAKAAkAGoAcwBvAG4ATwBiAGoALgAnAGEAYwB0AGkAdgBlAC0AdABoAHIAZQBhAHQAcwAtAHAAcgBlAHMAZQBuAHQAJwApACAAewANAAoACQAJAAkAJwB0AHIAdQBlACcAIAB7ACAAJABJAG4AZgBlAGMAdABlAGQAUwB0AGEAdAB1AHMAIAA9ACAAIgBJAG4AZgBlAGMAdABlAGQAIgAgAH0ADQAKAAkACQAJACcAZgBhAGwAcwBlACcAIAB7ACAAJABJAG4AZgBlAGMAdABlAGQAUwB0AGEAdAB1AHMAIAA9ACAAIgBDAGwAZQBhAG4AIgAgAH0ADQAKAAkACQAJAEQAZQBmAGEAdQBsAHQAIAB7ACAAJABJAG4AZgBlAGMAdABlAGQAUwB0AGEAdAB1AHMAIAA9ACAAIgBVAG4AawBuAG8AdwBuACIAIAB9AA0ACgAJAAkAfQANAAoADQAKAAkACQAuACAAZwBlAHQARAB5AG4AYQBtAGkAYwBFAG4AZwBpAG4AZQBTAHQAYQB0AHUAcwANAAoACQAJAA0ACgAJAH0ADQAKAH0ADQAKAA0ACgBmAHUAbgBjAHQAaQBvAG4AIABHAGUAdAAtAFMAMQBSAGUAYgBvAG8AdABSAGUAcQAgAHsADQAKAAkAJABzADEAUgBlAGIAbwBvAHQAUgBlAHEAIAA9ACAAJABGAGEAbABzAGUADQAKAAkAPAAjAA0ACgAJACMAJABzADEAYwBoAGUAYwBrACAAPQAgACgARwBlAHQALQBJAHQAZQBtAHAAcgBvAHAAZQByAHQAeQAgACIASABLAEwATQA6AFwAUwBvAGYAdAB3AGEAcgBlAFwATQBpAGMAcgBvAHMAbwBmAHQAXABXAGkAbgBkAG8AdwBzAFwAQwB1AHIAcgBlAG4AdABWAGUAcgBzAGkAbwBuAFwAVQBuAGkAbgBzAHQAYQBsAGwAXABTAGUAbgB0AGkAbgBlAGwAIABBAGcAZQBuAHQAIgAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQApAC4ASQBuAHMAdABhAGwAbABEAGEAdABlAA0ACgAJACQAUwAxAGMAaABlAGMAawAgAD0AIAAoAEcAZQB0AC0AQwBoAGkAbABkAEkAdABlAG0AIAAtAFAAYQB0AGgAIABIAEsATABNADoAXABTAE8ARgBUAFcAQQBSAEUAXABNAGkAYwByAG8AcwBvAGYAdABcAFcAaQBuAGQAbwB3AHMAXABDAHUAcgByAGUAbgB0AFYAZQByAHMAaQBvAG4AXABVAG4AaQBuAHMAdABhAGwAbAAgAHwAIABHAGUAdAAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAAfAAgAFcAaABlAHIAZQAtAE8AYgBqAGUAYwB0ACAAewAkAF8ALgBEAGkAcwBwAGwAYQB5AE4AYQBtAGUAIAAtAGUAcQAgACIAUwBlAG4AdABpAG4AZQBsACAAQQBnAGUAbgB0ACIAIAB9ACkALgBJAG4AcwB0AGEAbABsAEQAYQB0AGUADQAKAA0ACgAJACQAcwAxAGEAZwBlAG4AdABpAG4AcwB0AGEAbABsAHQAaQBtAGUAIAA9ACAAKABnAGUAdAAtAGkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAAIgBjADoAXABwAHIAbwBnAHIAYQBtACAAZgBpAGwAZQBzAFwAcwBlAG4AdABpAG4AZQBsAE8AbgBlACIAKQAuAEMAcgBlAGEAdABpAG8AbgBUAGkAbQBlAA0ACgAJAGkAZgAgACgAJABzADEAYwBoAGUAYwBrACAALQBuAGUAIAAkAG4AdQBsAGwAKQAgAHsADQAKAAkAJABzADEAYQBnAGUAbgB0AGkAbgBzAHQAYQBsAGwAdABpAG0AZQAgAD0AIABbAGQAYQB0AGUAdABpAG0AZQBdADoAOgBQAGEAcgBzAGUARQB4AGEAYwB0ACgAJABzADEAYwBoAGUAYwBrACwAIAAiAHkAeQB5AHkATQBNAGQAZAAiACwAIAAkAG4AdQBsAGwAKQANAAoACQB9AA0ACgAJACMAPgANAAoACQBpAGYAIAAoAHQAZQBzAHQALQBwAGEAdABoACAAIgBjADoAXABwAHIAbwBnAHIAYQBtACAAZgBpAGwAZQBzAFwAcwBlAG4AdABpAG4AZQBsAE8AbgBlACIAKQAgAHsADQAKAAkAJABzADEAYQBnAGUAbgB0AGkAbgBzAHQAYQBsAGwAdABpAG0AZQAgAD0AIAAoAGcAZQB0AC0AaQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAIAAiAGMAOgBcAHAAcgBvAGcAcgBhAG0AIABmAGkAbABlAHMAXABzAGUAbgB0AGkAbgBlAGwATwBuAGUAIgApAC4AQwByAGUAYQB0AGkAbwBuAFQAaQBtAGUADQAKAAkAfQANAAoADQAKAAkAJABsAGEAcwB0AGIAbwBvAHQAdQBwAHQAaQBtAGUAIAA9ACAAKABHAGUAdAAtAEMAaQBtAEkAbgBzAHQAYQBuAGMAZQAgAC0AQwBsAGEAcwBzAE4AYQBtAGUAIAB3AGkAbgAzADIAXwBvAHAAZQByAGEAdABpAG4AZwBzAHkAcwB0AGUAbQApAC4AbABhAHMAdABiAG8AbwB0AHUAcAB0AGkAbQBlAA0ACgAJACQAbwBzAGkAbgBzAHQAYQBsAGwAZABhAHQAZQAgAD0AIAAoAEcAZQB0AC0AQwBpAG0ASQBuAHMAdABhAG4AYwBlACAALQBDAGwAYQBzAHMATgBhAG0AZQAgAHcAaQBuADMAMgBfAG8AcABlAHIAYQB0AGkAbgBnAHMAeQBzAHQAZQBtACkALgBpAG4AcwB0AGEAbABsAGQAYQB0AGUAIAANAAoADQAKAAkAaQBmACAAKABbAGQAYQB0AGUAdABpAG0AZQBdACQAcwAxAGEAZwBlAG4AdABpAG4AcwB0AGEAbABsAHQAaQBtAGUAIAAtAGcAdAAgAFsAZABhAHQAZQB0AGkAbQBlAF0AJABsAGEAcwB0AGIAbwBvAHQAdQBwAHQAaQBtAGUAKQAgAHsADQAKAAkACQAkAHMAMQBSAGUAYgBvAG8AdABSAGUAcQAgAD0AIAAkAFQAcgB1AGUADQAKAAkAfQANAAoADQAKAAkAaQBmACAAKAAoAFsAZABhAHQAZQB0AGkAbQBlAF0AJABvAHMAaQBuAHMAdABhAGwAbABkAGEAdABlACAALQBnAHQAIABbAGQAYQB0AGUAdABpAG0AZQBdACQAcwAxAGEAZwBlAG4AdABpAG4AcwB0AGEAbABsAHQAaQBtAGUAKQAgAC0AYQBuAGQAIAAoACQAZAB5AG4AYQBtAGkAYwBlAG4AZwBpAG4AZQBzAHMAdABhAHQAdQBzACAALQBlAHEAIAAiAEQAaQBzAGEAYgBsAGUAZAAiACkAKQAgAHsADQAKAAkACQAkAHMAMQBSAGUAYgBvAG8AdABSAGUAcQAgAD0AIAAkAFQAcgB1AGUADQAKAAkAfQANAAoAfQANAAoAIwBlAG4AZAByAGUAZwBpAG8AbgANAAoADQAKAC4AIABlAHgAZQBjAHUAdABlAFMAZQBuAHQAaQBuAGUAbABDAE8ATQANAAoALgAgAEcAZQB0AC0AUwAxAFIAZQBiAG8AbwB0AFIAZQBxAA0ACgANAAoAVwByAGkAdABlAC0ASABvAHMAdAAgACIAYABuAEUARABSACAASQBuAHMAdABhAGwAbABlAGQAOgAgACIAIAAtAG4AbwBuAGUAdwBsAGkAbgBlADsAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgAkAGkAbgBzAHQAYQBsAGwAYQB0AGkAbwBuAFMAdABhAHQAdQBzACIAIAAtAEYAbwByAGUAZwByAG8AdQBuAGQAQwBvAGwAbwByACAARwByAGUAZQBuAA0ACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBTAGUAbgB0AGkAbgBlAGwATwBuAGUAIABBAGcAZQBuAHQAIABWAGUAcgBzAGkAbwBuADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABBAGcAZQBuAHQAVgBlAHIAcwBpAG8AbgAiACAALQBGAG8AcgBlAGcAcgBvAHUAbgBkAEMAbwBsAG8AcgAgAEcAcgBlAGUAbgANAAoAVwByAGkAdABlAC0ASABvAHMAdAAgACIAUwBlAG4AdABpAG4AZQBsACAAQQBnAGUAbgB0ACAAUwB0AGEAdAB1AHMAOgAgACIAIAAtAG4AbwBuAGUAdwBsAGkAbgBlADsAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgAkAFMAZQBuAHQAaQBuAGUAbABBAGcAZQBuAHQAUwB0AGEAdAB1AHMAIgAgAC0ARgBvAHIAZQBnAHIAbwB1AG4AZABDAG8AbABvAHIAIABHAHIAZQBlAG4ADQAKAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAFQAYQBtAHAAZQByACAAUAByAG8AdABlAGMAdABpAG8AbgAgAFMAdABhAHQAdQBzADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABwAHIAbwB0AGUAYwB0AGkAbwBuAFMAdABhAHQAdQBzACIAIAAtAEYAbwByAGUAZwByAG8AdQBuAGQAQwBvAGwAbwByACAARwByAGUAZQBuAA0ACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBEAHkAbgBhAG0AaQBjACAARQBuAGcAaQBuAGUAcwAgAFMAdABhAHQAdQBzADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABkAHkAbgBhAG0AaQBjAEUAbgBnAGkAbgBlAHMAUwB0AGEAdAB1AHMAIgAgAC0ARgBvAHIAZQBnAHIAbwB1AG4AZABDAG8AbABvAHIAIABHAHIAZQBlAG4ADQAKAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAEUAbgBmAG8AcgBjAGUAZAAgAFMAZQBjAHUAcgBpAHQAeQAgAFMAdABhAHQAdQBzADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABlAG4AZgBvAHIAYwBpAG4AZwBTAGUAYwB1AHIAaQB0AHkAIgAgAC0ARgBvAHIAZQBnAHIAbwB1AG4AZABDAG8AbABvAHIAIABHAHIAZQBlAG4ADQAKAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAEkAbgBmAGUAYwB0AGkAbwBuACAAUwB0AGEAdAB1AHMAOgAgACIAIAAtAG4AbwBuAGUAdwBsAGkAbgBlADsAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgAkAEkAbgBmAGUAYwB0AGUAZABTAHQAYQB0AHUAcwAiACAALQBGAG8AcgBlAGcAcgBvAHUAbgBkAEMAbwBsAG8AcgAgAEcAcgBlAGUAbgANAAoADQAKAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAE8AUwAgAEkAbgBzAHQAYQBsAGwAIABUAGkAbQBlADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABvAHMAaQBuAHMAdABhAGwAbABkAGEAdABlACIAIAAtAEYAbwByAGUAZwByAG8AdQBuAGQAQwBvAGwAbwByACAARwByAGUAZQBuAA0ACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBMAGEAcwB0ACAAQgBvAG8AdAB1AHAAIABUAGkAbQBlADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABsAGEAcwB0AGIAbwBvAHQAdQBwAHQAaQBtAGUAIgAgAC0ARgBvAHIAZQBnAHIAbwB1AG4AZABDAG8AbABvAHIAIABHAHIAZQBlAG4ADQAKAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAFMAZQBuAHQAaQBuAGUAbAAgAEEAZwBlAG4AdAAgAEkAbgBzAHQAYQBsAGwAIABUAGkAbQBlADoAIAAiACAALQBuAG8AbgBlAHcAbABpAG4AZQA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACIAJABzADEAYQBnAGUAbgB0AGkAbgBzAHQAYQBsAGwAdABpAG0AZQAiACAALQBGAG8AcgBlAGcAcgBvAHUAbgBkAEMAbwBsAG8AcgAgAEcAcgBlAGUAbgANAAoACQBpAGYAIAAoACQAcwAxAFIAZQBiAG8AbwB0AFIAZQBxACAALQBlAHEAIAAkAFQAcgB1AGUAKQAgAHsADQAKAAkACQBXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBSAGUAYgBvAG8AdAAgAFIAZQBxAHUAaQByAGUAZAA6ACAAIgAgAC0AbgBvAG4AZQB3AGwAaQBuAGUAOwAgAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiACQAcwAxAFIAZQBiAG8AbwB0AFIAZQBxACIAIAAtAEYAbwByAGUAZwByAG8AdQBuAGQAQwBvAGwAbwByACAAUgBlAGQADQAKAAkACQB9AA0ACgAJAGUAbABzAGUAIAB7AA0ACgAJAAkAVwByAGkAdABlAC0ASABvAHMAdAAgACIAUgBlAGIAbwBvAHQAIABSAGUAcQB1AGkAcgBlAGQAOgAgACIAIAAtAG4AbwBuAGUAdwBsAGkAbgBlADsAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgAkAHMAMQBSAGUAYgBvAG8AdABSAGUAcQAiACAALQBGAG8AcgBlAGcAcgBvAHUAbgBkAEMAbwBsAG8AcgAgAEcAcgBlAGUAbgANAAoACQB9AA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="installationStatus" ArgType="string" DisplayName="EDR Installed" Name="installationStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_installationStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="agentversion" ArgType="string" DisplayName="SentinelOne Agent Version" Name="agentversion">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_agentversion]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="SentinelAgentStatus" ArgType="string" DisplayName="Sentinel Agent Status" Name="SentinelAgentStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_SentinelAgentStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="protectionStatus" ArgType="string" DisplayName="Tamper Protection Status" Name="protectionStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_protectionStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="DynamicEnginesStatus" ArgType="string" DisplayName="Dynamic Engines Status" Name="DynamicEnginesStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_DynamicEnginesStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="enforcingSecurity" ArgType="string" DisplayName="Enforced Security Status" Name="enforcingSecurity">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_enforcingSecurity]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="InfectedStatus" ArgType="string" DisplayName="Infected Status" Name="InfectedStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_InfectedStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="OSInstalldate" ArgType="string" DisplayName="OS Install Time" Name="OSInstalldate">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_OSInstalldate]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="LastBootupTime" ArgType="string" DisplayName="Last Bootup Time" Name="LastBootupTime">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_LastBootupTime]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="s1agentinstalltime" ArgType="string" DisplayName="SentinelOne Agent Install Time" Name="s1agentinstalltime">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_s1agentinstalltime]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="s1rebootreq" ArgType="string" DisplayName="Reboot Required" Name="s1rebootreq">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_s1rebootreq]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_installationStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_agentversion" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_SentinelAgentStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_protectionStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_DynamicEnginesStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_enforcingSecurity" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_InfectedStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OSInstalldate" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_LastBootupTime" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_s1agentinstalltime" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_s1rebootreq" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

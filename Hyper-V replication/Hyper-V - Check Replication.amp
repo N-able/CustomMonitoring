@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="{5456d538-0a32-4519-84d3-9c0d13877dfd}" Name="Hyper-V - Check Replication" Description="Q2hlY2tzIGFuZCByZXBvcnRzIG9uIHRoZSBoZWFsaCBvZiBIeXBlci1WIHJlcGxpY2F0aW9uLg==" Version="1.7.2.53" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0" VariableSuffix="26">
+  <Object ID="{af62ee16-3d89-4a3f-b4b2-f81fa9387e59}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;normal&quot; Label=&quot;VMs replicating normally&quot; ParameterType=&quot;string&quot; Value=&quot;RunScript.servers - normal&quot; /&gt;&lt;Parameter ParameterName=&quot;warning&quot; Label=&quot;VMs with replication warnings&quot; ParameterType=&quot;string&quot; Value=&quot;RunScript.servers - warning&quot; /&gt;&lt;Parameter ParameterName=&quot;critical&quot; Label=&quot;VMs with critical replication errors&quot; ParameterType=&quot;string&quot; Value=&quot;RunScript.servers - critical&quot; /&gt;&lt;Parameter ParameterName=&quot;replicationstate&quot; Label=&quot;Overall replication state&quot; ParameterType=&quot;string&quot; Value=&quot;RunScript.Replication state&quot; /&gt;&lt;Parameter ParameterName=&quot;replicasonline&quot; Label=&quot;All replication servers reachable?&quot; ParameterType=&quot;string&quot; Value=&quot;RunScript.All replication servers reachable&quot; /&gt;&lt;Parameter ParameterName=&quot;resultcode&quot; Label=&quot;Overall replication health&quot; ParameterType=&quot;number&quot; Value=&quot;RunScript.resultcode&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.normal</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>normal</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.warning</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>warning</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.critical</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>critical</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.resultcode</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>resultcode</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.replicationstate</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>replicationstate</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>411e5826-ed38-4512-98e3-628b63b48fd2.replicasonline</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>replicasonline</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="sads sap" x:Class="Policy Builder">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>494,501</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p:PolicySequence DisplayName="Policy" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" sap:VirtualizedContainerService.HintSize="454,461">
+      <p:PolicySequence.Activities>
+        <p:RunScript AssemblyName="PolicyExecutionEngine, Version=1.7.2.45, Culture=neutral, PublicKeyToken=null" DisplayName="Run Script" Moniker="411e5826-ed38-4512-98e3-628b63b48fd2" OutPut_64="[RunScript_OutPut_64_10]" Result="[RunScript_Result_13]" ResultString="[RunScript_ResultString_11]" Results_x64="[RunScript_Results_x64_12]" RunAsCLU="False" ScriptDirectory="Unused" TypeName="RunScript" genArgEvent="b0492abf-8cc3-4045-bdaf-f72677b8e0a3" m_bTextLinkChange="False" sap:VirtualizedContainerService.HintSize="434,269" script="DQojIEh5cGVyLVYgcmVwbGljYXRpb24gbW9uaXRvciBmb3IgTi1hYmxlDQojIGJ5IFRpbSBXaXNlciwgR0NJIE1hbmFnZWQgSVQgKEF1Z3VzdCAyMDE1KQ0KDQoNCiRjb3VudCA9IDANCiRyZXN1bHRjb2RlID0gMA0KJHdhcm5pbmcgPSAwDQokY3JpdGljYWwgPSAwDQokbm9ybWFsID0gMA0KJHN0YXRlYmFkID0gMA0KJGNhbm5vdHBpbmcgPSAwDQoNCiRzcnZzX25vcm1hbCA9ICIiDQokc3J2c193YXJuaW5nID0gIiINCiRzcnZzX2NyaXRpY2FsID0gIiINCg0KJHJlcGxpY2F0ZWR2bXMgPSBHZXQtVk1SZXBsaWNhdGlvbg0KDQpGb3JFYWNoICgkaXRlbSBpbiAkcmVwbGljYXRlZHZtcykJew0KCQkJCQkkY291bnQgPSAkY291bnQgKyAxDQoNCgkJCQkJd3JpdGUtaG9zdCAkaXRlbS5uYW1lIGlzICRpdGVtLmhlYWx0aA0KCQkJCQkNCgkJCQkJIyB0cnkgYW5kIHBpbmcgdGhlIHJlcGxpY2F0aW9uIHRhcmdldCBzZXJ2ZXINCgkJCQkJJHBpbmdhYmxlID0gVGVzdC1Db25uZWN0aW9uIC1jb21wdXRlcm5hbWUgJGl0ZW0uUmVwbGljYVNlcnZlck5hbWUgLXF1aWV0DQoJCQkJCWlmICgtTm90ICRwaW5nYWJsZSApIHsgJGNhbm5vdHBpbmcgPSAxIH0NCg0KDQoJCQkJCWlmICgkaXRlbS5oZWFsdGggLWVxICJOb3JtYWwiKSAJew0KCQkJCQkJCQkJCSRub3JtYWwgPSAkbm9ybWFsICsgMQ0KCQkJCQkJCQkJCSRzcnZzX25vcm1hbCA9ICRzcnZzX25vcm1hbCArICIsICAiICsgJGl0ZW0ubmFtZQ0KCQkJCQkJCQkJfQ0KDQoJCQkJCWlmICgkaXRlbS5oZWFsdGggLWVxICJDcml0aWNhbCIpCXsNCgkJCQkJCQkJCQkJJGNyaXRpY2FsID0gJGNyaXRpY2FsICsgMQ0KCQkJCQkJCQkJCQkkc3J2c19jcml0aWNhbCA9ICRzcnZzX2NyaXRpY2FsICsgIiwgICIgKyAkaXRlbS5uYW1lDQoJCQkJCQkJCQkJfQ0KDQoJCQkJCWlmICgkaXRlbS5oZWFsdGggLWVxICJXYXJuaW5nIikJew0KCQkJCQkJCQkJCSR3YXJuaW5nID0gJHdhcm5pbmcgKyAxDQoJCQkJCQkJCQkJJHNydnNfd2FybmluZyA9ICRzcnZzX3dhcm5pbmcgKyAiLCAgIiArICRpdGVtLm5hbWUNCgkJCQkJCQkJCX0NCg0KCQkJCQkjIEZsYWcgaWYgdGhlcmUncyBWTXMgd2l0aCBiYWQgcmVwbGljYXRpb24gc3RhdGVzDQoJCQkJCSRzdGF0ZSA9ICRpdGVtLnN0YXRlDQoJCQkJCXN3aXRjaCAoJHN0YXRlKQ0KCQkJCQl7DQoJCQkJCSJFcnJvciIgCXsgJHN0YXRlYmFkID0gMSB9DQoJCQkJCSJTdXNwZW5kZWQiIAl7ICRzdGF0ZWJhZCAtIDEgfQ0KCQkJCQl9DQoJCQkJCQkJCQkNCgkJCQkJfQ0KDQojIHRhY2sgYSB0cmFpbGluZyBzcGFjZSBvbnRvIHNlcnZlciBsaXN0cyBpZiBzZXJ2ZXJzIGFyZSBmb3VuZC4gIFRoaXMgYWxsb3dzIHRoZSBBTVAgc2VydmljZSB0aHJlc2hvbGRzIHRvIHdvcmsuDQokbiA9ICRzcnZzX25vcm1hbA0KSWYgKCRuLmxlbmd0aCAtZ3QgMCkgeyAkbiA9ICRuLnN1YnN0cmluZygyKSAgfSBlbHNlIHsgJG4gPSAiTi9BIiB9ICAgICAjIG5vdGUgdGhlIHRyYWlsaW5nIHNwYWNlIGluIHRoaXMgb25lDQoNCiR3ID0gJHNydnNfd2FybmluZw0KSWYgKCR3Lmxlbmd0aCAtZ3QgMCkgeyAkdyA9ICR3LnN1YnN0cmluZygyKSAgfSBlbHNlIHsgJHcgPSAiTi9BIiB9DQoNCiRjID0gJHNydnNfY3JpdGljYWwNCklmICgkYy5sZW5ndGggLWd0IDApIHsgJGMgPSAkYy5zdWJzdHJpbmcoMikgfSBlbHNlIHsgJGMgPSAiTi9BIiB9DQoNCndyaXRlLWhvc3QgIiINCg0KIyBkaXNwbGF5IHRoZSBmaW5kaW5ncw0Kd3JpdGUtaG9zdCBOb3JtYWw6ICRub3JtYWwgKCAkbiApDQp3cml0ZS1ob3N0IENyaXRpY2FsOiAkY3JpdGljYWwgKCAkYyApDQp3cml0ZS1ob3N0IFdhcm5pbmc6ICR3YXJuaW5nICggJHcgKQ0Kd3JpdGUtaG9zdCAiIg0KDQojIHJlcG9ydCBpZiB0aGUgcmVwbGljYXRpb24gc3RhdGUgaXMgYmFkIG9uIGFueSBvZiB0aGUgVk1zDQokcmVwbGljYXRpb25zdGF0ZSA9ICJPSyINCmlmICgkc3RhdGViYWQgPSAwKSB7DQoJCQl3cml0ZS1ob3N0ICJPbmUgb3IgbW9yZSBzZXJ2ZXJzIGFyZSBpbiBhIGJhZCByZXBsaWNhdGlvbiBzdGF0ZSINCgkJCSRyZXBsaWNhdGlvbnN0YXRlID0gIkVycm9ycyINCgkJfQ0KDQojIHJlcG9ydCBvbiBudW1iZXIgb2Ygc2VydmVycw0Kd3JpdGUtaG9zdCAiJGNvdW50IHNlcnZlcnMiDQoNCiMgcmVwb3J0IGlmIG9uZSBvciBtb3JlIG9mIHRoZSByZXBsaWNhIHNlcnZlcnMgY2Fubm90IGJlIHBpbmdlZA0KaWYgKCRjYW5ub3RwaW5nIC1lcSAxKSAJew0KCQkJCSRyZXBsaWNhc29ubGluZSA9ICJObyINCgkJCX0NCgkJCWVsc2UNCgkJCXsNCg0KCQkJCSRyZXBsaWNhc29ubGluZSA9ICJZZXMiDQoJCQl9DQoNCiMgc2hvdyBpZiB0aGVyZSdzIG5vIHJlcGxpY2F0aW9uIHNldCB1cA0KaWYgKCRjb3VudCAtZXEgMCkgCQl7DQoJCQkJJHJlcGxpY2Fzb25saW5lID0gIlllcyAvIE5vIHJlcGxpY2F0aW9uIGNvbmZpZ3VyZWQiCQkJDQoJCQl9DQp3cml0ZS1ob3N0ICJSZXBsaWNhdGlvbiBob3N0cyByZWFjaGFibGU6ICRyZXBsaWNhc29ubGluZSINCg0KIyBkaXNwbGF5IHRoZSByZXN1bHQgY29kZQ0KJHJlc3VsdGNvZGUgPSAwDQppZiAoJHdhcm5pbmcgLWd0IDApIHsgJHJlc3VsdGNvZGUgPSAxIH0NCmlmICgkY3JpdGljYWwgLWd0IDApIHsgJHJlc3VsdGNvZGUgPSAyIH0NCndyaXRlLWhvc3QgRmluYWwgcmVzdWx0IGNvZGUgJHJlc3VsdGNvZGUNCg0KDQoNCiMgZXhwb3J0IHRoZSB2YWx1ZXMgdG8gQXV0b21hdGlvbiBNYW5hZ2VyDQokJWlkJW5vcm1hbCVpZCUgPSAkbg0KJCVpZCV3YXJuaW5nJWlkJSA9ICR3DQokJWlkJWNyaXRpY2FsJWlkJSA9ICRjDQokJWlkJXJlcGxpY2F0aW9uc3RhdGUlaWQlID0gJHJlcGxpY2F0aW9uc3RhdGUNCiQlaWQlcmVzdWx0Y29kZSVpZCUgPSAkcmVzdWx0Y29kZQ0KJCVpZCVyZXBsaWNhc29ubGluZSVpZCUgPSAkcmVwbGljYXNvbmxpbmUNCiQlaWQlbmNvdW50JWlkJSA9ICRub3JtYWwNCiQlaWQld2NvdW50JWlkJSA9ICR3YXJuaW5nDQokJWlkJWNjb3VudCVpZCUgPSAkY3JpdGljYWwNCg==">
+          <p:RunScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunScript.InArgs>
+          <p:RunScript.OutArgs>
+            <p:OutArg ArgType="string" DisplayName="servers - normal" Name="normal" x:Key="normal">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_normal_14]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="string" DisplayName="servers - warning" Name="warning" x:Key="warning">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_warning_15]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="string" DisplayName="servers - critical" Name="critical" x:Key="critical">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_critical_16]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="string" DisplayName="Replication state" Name="replicationstate" x:Key="replicationstate">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_replicationstate_21]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="number" DisplayName="resultcode" Name="resultcode" x:Key="resultcode">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_resultcode_18]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="string" DisplayName="All replication servers reachable" Name="replicasonline" x:Key="replicasonline">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunScript_replicasonline_22]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="number" DisplayName="ncount" Name="ncount" x:Key="ncount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_ncount_23]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="number" DisplayName="wcount" Name="wcount" x:Key="wcount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_wcount_24]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg ArgType="number" DisplayName="ccount" Name="ccount" x:Key="ccount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunScript_ccount_25]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunScript.OutArgs>
+        </p:RunScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable Name="RunScript_OutPut_64_10" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_ResultString_11" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_Results_x64_12" x:TypeArguments="scg:IEnumerable(x:Object)" />
+        <Variable Name="RunScript_Result_13" x:TypeArguments="x:Double" />
+        <Variable Name="RunScript_normal_14" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_warning_15" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_critical_16" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_resultcode_18" x:TypeArguments="x:Double" />
+        <Variable Name="RunScript_replicationstate_21" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_replicasonline_22" x:TypeArguments="x:String" />
+        <Variable Name="RunScript_ncount_23" x:TypeArguments="x:Double" />
+        <Variable Name="RunScript_wcount_24" x:TypeArguments="x:Double" />
+        <Variable Name="RunScript_ccount_25" x:TypeArguments="x:Double" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
