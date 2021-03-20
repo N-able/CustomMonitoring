@@ -11,8 +11,8 @@
   <Architecture>x86,x64</Architecture>
   <Locale>all</Locale>
   <Version>2.0.1.4088</Version>
-  <PMEAgentVersion>2.0.1.4088</PMEAgentVersion>
-  <PMECacheVersion>2.0.1.4055</PMEAgentVersion>
-  <PMERPCServerVersion>2.0.1.4055</PMEAgentVersion>
+  <PatchManagementServiceControllerVersion>2.0.1.4088</PatchManagementServiceControllerVersion>
+  <FileCacheServiceAgentVersion>2.0.1.4055</FileCacheServiceAgentVersion>
+  <RequestHandlerAgentVersion>2.0.1.4055</RequestHandlerAgentVersion>
   <ReleaseDate>2021.03.18</ReleaseDate>
 </ComponentDetails>
