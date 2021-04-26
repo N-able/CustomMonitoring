@@ -47,12 +47,12 @@ if (-not ([System.Management.Automation.PSTypeName]'ServerCertificateValidationC
 [ServerCertificateValidationCallback]::Ignore()
 
 #Connect to VCSA 
-$RestApi = Invoke-WebRequest -Uri https://$vCenterURL/rest/com/vmware/cis/session -Method Post -Headers $head
+$RestApi = Invoke-WebRequest -Uri https://$vCenterURL/rest/com/vmware/cis/session -Method Post -Headers $head -UseBasicParsing
 $token = (ConvertFrom-Json $RestApi.Content).value
 $session = @{'vmware-api-session-id' = $token }
 
 #Get All Clusters
-$RClusters = Invoke-WebRequest -Uri https://$vCenterURL/rest/vcenter/cluster -Method GET -Headers $session
+$RClusters = Invoke-WebRequest -Uri https://$vCenterURL/rest/vcenter/cluster -Method GET -Headers $session -UseBasicParsing
 $Clusters = (ConvertFrom-Json $RClusters.Content).value
 
 $Cluster = if ($Clusters.count -eq 1) { $Clusters[0] }
