@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="e984bcf4-7600-4311-bcaa-6676ae5aa831" Name="Get vCenter Cluster Info" Description="R2V0IGluZm8gYWJvdXQgdGhlIGNsdXN0ZXIgY29uZmlndXJlZCBpbiB2Q2VudGVyIChvbmx5IDEgY2x1c3RlciBzdXBwb3J0ZWQp" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{8d828c02-f2f7-4bec-9913-eec7038eab87}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;vCenterURL&quot; Label=&quot;vCenterURL&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;UserName&quot; Label=&quot;UserName&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;Password&quot; Label=&quot;Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;ClusterName&quot; Label=&quot;ClusterName&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.ClusterName&quot; /&gt;&lt;Parameter ParameterName=&quot;HAEnabled&quot; Label=&quot;HA Enabled&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.HA_Enabled&quot; /&gt;&lt;Parameter ParameterName=&quot;DRSEnabled&quot; Label=&quot;DRS Enabled&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.DRS_Enabled&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c0bd34e3-4d89-4207-bc53-1dc79ca65cf3.ClusterName</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>ClusterName</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c0bd34e3-4d89-4207-bc53-1dc79ca65cf3.HA_Enabled</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>HAEnabled</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c0bd34e3-4d89-4207-bc53-1dc79ca65cf3.DRS_Enabled</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>DRSEnabled</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.1.8" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>490,571</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="490,571" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" Moniker="c0bd34e3-4d89-4207-bc53-1dc79ca65cf3" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="2d97a11f-9b5f-4d16-8569-620b24cfd610" m_bTextLinkChange="False" script="JABQAFcARAAgAD0AIABDAG8AbgB2AGUAcgB0AFQAbwAtAFMAZQBjAHUAcgBlAFMAdAByAGkAbgBnACAALQBTAHQAcgBpAG4AZwAgACQAUABhAHMAcwB3AG8AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQANAAoADQAKACQAYwByAGUAZABlAG4AdABpAGEAbAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAALQBUAHkAcABlAE4AYQBtAGUAIABQAFMAQwByAGUAZABlAG4AdABpAGEAbAAgAC0AQQByAGcAdQBtAGUAbgB0AEwAaQBzAHQAIAAkAFUAcwBlAHIATgBhAG0AZQAsACAAJABQAFcARAANAAoADQAKACMARwBlAG4AZQByAGEAdABlACAAQQB1AHQAaAANAAoAJABhAHUAdABoACAAPQAgAFsAUwB5AHMAdABlAG0ALgBDAG8AbgB2AGUAcgB0AF0AOgA6AFQAbwBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoAFsAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AFUAVABGADgALgBHAGUAdABCAHkAdABlAHMAKAAkAEMAcgBlAGQAZQBuAHQAaQBhAGwALgBVAHMAZQByAE4AYQBtAGUAIAArACAAJwA6ACcAIAArACAAJABDAHIAZQBkAGUAbgB0AGkAYQBsAC4ARwBlAHQATgBlAHQAdwBvAHIAawBDAHIAZQBkAGUAbgB0AGkAYQBsACgAKQAuAFAAYQBzAHMAdwBvAHIAZAApACkADQAKACQAaABlAGEAZAAgAD0AIABAAHsADQAKACAAIAAgACAAJwBBAHUAdABoAG8AcgBpAHoAYQB0AGkAbwBuACcAIAA9ACAAIgBCAGEAcwBpAGMAIAAkAGEAdQB0AGgAIgANAAoAfQANAAoADQAKACMASQBnAG4AbwByAGUAIABTAGUAbABmAFMAaQBnAG4AIABDAGUAcgB0ACAADQAKAGkAZgAgACgALQBuAG8AdAAgACgAWwBTAHkAcwB0AGUAbQAuAE0AYQBuAGEAZwBlAG0AZQBuAHQALgBBAHUAdABvAG0AYQB0AGkAbwBuAC4AUABTAFQAeQBwAGUATgBhAG0AZQBdACcAUwBlAHIAdgBlAHIAQwBlAHIAdABpAGYAaQBjAGEAdABlAFYAYQBsAGkAZABhAHQAaQBvAG4AQwBhAGwAbABiAGEAYwBrACcAKQAuAFQAeQBwAGUAKQAgAHsADQAKACAAIAAgACAAJABjAGUAcgB0AEMAYQBsAGwAYgBhAGMAawAgAD0AIABAACIADQAKACAAIAAgACAAdQBzAGkAbgBnACAAUwB5AHMAdABlAG0AOwANAAoAIAAgACAAIAB1AHMAaQBuAGcAIABTAHkAcwB0AGUAbQAuAE4AZQB0ADsADQAKACAAIAAgACAAdQBzAGkAbgBnACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAZQBjAHUAcgBpAHQAeQA7AA0ACgAgACAAIAAgAHUAcwBpAG4AZwAgAFMAeQBzAHQAZQBtAC4AUwBlAGMAdQByAGkAdAB5AC4AQwByAHkAcAB0AG8AZwByAGEAcABoAHkALgBYADUAMAA5AEMAZQByAHQAaQBmAGkAYwBhAHQAZQBzADsADQAKACAAIAAgACAAcAB1AGIAbABpAGMAIABjAGwAYQBzAHMAIABTAGUAcgB2AGUAcgBDAGUAcgB0AGkAZgBpAGMAYQB0AGUAVgBhAGwAaQBkAGEAdABpAG8AbgBDAGEAbABsAGIAYQBjAGsADQAKACAAIAAgACAAewANAAoAIAAgACAAIAAgACAAIAAgAHAAdQBiAGwAaQBjACAAcwB0AGEAdABpAGMAIAB2AG8AaQBkACAASQBnAG4AbwByAGUAKAApAA0ACgAgACAAIAAgACAAIAAgACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAaQBmACgAUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgAuAFMAZQByAHYAZQByAEMAZQByAHQAaQBmAGkAYwBhAHQAZQBWAGEAbABpAGQAYQB0AGkAbwBuAEMAYQBsAGwAYgBhAGMAawAgAD0APQBuAHUAbABsACkADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgAuAFMAZQByAHYAZQByAEMAZQByAHQAaQBmAGkAYwBhAHQAZQBWAGEAbABpAGQAYQB0AGkAbwBuAEMAYQBsAGwAYgBhAGMAawAgACsAPQAgAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAZABlAGwAZQBnAGEAdABlAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAKAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAATwBiAGoAZQBjAHQAIABvAGIAagAsACAADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFgANQAwADkAQwBlAHIAdABpAGYAaQBjAGEAdABlACAAYwBlAHIAdABpAGYAaQBjAGEAdABlACwAIAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAWAA1ADAAOQBDAGgAYQBpAG4AIABjAGgAYQBpAG4ALAAgAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAHMAbABQAG8AbABpAGMAeQBFAHIAcgBvAHIAcwAgAGUAcgByAG8AcgBzAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAKQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAHIAZQB0AHUAcgBuACAAdAByAHUAZQA7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAfQA7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAB9AA0ACgAiAEAADQAKACAAIAAgACAAQQBkAGQALQBUAHkAcABlACAAJABjAGUAcgB0AEMAYQBsAGwAYgBhAGMAawANAAoAfQANAAoAWwBTAGUAcgB2AGUAcgBDAGUAcgB0AGkAZgBpAGMAYQB0AGUAVgBhAGwAaQBkAGEAdABpAG8AbgBDAGEAbABsAGIAYQBjAGsAXQA6ADoASQBnAG4AbwByAGUAKAApAA0ACgANAAoAIwBDAG8AbgBuAGUAYwB0ACAAdABvACAAVgBDAFMAQQAgAA0ACgAkAFIAZQBzAHQAQQBwAGkAIAA9ACAASQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAALQBVAHIAaQAgAGgAdAB0AHAAcwA6AC8ALwAkAHYAQwBlAG4AdABlAHIAVQBSAEwALwByAGUAcwB0AC8AYwBvAG0ALwB2AG0AdwBhAHIAZQAvAGMAaQBzAC8AcwBlAHMAcwBpAG8AbgAgAC0ATQBlAHQAaABvAGQAIABQAG8AcwB0ACAALQBIAGUAYQBkAGUAcgBzACAAJABoAGUAYQBkAA0ACgAkAHQAbwBrAGUAbgAgAD0AIAAoAEMAbwBuAHYAZQByAHQARgByAG8AbQAtAEoAcwBvAG4AIAAkAFIAZQBzAHQAQQBwAGkALgBDAG8AbgB0AGUAbgB0ACkALgB2AGEAbAB1AGUADQAKACQAcwBlAHMAcwBpAG8AbgAgAD0AIABAAHsAJwB2AG0AdwBhAHIAZQAtAGEAcABpAC0AcwBlAHMAcwBpAG8AbgAtAGkAZAAnACAAPQAgACQAdABvAGsAZQBuACAAfQANAAoADQAKACMARwBlAHQAIABBAGwAbAAgAEMAbAB1AHMAdABlAHIAcwANAAoAJABSAEMAbAB1AHMAdABlAHIAcwAgAD0AIABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAaAB0AHQAcABzADoALwAvACQAdgBDAGUAbgB0AGUAcgBVAFIATAAvAHIAZQBzAHQALwB2AGMAZQBuAHQAZQByAC8AYwBsAHUAcwB0AGUAcgAgAC0ATQBlAHQAaABvAGQAIABHAEUAVAAgAC0ASABlAGEAZABlAHIAcwAgACQAcwBlAHMAcwBpAG8AbgANAAoAJABDAGwAdQBzAHQAZQByAHMAIAA9ACAAKABDAG8AbgB2AGUAcgB0AEYAcgBvAG0ALQBKAHMAbwBuACAAJABSAEMAbAB1AHMAdABlAHIAcwAuAEMAbwBuAHQAZQBuAHQAKQAuAHYAYQBsAHUAZQANAAoADQAKACQAQwBsAHUAcwB0AGUAcgBOAGEAbQBlACAAPQAgAGkAZgAgACgAJABDAGwAdQBzAHQAZQByAHMALgBjAG8AdQBuAHQAIAAtAGUAcQAgADEAKQAgAHsAIAAkAEMAbAB1AHMAdABlAHIAcwBbADAAXQAuAG4AYQBtAGUAIAB9ACAAZQBsAHMAZQAgAHsAIAAiAFsATgBPACAAQwBMAFUAUwBUAEUAUgAgAEYATwBVAE4ARABdACIAIAB9AA0ACgAkAEgAQQBfAEUAbgBhAGIAbABlAGQAIAAgAD0AIABpAGYAIAAoACQAQwBsAHUAcwB0AGUAcgBzAC4AYwBvAHUAbgB0ACAALQBlAHEAIAAxACkAIAB7ACAAJABDAGwAdQBzAHQAZQByAHMAWwAwAF0ALgBoAGEAXwBlAG4AYQBiAGwAZQBkACAAfQAgAGUAbABzAGUAIAB7ACAAIgBbAE4ATwAgAEMATABVAFMAVABFAFIAIABGAE8AVQBOAEQAXQAiACAAfQANAAoAJABEAFIAUwBfAEUAbgBhAGIAbABlAGQAIAA9ACAAaQBmACAAKAAkAEMAbAB1AHMAdABlAHIAcwAuAGMAbwB1AG4AdAAgAC0AZQBxACAAMQApACAAewAgACQAQwBsAHUAcwB0AGUAcgBzAFsAMABdAC4AZAByAHMAXwBlAG4AYQBiAGwAZQBkACAAfQAgAGUAbABzAGUAIAB7ACAAIgBbAE4ATwAgAEMATABVAFMAVABFAFIAIABGAE8AVQBOAEQAXQAiACAAfQANAAoA">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="UserName" ArgType="string" DisplayArg="Input Parameters.UserName" DisplayName="UserName" Name="UserName" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[UserName]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="Password" ArgType="password" DisplayArg="Input Parameters.Password" DisplayName="Password" Name="Password" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[Password]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="vCenterURL" ArgType="string" DisplayArg="Input Parameters.vCenterURL" DisplayName="vCenterURL" Name="vCenterURL" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[vCenterURL]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="ClusterName" ArgType="string" DisplayName="ClusterName" Name="ClusterName">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_ClusterName]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="HA_Enabled" ArgType="string" DisplayName="HA_Enabled" Name="HA_Enabled">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_HA_Enabled]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="DRS_Enabled" ArgType="string" DisplayName="DRS_Enabled" Name="DRS_Enabled">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_DRS_Enabled]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="UserName" />
+        <Variable x:TypeArguments="x:String" Name="vCenterURL" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ClusterName" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_HA_Enabled" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_DRS_Enabled" />
+        <Variable x:TypeArguments="p:Password" Name="Password" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
