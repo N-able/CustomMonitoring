@@ -2,6 +2,7 @@
 $UserName = "apiuser@vsphere.local"
 $Password = "VerySecure1337P@ssword"
 $vCenterURL = "vCenter.contoso.com"
+$ClusterInputName = ""
 #endregion
 
 $PasswordSec = ConvertTo-SecureString -String $Password -AsPlainText -Force
@@ -54,9 +55,12 @@ $session = @{'vmware-api-session-id' = $token }
 $RClusters = Invoke-WebRequest -Uri https://$vCenterURL/rest/vcenter/cluster -Method GET -Headers $session
 $Clusters = (ConvertFrom-Json $RClusters.Content).value
 
+$Cluster = if ($Clusters.count -eq 1) { $Clusters[0] }
+else { $Clusters | ForEach-Object { if ($_.name -eq $ClusterInputName) { $_ } } }
+
 #Output Variables
 $global:OutputVariables = @{
-    ClusterName = if ($Clusters.count -eq 1) { $Clusters[0].name } else { "[NO CLUSTER FOUND]" }
-    HA_Enabled  = if ($Clusters.count -eq 1) { $Clusters[0].ha_enabled } else { "[NO CLUSTER FOUND]" }
-    DRS_Enabled = if ($Clusters.count -eq 1) { $Clusters[0].drs_enabled } else { "[NO CLUSTER FOUND]" }
+    ClusterName = if ($Cluster) { $Cluster.name } else { "[NO CLUSTER FOUND]" }
+    HA_Enabled  = if ($Cluster) { $Cluster.ha_enabled } else { "[NO CLUSTER FOUND]" }
+    DRS_Enabled = if ($Cluster) { $Cluster.drs_enabled } else { "[NO CLUSTER FOUND]" }
 }
