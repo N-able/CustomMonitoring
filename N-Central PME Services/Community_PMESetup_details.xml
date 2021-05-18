@@ -15,5 +15,5 @@
   <PatchManagementServiceControllerVersion>2.1.0.4157</PatchManagementServiceControllerVersion>
   <FileCacheServiceAgentVersion>2.1.0.4095</FileCacheServiceAgentVersion>
   <RequestHandlerAgentVersion>2.1.0.4095</RequestHandlerAgentVersion>
-  <ReleaseDate>2021.03.18</ReleaseDate>
+  <ReleaseDate>2021.05.17</ReleaseDate>
 </ComponentDetails>
