@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="5ee488f6-4138-4754-ab7c-9daf4144e177" Name="FU Status Check" Description="Q2hlY2tzIHRoZSBzdGF0dXMgb2YgY3VycmVudCBXaW5kb3dzIDEwIEZlYXR1cmUgdXBkYXRlIHN0YXR1cyBmb3IgZmFpbHVyZXMgb3Igcm9sbGJhY2tz" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{4af5e0bc-401a-49f1-b81c-77943f5360d0}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;FailureCount&quot; Label=&quot;Failure Count&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Failure Count&quot; /&gt;&lt;Parameter ParameterName=&quot;InstallAttempts&quot; Label=&quot;Install Attempts&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Install Attempts&quot; /&gt;&lt;Parameter ParameterName=&quot;RollbackCount&quot; Label=&quot;Rollback Count&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Rollback Count&quot; /&gt;&lt;Parameter ParameterName=&quot;SetupHostResult&quot; Label=&quot;Setup Host Result&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Setup Host Result&quot; /&gt;&lt;Parameter ParameterName=&quot;BoxResult&quot; Label=&quot;Box Result&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Box Result&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e180bf8-c8d1-4268-9b79-7a94bf8acbf2.FailureCount</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>FailureCount</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e180bf8-c8d1-4268-9b79-7a94bf8acbf2.InstallAttempts</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>InstallAttempts</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e180bf8-c8d1-4268-9b79-7a94bf8acbf2.RollbackCount</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>RollbackCount</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e180bf8-c8d1-4268-9b79-7a94bf8acbf2.SetupHostResult</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>SetupHostResult</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e180bf8-c8d1-4268-9b79-7a94bf8acbf2.BoxResult</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BoxResult</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.16.1.15" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>490,571</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="490,571" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.16.1.15, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" Moniker="1e180bf8-c8d1-4268-9b79-7a94bf8acbf2" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="3cf7fbff-7226-4bea-b08b-2aeab555dd43" m_bTextLinkChange="False" script="RgB1AG4AYwB0AGkAbwBuACAAVABlAHMAdAAtAFIAZQBnAGkAcwB0AHIAeQBWAGEAbAB1AGUAKAAkAHIAZQBnAGsAZQB5ACwAIAAkAG4AYQBtAGUAKQAgAHsADQAKACAAIAAgACAARwBlAHQALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQAgACQAcgBlAGcAawBlAHkAIAAkAG4AYQBtAGUAIAAtAEUAcgByAG8AcgBBAGMAdABpAG8AbgAgAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAIAB8ACAADQAKACAAIAAgACAATwB1AHQALQBOAHUAbABsAA0ACgAgACAAIAAgACQAPwANAAoAfQANAAoADQAKAGMAbABhAHMAcwAgAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzACAAewANAAoAIAAgACAAIABzAHQAYQB0AGkAYwAgAFsAcwB0AHIAaQBuAGcAXQAgACQAVgBLAGUAeQAgAD0AIAAnAEgASwBMAE0AOgBcAFMAWQBTAFQARQBNAFwAUwBlAHQAdQBwAFwATQBvAFMAZQB0AHUAcABcAFYAbwBsAGEAdABpAGwAZQAnAA0ACgAgACAAIAAgAHMAdABhAHQAaQBjACAAWwBzAHQAcgBpAG4AZwBdACAAJABUAEsAZQB5ACAAPQAgACcASABLAEwATQA6AFwAUwBZAFMAVABFAE0AXABTAGUAdAB1AHAAXABNAG8AUwBlAHQAdQBwAFwAVAByAGEAYwBrAGkAbgBnACcADQAKACAAIAAgACAAcwB0AGEAdABpAGMAIABbAGIAbwBvAGwAXQAgAEkAcwBJAG4AUAByAG8AZwByAGUAcwBzACgAKQAgAHsAIAByAGUAdAB1AHIAbgAgAFQAZQBzAHQALQBQAGEAdABoACAAJwBIAEsATABNADoAXABTAFkAUwBUAEUATQBcAFMAZQB0AHUAcABcAEQAZQBwAGwAbwB5AG0AZQBuAHQASQBuAFAAcgBvAGcAcgBlAHMAcwAnACAAfQANAAoAIAAgACAAIABzAHQAYQB0AGkAYwAgAFsAYgBvAG8AbABdACAASQBzAEQAbwB3AG4AbABlAHYAZQBsAEEAYwB0AGkAdgBlACgAKQAgAHsAIAByAGUAdAB1AHIAbgAgAFQAZQBzAHQALQBQAGEAdABoACAAJwBIAEsATABNADoAXABTAFkAUwBUAEUATQBcAFMAZQB0AHUAcABcAFMAZQB0AHUAcABQAGwAYQB0AGYAbwByAG0AXABEAG8AdwBuAGwAZQB2AGUAbABBAGMAdABpAHYAZQAnACAAfQANAAoAIAAgACAAIABzAHQAYQB0AGkAYwAgAFsAaQBuAHQAXQAgAEcAZQB0AFMAZQB0AHUAcABQAGgAYQBzAGUAKAApACAAewANAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAKABUAGUAcwB0AC0AUgBlAGcAaQBzAHQAcgB5AFYAYQBsAHUAZQAgAC0AcgBlAGcAawBlAHkAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVgBLAGUAeQApACAALQBuAGEAbQBlACAAJwBTAGUAdAB1AHAAUABoAGEAcwBlACcAKQAgAC0AZQBxACAAJAB0AHIAdQBlACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAByAGUAdAB1AHIAbgAgAEcAZQB0AC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAALQBQAGEAdABoACAAKABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AFYASwBlAHkAKQAgAC0ATgBhAG0AZQAgACcAUwBlAHQAdQBwAFAAaABhAHMAZQAnAA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAAgACAAIAAgAGUAbABzAGUAIAB7ACAAcgBlAHQAdQByAG4AIAAkAG4AdQBsAGwAIAB9AA0ACgAgACAAIAAgAH0ADQAKACAAIAAgACAAcwB0AGEAdABpAGMAIABbAGkAbgB0AF0AIABHAGUAdABTAGUAdAB1AHAAUAByAG8AZwByAGUAcwBzACgAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACgAVABlAHMAdAAtAFIAZQBnAGkAcwB0AHIAeQBWAGEAbAB1AGUAIAAtAHIAZQBnAGsAZQB5ACAAKABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AFYASwBlAHkAKQAgAC0AbgBhAG0AZQAgACcAUwBlAHQAdQBwAFAAcgBvAGcAcgBlAHMAcwAnACkAIAAtAGUAcQAgACQAdAByAHUAZQApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAcgBlAHQAdQByAG4AIABHAGUAdAAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5AFYAYQBsAHUAZQAgAC0AUABhAHQAaAAgACgAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBWAEsAZQB5ACkAIAAtAE4AYQBtAGUAIAAnAFMAZQB0AHUAcABQAHIAbwBnAHIAZQBzAHMAJwANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABlAGwAcwBlACAAewAgAHIAZQB0AHUAcgBuACAAJABuAHUAbABsACAAfQANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgAHMAdABhAHQAaQBjACAAWwBpAG4AdABdACAARwBlAHQAUwBlAHQAdQBwAFMAdQBiAFAAaABhAHMAZQAoACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKAAoAFQAZQBzAHQALQBSAGUAZwBpAHMAdAByAHkAVgBhAGwAdQBlACAALQByAGUAZwBrAGUAeQAgACgAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBWAEsAZQB5ACkAIAAtAG4AYQBtAGUAIAAnAFMAZQB0AHUAcABTAHUAYgBQAGgAYQBzAGUAJwApACAALQBlAHEAIAAkAHQAcgB1AGUAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAHIAZQB0AHUAcgBuACAARwBlAHQALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQBWAGEAbAB1AGUAIAAtAFAAYQB0AGgAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVgBLAGUAeQApACAALQBOAGEAbQBlACAAJwBTAGUAdAB1AHAAUwB1AGIAUABoAGEAcwBlACcADQAKACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAZQBsAHMAZQAgAHsAIAByAGUAdAB1AHIAbgAgACQAbgB1AGwAbAAgAH0ADQAKACAAIAAgACAAfQANAAoAIAAgACAAIABzAHQAYQB0AGkAYwAgAFsAcwB0AHIAaQBuAGcAXQAgAEcAZQB0AEIAbwB4AFIAZQBzAHUAbAB0ACgAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACgAVABlAHMAdAAtAFIAZQBnAGkAcwB0AHIAeQBWAGEAbAB1AGUAIAAtAHIAZQBnAGsAZQB5ACAAKABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AFYASwBlAHkAKQAgAC0AbgBhAG0AZQAgACcAQgBvAHgAUgBlAHMAdQBsAHQAJwApACAALQBlAHEAIAAkAHQAcgB1AGUAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAHIAZQB0AHUAcgBuACAAIgAwAHgAJAAoACIAewAwADoAeAB9ACIAIAAtAGYAIAAoAEcAZQB0AC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAALQBQAGEAdABoACAAKABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AFYASwBlAHkAKQAgAC0ATgBhAG0AZQAgACcAQgBvAHgAUgBlAHMAdQBsAHQAJwApACkAIgANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABlAGwAcwBlACAAewAgAHIAZQB0AHUAcgBuACAAIgAwAHgAMAAiACAAfQAgAA0ACgAgACAAIAAgAH0ADQAKACAAIAAgACAAcwB0AGEAdABpAGMAIABbAHMAdAByAGkAbgBnAF0AIABHAGUAdABTAGUAdAB1AHAASABvAHMAdABSAGUAcwB1AGwAdAAoACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKAAoAFQAZQBzAHQALQBSAGUAZwBpAHMAdAByAHkAVgBhAGwAdQBlACAALQByAGUAZwBrAGUAeQAgACgAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBWAEsAZQB5ACkAIAAtAG4AYQBtAGUAIAAnAFMAZQB0AHUAcABIAG8AcwB0AFIAZQBzAHUAbAB0ACcAKQAgAC0AZQBxACAAJAB0AHIAdQBlACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAByAGUAdAB1AHIAbgAgACIAMAB4ACQAKAAiAHsAMAA6AHgAfQAiACAALQBmACAAKABHAGUAdAAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5AFYAYQBsAHUAZQAgAC0AUABhAHQAaAAgACgAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBWAEsAZQB5ACkAIAAtAE4AYQBtAGUAIAAnAFMAZQB0AHUAcABIAG8AcwB0AFIAZQBzAHUAbAB0ACcAKQApACIADQAKACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAZQBsAHMAZQAgAHsAIAByAGUAdAB1AHIAbgAgACIAMAB4ADAAIgAgAH0AIAANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgAHMAdABhAHQAaQBjACAAWwBpAG4AdABdACAARwBlAHQARgBhAGkAbAB1AHIAZQBDAG8AdQBuAHQAKAApACAAewANAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAKABUAGUAcwB0AC0AUgBlAGcAaQBzAHQAcgB5AFYAYQBsAHUAZQAgAC0AcgBlAGcAawBlAHkAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVABLAGUAeQApACAALQBuAGEAbQBlACAAJwBGAGEAaQBsAHUAcgBlAEMAbwB1AG4AdAAnACkAIAAtAGUAcQAgACQAdAByAHUAZQApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAcgBlAHQAdQByAG4AIAAoAEcAZQB0AC0ASQB0AGUAbQBQAHIAbwBwAGUAcgB0AHkAVgBhAGwAdQBlACAALQBQAGEAdABoACAAKABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AFQASwBlAHkAKQAgAC0ATgBhAG0AZQAgACcARgBhAGkAbAB1AHIAZQBDAG8AdQBuAHQAJwApAA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAAgACAAIAAgAGUAbABzAGUAIAB7ACAAcgBlAHQAdQByAG4AIAAwACAAfQAgAA0ACgAgACAAIAAgAH0ADQAKACAAIAAgACAAcwB0AGEAdABpAGMAIABbAGkAbgB0AF0AIABHAGUAdABJAG4AcwB0AGEAbABsAEEAdAB0AGUAbQBwAHQAcwAoACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKAAoAFQAZQBzAHQALQBSAGUAZwBpAHMAdAByAHkAVgBhAGwAdQBlACAALQByAGUAZwBrAGUAeQAgACgAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBUAEsAZQB5ACkAIAAtAG4AYQBtAGUAIAAnAEkAbgBzAHQAYQBsAGwAQQB0AHQAZQBtAHAAdABzACcAKQAgAC0AZQBxACAAJAB0AHIAdQBlACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAByAGUAdAB1AHIAbgAgACgARwBlAHQALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQBWAGEAbAB1AGUAIAAtAFAAYQB0AGgAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVABLAGUAeQApACAALQBOAGEAbQBlACAAJwBJAG4AcwB0AGEAbABsAEEAdAB0AGUAbQBwAHQAcwAnACkADQAKACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAZQBsAHMAZQAgAHsAIAByAGUAdAB1AHIAbgAgADAAIAB9ACAADQAKACAAIAAgACAAfQANAAoAIAAgACAAIABzAHQAYQB0AGkAYwAgAFsAaQBuAHQAXQAgAEcAZQB0AFIAbwBsAGwAYgBhAGMAawBDAG8AdQBuAHQAKAApACAAewANAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAKABUAGUAcwB0AC0AUgBlAGcAaQBzAHQAcgB5AFYAYQBsAHUAZQAgAC0AcgBlAGcAawBlAHkAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVABLAGUAeQApACAALQBuAGEAbQBlACAAJwBSAG8AbABsAGIAYQBjAGsAQwBvAHUAbgB0ACcAKQAgAC0AZQBxACAAJAB0AHIAdQBlACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAByAGUAdAB1AHIAbgAgACgARwBlAHQALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQBWAGEAbAB1AGUAIAAtAFAAYQB0AGgAIAAoAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoAVABLAGUAeQApACAALQBOAGEAbQBlACAAJwBSAG8AbABsAGIAYQBjAGsAQwBvAHUAbgB0ACcAKQANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABlAGwAcwBlACAAewAgAHIAZQB0AHUAcgBuACAAMAAgAH0AIAANAAoAIAAgACAAIAB9ACAAIAAgACAAIAAgACAAIAANAAoAfQANAAoADQAKACQARgBhAGkAbAB1AHIAZQBDAG8AdQBuAHQAIAA9ACAAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBHAGUAdABGAGEAaQBsAHUAcgBlAEMAbwB1AG4AdAAoACkADQAKACQASQBuAHMAdABhAGwAbABBAHQAdABlAG0AcAB0AHMAIAA9ACAAWwBEAGUAcABsAG8AeQBTAHQAYQB0AHUAcwBdADoAOgBHAGUAdABJAG4AcwB0AGEAbABsAEEAdAB0AGUAbQBwAHQAcwAoACkADQAKACQAUgBvAGwAbABiAGEAYwBrAEMAbwB1AG4AdAAgAD0AIABbAEQAZQBwAGwAbwB5AFMAdABhAHQAdQBzAF0AOgA6AEcAZQB0AFIAbwBsAGwAYgBhAGMAawBDAG8AdQBuAHQAKAApAA0ACgAkAFMAZQB0AHUAcABIAG8AcwB0AFIAZQBzAHUAbAB0ACAAPQAgAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoARwBlAHQAUwBlAHQAdQBwAEgAbwBzAHQAUgBlAHMAdQBsAHQAKAApAA0ACgAkAEIAbwB4AFIAZQBzAHUAbAB0ACAAPQAgAFsARABlAHAAbABvAHkAUwB0AGEAdAB1AHMAXQA6ADoARwBlAHQAQgBvAHgAUgBlAHMAdQBsAHQAKAApAA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="FailureCount" ArgType="number" DisplayName="Failure Count" Name="FailureCount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_FailureCount]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="InstallAttempts" ArgType="number" DisplayName="Install Attempts" Name="InstallAttempts">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_InstallAttempts]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="RollbackCount" ArgType="number" DisplayName="Rollback Count" Name="RollbackCount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_RollbackCount]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="SetupHostResult" ArgType="string" DisplayName="Setup Host Result" Name="SetupHostResult">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_SetupHostResult]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="BoxResult" ArgType="string" DisplayName="Box Result" Name="BoxResult">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BoxResult]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_FailureCount" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_InstallAttempts" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_RollbackCount" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_SetupHostResult" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BoxResult" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

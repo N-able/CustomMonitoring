@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+
+<service xmlns="http://www.n-able.com" author="David.Brooks" creationdate="05/25/2021" organization="N-able Technologies" syntaxversion="1.1.0.0" version="1.0.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<servicedefinition id="1268709" reason="" releasedependency="4.5.0.0" servicetype="AMP" version="1.0.1.2">
+		<description country="ca" language="en">Checks against the given version of Windows 10 from an AMP and validates against the given thresholds</description>
+		<displayname country="ca" language="en">FU Release</displayname>
+		<displaylabel>FU Release</displaylabel>
+		<help country="ca" language="en">FU Release</help>
+		<popuphelp country="ca" language="en">FU Release</popuphelp>
+
+
+		<serviceparameters aggregatedata="false" aggregatetasks="false" maxinstances="100" maxpollrate="60" minpollrate="0" schedulertype="Quartz Based Scheduler" serviceinstancetype="Multiple" timetostale="60" usesstockserviceitem="false"/>
+
+
+		<moduleparameters>
+
+
+		
+			<moduleparameter key="scan_interval" max="1440" min="0" phardcoded="false" preferredident="0" foruseby="3" type="2" value="0 0 9,12,21 * * ? *">
+				<shortdescription country="ca" language="en">Scan Interval</shortdescription>
+				<longdescription country="ca" language="en">Scan Interval</longdescription>
+				<help country="ca" language="en">The number of minutes between scans.</help>
+			</moduleparameter>
+			<moduleparameter key="selectedAutomationPolicy" max="1440" min="0" phardcoded="true" preferredident="0" foruseby="3" type="2" value="2084547036">
+				<shortdescription country="ca" language="en">Automation Manager Policy</shortdescription>
+				<longdescription country="ca" language="en">Automation Manager Policy</longdescription>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+			<moduleparameter key="serviceIdentifier" max="1440" min="0" phardcoded="false" preferredident="1" foruseby="3" type="2" value="">
+				<shortdescription country="ca" language="en">Service Identifier</shortdescription>
+				<longdescription country="ca" language="en">Service Identifier</longdescription>
+				<help country="ca" language="en"/>
+			</moduleparameter>
+		</moduleparameters>
+
+
+
+		<scandetails>
+			<scandetailid>3522800</scandetailid>
+		</scandetails>
+	</servicedefinition>
+
+
+
+	<scandetail id="3522800" monitoringtypeon="true" processforstate="true" cookid="23" releasedependency="2020.1.5.425" version="1.0.0.0" >
+		<thresholddefaults>
+			<thresholds configurable="true" type="Double"><threshold high="9999" low="2005" streval="" strvalue="" state="Normal"/><threshold high="2004" low="2004" streval="" strvalue="" state="Warning"/><threshold high="2003" low="0" streval="" strvalue="" state="Failed"/>
+			</thresholds>
+		</thresholddefaults>
+		<description country="ca" language="en">ReleaseID</description>
+		<displayname country="ca" language="en">SD1268709_ReleaseID</displayname>
+	</scandetail>
+
+
+	<automationmanagerpolicy name="FU Release" description="Outputs the release version to a status monitor" itemuuid="cb0eaee2-1f42-4661-95af-6fd31b4258ab" category="0" uploaddate="2021-05-25 23:06:26">
+		<ampdata>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48UG9saWN5IERlc2NyaXB0aW9uPSJUM1YwY0hWMGN5QjBhR1VnY21Wc1pXRnpaU0IyWlhKemFXOXVJSFJ2SUdFZ2MzUmhkSFZ6SUcxdmJtbDBiM0k9IiBFeGVjdXRpb25UeXBlPSJMb2NhbCIgSUQ9ImNiMGVhZWUyLTFmNDItNDY2MS05NWFmLTZmZDMxYjQyNThhYiIgTWluaW11bVBTVmVyc2lvblJlcXVpcmVkPSIwLjAuMCIgTmFtZT0iRlUgUmVsZWFzZSIgUmVtb3RlQ2F0ZWdvcnk9IjAiIFZlcnNpb249IjIuMTAuMC4xOSI+CiAgPE9iamVjdCBEYXRhPSImbHQ7eG1sJmd0OyZsdDtPdXRwdXRQYXJhbWV0ZXJzJmd0OyZsdDtQYXJhbWV0ZXIgUGFyYW1ldGVyTmFtZT0mcXVvdDtSZWxlYXNlSUQmcXVvdDsgTGFiZWw9JnF1b3Q7UmVsZWFzZUlEJnF1b3Q7IFBhcmFtZXRlclR5cGU9JnF1b3Q7bnVtYmVyJnF1b3Q7IFZhbHVlPSZxdW90O1J1biBQb3dlclNoZWxsIFNjcmlwdC5WZXJzaW9uJnF1b3Q7IC8mZ3Q7Jmx0Oy9PdXRwdXRQYXJhbWV0ZXJzJmd0OyZsdDsveG1sJmd0OyIgSUQ9IntiNGI3N2Y2Zi1hNzY1LTRhYTYtYmMxOC1mODA3ZTg0OGRiZTh9IiBUeXBlPSJ7QjZGQTZEOEItRUVBQS00N0E2LTg0NjMtN0Y5QTRGNUJCQjZFfSIvPgogIDxMaW5rTWFuYWdlciB4bWxucz0iaHR0cDovL3NjaGVtYXMuZGF0YWNvbnRyYWN0Lm9yZy8yMDA0LzA3L1BvbGljeUV4ZWN1dG9yIiB4bWxuczppPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+CiAgICA8aGFzaHNldCB4bWxuczpkMnAxPSJodHRwOi8vc2NoZW1hcy5kYXRhY29udHJhY3Qub3JnLzIwMDQvMDcvU3lzdGVtIj4KICAgICAgPGQycDE6VHVwbGVPZnN0cmluZ3N0cmluZ3N0cmluZ3N0cmluZz4KICAgICAgICA8ZDJwMTptX0l0ZW0xPmE5ZTNhNDYzLTZmZjctNDdiNC1iYjMwLWM1MmEwYzhhYzczMC5WZXJzaW9uPC9kMnAxOm1fSXRlbTE+CiAgICAgICAgPGQycDE6bV9JdGVtMj5PdXRwdXRPYmplY3Q8L2QycDE6bV9JdGVtMj4KICAgICAgICA8ZDJwMTptX0l0ZW0zLz4KICAgICAgICA8ZDJwMTptX0l0ZW00PlJlbGVhc2VJRDwvZDJwMTptX0l0ZW00PgogICAgICA8L2QycDE6VHVwbGVPZnN0cmluZ3N0cmluZ3N0cmluZ3N0cmluZz4KICAgIDwvaGFzaHNldD4KICA8L0xpbmtNYW5hZ2VyPgogIDxEaWFnbm9zdGljcyBPcmlnaW5hbFZlcnNpb249IjIuMTYuMS4xNSIvPgogIDxBY3Rpdml0eSB4bWxucz0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9uZXRmeC8yMDA5L3hhbWwvYWN0aXZpdGllcyIgeG1sbnM6bWM9Imh0dHA6Ly9zY2hlbWFzLm9wZW54bWxmb3JtYXRzLm9yZy9tYXJrdXAtY29tcGF0aWJpbGl0eS8yMDA2IiB4bWxuczptdmE9ImNsci1uYW1lc3BhY2U6TWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFjdGl2aXRpZXM7YXNzZW1ibHk9U3lzdGVtLkFjdGl2aXRpZXMiIHhtbG5zOnA9ImNsci1uYW1lc3BhY2U6UG9saWN5RXhlY3V0b3I7YXNzZW1ibHk9UG9saWN5RXhlY3V0aW9uRW5naW5lIiB4bWxuczpzYWRzPSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL25ldGZ4LzIwMTAveGFtbC9hY3Rpdml0aWVzL2RlYnVnZ2VyIiB4bWxuczpzYXA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vbmV0ZngvMjAwOS94YW1sL2FjdGl2aXRpZXMvcHJlc2VudGF0aW9uIiB4bWxuczpzY2c9ImNsci1uYW1lc3BhY2U6U3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWM7YXNzZW1ibHk9bXNjb3JsaWIiIHhtbG5zOng9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd2luZngvMjAwNi94YW1sIiBtYzpJZ25vcmFibGU9InNhZHMgc2FwIiB4OkNsYXNzPSJQb2xpY3kgQnVpbGRlciI+CiAgICA8eDpNZW1iZXJzPgogICAgICA8eDpQcm9wZXJ0eSBOYW1lPSJQb2xpY3lHVUlEIiBUeXBlPSJJbkFyZ3VtZW50KHg6U3RyaW5nKSIvPgogICAgPC94Ok1lbWJlcnM+CiAgICA8c2FwOlZpcnR1YWxpemVkQ29udGFpbmVyU2VydmljZS5IaW50U2l6ZT40OTAsNTcxPC9zYXA6VmlydHVhbGl6ZWRDb250YWluZXJTZXJ2aWNlLkhpbnRTaXplPgogICAgPG12YTpWaXN1YWxCYXNpYy5TZXR0aW5ncz5Bc3NlbWJseSByZWZlcmVuY2VzIGFuZCBpbXBvcnRlZCBuYW1lc3BhY2VzIHNlcmlhbGl6ZWQgYXMgWE1MIG5hbWVzcGFjZXM8L212YTpWaXN1YWxCYXNpYy5TZXR0aW5ncz4KICAgIDxwOlBvbGljeVNlcXVlbmNlIERpc3BsYXlOYW1lPSJQb2xpY3kgQnVpbGRlciIgbXZhOlZpc3VhbEJhc2ljLlNldHRpbmdzPSJBc3NlbWJseSByZWZlcmVuY2VzIGFuZCBpbXBvcnRlZCBuYW1lc3BhY2VzIHNlcmlhbGl6ZWQgYXMgWE1MIG5hbWVzcGFjZXMiIHNhcDpWaXJ0dWFsaXplZENvbnRhaW5lclNlcnZpY2UuSGludFNpemU9IjQ5MCw1NzEiPgogICAgICA8cDpQb2xpY3lTZXF1ZW5jZS5BY3Rpdml0aWVzPgogICAgICAgIDxwOlJ1blBvd2VyU2hlbGxTY3JpcHQgQXNzZW1ibHlOYW1lPSJQb2xpY3lFeGVjdXRpb25FbmdpbmUsIFZlcnNpb249Mi4xNi4xLjE1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwiIERpc3BsYXlOYW1lPSJSdW4gUG93ZXJTaGVsbCBTY3JpcHQiIE1vbmlrZXI9ImE5ZTNhNDYzLTZmZjctNDdiNC1iYjMwLWM1MmEwYzhhYzczMCIgT3V0UHV0XzY0PSJbUnVuUG93ZXJTaGVsbFNjcmlwdF9PdXRQdXRfNjRdIiBSZXN1bHQ9IltSdW5Qb3dlclNoZWxsU2NyaXB0X1Jlc3VsdF0iIFJlc3VsdFN0cmluZz0iW1J1blBvd2VyU2hlbGxTY3JpcHRfUmVzdWx0U3RyaW5nXSIgUmVzdWx0c194NjQ9IltSdW5Qb3dlclNoZWxsU2NyaXB0X1Jlc3VsdHNfeDY0XSIgUnVuQXNDdXJyZW50TG9nZ2VkT25Vc2VyPSJGYWxzZSIgU2NyaXB0RXhlY3V0aW9uTWV0aG9kPSJFeGVjdXRlRGVidWciIFR5cGVOYW1lPSJSdW5Qb3dlclNoZWxsU2NyaXB0IiBnZW5BcmdFdmVudD0iYmZlM2FlMjUtZjBkYy00Yjk4LWFiYjktMjBmZTk0NmY0ZDQyIiBtX2JUZXh0TGlua0NoYW5nZT0iRmFsc2UiIHNhcDpWaXJ0dWFsaXplZENvbnRhaW5lclNlcnZpY2UuSGludFNpemU9IjQ1NCwzNDgiIHNjcmlwdD0iSkFCV0FHVUFjZ0J6QUdrQWJ3QnVBQ0FBUFFBZ0FGc0FhUUJ1QUhRQVhRQW9BRWNBWlFCMEFDMEFTUUIwQUdVQWJRQlFBSElBYndCd0FHVUFjZ0IwQUhrQUlBQXRBRkFBWVFCMEFHZ0FJQUFpQUVnQVN3Qk1BRTBBT2dCY0FGTUFUd0JHQUZRQVZ3QkJBRklBUlFCY0FFMEFhUUJqQUhJQWJ3QnpBRzhBWmdCMEFGd0FWd0JwQUc0QVpBQnZBSGNBY3dBZ0FFNEFWQUJjQUVNQWRRQnlBSElBWlFCdUFIUUFWZ0JsQUhJQWN3QnBBRzhBYmdBaUFDQUFMUUJPQUdFQWJRQmxBQ0FBVWdCbEFHd0FaUUJoQUhNQVpRQkpBR1FBS1FBdUFGSUFaUUJzQUdVQVlRQnpBR1VBU1FCa0FBMEFDZ0E9Ij4KICAgICAgICAgIDxwOlJ1blBvd2VyU2hlbGxTY3JpcHQuSW5BcmdzPgogICAgICAgICAgICA8c2NnOkRpY3Rpb25hcnkgeDpUeXBlQXJndW1lbnRzPSJ4OlN0cmluZywgcDpJbkFyZyIvPgogICAgICAgICAgPC9wOlJ1blBvd2VyU2hlbGxTY3JpcHQuSW5BcmdzPgogICAgICAgICAgPHA6UnVuUG93ZXJTaGVsbFNjcmlwdC5PdXRBcmdzPgogICAgICAgICAgICA8cDpPdXRBcmcgQXJnVHlwZT0ibnVtYmVyIiBEaXNwbGF5TmFtZT0iVmVyc2lvbiIgTmFtZT0iVmVyc2lvbiIgeDpLZXk9IlZlcnNpb24iPgogICAgICAgICAgICAgIDxwOk91dEFyZy5Bcmc+CiAgICAgICAgICAgICAgICA8T3V0QXJndW1lbnQgeDpUeXBlQXJndW1lbnRzPSJ4OkRvdWJsZSI+W1J1blBvd2VyU2hlbGxTY3JpcHRfVmVyc2lvbl08L091dEFyZ3VtZW50PgogICAgICAgICAgICAgIDwvcDpPdXRBcmcuQXJnPgogICAgICAgICAgICA8L3A6T3V0QXJnPgogICAgICAgICAgPC9wOlJ1blBvd2VyU2hlbGxTY3JpcHQuT3V0QXJncz4KICAgICAgICA8L3A6UnVuUG93ZXJTaGVsbFNjcmlwdD4KICAgICAgPC9wOlBvbGljeVNlcXVlbmNlLkFjdGl2aXRpZXM+CiAgICAgIDxwOlBvbGljeVNlcXVlbmNlLlZhcmlhYmxlcz4KICAgICAgICA8VmFyaWFibGUgTmFtZT0iUnVuUG93ZXJTaGVsbFNjcmlwdF9PdXRQdXRfNjQiIHg6VHlwZUFyZ3VtZW50cz0ieDpTdHJpbmciLz4KICAgICAgICA8VmFyaWFibGUgTmFtZT0iUnVuUG93ZXJTaGVsbFNjcmlwdF9SZXN1bHRTdHJpbmciIHg6VHlwZUFyZ3VtZW50cz0ieDpTdHJpbmciLz4KICAgICAgICA8VmFyaWFibGUgTmFtZT0iUnVuUG93ZXJTaGVsbFNjcmlwdF9SZXN1bHRzX3g2NCIgeDpUeXBlQXJndW1lbnRzPSJzY2c6SUVudW1lcmFibGUoeDpPYmplY3QpIi8+CiAgICAgICAgPFZhcmlhYmxlIE5hbWU9IlJ1blBvd2VyU2hlbGxTY3JpcHRfUmVzdWx0IiB4OlR5cGVBcmd1bWVudHM9Ing6RG91YmxlIi8+CiAgICAgICAgPFZhcmlhYmxlIE5hbWU9IlJ1blBvd2VyU2hlbGxTY3JpcHRfVmVyc2lvbiIgeDpUeXBlQXJndW1lbnRzPSJ4OkRvdWJsZSIvPgogICAgICA8L3A6UG9saWN5U2VxdWVuY2UuVmFyaWFibGVzPgogICAgPC9wOlBvbGljeVNlcXVlbmNlPgogIDwvQWN0aXZpdHk+CjwvUG9saWN5Pg==</ampdata>
+	</automationmanagerpolicy>
+
+</service>
+<?N-able-SDK version=3.0?>
