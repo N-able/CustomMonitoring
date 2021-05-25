@@ -14,6 +14,8 @@ The FU Status check provides a metrics on a number of important registry key val
 
 These values generally relate to where in the update phases it reached, in the below exmaple where the disk space is no sufficient, windows has failed many times in attempting to update, there is no rollback value as it never reached a downlevel phase and rolled back during the migration.
 
+The author notes that Microsoft _often_ updates these keys but doesn't always, I have also provided FU Clear Status.amp to run against devices, run it with a certain release id below which is delete the HKLM:\SYSTEM\Setup\MoSetup key where Microsoft keeps the status data.
+
 ![image](https://user-images.githubusercontent.com/17693460/119506497-4f2ad400-bdb1-11eb-9438-7ab95cfffb39.png)
 
 ## FU Release
