@@ -34,6 +34,10 @@ If the monitor is red it means that the boot configuration is misconfigured/malf
 
 ![image](https://user-images.githubusercontent.com/17693460/119508688-4935f280-bdb3-11eb-8ec6-093f38b5de8e.png)
 
+### Deployment Notes
+When deploying the custom service via Service Template, **turn off** the threshold for the "Boot Path" value as this is for diagnostics purposes only, you will expect to see \Windows\system32\winload.exe for BIOS boot devices and \Windows\system32\winload.efi for EFI boot devices.
+
+### Remdiation Nots
 If you do encounter a broken boot configuration, a way in which you may resolve the issue is to:
 1. Backup the BCD! `bcdedit /export C:\temp\bcd.bak`
 2. Get the list of all the boot configuration entries with `bcdedit /enum /v`
