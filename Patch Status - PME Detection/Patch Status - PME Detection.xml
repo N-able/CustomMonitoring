@@ -76,7 +76,7 @@
 
 
 
-	<scandetail id="3040802" monitoringtypeon="true" processforstate="false" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
+	<scandetail id="3040802" monitoringtypeon="true" processforstate="true" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="Timestamp"><threshold high="83" low="0" streval="" strvalue="" state="Normal"/><threshold high="166" low="83" streval="" strvalue="" state="Warning"/><threshold high="250" low="166" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -98,7 +98,7 @@
 
 
 
-	<scandetail id="3040804" monitoringtypeon="true" processforstate="false" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
+	<scandetail id="3040804" monitoringtypeon="true" processforstate="true" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="Timestamp"><threshold high="83" low="0" streval="" strvalue="" state="Normal"/><threshold high="166" low="83" streval="" strvalue="" state="Warning"/><threshold high="250" low="166" streval="" strvalue="" state="Failed"/>
 			</thresholds>
@@ -142,7 +142,7 @@
 
 
 
-	<scandetail id="3040808" monitoringtypeon="true" processforstate="false" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
+	<scandetail id="3040808" monitoringtypeon="true" processforstate="true" cookid="9" releasedependency="2021.1.2.391" version="1.0.0.0" >
 		<thresholddefaults>
 			<thresholds configurable="true" type="Timestamp"><threshold high="83" low="0" streval="" strvalue="" state="Normal"/><threshold high="166" low="83" streval="" strvalue="" state="Warning"/><threshold high="250" low="166" streval="" strvalue="" state="Failed"/>
 			</thresholds>
