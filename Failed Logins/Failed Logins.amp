@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="3cb25417-78f1-45a8-8aef-6502bafbc666" Name="Failed Logins" Description="RmFpbGVkIExvZ2lucyArIERldGFpbHM=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{7fc9d79f-4c5e-4052-ad42-2af0171e2bb1}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;BadAttempt&quot; Label=&quot;Amount of bad Username/Passwords&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Amount of bad Username/Password&quot; /&gt;&lt;Parameter ParameterName=&quot;PreAuthAttempt&quot; Label=&quot;Amount of failed PreAuthentications&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Amount of failed PreAuthentication&quot; /&gt;&lt;Parameter ParameterName=&quot;BadUsers&quot; Label=&quot;Bad Users&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bad Users&quot; /&gt;&lt;Parameter ParameterName=&quot;BadNetworks&quot; Label=&quot;Bad Networks&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bad Network&quot; /&gt;&lt;Parameter ParameterName=&quot;BadApps&quot; Label=&quot;Bad Applications&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bad Applications&quot; /&gt;&lt;Parameter ParameterName=&quot;PreAuthUsers&quot; Label=&quot;Failed PreAuth Users&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Failed PreAuth Users&quot; /&gt;&lt;Parameter ParameterName=&quot;PreAuthNetworks&quot; Label=&quot;Failed PreAuth Networks&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Failed PreAuth Network&quot; /&gt;&lt;Parameter ParameterName=&quot;PreAuthNames&quot; Label=&quot;Failed PreAuth Kerberos Names&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Failed PreAuth Kerberos Names&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.BadAttempt</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BadAttempt</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.PreAuthAttempt</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>PreAuthAttempt</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.BadUsers</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BadUsers</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.BadNetwork</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BadNetworks</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.BadApps</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BadApps</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.PreAuthUsers</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>PreAuthUsers</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.PreAuthNetwork</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>PreAuthNetworks</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>3bdcf86c-37c3-4287-9e7f-127e01ae7271.PreAuthNames</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>PreAuthNames</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="3bdcf86c-37c3-4287-9e7f-127e01ae7271" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="e0d208e9-7c12-409f-8b8e-5debcf844259" m_bTextLinkChange="False" script="JABGAGEAaQBsAGUAZABMAG8AZwBpAG4AcwA0ADYAMgA1ACAAPQAgAEcAZQB0AC0AVwBpAG4ARQB2AGUAbgB0ACAALQBGAGkAbAB0AGUAcgBIAGEAcwBoAHQAYQBiAGwAZQAgAEAAewAgAFAAcgBvAHYAaQBkAGUAcgBOAGEAbQBlACAAPQAgACIATQBpAGMAcgBvAHMAbwBmAHQALQBXAGkAbgBkAG8AdwBzAC0AUwBlAGMAdQByAGkAdAB5AC0AQQB1AGQAaQB0AGkAbgBnACIAIAA7ACAASQBkACAAPQAgADQANgAyADUAIAA7ACAAUwB0AGEAcgB0AFQAaQBtAGUAIAA9ACAAKAAoAEcAZQB0AC0ARABhAHQAZQApAC4AQQBkAGQARABhAHkAcwAoAC0AMQApACkAIAB9ACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlAA0ACgAkAEYAYQBpAGwAZQBkAFUAcwBlAHIAcwA0ADYAMgA1ACAAPQAgACQARgBhAGkAbABlAGQATABvAGcAaQBuAHMANAA2ADIANQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAJABfAC4AUAByAG8AcABlAHIAdABpAGUAcwBbADUAXQAuAFYAYQBsAHUAZQAgAH0AIAB8ACAARwByAG8AdQBwAC0ATwBiAGoAZQBjAHQADQAKACQARgBhAGkAbABlAGQATgBlAHQAdwBvAHIAawBTAG8AdQByAGMAZQA0ADYAMgA1ACAAPQAgACQARgBhAGkAbABlAGQATABvAGcAaQBuAHMANAA2ADIANQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAJABfAC4AUAByAG8AcABlAHIAdABpAGUAcwBbADEAOQBdAC4AVgBhAGwAdQBlACAAfQAgAHwAIABHAHIAbwB1AHAALQBPAGIAagBlAGMAdAANAAoAJABGAGEAaQBsAGUAZABBAHAAcABTAG8AdQByAGMAZQA0ADYAMgA1ACAAPQAgACQARgBhAGkAbABlAGQATABvAGcAaQBuAHMANAA2ADIANQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAJABfAC4AUAByAG8AcABlAHIAdABpAGUAcwBbADEAOABdAC4AVgBhAGwAdQBlACAAfQAgAHwAIABHAHIAbwB1AHAALQBPAGIAagBlAGMAdAANAAoADQAKACQARgBhAGkAbABlAGQATABvAGcAaQBuAHMANAA3ADcAMQAgAD0AIABHAGUAdAAtAFcAaQBuAEUAdgBlAG4AdAAgAC0ARgBpAGwAdABlAHIASABhAHMAaAB0AGEAYgBsAGUAIABAAHsAIABQAHIAbwB2AGkAZABlAHIATgBhAG0AZQAgAD0AIAAiAE0AaQBjAHIAbwBzAG8AZgB0AC0AVwBpAG4AZABvAHcAcwAtAFMAZQBjAHUAcgBpAHQAeQAtAEEAdQBkAGkAdABpAG4AZwAiACAAOwAgAEkAZAAgAD0AIAA0ADcANwAxACAAOwAgAFMAdABhAHIAdABUAGkAbQBlACAAPQAgACgAKABHAGUAdAAtAEQAYQB0AGUAKQAuAEEAZABkAEQAYQB5AHMAKAAtADEAKQApACAAfQAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQANAAoAJABGAGEAaQBsAGUAZABVAHMAZQByAHMANAA3ADcAMQAgAD0AIAAkAEYAYQBpAGwAZQBkAEwAbwBnAGkAbgBzADQANwA3ADEAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAgACQAXwAuAFAAcgBvAHAAZQByAHQAaQBlAHMAWwAwAF0ALgBWAGEAbAB1AGUAIAB9ACAAfAAgAEcAcgBvAHUAcAAtAE8AYgBqAGUAYwB0AA0ACgAkAEYAYQBpAGwAZQBkAE4AZQB0AHcAbwByAGsAUwBvAHUAcgBjAGUANAA3ADcAMQAgAD0AIAAkAEYAYQBpAGwAZQBkAEwAbwBnAGkAbgBzADQANwA3ADEAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAgACQAXwAuAFAAcgBvAHAAZQByAHQAaQBlAHMAWwA2AF0ALgBWAGEAbAB1AGUAIAB9ACAAfAAgAEcAcgBvAHUAcAAtAE8AYgBqAGUAYwB0AA0ACgAkAEYAYQBpAGwAZQBkAEEAcABwAFMAbwB1AHIAYwBlADQANwA3ADEAIAA9ACAAJABGAGEAaQBsAGUAZABMAG8AZwBpAG4AcwA0ADcANwAxACAAfAAgAEYAbwByAEUAYQBjAGgALQBPAGIAagBlAGMAdAAgAHsAIAAkAF8ALgBQAHIAbwBwAGUAcgB0AGkAZQBzAFsAMgBdAC4AVgBhAGwAdQBlACAAfQAgAHwAIABHAHIAbwB1AHAALQBPAGIAagBlAGMAdAANAAoADQAKACMAcgBlAGcAaQBvAG4AIABPAHUAdABwAHUAdAAgAHAAYQByAGEAbQBlAHQAZQByAHMAIABmAG8AcgAgAEEAdQB0AG8AbQBhAHQAaQBvAG4AIABNAGEAbgBhAGcAZQByAA0ACgAkAEIAYQBkAEEAdAB0AGUAbQBwAHQAIAA9ACAAJABGAGEAaQBsAGUAZABMAG8AZwBpAG4AcwA0ADYAMgA1AC4AQwBvAHUAbgB0AA0ACgAkAFAAcgBlAEEAdQB0AGgAQQB0AHQAZQBtAHAAdAAgAD0AIAAkAEYAYQBpAGwAZQBkAEwAbwBnAGkAbgBzADQANwA3ADEALgBDAG8AdQBuAHQADQAKACQAQgBhAGQAVQBzAGUAcgBzACAAPQAgACgAWwBhAHIAcgBhAHkAXQAoACQARgBhAGkAbABlAGQAVQBzAGUAcgBzADQANgAyADUAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAgACIAJAAoACQAXwAuAE4AYQBtAGUAKQAgACgAJAAoACQAXwAuAEMAbwB1AG4AdAApAHgAKQAiACAAfQApACkAIAAtAGoAbwBpAG4AIAAiADwAYgByAD4AIgANAAoAJABCAGEAZABOAGUAdAB3AG8AcgBrACAAPQAgACgAWwBhAHIAcgBhAHkAXQAoACQARgBhAGkAbABlAGQATgBlAHQAdwBvAHIAawBTAG8AdQByAGMAZQA0ADYAMgA1ACAAfAAgAEYAbwByAEUAYQBjAGgALQBPAGIAagBlAGMAdAAgAHsAIAAiACQAKAAkAF8ALgBOAGEAbQBlACkAIAAoACQAKAAkAF8ALgBDAG8AdQBuAHQAKQB4ACkAIgAgAH0AKQApACAALQBqAG8AaQBuACAAIgA8AGIAcgA+ACIADQAKACQAQgBhAGQAQQBwAHAAcwAgAD0AIAAoAFsAYQByAHIAYQB5AF0AKAAkAEYAYQBpAGwAZQBkAEEAcABwAFMAbwB1AHIAYwBlADQANgAyADUAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAgACIAJAAoACQAXwAuAE4AYQBtAGUAKQAgACgAJAAoACQAXwAuAEMAbwB1AG4AdAApAHgAKQAiACAAfQApACkAIAAtAGoAbwBpAG4AIAAiADwAYgByAD4AIgANAAoAJAByAGUAQQB1AHQAaABVAHMAZQByAHMAIAA9ACAAKABbAGEAcgByAGEAeQBdACgAJABGAGEAaQBsAGUAZABVAHMAZQByAHMANAA3ADcAMQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAIgAkACgAJABfAC4ATgBhAG0AZQApACAAKAAkACgAJABfAC4AQwBvAHUAbgB0ACkAeAApACIAIAB9ACkAKQAgAC0AagBvAGkAbgAgACIAPABiAHIAPgAiAA0ACgAkAFAAcgBlAEEAdQB0AGgATgBlAHQAdwBvAHIAawAgAD0AIAAoAFsAYQByAHIAYQB5AF0AKAAkAEYAYQBpAGwAZQBkAE4AZQB0AHcAbwByAGsAUwBvAHUAcgBjAGUANAA3ADcAMQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAIgAkACgAJABfAC4ATgBhAG0AZQApACAAKAAkACgAJABfAC4AQwBvAHUAbgB0ACkAeAApACIAIAB9ACkAKQAgAC0AagBvAGkAbgAgACIAPABiAHIAPgAiAA0ACgAkAFAAcgBlAEEAdQB0AGgATgBhAG0AZQBzACAAPQAgACgAWwBhAHIAcgBhAHkAXQAoACQARgBhAGkAbABlAGQAQQBwAHAAUwBvAHUAcgBjAGUANAA3ADcAMQAgAHwAIABGAG8AcgBFAGEAYwBoAC0ATwBiAGoAZQBjAHQAIAB7ACAAIgAkACgAJABfAC4ATgBhAG0AZQApACAAKAAkACgAJABfAC4AQwBvAHUAbgB0ACkAeAApACIAIAB9ACkAKQAgAC0AagBvAGkAbgAgACIAPABiAHIAPgAiAA0ACgAjAGUAbgBkAHIAZQBnAGkAbwBuAA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="BadAttempt" ArgType="number" DisplayName="Amount of bad Username/Password" Name="BadAttempt">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_BadAttempt]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="PreAuthAttempt" ArgType="number" DisplayName="Amount of failed PreAuthentication" Name="PreAuthAttempt">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_PreAuthAttempt]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="BadUsers" ArgType="string" DisplayName="Bad Users" Name="BadUsers">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BadUsers]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="BadNetwork" ArgType="string" DisplayName="Bad Network" Name="BadNetwork">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BadNetwork]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="BadApps" ArgType="string" DisplayName="Bad Applications" Name="BadApps">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BadApps]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="PreAuthUsers" ArgType="string" DisplayName="Failed PreAuth Users" Name="PreAuthUsers">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_PreAuthUsers]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="PreAuthNetwork" ArgType="string" DisplayName="Failed PreAuth Network" Name="PreAuthNetwork">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_PreAuthNetwork]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="PreAuthNames" ArgType="string" DisplayName="Failed PreAuth Kerberos Names" Name="PreAuthNames">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_PreAuthNames]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_BadAttempt" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_PreAuthAttempt" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BadUsers" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BadNetwork" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BadApps" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_PreAuthUsers" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_PreAuthNetwork" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_PreAuthNames" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
