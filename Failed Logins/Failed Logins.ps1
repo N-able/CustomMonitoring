@@ -1,12 +1,12 @@
-$FailedLogins4625 = get-eventlog -LogName Security -EntryType FailureAudit -InstanceId 4625 -After ((Get-Date).AddDays(-1)) -ErrorAction SilentlyContinue
-$FailedUsers4625 = $FailedLogins4625 | ForEach-Object { $_.ReplacementStrings[5] } | Group-Object
-$FailedNetworkSource4625 = $FailedLogins4625 | ForEach-Object { $_.ReplacementStrings[19] } | Group-Object
-$FailedAppSource4625 = $FailedLogins4625 | ForEach-Object { $_.ReplacementStrings[18] } | Group-Object
+$FailedLogins4625 = Get-WinEvent -FilterHashtable @{ ProviderName = "Microsoft-Windows-Security-Auditing" ; Id = 4625 ; StartTime = ((Get-Date).AddDays(-1)) } -ErrorAction SilentlyContinue
+$FailedUsers4625 = $FailedLogins4625 | ForEach-Object { $_.Properties[5].Value } | Group-Object
+$FailedNetworkSource4625 = $FailedLogins4625 | ForEach-Object { $_.Properties[19].Value } | Group-Object
+$FailedAppSource4625 = $FailedLogins4625 | ForEach-Object { $_.Properties[18].Value } | Group-Object
 
-$FailedLogins4771 = get-eventlog -LogName Security -EntryType FailureAudit -InstanceId 4771 -After ((Get-Date).AddDays(-1)) -ErrorAction SilentlyContinue
-$FailedUsers4771 = $FailedLogins4771 | ForEach-Object { $_.ReplacementStrings[0] } | Group-Object
-$FailedNetworkSource4771 = $FailedLogins4771 | ForEach-Object { $_.ReplacementStrings[6] } | Group-Object
-$FailedAppSource4771 = $FailedLogins4771 | ForEach-Object { $_.ReplacementStrings[2] } | Group-Object
+$FailedLogins4771 = Get-WinEvent -FilterHashtable @{ ProviderName = "Microsoft-Windows-Security-Auditing" ; Id = 4771 ; StartTime = ((Get-Date).AddDays(-1)) } -ErrorAction SilentlyContinue
+$FailedUsers4771 = $FailedLogins4771 | ForEach-Object { $_.Properties[0].Value } | Group-Object
+$FailedNetworkSource4771 = $FailedLogins4771 | ForEach-Object { $_.Properties[6].Value } | Group-Object
+$FailedAppSource4771 = $FailedLogins4771 | ForEach-Object { $_.Properties[2].Value } | Group-Object
 
 #region Output parameters for Automation Manager
 $BadAttempt = $FailedLogins4625.Count

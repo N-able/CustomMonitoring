@@ -11,6 +11,11 @@ Probably, you want to make a filter to target devices you would like to activate
 
 the Automation Manager Policy (.amp) is the raw script I used. It is just a wrapper for the Powershell script (.ps1) itself. if you want to make changes to it for your environment, you need this file (or you extract it from your nCentral after installing the Service Templates).
 
+## Release Notes
+
+1.0|2021/10/25|Initial Release (25/10/2021)
+1.1|2021/10/25|Changed from Get-EventLog to Get-WinEvent and worked with FilterHashTable to speedup requests even more. I've tested on some servers with multiple Gb's of event logs and went in the most extreme case van 12 minutes to 37 seconds. or on more normal servers from 63,9 seconds to 2,6 seconds
+
 ## License
 
 This work is licensed under Creative Commons Attribition 4.0 International (CC BY 4.0) - https://creativecommons.org/licenses/by/4.0/
