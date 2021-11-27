@@ -2,17 +2,17 @@
 <ComponentDetails>
   <Name>Patch Management Engine</Name>
   <Description>Patch Management Engine</Description>
-  <MD5Checksum>6CE419F9936B7ECDE155BA2037596C10</MD5Checksum>
-  <SHA1Checksum>215606B95310BDF5B7D3277A68022715D6BA4D48</SHA1Checksum>
-  <SHA256Checksum>7A0D030AC58E99429BC787286C4A7C16B20CC0F452777EB85F7CD7A40DF1638F</SHA256Checksum>
-  <SizeInBytes>7135176</SizeInBytes>
-  <DownloadURL>https://sis.n-able.com/Components/MSP-PME/2.3.0.5120/PMESetup.exe</DownloadURL>
+  <MD5Checksum>3F6CE5FE73EEC8C8E71A4BD3F9AA3ACC</MD5Checksum>
+  <SHA1Checksum>65CAE967AE479253F993A6F95599CA3B911ABF1C</SHA1Checksum>
+  <SHA256Checksum>2B6C71EDB5D87F808759A87E47B18696274C42C9D5D50D0AF970F2181ACC4CCF</SHA256Checksum>
+  <SizeInBytes>7162400</SizeInBytes>
+  <DownloadURL>https://sis.n-able.com/Components/MSP-PME/2.4.1.5153/PMESetup.exe</DownloadURL>
   <FileName>PMESetup.exe</FileName>
   <Architecture>x86,x64</Architecture>
   <Locale>all</Locale>
-  <Version>2.3.0.5120</Version>
-  <PatchManagementServiceControllerVersion>2.3.0.5120</PatchManagementServiceControllerVersion>
-  <FileCacheServiceAgentVersion>2.3.0.5025</FileCacheServiceAgentVersion>
-  <RequestHandlerAgentVersion>2.3.0.5025</RequestHandlerAgentVersion>
-  <ReleaseDate>2021.10.27</ReleaseDate>
+  <Version>2.4.1.5153</Version>
+  <PatchManagementServiceControllerVersion>2.4.1.5153</PatchManagementServiceControllerVersion>
+  <FileCacheServiceAgentVersion>2.4.1.5041</FileCacheServiceAgentVersion>
+  <RequestHandlerAgentVersion>2.4.1.5041</RequestHandlerAgentVersion>
+  <ReleaseDate>2021.11.25</ReleaseDate>
 </ComponentDetails>
