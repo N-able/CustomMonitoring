@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="d04334b0-aaab-42ff-816d-55626758d2f1" Name="CHECK Azure AD Join Status" Description="Q2hlY2sgaWYgYSBkZXZpY2UgaXMgam9pbmVkIGluIEF6dXJlIEFE" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{b76320cd-7427-4104-9b03-a70ef3f7a987}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;azureAdJoined&quot; Label=&quot;Is the device Azure AD Joined?&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.azureAdJoined&quot; /&gt;&lt;Parameter ParameterName=&quot;domainJoined&quot; Label=&quot;Is the device Domain Joined?&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.domainJoined&quot; /&gt;&lt;Parameter ParameterName=&quot;tenantName&quot; Label=&quot;Tenant Name&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.tenantName&quot; /&gt;&lt;Parameter ParameterName=&quot;azureAdJoinedBoolean&quot; Label=&quot;Numeric Value of AzureADJoined value&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.azureAdJoinedBoolean&quot; /&gt;&lt;Parameter ParameterName=&quot;domainJoinedBoolean&quot; Label=&quot;Numeric Value of DomainedJoined value&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.domainJoinedBoolean&quot; /&gt;&lt;Parameter ParameterName=&quot;status&quot; Label=&quot;Status&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.status&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.azureAdJoined</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>azureAdJoined</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.domainJoined</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>domainJoined</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.tenantName</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>tenantName</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.azureAdJoinedBoolean</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>azureAdJoinedBoolean</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.domainJoinedBoolean</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>domainJoinedBoolean</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>b996917c-4a3e-4ecf-8398-8b0dcab7f2ca.status</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>status</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.0.10" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="b996917c-4a3e-4ecf-8398-8b0dcab7f2ca" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="5b9f0b85-b652-4463-b75d-9120705807e8" m_bTextLinkChange="False" script="JABkAHMAcgBlAGcAIAA9ACAAZABzAHIAZQBnAGMAbQBkACAALwBzAHQAYQB0AHUAcwANAAoAJABhAHoAdQByAGUAQQBkAEoAbwBpAG4AZQBkACAAPQAgACQAZABzAHIAZQBnACAALQBsAGkAawBlACAAIgAqAEEAegB1AHIAZQBBAGQASgBvAGkAbgBlAGQAIAA6ACoAIgANAAoAJABkAG8AbQBhAGkAbgBKAG8AaQBuAGUAZAAgAD0AIAAkAGQAcwByAGUAZwAgAC0AbABpAGsAZQAgACIAKgBEAG8AbQBhAGkAbgBKAG8AaQBuAGUAZAAgADoAKgAiAA0ACgAkAHQAZQBuAGEAbgB0AE4AYQBtAGUAIAA9ACAAJABkAHMAcgBlAGcAIAAtAGwAaQBrAGUAIAAiACoAVABlAG4AYQBuAHQATgBhAG0AZQAgADoAKgAiAA0ACgANAAoAaQBmACAAKAAkAGEAegB1AHIAZQBBAGQASgBvAGkAbgBlAGQAIAAtAGwAaQBrAGUAIAAiACoAWQBFAFMAIgApACAAewAgACQAYQB6AHUAcgBlAEEAZABKAG8AaQBuAGUAZABCAG8AbwBsAGUAYQBuACAAPQAgADEAfQAgAGUAbABzAGUAIAB7ACAAJABhAHoAdQByAGUAQQBkAEoAbwBpAG4AZQBkAEIAbwBvAGwAZQBhAG4AIAA9ACAAMAB9AA0ACgBpAGYAIAAoACQAZABvAG0AYQBpAG4ASgBvAGkAbgBlAGQAIAAtAGwAaQBrAGUAIAAiACoAWQBFAFMAIgApACAAewAgACQAZABvAG0AYQBpAG4ASgBvAGkAbgBlAGQAQgBvAG8AbABlAGEAbgA9ACAAMQAgAH0AIABlAGwAcwBlACAAewAgACQAZABvAG0AYQBpAG4ASgBvAGkAbgBlAGQAQgBvAG8AbABlAGEAbgA9ACAAMAB9AA0ACgANAAoAJABhAHoAdQByAGUAQQBkAEoAbwBpAG4AZQBkACAAPQAgACQAYQB6AHUAcgBlAEEAZABKAG8AaQBuAGUAZAAuAHMAdQBiAHMAdAByAGkAbgBnACgAJABhAHoAdQByAGUAQQBkAEoAbwBpAG4AZQBkAC4AbABlAG4AZwB0AGgAIAArACAAMgA4ACkADQAKACQAdABlAG4AYQBuAHQATgBhAG0AZQAgAD0AIAAkAHQAZQBuAGEAbgB0AE4AYQBtAGUALgBzAHUAYgBzAHQAcgBpAG4AZwAoACQAdABlAG4AYQBuAHQATgBhAG0AZQAuAGwAZQBuAGcAdABoACAAKwAgADIAOAApAA0ACgAkAGQAbwBtAGEAaQBuAEoAbwBpAG4AZQBkACAAPQAgACQAZABvAG0AYQBpAG4ASgBvAGkAbgBlAGQALgBzAHUAYgBzAHQAcgBpAG4AZwAoACQAZABvAG0AYQBpAG4ASgBvAGkAbgBlAGQALgBsAGUAbgBnAHQAaAAgACsAIAAyADgAKQANAAoADQAKACQAcwB0AGEAdAB1AHMAIAA9ACAAMAA7AA0ACgAgAGkAZgAgACgAKAAkAGEAegB1AHIAZQBBAGQASgBvAGkAbgBlAGQAQgBvAG8AbABlAGEAbgAgAC0AZQBxACAAMQApACAALQBhAG4AZAAgACgAJABkAG8AbQBhAGkAbgBKAG8AaQBuAGUAZABCAG8AbwBsAGUAYQBuACAALQBlAHEAIAAwACkAKQAgAHsAIAAkAHMAdABhAHQAdQBzACAAPQAgADAAIAB9ACAAIwBBAHoAdQByAGUAIABPAG4AbAB5AA0ACgAgAGkAZgAgACgAKAAkAGEAegB1AHIAZQBBAGQASgBvAGkAbgBlAGQAQgBvAG8AbABlAGEAbgAgAC0AZQBxACAAMQApACAALQBhAG4AZAAgACgAJABkAG8AbQBhAGkAbgBKAG8AaQBuAGUAZABCAG8AbwBsAGUAYQBuACAALQBlAHEAIAAxACkAKQAgAHsAIAAkAHMAdABhAHQAdQBzACAAPQAgADEAfQAgACMASAB5AGIAcgBpAGQADQAKACAAaQBmACAAKAAkAGEAegB1AHIAZQBBAGQASgBvAGkAbgBlAGQAQgBvAG8AbABlAGEAbgAgAC0AZQBxACAAMAApACAAewAgACQAcwB0AGEAdAB1AHMAIAA9ACAAMgAgAH0AIAAjAE4AbwB0ACAAQwBvAG4AbgBlAGMAdABlAGQA">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="azureAdJoined" ArgType="string" DisplayName="azureAdJoined" Name="azureAdJoined">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_azureAdJoined]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="domainJoined" ArgType="string" DisplayName="domainJoined" Name="domainJoined">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_domainJoined]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="tenantName" ArgType="string" DisplayName="tenantName" Name="tenantName">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_tenantName]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="azureAdJoinedBoolean" ArgType="number" DisplayName="azureAdJoinedBoolean" Name="azureAdJoinedBoolean">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_azureAdJoinedBoolean]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="domainJoinedBoolean" ArgType="number" DisplayName="domainJoinedBoolean" Name="domainJoinedBoolean">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_domainJoinedBoolean]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="status" ArgType="number" DisplayName="status" Name="status">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_status]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_azureAdJoined" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_domainJoined" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_tenantName" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_azureAdJoinedBoolean" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_domainJoinedBoolean" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_status" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
