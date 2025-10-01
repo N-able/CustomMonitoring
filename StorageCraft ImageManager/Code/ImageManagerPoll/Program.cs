@@ -248,9 +248,8 @@ namespace ImageManagerPoll
 
 
                         Console.WriteLine("Querying replication data");
-                        // using the IReplicationService interface instead of IReplicationService2 for compatibility with older versions.
-                        // None of the data we query for monitoring relies on the IReplicationService2 interface.
-                        IReplicationService replicationService = locator.Find<IReplicationService>(folder.Id);
+                        // Switched to IReplicationService3 from IReplicationService to support Arcserve Cloud Replication targets.
+                        IReplicationService3 replicationService = locator.Find<IReplicationService3>(folder.Id);
                         int failedReplications = 0;
                         int queuedFiles = 0;
                         string replicationTargetsText = (replicationService.Targets.Count > 0 ? "" : "N/A");
