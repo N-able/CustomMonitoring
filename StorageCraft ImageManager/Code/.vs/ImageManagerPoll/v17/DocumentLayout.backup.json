@@ -14,8 +14,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +28,9 @@
               "RelativeDocumentMoniker": "ImageManagerPoll\\Program.cs",
               "ToolTip": "C:\\Users\\cconner\\source\\repos\\N-able\\CustomMonitoring\\StorageCraft ImageManager\\Code\\ImageManagerPoll\\Program.cs",
               "RelativeToolTip": "ImageManagerPoll\\Program.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAgwPoAAACDAAAAAAAAAA==",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAUwAkBAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T20:09:56.038Z",
+              "WhenOpened": "2026-02-12T21:11:01.512Z",
               "EditorCaption": ""
             }
           ]

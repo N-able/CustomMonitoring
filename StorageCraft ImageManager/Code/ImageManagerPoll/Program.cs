@@ -117,7 +117,7 @@ namespace ImageManagerPoll
 
                 // using the IAgent interface instead of IAgent3 for compatibility with older versions.
                 // None of the data we query for monitoring relies on the IAgent3 interface.
-                IAgent5 agent = (IAgent5)Client.Connect("localhost", 56765, hashedPassword);
+                IAgent7 agent = (IAgent7)Client.Connect("localhost", 56765, hashedPassword);
                 if (agent == null)
                 {
                     Console.WriteLine("Incorrect password provided for local ImageManager service");
@@ -228,12 +228,47 @@ namespace ImageManagerPoll
 
                         Console.WriteLine("Querying consolidation data");
                         IConsolidationService consolidationService = locator.Find<IConsolidationService>(folder.Id);
+                        IConsolidationService consolidationParentService = locator.Find<IConsolidationService>(folder.ParentFolderId);
+                        ConsolidationPolicy consolidationAgentService = agent.AgentSettings.AgentConsolidationPolicy;
+
+                        ConsolidationPolicy parentCPolicy;
+                        ConsolidationPolicy folderCPolicy;
+                        ConsolidationPolicy cEffective = null;
+
+                        //Console.WriteLine("consolidationService:" + consolidationService.Policy);
+
+                        //Set Parent and Child Policies based on whether or not the folder is a Parent folder or not.  If Parent and Child Policies are both empty, use the Agent Policy.
+                        if (folder.ParentFolderId != Guid.Empty && consolidationService.Policy != null)
+                        {
+                            parentCPolicy = locator.Find<IConsolidationService>(folder.ParentFolderId).Policy;
+                            folderCPolicy = locator.Find<IConsolidationService>(folder.Id).Policy;
+                        }
+                        else if (consolidationService.Policy != null)
+                        {
+                            parentCPolicy = null;
+                            folderCPolicy = locator.Find<IConsolidationService>(folder.Id).Policy;
+                        }
+                        else
+                        {
+                            parentCPolicy = null;
+                            folderCPolicy = consolidationAgentService;
+                        }
+
+
+                        //Console.WriteLine("folderCPolicy:" + folderCPolicy);
+                        //Console.WriteLine("parentCPolicy:" + parentCPolicy);    
+
+                        //Determine the effective Consolidation Policy on the folder between Agent, Parent, and Child.
+                        cEffective = ConsolidationPolicy.ResolveEffectivePolicy(parentCPolicy, folderCPolicy);
+
+                        //Console.WriteLine("cEffective:" + cEffective);
+                        
                         Console.WriteLine("Consolidation Policy:");
-                        Console.WriteLine("  ConsolidationEnabled:" + consolidationService.Policy.IsEnabled);
-                        Console.WriteLine("  MonthlyConsolidationDay:" + consolidationService.Policy.MonthlyConsolidationDay);
-                        Console.WriteLine("  MonthlyConsolidationDayOfWeek:" + consolidationService.Policy.MonthlyConsolidationDayOfWeek);
-                        Console.WriteLine("  MonthlyConsolidationWeek:" + consolidationService.Policy.MonthlyConsolidationWeek);
-                        Console.WriteLine("  WeeklyConsolidationDay:" + consolidationService.Policy.WeeklyConsolidationDay);
+                        Console.WriteLine("  ConsolidationEnabled:" + cEffective.IsEnabled);
+                        Console.WriteLine("  MonthlyConsolidationDay:" + cEffective.MonthlyConsolidationDay);
+                        Console.WriteLine("  MonthlyConsolidationDayOfWeek:" + cEffective.MonthlyConsolidationDayOfWeek);
+                        Console.WriteLine("  MonthlyConsolidationWeek:" + cEffective.MonthlyConsolidationWeek);
+                        Console.WriteLine("  WeeklyConsolidationDay:" + cEffective.WeeklyConsolidationDay);
 
                         String lastSuccessfulConsolidation = (DateTime.MinValue.Equals(consolidationService.LastSuccessTime) ? "Never" : consolidationService.LastSuccessTime.ToString());
                         Console.WriteLine("Last successful consolidation: " + lastSuccessfulConsolidation + ", number of failures detected: " + consolidationService.Failures.Count);
@@ -362,7 +397,7 @@ namespace ImageManagerPoll
                         Console.WriteLine("Querying Headstart Restore data");
                         // using the IHeadStartService interface instead of IHeadStartService2 for compatibility with older versions.
                         // None of the data we query for monitoring relies on the IHeadStartService2 interface.
-                        IHeadStartService headStartService = locator.Find<IHeadStartService>(folder.Id);
+                        IHeadStartService2 headStartService = locator.Find<IHeadStartService2>(folder.Id);
                         int failedHeadstartJobs = 0;
                         string headstartJobsText = (headStartService.FindAllJobs().Count > 0 ? "" : "N/A");
                         foreach (HeadStartJob job in headStartService.FindAllJobs())
@@ -406,7 +441,7 @@ namespace ImageManagerPoll
                         wmiObject.SetPropertyValue("ReverifyExistingImages", vEffective.ReverifyExistingImages);
                         wmiObject.SetPropertyValue("ReverifyInterval", vEffective.ReverifyInterval);
 
-                        wmiObject.SetPropertyValue("ConsolidationEnabled", consolidationService.Policy.IsEnabled);
+                        wmiObject.SetPropertyValue("ConsolidationEnabled", cEffective.IsEnabled);
                         wmiObject.SetPropertyValue("LastSuccessfulConsolidation", lastSuccessfulConsolidation);
                         wmiObject.SetPropertyValue("NumberOfFilesFailingConsolidation", consolidationService.Failures.Count);
                         wmiObject.SetPropertyValue("ConsolidationFailureDetails", consolidationFailureDetails);
